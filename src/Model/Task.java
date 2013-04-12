@@ -12,7 +12,7 @@ public class Task {
 	public void changePriority(){
 		
 	}
-	public priority getPrio(){
+	public Priority getPrio(){
 		return priority;
 	}
 	public String getTitle(){
