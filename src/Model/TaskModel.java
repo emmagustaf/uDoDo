@@ -15,10 +15,12 @@ public class TaskModel {
 		checked = false;
 		prio = Priority.NO_PRIORITY;
 	}
+	
 	public void removeTask(){
 		
 	}
-	public void changePriority(){
+	
+	public void changePriority(){				//We probably will be needing a controller-class for the tasks, doing this kind of stuff but not yet! :D
 		switch (prio) {
 			case NO_PRIORITY:
 				prio = Priority.HIGH_PRIORITY;
@@ -36,12 +38,16 @@ public class TaskModel {
 	public void changeState(){
 		checked = !checked;
 	}
+	
 	public Priority getPrio(){
 		return prio;
 	}
+	
 	public String getTitle(){
 		return title;
 	}
+	
+	//TODO going to need setters and getters for ALL the variables owned by a new task.
 	
 	
 }
