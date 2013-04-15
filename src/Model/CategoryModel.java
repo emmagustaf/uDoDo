@@ -2,18 +2,18 @@ package model;
 
 import java.util.*;
 
-public class Category {
+public class CategoryModel {
 	
-	private List <Task> list;
+	private List <TaskModel> list;
 	private String catTitle;
 	
-	public Category(String catTitle){
+	public CategoryModel(String catTitle){
 		this.catTitle=catTitle;
-		list=new ArrayList<Task>();
+		list=new ArrayList<TaskModel>();
 	
 	}
 	
-	public void addTask(Task task){
+	public void addTask(TaskModel task){
 		list.add(task);
 	}
 	

@@ -1,6 +1,6 @@
 package model;
 
-public class Task {
+public class TaskModel {
 	private enum Priority{
 		HIGH_PRIORITY, NO_PRIORITY
 	}
@@ -10,7 +10,7 @@ public class Task {
 	private String description;
 	private Priority prio;
 	
-	public Task(String title){
+	public TaskModel(String title){
 		this.title = title;
 		checked = false;
 		prio = Priority.NO_PRIORITY;
