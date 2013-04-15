@@ -1,4 +1,4 @@
-package Model;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
