@@ -4,14 +4,14 @@ import javax.swing.JPanel;
 
 public class TaskPanel extends JPanel {
 
-	//TODO Skapa textLabel osv som skall synas i varje task.
+	//TODO Create textlabels, checkbox and other shit that every task should show in the list.
 	/**
 	 * Create the panel.
 	 */
 	public TaskPanel(TaskModel model) {
 		
-		//TODO Borde ta in en model och hämta information från den som sedan målar ut informationen från den
-		//medskickade modelen i (denna)panelen som representerar den nyskapade tasken.
+		//TODO Get the information from the model and place it in this panel. This panel should represent a new task in the list. 
+		//(Name, checkbox and so on)
 
 	}
 
