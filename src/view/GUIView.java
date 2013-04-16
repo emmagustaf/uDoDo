@@ -25,8 +25,6 @@ public class GUIView extends JPanel {
 				
 		setVisible(true);
 
-		//TODO create panels to add panels in?
-		//TODO instances from the classes HeaderView and ListView should be added to the GUI. 
 	}
 	
 }
