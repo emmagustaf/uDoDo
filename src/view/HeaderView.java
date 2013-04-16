@@ -1,6 +1,12 @@
 package view;
 
+<<<<<<< HEAD
+import javax.swing.JPanel;
+import controller.*;
+
+=======
 import java.awt.event.*;
+>>>>>>> 56d76b726ec41b908a9c8d62a4ca40b32786c0f2
 
 import javax.swing.*;
 
