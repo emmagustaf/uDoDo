@@ -1,38 +1,30 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import javax.swing.*;
 
 public class GUIView extends JPanel {
 
 	private HeaderView header;
 	private ListView list;
-
+	private JPanel headerPanel = new JPanel();
+	private JPanel listPanel = new JPanel();
+	
+	
 	/**
 	 * Creates the frame.
 	 */
 	public GUIView(HeaderView header, ListView list) {
 		this.header = header;
 		this.list = list;
-		
+		headerPanel.add(header);
+		listPanel.add(list);
 		setLayout(new BorderLayout(0, 0));
-		add(header, BorderLayout.NORTH);
-		
-		JPanel taskPresenter = new JPanel();
-		TaskPanel panel = new TaskPanel(null);
-		add(taskPresenter, BorderLayout.CENTER);
-		taskPresenter.add(panel);
-		pack();
-		repaint();
+		add(headerPanel, BorderLayout.NORTH);
+		add(listPanel, BorderLayout.CENTER);
+				
+		setVisible(true);
 
-		//TODO create panels to add panels in?
-		//TODO instances from the classes HeaderView and ListView should be added to the GUI. 
 	}
 	
-
-
 }
