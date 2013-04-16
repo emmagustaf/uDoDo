@@ -12,11 +12,14 @@ public class GUIView extends JPanel {
 	public GUIView(HeaderView header, ListView list) {
 		this.header = header;
 		this.list = list;
+		
 		headerPanel.add(header);
 		listPanel.add(list);	
+		
 		setLayout(new BorderLayout(0, 0));
 		add(headerPanel, BorderLayout.NORTH);
 		add(listPanel, BorderLayout.CENTER);
+		
 		setVisible(true);
 	}	
 }
