@@ -16,7 +16,7 @@ public class HeaderView extends JPanel{
 	
 	public HeaderView(ListController controller) {
 		this.controller = controller;
-		taskTitleInput = new JTextField("New task", 50);
+		taskTitleInput = new JTextField(50);
 		JButton addNewTaskButton = new JButton("Add");
 		this.add(taskTitleInput);
 		this.add(addNewTaskButton);
@@ -30,6 +30,7 @@ public class HeaderView extends JPanel{
 					TaskModel task = new TaskModel(taskTitleInput.getText());
 					TaskPanel taskPanel = new TaskPanel(task);
 					controller.addTask(taskPanel);
+					controller.updateListView();
 				}
 			}
 		}
