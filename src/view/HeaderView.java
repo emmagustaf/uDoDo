@@ -1,6 +1,8 @@
 package view;
 
 import javax.swing.JPanel;
+import controller.*;
+
 
 public class HeaderView extends JPanel {
 

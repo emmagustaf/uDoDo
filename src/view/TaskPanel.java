@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.JPanel;
+import model.*;
 
 public class TaskPanel extends JPanel {
 
