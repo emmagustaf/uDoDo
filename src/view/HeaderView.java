@@ -26,7 +26,7 @@ public class HeaderView extends JPanel{
 	private class NewTaskListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			if(e.getSource() instanceof JButton){
-				if(taskTitleInput.getText() != null){
+				if(taskTitleInput.getText().length() > 0){
 					TaskModel task = new TaskModel(taskTitleInput.getText());
 					TaskPanel taskPanel = new TaskPanel(task);
 					controller.addTask(taskPanel);
