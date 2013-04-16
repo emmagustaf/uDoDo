@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TaskModel {
 	private enum Priority{
 		HIGH_PRIORITY, NO_PRIORITY
@@ -9,11 +12,15 @@ public class TaskModel {
 	private String title;
 	private String description;
 	private Priority prio;
+	private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
+	//we will have to find a way to keep track of unchecked and checked tasks
+	//I think it will be too many lists with stuff soon...
 	
 	public TaskModel(String title){
 		this.title = title;
 		checked = false;
 		prio = Priority.NO_PRIORITY;
+		tsljzdnflafkList.add(this);
 	}
 	
 	public void removeTask(){
