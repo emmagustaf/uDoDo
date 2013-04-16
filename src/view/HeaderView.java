@@ -1,9 +1,9 @@
 package view;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 import controller.*;
 import java.awt.event.*;
-import javax.swing.*;
+import java.awt.*;
 import model.TaskModel;
 import controller.ListController;
 
@@ -17,8 +17,9 @@ public class HeaderView extends JPanel{
 	public HeaderView(ListController controller) {
 		this.controller = controller;
 		taskTitleInput = new JTextField("New task", 50);
-		
-		
+		JButton addNewTaskButton = new JButton("Add");
+		this.add(taskTitleInput);
+		this.add(addNewTaskButton);	
 	}
 	
 	private class NewTaskListener implements ActionListener{
