@@ -1,11 +1,8 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.Event.*;
+import javax.swing.*;
 
 public class GUIView extends JPanel {
 
@@ -26,7 +23,7 @@ public class GUIView extends JPanel {
 		TaskPanel panel = new TaskPanel(null);
 		add(taskPresenter, BorderLayout.CENTER);
 		taskPresenter.add(panel);
-		pack();
+		this.pack();
 		repaint();
 
 		//TODO create panels to add panels in?
