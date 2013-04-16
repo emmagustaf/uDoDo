@@ -9,11 +9,16 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JCheckBox;
 
+/**
+ * A class to represent a TaskPanel. 
+ * 
+ * @author Hanna
+ */
+
 public class TaskPanel extends JPanel {
 	
 	private TaskModel model;
 
-	//TODO Create textlabels, checkbox and other shit that every task should show in the list.
 	/**
 	 * Create the panel.
 	 */
@@ -23,18 +28,13 @@ public class TaskPanel extends JPanel {
 		
 		setLayout(new MigLayout("", "[][][][][][][]", "[]"));
 		
-		JLabel taskLabel = new JLabel("ToDo-task");
+		JLabel taskLabel = new JLabel(model.getTitle());
 		taskLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 		add(taskLabel, "cell 1 0");
-		taskLabel.setText(model.getTitle());
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("");
 		add(chckbxNewCheckBox, "cell 6 0");
 		
-		
-		
-		//TODO Get the information from the model and place it in this panel. This panel should represent a new task in the list. 
-		//(Name, checkbox and so on)
 		
 	}
 

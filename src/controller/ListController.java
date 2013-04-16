@@ -13,6 +13,7 @@ public class ListController {
 	public void addTask(TaskPanel task){
 		//TODO add task to the listview.
 		view.add(task);
+		view.revalidate();
 		view.repaint();
 		
 	}
