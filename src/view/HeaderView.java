@@ -1,11 +1,10 @@
 package view;
 
+import javax.swing.JPanel;
+import controller.*;
 import java.awt.event.*;
-
 import javax.swing.*;
-
 import model.TaskModel;
-
 import controller.ListController;
 
 public class HeaderView extends JPanel{
