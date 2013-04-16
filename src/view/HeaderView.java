@@ -33,8 +33,8 @@ public class HeaderView extends JPanel{
 			if(e.getSource() instanceof JButton){
 				if(taskTitleInput.getText() != null){
 					TaskModel task = new TaskModel(taskTitleInput.getText());
-					//implementation to display a task in ListView?
-					repaint();
+					TaskPanel taskPanel = new TaskPanel(task);
+					controller.addTask(taskPanel);
 				}
 			}
 		}
