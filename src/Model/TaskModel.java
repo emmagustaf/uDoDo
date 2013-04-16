@@ -46,11 +46,11 @@ public class TaskModel {
 	public String getTitle(){
 		return title;
 	}
-<<<<<<< HEAD:src/Model/Task.java
-=======
+//<<<<<<< HEAD:src/Model/Task.java
+//=======
+//	
+//TODO going to need setters and getters for ALL the variables owned by a new task.
 	
-	//TODO going to need setters and getters for ALL the variables owned by a new task.
 	
-	
->>>>>>> d1e91b487a20301c0ba16875b6ffd53d8a0c1310:src/Model/TaskModel.java
+//>>>>>>> d1e91b487a20301c0ba16875b6ffd53d8a0c1310:src/Model/TaskModel.java
 }

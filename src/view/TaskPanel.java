@@ -2,6 +2,8 @@ package view;
 
 import javax.swing.JPanel;
 
+import model.TaskModel;
+
 public class TaskPanel extends JPanel {
 
 	//TODO Create textlabels, checkbox and other shit that every task should show in the list.
