@@ -18,12 +18,15 @@ public class GUIView extends JPanel {
 	public GUIView(HeaderView header, ListView list) {
 		this.header = header;
 		this.list = list;
+		
 		setLayout(new BorderLayout(0, 0));
 		add(header, BorderLayout.NORTH);
-		add(list, BorderLayout.CENTER);
+		
+		JPanel taskPresenter = new JPanel();
 		TaskPanel panel = new TaskPanel(null);
-	
-		list.add(panel);
+		add(taskPresenter, BorderLayout.CENTER);
+		taskPresenter.add(panel);
+		pack();
 		repaint();
 
 		//TODO create panels to add panels in?
