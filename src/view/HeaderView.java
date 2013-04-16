@@ -19,7 +19,8 @@ public class HeaderView extends JPanel{
 		taskTitleInput = new JTextField("New task", 50);
 		JButton addNewTaskButton = new JButton("Add");
 		this.add(taskTitleInput);
-		this.add(addNewTaskButton);	
+		this.add(addNewTaskButton);
+		addNewTaskButton.addActionListener(new NewTaskListener());
 	}
 	
 	private class NewTaskListener implements ActionListener{
