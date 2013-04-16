@@ -20,7 +20,7 @@ public class TaskModel {
 		this.title = title;
 		checked = false;
 		prio = Priority.NO_PRIORITY;
-		tsljzdnflafkList.add(this);
+		uncheckedTaskList.add(this);
 	}
 	
 	public void removeTask(){
