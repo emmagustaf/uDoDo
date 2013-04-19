@@ -24,8 +24,7 @@ public class TaskPanel extends JPanel {
 	 */
 	public TaskPanel(TaskModel model) {
 		this.model=model;
-		
-		
+	
 		setLayout(new MigLayout("", "[][][][][][][]", "[]"));
 		
 		JLabel taskLabel = new JLabel(model.getTitle());
@@ -34,9 +33,5 @@ public class TaskPanel extends JPanel {
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("");
 		add(chckbxNewCheckBox, "cell 6 0");
-		
-		
 	}
-
-
 }
