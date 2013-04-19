@@ -22,7 +22,7 @@ public class GUIView extends JPanel {
 		setLayout(new BorderLayout(0, 0));
 		add(headerPanel, BorderLayout.NORTH);
 		add(listPanel, BorderLayout.CENTER);
-		add(categoryPanel);
+		add(categoryPanel, BorderLayout.WEST);
 		setVisible(true);
 	}	
 }
