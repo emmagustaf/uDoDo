@@ -53,6 +53,9 @@ public class TaskModel {
 	public String getTitle(){
 		return title;
 	}
+	public String getDescription(){
+		return description;
+	}
 //<<<<<<< HEAD:src/Model/Task.java
 //=======
 //	
