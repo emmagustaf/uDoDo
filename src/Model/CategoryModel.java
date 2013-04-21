@@ -20,4 +20,8 @@ public class CategoryModel {
 	public String getCatTitle(){
 		return catTitle;
 	}
+	public String setCatTitle(String title){
+		return title;
+		
+	}
 }
