@@ -8,7 +8,7 @@ public class CategoryController {
 		this.view = view;
 	}
 	
-	public void addTask(CategoryPanel cat){
+	public void addCategory(CategoryPanel cat){
 		
 		view.add(cat);
 		view.revalidate();

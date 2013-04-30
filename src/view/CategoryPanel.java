@@ -10,10 +10,13 @@ public class CategoryPanel extends JPanel{
 	
 	public CategoryPanel(CategoryModel model) {
 		this.model=model;
-		setLayout(new MigLayout("", "[][]", "[]"));
+		setLayout(new MigLayout("", "[][][][][]", "[][][][][][]"));
+		
+		JButton btnNewButton = new JButton("New button");
+		add(btnNewButton, "cell 2 0");
 		
 		JLabel catLabel = new JLabel(model.getCatTitle());
-		add(catLabel, "cell 1 0");
+		add(catLabel, "cell 2 2,growy");
 	}
 
 }
