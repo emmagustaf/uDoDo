@@ -14,6 +14,8 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.FlowLayout;
 import java.awt.Component;
+import javax.swing.JButton;
+import javax.swing.Box;
 
 /**
  * A class to represent a TaskPanel. 
@@ -34,16 +36,22 @@ public class TaskPanel extends JPanel {
 		setPreferredSize(new Dimension(470, 70));
 		setSize(new Dimension(30, 20));
 		this.model=model;
-		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		setLayout(new MigLayout("", "[100px][35px][][][][][76.00][84px]", "[30px]"));
 		
 		JLabel taskLabel = new JLabel(model.getTitle());
 		taskLabel.setSize(new Dimension(30, 20));
 		taskLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
-		add(taskLabel);
+		add(taskLabel, "cell 0 0,alignx left,aligny top");
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("");
+		chckbxNewCheckBox.setMinimumSize(new Dimension(35, 30));
+		chckbxNewCheckBox.setMaximumSize(new Dimension(35, 30));
+		chckbxNewCheckBox.setForeground(new Color(50, 205, 50));
 		chckbxNewCheckBox.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		chckbxNewCheckBox.setActionCommand(taskCheck);
-		add(chckbxNewCheckBox);
+		add(chckbxNewCheckBox, "cell 1 0,alignx right,aligny top");
+		
+		JButton btnDelete = new JButton("Delete");
+		add(btnDelete, "cell 7 0,alignx right,aligny bottom");
 	}
 }

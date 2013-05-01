@@ -1,8 +1,11 @@
 package controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import view.*;
 
-public class ListController {
+public class ListController implements ActionListener {
 
 	private ListView view;
 	
@@ -26,6 +29,12 @@ public class ListController {
 	public void updateListView(){
 		//TODO update the listview.
 		view.repaint();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
