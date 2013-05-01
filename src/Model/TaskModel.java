@@ -56,6 +56,19 @@ public class TaskModel {
 	public String getDescription(){
 		return description;
 	}
+	public void editTitle(){
+		
+	}
+	public void editDescription(){
+		
+	}
+	public void editPrio(){
+		
+	}
+	public void editDeadline(){
+		
+	}
+	
 }
 //TODO going to need setters and getters for ALL the variables owned by a new task.
 
