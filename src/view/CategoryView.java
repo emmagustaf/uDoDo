@@ -11,8 +11,6 @@ public class CategoryView extends JPanel {
 	
 	public CategoryView(){
 		categoryTitleInput = new JTextField(10);
-		
-		
 		add(categoryTitleInput);
 		add(addNewCategoryButton);
 		addNewCategoryButton.setActionCommand("addCategory");

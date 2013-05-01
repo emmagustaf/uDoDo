@@ -4,12 +4,15 @@ import javax.swing.*;
 import model.*;
 import net.miginfocom.swing.MigLayout;
 
+
 public class CategoryPanel extends JPanel{
 
+	private CategoryPanelModel panelModel;
 	private CategoryModel model;
+	private CategoryPanel panel;
 	
-	public CategoryPanel(CategoryModel model) {
-		this.model=model;
+	public CategoryPanel(CategoryPanelModel panelModel) {
+		this.panelModel=panelModel;
 		setLayout(new MigLayout("", "[][][][][]", "[][][][][][]"));
 		
 		JLabel catLabel = new JLabel(model.getCatTitle());
