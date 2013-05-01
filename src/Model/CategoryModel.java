@@ -17,6 +17,7 @@ public class CategoryModel {
 		list.add(task);
 	}
 	*/
+	
 	public String getCatTitle(){
 		return catTitle;
 	}
