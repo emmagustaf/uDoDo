@@ -10,11 +10,15 @@ public class Main {
 	/**
 	 * @param args
 	 */
+	
 	public static void main(String[] args) {
 		
 		JFrame frame = new JFrame();
 		ListView listView = new ListView();
-		CategoryView categoryView = new CategoryView();
+		
+		CategoryController catController= new CategoryController();
+		CategoryView categoryView = new CategoryView(catController);
+		
 		ListController controller = new ListController(listView);
 		HeaderView headerView = new HeaderView(controller);
 		GUIView guiView = new GUIView(headerView, listView, categoryView);
