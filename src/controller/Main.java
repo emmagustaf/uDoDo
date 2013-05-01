@@ -17,7 +17,7 @@ public class Main {
 		ListView listView = new ListView();
 		
 		CategoryController catController= new CategoryController();
-		CategoryView categoryView = new CategoryView(catController);
+		CategoryView categoryView = new CategoryView();
 		
 		ListController controller = new ListController(listView);
 		HeaderView headerView = new HeaderView(controller);

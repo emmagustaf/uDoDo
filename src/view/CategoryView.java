@@ -4,14 +4,14 @@ import java.awt.*;
 import controller.*;
 import javax.swing.*;
 public class CategoryView extends JPanel {
-	private CategoryController controller;
+	
 	private JTextField categoryTitleInput;
 	private String addCategory;
 	JButton addNewCategoryButton = new JButton ("New");
 	
-	public CategoryView(CategoryController controller){
+	public CategoryView(){
 		categoryTitleInput = new JTextField(10);
-		this.controller=controller;
+		
 		
 		add(categoryTitleInput);
 		add(addNewCategoryButton);
