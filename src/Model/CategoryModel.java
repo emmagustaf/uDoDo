@@ -24,4 +24,7 @@ public class CategoryModel {
 		return title;
 		
 	}
+	public void addNewCategory(String title){
+		
+	}
 }
