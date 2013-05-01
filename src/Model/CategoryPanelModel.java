@@ -1,15 +1,22 @@
 package model;
 
-import view.*;
 
 public class CategoryPanelModel {
 	
-	
-	public void addNewCategoryPanel(CategoryPanel panel){
-		
+	private String catTitle;
+	public void addNewCategoryPanel(String catTitle ){
+		this.catTitle=catTitle;
 	}
 	
 	public void removeCategoryPanel(){
 		
+	}
+	
+	public void setCatTitle(String catTitle){
+		this.catTitle=catTitle;
+	}
+	
+	public String getCatTitle(){
+		return catTitle;
 	}
 }

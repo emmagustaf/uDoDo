@@ -19,5 +19,8 @@ public class CategoryView extends JPanel {
 	public JButton getAddButton(){
 		return addNewCategoryButton;
 	}
+	public String getCatTitle(){
+		return categoryTitleInput.getText();
+	}
 
 }
