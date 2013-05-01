@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TaskModel {
@@ -12,19 +13,16 @@ public class TaskModel {
 	private String title;
 	private String description;
 	private Priority prio;
-	private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
+	private Date deadline;
+	//private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
 	//we will have to find a way to keep track of unchecked and checked tasks
 	//I think it will be too many lists with stuff soon...
 	
 	public TaskModel(String title){
 		this.title = title;
-		checked = false;
-		prio = Priority.NO_PRIORITY;
-		uncheckedTaskList.add(this);
-	}
-	
-	public void removeTask(){
-		
+		this.checked = false;
+		this.prio = Priority.NO_PRIORITY;
+		//this.uncheckedTaskList.add(this);
 	}
 	
 	public void changePriority(){				//We probably will be needing a controller-class for the tasks, doing this kind of stuff but not yet! :D
@@ -45,30 +43,31 @@ public class TaskModel {
 	public void changeState(){
 		checked = !checked;
 	}
-	
 	public Priority getPrio(){
 		return prio;
 	}
-	
 	public String getTitle(){
 		return title;
 	}
 	public String getDescription(){
 		return description;
 	}
-	public void editTitle(){
-		
+	public Date getDeadline(){
+		return deadline;
 	}
-	public void editDescription(){
-		
+	public void setTitle(String title){
+		this.title=title;
 	}
-	public void editPrio(){
-		
+	public void setDescription(String description){
+		this.description=description;
 	}
-	public void editDeadline(){
-		
+	public void setPrio(Priority prio){
+		this.prio=prio;
+	}
+	public void setDeadline(Date deadline){
+		this.deadline=deadline;
 	}
 	
 }
-//TODO going to need setters and getters for ALL the variables owned by a new task.
+
 
