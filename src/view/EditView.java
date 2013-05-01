@@ -6,6 +6,7 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
+//Här kommer vi behöva ändra statet på task
 public class EditView extends JPanel {
 	private JTextField titleTextField;
 	private JTextField descriptionTextField;

@@ -6,13 +6,15 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 
+
+//Denna klass ska ha en massa setters
 public class DisplayTaskView extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
 	public DisplayTaskView() {
-		setLayout(new MigLayout("", "[207.00][]", "[][][][][][][][][]"));
+		setLayout(new MigLayout("", "[207.00][][]", "[][][][][][][][][]"));
 		
 		JLabel titleLabel = new JLabel("Title");
 		titleLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
@@ -30,9 +32,14 @@ public class DisplayTaskView extends JPanel {
 		prioLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
 		add(prioLabel, "cell 0 6");
 		
+		JButton editButton = new JButton("Edit");
+		add(editButton, "cell 1 8");
+		
 		JButton okButton = new JButton("OK");
-		add(okButton, "cell 1 8");
+		add(okButton, "cell 2 8");
 
 	}
+	
+	public 
 
 }
