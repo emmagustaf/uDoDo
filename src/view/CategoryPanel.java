@@ -1,15 +1,16 @@
 package view;
 
 import javax.swing.*;
+import model.*;
 
-import net.miginfocom.swing.MigLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-
 public class CategoryPanel extends JPanel{
-
 	
-	public CategoryPanel() {
+	private CategoryPanelModel model;
+	
+	public CategoryPanel(CategoryPanelModel model) {
+		this.model=model;
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{208, 0};
 		gridBagLayout.rowHeights = new int[]{111, 0};
@@ -20,8 +21,9 @@ public class CategoryPanel extends JPanel{
 		gbc_catLabel.gridx = 0;
 		gbc_catLabel.gridy = 0;
 		
-		JLabel catLabel = new JLabel();
+		JLabel catLabel = new JLabel(model.getCatTitle());
 		add(catLabel, gbc_catLabel);
 	}
+	
 
 }

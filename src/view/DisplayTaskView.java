@@ -8,6 +8,13 @@ import java.awt.Font;
 
 
 //Denna klass ska ha en massa setters
+
+/**
+ * A class to represent the view where you can see the title, description, priority and deadline of the task
+ *
+ * @author Hanna
+ *
+ */
 public class DisplayTaskView extends JPanel {
 
 	/**
@@ -37,6 +44,8 @@ public class DisplayTaskView extends JPanel {
 		
 		JButton okButton = new JButton("OK");
 		add(okButton, "cell 2 8");
+		
+		editButton.setActionCommand("editTask");
 
 	}
 	
