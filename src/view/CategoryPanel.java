@@ -8,7 +8,6 @@ import java.awt.GridBagConstraints;
 
 public class CategoryPanel extends JPanel{
 
-
 	
 	public CategoryPanel() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
