@@ -12,7 +12,10 @@ public class DisplayController implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof DisplayModel){
 			DisplayModel model = (DisplayModel) e.getSource();
-			if(equals(e.getActionCommand())){
+			if("editButton".equals(e.getActionCommand())){
+				
+			// WAAAAH HJEELP
+				
 				
 			}
 		}

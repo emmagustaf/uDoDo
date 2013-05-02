@@ -44,6 +44,8 @@ public class DisplayTaskView extends JPanel {
 		
 		JButton okButton = new JButton("OK");
 		add(okButton, "cell 2 8");
+		
+		editButton.setActionCommand("editTask");
 
 	}
 	
