@@ -7,6 +7,7 @@ public class CategoryPanelModel {
 	
 	public void addNewCategoryPanel(String catTitle ){
 		this.catTitle=catTitle;
+		setCatTitle(catTitle);
 	}
 	
 	public void removeCategoryPanel(){

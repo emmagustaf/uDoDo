@@ -17,11 +17,9 @@ public class CategoryModel {
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
 	}
-
-	/*
-	 * public void addTask(TaskModel task){ list.add(task); }
-	 */
-
+	public List getList(){
+		return catList;
+	}
 	public String getCatTitle() {
 		return catTitle;
 	}
@@ -31,11 +29,11 @@ public class CategoryModel {
 	}
 
 	public void addNewCategory(String title) {
-		CategoryPanel panel = new CategoryPanel();
+		CategoryPanel panel = new CategoryPanel(panelModel);
 		catList.add(panel);
-		updateCategoryView();
-		
+		updateCategoryView();	
 	}
+	
 	public void updateCategoryView() {
 		view.repaint();
 	}

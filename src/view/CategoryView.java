@@ -2,6 +2,7 @@ package view;
 
 import java.awt.*;
 import controller.*;
+
 import javax.swing.*;
 import net.miginfocom.swing.MigLayout;
 public class CategoryView extends JPanel {
@@ -17,7 +18,9 @@ public class CategoryView extends JPanel {
 		add(addNewCategoryButton, "cell 1 0,alignx left,aligny top");
 		addNewCategoryButton.setActionCommand("addCategory");
 	}
-	
+	public void setController(CategoryController controller){
+		addNewCategoryButton.addActionListener(controller);
+	}
 	public JButton getAddButton(){
 		return addNewCategoryButton;
 	}
