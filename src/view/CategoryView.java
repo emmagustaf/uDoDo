@@ -20,7 +20,7 @@ public class CategoryView extends JPanel {
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		add(panel);
-		panel.setLayout(new MigLayout("", "[67.00px][63.00px]", "[31.00px,grow]"));
+		panel.setLayout(new MigLayout("", "[67.00px][62.00px]", "[31.00px,grow]"));
 		
 		categoryTitleInput = new JTextPane();
 		panel.add(categoryTitleInput, "cell 0 0,growx,aligny center");

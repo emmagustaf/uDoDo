@@ -17,7 +17,8 @@ public class HeaderController implements ActionListener{
 	private HeaderView headerView;
 	
 	public HeaderController(HeaderView headerView, ListView view){
-		this.headerView.setController(this);
+		this.headerView = headerView;
+		headerView.setController(this);
 		this.view = view;
 	}
 	
@@ -28,8 +29,7 @@ public class HeaderController implements ActionListener{
 				TaskModel task = new TaskModel(headerView.getTextField());
 				TaskPanel taskPanel = new TaskPanel(task);
 				view.add(taskPanel);
-				view.revalidate();
-				view.repaint();
+				view.updateView();
 				//view.
 			}
 		}
