@@ -67,7 +67,6 @@ public class TaskModel {
 	public void setDeadline(Date deadline){
 		this.deadline=deadline;
 	}
-	
 }
 
 

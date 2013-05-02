@@ -39,7 +39,4 @@ public class DisplayTaskView extends JPanel {
 		add(okButton, "cell 2 8");
 
 	}
-	
-	public 
-
 }
