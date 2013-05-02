@@ -13,7 +13,7 @@ public class HeaderController implements ActionListener{
 	private HeaderView view;
 	
 	public HeaderController(HeaderView view){
-		this.view = view;
+		this.view.setController(this);
 	}
 	
 	@Override

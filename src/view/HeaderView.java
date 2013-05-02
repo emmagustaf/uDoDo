@@ -6,24 +6,30 @@ import java.awt.event.*;
 import java.awt.*;
 import model.TaskModel;
 import controller.ListController;
+import net.miginfocom.swing.MigLayout;
 
 public class HeaderView extends JPanel{
 
 	//TODO Create button "Ny" and textfield to get taskname
-	private HeaderController controller;
+	//private HeaderController controller;
 	private JTextField taskTitleInput;
-
+	private JButton addNewTaskButton;
 	
 	public HeaderView() {
-		taskTitleInput = new JTextField(50);
-		JButton addNewTaskButton = new JButton("Add");
-		this.add(taskTitleInput);
-		this.add(addNewTaskButton);
-		controller = new HeaderController(this);
-		addNewTaskButton.addActionListener(controller);
+		setLayout(new MigLayout("", "[][274.00px][115.00px][]", "[23px][][]"));
+		
+		Component horizontalStrut = Box.createHorizontalStrut(20);
+		add(horizontalStrut, "cell 0 1");
+		taskTitleInput = new JTextField(30);
+		this.add(taskTitleInput, "cell 1 1,alignx right,aligny center");
+		addNewTaskButton = new JButton("Add");
+		this.add(addNewTaskButton, "cell 2 1,alignx center,aligny top");
 		addNewTaskButton.setActionCommand("newTask");
 	}
 	
+	public void setController(HeaderController controller){
+		addNewTaskButton.addActionListener(controller);
+	}
 	public String getTextField(){
 		return taskTitleInput.getText();
 	}
