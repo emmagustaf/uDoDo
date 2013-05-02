@@ -16,11 +16,11 @@ public class Main {
 		JFrame frame = new JFrame();
 		ListView listView = new ListView();
 		
-		CategoryController catController= new CategoryController();
+		//CategoryController catController= new CategoryController();
 		CategoryView categoryView = new CategoryView();
 		
-		ListController controller = new ListController(listView);
-		HeaderView headerView = new HeaderView(controller);
+		//ListController controller = new ListController(listView);
+		HeaderView headerView = new HeaderView();
 		GUIView guiView = new GUIView(headerView, listView, categoryView);
 
 		frame.setTitle("uDoDo 1.0");

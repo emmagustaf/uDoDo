@@ -11,6 +11,8 @@ public class CategoryController implements ActionListener{
 	private CategoryView view;
 	private CategoryPanelModel panelModel;
 	
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof CategoryModel){
