@@ -17,18 +17,12 @@ public class CategoryController implements ActionListener{
 		this.view=view;
 		this.panelModel=panelModel;
 	}
-	public void presentList(){
-		view.add((Component) model.getList());
-		view.repaint();
-		view.revalidate();
-	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() instanceof CategoryView){
-			CategoryView view= (CategoryView) e.getSource();
+		if(e.getSource() instanceof CategoryModel){
+			CategoryModel model= (CategoryModel) e.getSource();
 			if("addCategory".equals(e.getActionCommand()) && panelModel.getCatTitle().length() > 0){
-				model.addNewCategory(view.getCatTitle());
 				CategoryModel cat = new CategoryModel(view.getCatTitle());
 				CategoryPanel catPanel = new CategoryPanel(panelModel);
 				view.repaint();
