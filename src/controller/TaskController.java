@@ -2,27 +2,29 @@ package controller;
 
 
 import model.*;
+import view.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TaskController implements ActionListener {
+import javax.swing.JCheckBox;
 
-	public TaskController(){
-		
-		
+public class TaskController implements ActionListener {
+	ListModel listModel;
+	ListView listView;
+
+	public TaskController(ListView listView, ListModel listModel){
+		this.listView = listView;
+		this.listModel = listModel;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() instanceof TaskModel){
-			TaskModel model = (TaskModel) e.getSource();
-			if(e.getActionCommand().equals("taskCheck")){
-				model.changeState();
-			}
 			
-		}
-		
+			if(e.getActionCommand().equals("taskCheck")){
+				 ((TaskPanel)((JCheckBox) e.getSource()).getParent()).getModel().changeState();
+			}else if(e.getSource().equals("deleteTask")){
+//				listView.
+	//			listModel.removeTask(model);
+			}
 	}
-
-
 }
