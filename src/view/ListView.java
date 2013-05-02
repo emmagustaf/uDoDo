@@ -14,4 +14,9 @@ public class ListView extends JPanel {
 		
 	}
 	
+	public void updateView(){
+		this.revalidate();
+		this.repaint();
+	}
+	
 }

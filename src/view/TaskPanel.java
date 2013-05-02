@@ -27,6 +27,7 @@ public class TaskPanel extends JPanel {
 	
 	private TaskModel model;
 	private String taskCheck;
+	private String deleteTask;
 	/**
 	 * Create the panel.
 	 */
@@ -52,6 +53,11 @@ public class TaskPanel extends JPanel {
 		add(chckbxNewCheckBox, "cell 1 0,alignx right,aligny top");
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.setActionCommand(deleteTask);
 		add(btnDelete, "cell 7 0,alignx right,aligny bottom");
+	}
+	
+	public TaskModel getModel(){
+		return this.model;
 	}
 }

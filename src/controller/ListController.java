@@ -9,25 +9,20 @@ import model.*;
 public class ListController implements ActionListener {
 
 	private ListView view;
+	private ListModel model;
 	
 	public ListController(ListView view, ListModel model){
 		this.view = view;
+		this.model = model;
 	}
 	
 	public void addTask(TaskPanel task){
 		view.add(task);
-		view.revalidate();
-		view.repaint();
+		view.updateView();
 	}
 	
 	public void removeTask(TaskPanel task){
-		//TODO remove task from the listview.
 		view.remove(task);
-	}
-	
-	public void updateListView(){
-		//TODO update the listview.
-		view.repaint();
 	}
 
 	@Override
