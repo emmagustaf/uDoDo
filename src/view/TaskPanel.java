@@ -32,7 +32,7 @@ public class TaskPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public TaskPanel(TaskModel model) {
-		setBorder(new LineBorder(new Color(0, 0, 0)));
+		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		setMinimumSize(new Dimension(30, 20));
 		setPreferredSize(new Dimension(397, 53));
 		setSize(new Dimension(30, 20));
