@@ -9,9 +9,10 @@ public class CategoryView extends JPanel {
 	
 	private JTextField categoryTitleInput;
 	private String addCategory;
-	JButton addNewCategoryButton = new JButton ("New");
-	
+	JButton addNewCategoryButton;
 	public CategoryView(){
+		addNewCategoryButton = new JButton ("New");
+
 		setLayout(new MigLayout("", "[82.00px][53px]", "[23px]"));
 		categoryTitleInput = new JTextField(8);
 		add(categoryTitleInput, "cell 0 0,alignx left,aligny center");
@@ -21,9 +22,7 @@ public class CategoryView extends JPanel {
 	public void setController(CategoryController controller){
 		addNewCategoryButton.addActionListener(controller);
 	}
-	public JButton getAddButton(){
-		return addNewCategoryButton;
-	}
+	
 	public String getCatTitle(){
 		return categoryTitleInput.getText();
 	}
