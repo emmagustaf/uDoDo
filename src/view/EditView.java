@@ -7,6 +7,14 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 
 //Här kommer vi behöva ändra statet på task
+
+
+/**
+ * A class to represent the view where you can edit a task.
+ * 
+ * @author Hanna
+ *
+ */
 public class EditView extends JPanel {
 	private JTextField titleTextField;
 	private JTextField descriptionTextField;
@@ -44,5 +52,12 @@ public class EditView extends JPanel {
 		add(saveButton, "cell 1 9,alignx right");
 
 	}
+	public String getTitleTextField(){
+		return titleTextField.getText();
+	}
+	public String getDescriptionTextField(){
+		return descriptionTextField.getText();
+	}
+	
 
 }
