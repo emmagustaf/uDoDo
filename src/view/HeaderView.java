@@ -30,6 +30,7 @@ public class HeaderView extends JPanel{
 	public void setController(HeaderController controller){
 		addNewTaskButton.addActionListener(controller);
 	}
+	
 	public String getTextField(){
 		return taskTitleInput.getText();
 	}
