@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Component;
 import java.util.*;
 
 import view.*;
@@ -31,10 +32,14 @@ public class CategoryModel {
 	public void addNewCategory(String title) {
 		CategoryPanel panel = new CategoryPanel(panelModel);
 		catList.add(panel);
-		updateCategoryView();	
+	}
+	public void removeCategory (CategoryPanelModel panelModel){
+		catList.remove(panelModel);
 	}
 	
 	public void updateCategoryView() {
+		view.add((Component) catList);
 		view.repaint();
+		view.revalidate();
 	}
 }

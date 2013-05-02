@@ -12,6 +12,7 @@ public class CategoryPanelController implements ActionListener {
 	private CategoryPanel panel;
 	private CategoryModel model;
 	
+	
 	public CategoryPanelController(CategoryPanel panel, CategoryModel model){
 		this.panel=panel;
 		this.model=model;
@@ -27,8 +28,6 @@ public class CategoryPanelController implements ActionListener {
 				}
 		}
 	}
-	
-	 
 	
 	public String getCatTitle(){
 		return model.getCatTitle();
