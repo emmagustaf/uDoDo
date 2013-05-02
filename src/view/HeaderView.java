@@ -16,7 +16,7 @@ public class HeaderView extends JPanel{
 	private JButton addNewTaskButton;
 	
 	public HeaderView() {
-		setLayout(new MigLayout("", "[][274.00px][115.00px][]", "[23px][][]"));
+		setLayout(new MigLayout("", "[][322.00px][109.00px][]", "[23px][][]"));
 		
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		add(horizontalStrut, "cell 0 1");

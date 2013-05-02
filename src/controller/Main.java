@@ -1,5 +1,7 @@
 package controller;
 
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 
 import view.*;
@@ -24,6 +26,7 @@ public class Main {
 		GUIView guiView = new GUIView(headerView, listView, categoryView);
 
 		frame.setTitle("uDoDo 1.0");
+		frame.setMinimumSize(new Dimension(650, 500));
 
 		// Add gui to window
 		frame.add(guiView);
