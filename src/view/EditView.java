@@ -50,6 +50,8 @@ public class EditView extends JPanel {
 		
 		JButton saveButton = new JButton("Save");
 		add(saveButton, "cell 1 9,alignx right");
+		
+	
 
 	}
 	public String getTitleTextField(){
