@@ -31,6 +31,7 @@ public class CategoryView extends JPanel {
 		
 		addNewCategoryButton = new JButton("New");
 		addNewCategoryButton.setFont(GraphicConstants.REGULARFONT);
+		addNewCategoryButton.setActionCommand("newCategory");
 		panel.add(addNewCategoryButton, "cell 1 0,alignx right,aligny center");
 	}
 	public void setController(CategoryController controller){
