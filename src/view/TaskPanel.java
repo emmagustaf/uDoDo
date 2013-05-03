@@ -38,6 +38,7 @@ public class TaskPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public TaskPanel(TaskModel model) {
+		this.setBackground(GraphicConstants.BACKGROUND);
 		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		setMinimumSize(new Dimension(30, 20));
 		setPreferredSize(new Dimension(397, 53));

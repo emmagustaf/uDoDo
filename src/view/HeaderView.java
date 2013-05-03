@@ -18,16 +18,19 @@ public class HeaderView extends JPanel{
 	private JButton addNewTaskButton;
 	
 	public HeaderView() {
+		this.setBackground(GraphicConstants.BACKGROUND);
 		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		setLayout(new MigLayout("", "[][391.00px][98.00px][90.00]", "[23px][][]"));
 		setSize(new Dimension(620, 62));
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		add(horizontalStrut, "cell 0 1");
 		taskTitleInput = new JTextField(30);
+		taskTitleInput.setFont(GraphicConstants.REGULARFONT);
 		taskTitleInput.setActionCommand("newTask");
 		
 		this.add(taskTitleInput, "cell 1 1,alignx right,aligny center");
 		addNewTaskButton = new JButton("Add");
+		addNewTaskButton.setFont(GraphicConstants.REGULARFONT);
 		this.add(addNewTaskButton, "cell 2 1,alignx center,aligny top");
 		addNewTaskButton.setActionCommand("newTask");
 	}

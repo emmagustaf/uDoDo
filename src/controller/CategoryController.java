@@ -10,10 +10,10 @@ import java.awt.event.ActionListener;
 public class CategoryController implements ActionListener{
 
 	private CategoryView view;
-	private CategoryPanelModel panelModel;
+	private CategoryModel panelModel;
 	private CategoryModel model;
 	
-	public CategoryController(CategoryView view, CategoryPanelModel panelModel){
+	public CategoryController(CategoryView view, CategoryModel panelModel){
 		this.view=view;
 		this.panelModel=panelModel;
 	}

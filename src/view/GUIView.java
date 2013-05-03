@@ -16,14 +16,18 @@ public class GUIView extends JPanel {
 	 */
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat) {
+		this.setBackground(GraphicConstants.BACKGROUND);
 		this.header = header;
 		this.list = list;
 		this.cat=cat;	
 		this.setMinimumSize(new Dimension(550, 302));
 		
-		headerPanel.setMinimumSize(new Dimension(550, 62)); 
+		headerPanel.setMinimumSize(new Dimension(550, 62));
+		headerPanel.setBackground(GraphicConstants.BACKGROUND);
 		categoryPanel.setMinimumSize(new Dimension(153, 240));
+		categoryPanel.setBackground(GraphicConstants.BACKGROUND);
 		listPanel.setMinimumSize(new Dimension(397, 240));
+		listPanel.setBackground(GraphicConstants.BACKGROUND);
 		headerPanel.add(header);
 		FlowLayout flowLayout = (FlowLayout) listPanel.getLayout();
 		listPanel.add(list);

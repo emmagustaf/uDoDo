@@ -11,6 +11,7 @@ public class ListView extends JPanel {
 	 * Create the panel.
 	 */
 	public ListView() {
+		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new GridLayout(1000, 1));
 		
 	}

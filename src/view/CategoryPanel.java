@@ -1,17 +1,21 @@
 package view;
 
 import utility.*;
+
 import javax.swing.*;
 import model.*;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.Color;
 public class CategoryPanel extends JPanel{
 	
-	private CategoryPanelModel model;
+	private CategoryModel model;
 	
-	public CategoryPanel(CategoryPanelModel model) {
+	public CategoryPanel(CategoryModel model) {
 		this.model=model;
+		this.setBackground(GraphicConstants.BACKGROUND);
+		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{208, 0};
 		gridBagLayout.rowHeights = new int[]{111, 0};
