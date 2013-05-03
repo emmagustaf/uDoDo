@@ -6,6 +6,8 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+
 
 public class CategoryController implements ActionListener{
 
@@ -20,11 +22,11 @@ public class CategoryController implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() instanceof CategoryModel){
-			CategoryModel model= (CategoryModel) e.getSource();
-			if("addCategory".equals(e.getActionCommand()) && panelModel.getCatTitle().length() > 0){
+		if(e.getSource() instanceof JButton){
+			if(e.getActionCommand().equals("addCategory") && panelModel.getCatTitle().length() > 0){
 				CategoryModel cat = new CategoryModel(view.getCatTitle());
 				CategoryPanel catPanel = new CategoryPanel(panelModel);
+				view.add(catPanel);
 				view.repaint();
 				view.revalidate();
 				}
