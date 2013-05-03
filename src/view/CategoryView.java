@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.*;
+import utility.*;
 import controller.*;
 
 import javax.swing.*;

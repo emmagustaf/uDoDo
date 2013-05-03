@@ -1,6 +1,8 @@
 package view;
+
 import java.awt.*;
 import javax.swing.*;
+import utility.*;
 public class GUIView extends JPanel {
 	private HeaderView header;
 	private ListView list;

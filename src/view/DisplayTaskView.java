@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.JPanel;
+import utility.*;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;

@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.JPanel;
+import utility.*;
 import model.*;
 
 import java.awt.*;
