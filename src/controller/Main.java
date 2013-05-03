@@ -16,6 +16,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		JFrame frame = new JFrame();
+		
 		ListView listView = new ListView();
 		
 		//CategoryController catController= new CategoryController();
@@ -23,7 +24,10 @@ public class Main {
 		
 		//ListController controller = new ListController(listView);
 		HeaderView headerView = new HeaderView();
-		GUIView guiView = new GUIView(headerView, listView, categoryView);
+		
+		TopView topView = new TopView();
+		
+		GUIView guiView = new GUIView(headerView, listView, categoryView, topView);
 		
 		HeaderController controller = new HeaderController(headerView, listView);
 
