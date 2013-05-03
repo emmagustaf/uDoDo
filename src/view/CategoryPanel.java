@@ -21,8 +21,10 @@ public class CategoryPanel extends JPanel{
 		GridBagConstraints gbc_catLabel = new GridBagConstraints();
 		gbc_catLabel.gridx = 0;
 		gbc_catLabel.gridy = 0;
+		this.setBackground(GraphicConstants.BACKGROUND);
 		
 		JLabel catLabel = new JLabel(model.getCatTitle());
+		catLabel.setFont(GraphicConstants.REGULARFONT);
 		add(catLabel, gbc_catLabel);
 	}
 	
