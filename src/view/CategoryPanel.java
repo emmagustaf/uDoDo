@@ -10,7 +10,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Color;
 public class CategoryPanel extends JPanel{
 	
-	private CategoryPanelModel model;
+	private CategoryPanelModel panelModel;
 	private JLabel catLabel;
 	private CategoryModel model;
 	

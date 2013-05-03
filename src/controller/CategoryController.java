@@ -17,13 +17,10 @@ public class CategoryController implements ActionListener{
 	
 	public CategoryController(CategoryView view, CategoryListView listView){
 		this.view=view;
-<<<<<<< HEAD
-		this.panelModel=panelModel;
-		panelModel.setController(this);
-=======
+		//		this.panelModel=panelModel;
+		//panelModel.setController(this);
 		view.setController(this);
 		this.listView = listView;
->>>>>>> 0a8db69a9f5822c2f103b7691e2fda38f99567e9
 	}
 	
 	@Override
