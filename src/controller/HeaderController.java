@@ -26,12 +26,13 @@ public class HeaderController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
-			if(e.getActionCommand().equals("newTask") && headerView.getTextField().length() > 0){
-				TaskModel task = new TaskModel(headerView.getTextField());
+			if(e.getActionCommand().equals("newTask") && headerView.getTextField().getText().length() > 0){
+				TaskModel task = new TaskModel(headerView.getTextField().getText());
 				TaskPanel taskPanel = new TaskPanel(task);
-				TaskController taskController = new TaskController(view, taskPanel);
 				view.add(taskPanel);
+				headerView.getTextField().setText("");
 				view.updateView();
+				TaskController taskController = new TaskController(view, taskPanel);
 				//view.
 			}
 		}

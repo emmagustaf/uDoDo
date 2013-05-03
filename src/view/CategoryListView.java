@@ -1,16 +1,14 @@
 package view;
 
+import java.awt.GridLayout;
+
 import javax.swing.JPanel;
-import utility.*;
-import model.*;
 
-import java.awt.*;
+import utility.GraphicConstants;
 
-public class ListView extends JPanel {
-	/**
-	 * Create the panel.
-	 */
-	public ListView() {
+public class CategoryListView extends JPanel{
+	
+	public CategoryListView(){
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new GridLayout(1000, 1));
 		
@@ -19,6 +17,7 @@ public class ListView extends JPanel {
 	public void updateView(){
 		this.revalidate();
 		this.repaint();
+		System.out.println("view updated");
 	}
 	
 }

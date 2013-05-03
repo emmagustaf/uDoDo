@@ -16,8 +16,11 @@ import java.awt.FlowLayout;
 import java.awt.Component;
 import javax.swing.JButton;
 import javax.swing.Box;
+import utility.*;
 
 import controller.TaskController;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  * A class to represent a TaskPanel. 
@@ -35,12 +38,13 @@ public class TaskPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public TaskPanel(TaskModel model) {
+		this.setBackground(GraphicConstants.BACKGROUND);
 		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		setMinimumSize(new Dimension(30, 20));
 		setPreferredSize(new Dimension(397, 53));
 		setSize(new Dimension(30, 20));
 		this.model=model;
-		setLayout(new MigLayout("", "[59.00px][][35px][][][][][][][][39.00][108.00]", "[45.00px,center]"));
+		setLayout(new MigLayout("", "[59.00px][211.00][242.00][94.00][108.00,fill]", "[45.00px,center]"));
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("");
 		chckbxNewCheckBox.setMinimumSize(new Dimension(35, 30));
@@ -52,12 +56,19 @@ public class TaskPanel extends JPanel {
 		
 		JLabel taskLabel = new JLabel(model.getTitle());
 		taskLabel.setSize(new Dimension(30, 20));
-		taskLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+		taskLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
 		add(taskLabel, "cell 1 0,alignx center,aligny center");
 		
+		Component rigidArea = Box.createRigidArea(new Dimension(20, 20));
+		add(rigidArea, "cell 2 0,alignx right");
+		
 		deleteTaskButton = new JButton("Delete");
-		deleteTaskButton.setActionCommand(deleteTask);
-		add(deleteTaskButton, "cell 11 0,alignx center,aligny center");
+		deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
+		deleteTaskButton.setActionCommand("deleteTask");
+		add(deleteTaskButton, "cell 3 0,alignx center,aligny center");
+		
+		Component rigidArea_1 = Box.createRigidArea(new Dimension(20, 20));
+		add(rigidArea_1, "cell 4 0");
 	}
 	
 	public void setController(TaskController controller){
