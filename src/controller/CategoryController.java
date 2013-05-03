@@ -12,23 +12,23 @@ import javax.swing.JButton;
 public class CategoryController implements ActionListener{
 
 	private CategoryView view;
-	private CategoryModel panelModel;
 	private CategoryModel model;
+	private CategoryListView listView;
 	
-	public CategoryController(CategoryView view, CategoryModel panelModel){
+	public CategoryController(CategoryView view, CategoryListView listView){
 		this.view=view;
-		this.panelModel=panelModel;
+		view.setController(this);
+		this.listView = listView;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton){
-			if(e.getActionCommand().equals("addCategory") && panelModel.getCatTitle().length() > 0){
-				CategoryModel cat = new CategoryModel(view.getCatTitle());
-				CategoryPanel catPanel = new CategoryPanel(panelModel);
-				view.add(catPanel);
-				view.repaint();
-				view.revalidate();
+			if(e.getActionCommand().equals("addCategory") && view.getTextField().getText().length() > 0){
+				CategoryModel cat = new CategoryModel(view.getTextField().getText());
+				CategoryPanel catPanel = new CategoryPanel(cat);
+				listView.add(catPanel);
+				listView.updateView();
 				}
 		}
 	}
