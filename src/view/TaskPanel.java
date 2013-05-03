@@ -67,4 +67,8 @@ public class TaskPanel extends JPanel {
 	public TaskModel getModel(){
 		return this.model;
 	}
+	
+	public TaskPanel getPanel(){
+		return this;
+	}
 }
