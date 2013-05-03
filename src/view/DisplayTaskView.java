@@ -22,6 +22,7 @@ public class DisplayTaskView extends JPanel {
 	 * Create the panel.
 	 */
 	public DisplayTaskView() {
+		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[207.00][][]", "[][][][][][][][][]"));
 		
 		JLabel titleLabel = new JLabel("Title");

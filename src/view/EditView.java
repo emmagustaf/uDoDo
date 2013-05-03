@@ -24,6 +24,7 @@ public class EditView extends JPanel {
 	 * Create the panel.
 	 */
 	public EditView() {
+		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[][283.00,grow]", "[][][][][][][][][][]"));
 		
 		JLabel changeTitleLabel = new JLabel("Change title:");
