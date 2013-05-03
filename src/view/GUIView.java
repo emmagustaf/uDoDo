@@ -35,10 +35,10 @@ public class GUIView extends JPanel {
 		categoryPanel.setMinimumSize(new Dimension(153, 240));
 		categoryPanel.setBackground(GraphicConstants.BACKGROUND);
 		
-		listPanel.setMinimumSize(new Dimension(397, 240));
+		listPanel.setMinimumSize(new Dimension(150, 240));
 		listPanel.setBackground(GraphicConstants.BACKGROUND);
 		
-		topPanel.setMinimumSize(new Dimension(550, 62));
+		topPanel.setMinimumSize(new Dimension(397, 62));
 		topPanel.setBackground(GraphicConstants.BACKGROUND);
 		
 		
@@ -48,11 +48,10 @@ public class GUIView extends JPanel {
 		listPanel.add(list);
 		categoryPanel.add(cat);
 		topPanel.add(top);
-		
-		this.setLayout(new BorderLayout(4, 4));
+		setLayout(new BorderLayout());
 		this.add(topPanel, BorderLayout.NORTH);
-		this.add(headerPanel, BorderLayout.NORTH);
-		this.add(listPanel, BorderLayout.CENTER);
+		this.add(headerPanel, BorderLayout.CENTER);
+		this.add(listPanel, BorderLayout.SOUTH);
 		this.add(categoryPanel, BorderLayout.WEST);
 		this.setVisible(true);
 		
