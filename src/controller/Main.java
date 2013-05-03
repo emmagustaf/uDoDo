@@ -30,6 +30,8 @@ public class Main {
 		GUIView guiView = new GUIView(headerView, listView, categoryView, topView);
 		
 		HeaderController controller = new HeaderController(headerView, listView);
+		
+		CategoryController catConroller = new CategoryController(categoryView, );
 
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(650, 500));

@@ -36,8 +36,8 @@ public class CategoryView extends JPanel {
 		addNewCategoryButton.addActionListener(controller);
 	}
 	
-	public String getCatTitle(){
-		return categoryTitleInput.getText();
+	public JTextField getTextField(){
+		return categoryTitleInput;
 	}
 
 }

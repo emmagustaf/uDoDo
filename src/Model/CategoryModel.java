@@ -36,10 +36,4 @@ public class CategoryModel {
 	public void removeCategory (CategoryPanelModel panelModel){
 		catList.remove(panelModel);
 	}
-	
-	public void updateCategoryView() {
-		view.add((Component) catList);
-		view.repaint();
-		view.revalidate();
-	}
 }
