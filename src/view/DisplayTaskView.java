@@ -25,25 +25,27 @@ public class DisplayTaskView extends JPanel {
 		setLayout(new MigLayout("", "[207.00][][]", "[][][][][][][][][]"));
 		
 		JLabel titleLabel = new JLabel("Title");
-		titleLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		titleLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
 		add(titleLabel, "cell 0 0");
 		
 		JLabel descriptionLabel = new JLabel("Description");
-		descriptionLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		descriptionLabel.setFont(GraphicConstants.REGULARFONT);
 		add(descriptionLabel, "cell 0 2");
 		
 		JLabel deadlineLabel = new JLabel("Deadline");
-		deadlineLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(deadlineLabel, "cell 0 4");
 		
 		JLabel prioLabel = new JLabel("Priority");
-		prioLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		prioLabel.setFont(GraphicConstants.REGULARFONT);
 		add(prioLabel, "cell 0 6");
 		
 		JButton editButton = new JButton("Edit");
+		editButton.setFont(GraphicConstants.REGULARFONT);
 		add(editButton, "cell 1 8");
 		
 		JButton okButton = new JButton("OK");
+		okButton.setFont(GraphicConstants.REGULARFONT);
 		add(okButton, "cell 2 8");
 		
 		editButton.setActionCommand("editTask");

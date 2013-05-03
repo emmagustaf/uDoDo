@@ -55,14 +55,14 @@ public class TaskPanel extends JPanel {
 		
 		JLabel taskLabel = new JLabel(model.getTitle());
 		taskLabel.setSize(new Dimension(30, 20));
-		taskLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+		taskLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
 		add(taskLabel, "cell 1 0,alignx center,aligny center");
 		
 		Component rigidArea = Box.createRigidArea(new Dimension(20, 20));
 		add(rigidArea, "cell 2 0,alignx right");
 		
 		deleteTaskButton = new JButton("Delete");
-		
+		deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
 		deleteTaskButton.setActionCommand("deleteTask");
 		add(deleteTaskButton, "cell 3 0,alignx center,aligny center");
 		
