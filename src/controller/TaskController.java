@@ -18,13 +18,8 @@ public class TaskController implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-			
-			if(e.getActionCommand().equals("taskCheck")){
-				 ((TaskPanel)((JCheckBox) e.getSource()).getParent()).getModel().changeState();
-			}else if(e.getSource().equals("deleteTask")){
-//				listView.
-	//			listModel.removeTask(model);
-			}
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
