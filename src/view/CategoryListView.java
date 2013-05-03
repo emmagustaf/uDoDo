@@ -17,6 +17,7 @@ public class CategoryListView extends JPanel{
 	public void updateView(){
 		this.revalidate();
 		this.repaint();
+		System.out.println("view updated");
 	}
 	
 }
