@@ -24,6 +24,8 @@ public class Main {
 		//ListController controller = new ListController(listView);
 		HeaderView headerView = new HeaderView();
 		GUIView guiView = new GUIView(headerView, listView, categoryView);
+		
+		HeaderController controller = new HeaderController(headerView, listView);
 
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(650, 500));

@@ -7,6 +7,7 @@ import java.awt.*;
 import model.TaskModel;
 import controller.ListController;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.border.LineBorder;
 
 public class HeaderView extends JPanel{
 
@@ -16,8 +17,9 @@ public class HeaderView extends JPanel{
 	private JButton addNewTaskButton;
 	
 	public HeaderView() {
-		setLayout(new MigLayout("", "[][322.00px][109.00px][]", "[23px][][]"));
-		
+		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+		setLayout(new MigLayout("", "[][391.00px][98.00px][90.00]", "[23px][][]"));
+		setSize(new Dimension(620, 62));
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		add(horizontalStrut, "cell 0 1");
 		taskTitleInput = new JTextField(30);
@@ -30,6 +32,7 @@ public class HeaderView extends JPanel{
 	public void setController(HeaderController controller){
 		addNewTaskButton.addActionListener(controller);
 	}
+	
 	public String getTextField(){
 		return taskTitleInput.getText();
 	}

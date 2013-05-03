@@ -1,8 +1,6 @@
 package model;
 
-
 public class CategoryPanelModel {
-	
 	private String catTitle;
 	
 	public void addNewCategoryPanel(String catTitle ){

@@ -32,17 +32,12 @@ public class TaskPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public TaskPanel(TaskModel model) {
-		setBorder(new LineBorder(new Color(0, 0, 0)));
+		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		setMinimumSize(new Dimension(30, 20));
-		setPreferredSize(new Dimension(470, 70));
+		setPreferredSize(new Dimension(397, 53));
 		setSize(new Dimension(30, 20));
 		this.model=model;
-		setLayout(new MigLayout("", "[100px][35px][][][][][76.00][84px]", "[30px]"));
-		
-		JLabel taskLabel = new JLabel(model.getTitle());
-		taskLabel.setSize(new Dimension(30, 20));
-		taskLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
-		add(taskLabel, "cell 0 0,alignx left,aligny top");
+		setLayout(new MigLayout("", "[59.00px][][35px][][][][][][][][39.00][108.00]", "[45.00px,center]"));
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("");
 		chckbxNewCheckBox.setMinimumSize(new Dimension(35, 30));
@@ -50,11 +45,16 @@ public class TaskPanel extends JPanel {
 		chckbxNewCheckBox.setForeground(new Color(50, 205, 50));
 		chckbxNewCheckBox.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		chckbxNewCheckBox.setActionCommand(taskCheck);
-		add(chckbxNewCheckBox, "cell 1 0,alignx right,aligny top");
+		add(chckbxNewCheckBox, "cell 0 0,alignx center,aligny center");
+		
+		JLabel taskLabel = new JLabel(model.getTitle());
+		taskLabel.setSize(new Dimension(30, 20));
+		taskLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+		add(taskLabel, "cell 1 0,alignx center,aligny center");
 		
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.setActionCommand(deleteTask);
-		add(btnDelete, "cell 7 0,alignx right,aligny bottom");
+		add(btnDelete, "cell 11 0,alignx center,aligny center");
 	}
 	
 	public TaskModel getModel(){
