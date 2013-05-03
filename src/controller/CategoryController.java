@@ -16,6 +16,7 @@ public class CategoryController implements ActionListener{
 	public CategoryController(CategoryView view, CategoryPanelModel panelModel){
 		this.view=view;
 		this.panelModel=panelModel;
+		panelModel.setController(this);
 	}
 	
 	@Override

@@ -8,6 +8,7 @@ import java.awt.GridBagConstraints;
 public class CategoryPanel extends JPanel{
 	
 	private CategoryPanelModel model;
+	private JLabel catLabel;
 	
 	public CategoryPanel(CategoryPanelModel model) {
 		this.model=model;
@@ -21,7 +22,7 @@ public class CategoryPanel extends JPanel{
 		gbc_catLabel.gridx = 0;
 		gbc_catLabel.gridy = 0;
 		
-		JLabel catLabel = new JLabel(model.getCatTitle());
+		catLabel = new JLabel(model.getCatTitle());
 		add(catLabel, gbc_catLabel);
 	}
 	
