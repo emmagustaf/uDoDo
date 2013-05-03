@@ -21,17 +21,18 @@ public class Main {
 		
 		//CategoryController catController= new CategoryController();
 		CategoryView categoryView = new CategoryView();
+		CategoryListView categoryListView = new CategoryListView();
 		
 		//ListController controller = new ListController(listView);
 		HeaderView headerView = new HeaderView();
 		
 		TopView topView = new TopView();
 		
-		GUIView guiView = new GUIView(headerView, listView, categoryView, topView);
+		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView);
 		
 		HeaderController controller = new HeaderController(headerView, listView);
 		
-		CategoryController catConroller = new CategoryController(categoryView, );
+		CategoryController catConroller = new CategoryController(categoryView, categoryListView);
 
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(650, 500));
