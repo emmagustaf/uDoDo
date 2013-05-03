@@ -29,9 +29,9 @@ public class HeaderController implements ActionListener{
 			if(e.getActionCommand().equals("newTask") && headerView.getTextField().length() > 0){
 				TaskModel task = new TaskModel(headerView.getTextField());
 				TaskPanel taskPanel = new TaskPanel(task);
-				TaskController taskController = new TaskController(view, taskPanel);
 				view.add(taskPanel);
 				view.updateView();
+				TaskController taskController = new TaskController(view, taskPanel);
 				//view.
 			}
 		}

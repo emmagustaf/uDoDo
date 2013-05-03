@@ -56,7 +56,7 @@ public class TaskPanel extends JPanel {
 		add(taskLabel, "cell 1 0,alignx center,aligny center");
 		
 		deleteTaskButton = new JButton("Delete");
-		deleteTaskButton.setActionCommand(deleteTask);
+		deleteTaskButton.setActionCommand("deleteTask");
 		add(deleteTaskButton, "cell 11 0,alignx center,aligny center");
 	}
 	
