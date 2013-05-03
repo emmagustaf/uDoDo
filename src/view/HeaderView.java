@@ -36,8 +36,8 @@ public class HeaderView extends JPanel{
 		taskTitleInput.addActionListener(controller);
 	}
 	
-	public String getTextField(){
-		return taskTitleInput.getText();
+	public JTextField getTextField(){
+		return taskTitleInput;
 	}
 
 }
