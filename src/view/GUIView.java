@@ -8,6 +8,7 @@ public class GUIView extends JPanel {
 	private ListView list;
 	private CategoryView cat;
 	private TopView top;
+	private CategoryListView listView;
 	private JPanel headerPanel = new JPanel();
 	private JPanel listPanel = new JPanel();
 	private JPanel categoryPanel = new JPanel();
@@ -17,12 +18,13 @@ public class GUIView extends JPanel {
 	 * Creates the frame.
 	 */
 	
-	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top) {
+	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView) {
 		
 		this.header = header;
 		this.list = list;
 		this.cat=cat;
 		this.top=top;
+		this.listView = listView;
 		
 		this.setMinimumSize(new Dimension(550, 302));
 		this.setBackground(GraphicConstants.BACKGROUND);
