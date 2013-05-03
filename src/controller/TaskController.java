@@ -14,12 +14,13 @@ public class TaskController implements ActionListener {
 
 	public TaskController(ListView listView, ListModel listModel){
 		this.listView = listView;
+		listView.setController(this);
 		this.listModel = listModel;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent e) {
+		
 		
 	}
 }

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 import model.TaskModel;
 
@@ -24,7 +25,7 @@ public class HeaderController implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() instanceof JButton){
+		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
 			if(e.getActionCommand().equals("newTask") && headerView.getTextField().length() > 0){
 				TaskModel task = new TaskModel(headerView.getTextField());
 				TaskPanel taskPanel = new TaskPanel(task);

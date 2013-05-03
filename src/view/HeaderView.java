@@ -23,6 +23,8 @@ public class HeaderView extends JPanel{
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		add(horizontalStrut, "cell 0 1");
 		taskTitleInput = new JTextField(30);
+		taskTitleInput.setActionCommand("newTask");
+		
 		this.add(taskTitleInput, "cell 1 1,alignx right,aligny center");
 		addNewTaskButton = new JButton("Add");
 		this.add(addNewTaskButton, "cell 2 1,alignx center,aligny top");
@@ -31,6 +33,7 @@ public class HeaderView extends JPanel{
 	
 	public void setController(HeaderController controller){
 		addNewTaskButton.addActionListener(controller);
+		taskTitleInput.addActionListener(controller);
 	}
 	
 	public String getTextField(){

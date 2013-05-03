@@ -17,6 +17,8 @@ import java.awt.Component;
 import javax.swing.JButton;
 import javax.swing.Box;
 
+import controller.TaskController;
+
 /**
  * A class to represent a TaskPanel. 
  * 
@@ -28,6 +30,7 @@ public class TaskPanel extends JPanel {
 	private TaskModel model;
 	private String taskCheck;
 	private String deleteTask;
+	private JButton deleteTaskButton;
 	/**
 	 * Create the panel.
 	 */
@@ -52,9 +55,13 @@ public class TaskPanel extends JPanel {
 		taskLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 		add(taskLabel, "cell 1 0,alignx center,aligny center");
 		
-		JButton btnDelete = new JButton("Delete");
-		btnDelete.setActionCommand(deleteTask);
-		add(btnDelete, "cell 11 0,alignx center,aligny center");
+		deleteTaskButton = new JButton("Delete");
+		deleteTaskButton.setActionCommand(deleteTask);
+		add(deleteTaskButton, "cell 11 0,alignx center,aligny center");
+	}
+	
+	public void setController(TaskController controller){
+		deleteTaskButton.addActionListener(controller);
 	}
 	
 	public TaskModel getModel(){
