@@ -47,6 +47,7 @@ public class GUIView extends JPanel {
 		headerPanel.add(header);
 		listPanel.add(list);
 		categoryPanel.add(cat);
+		
 		topPanel.add(top);
 		setLayout(new BorderLayout());
 		this.add(topPanel, BorderLayout.NORTH);

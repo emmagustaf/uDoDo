@@ -14,11 +14,17 @@ public class CategoryModel {
 	private CategoryModel panelModel;
 	
 	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
-
+	
+	
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
+	
 	}
 	public List getList(){
+		CategoryPanel categoryPanel = new CategoryPanel(this);
+		this.setCatTitle("Alla");
+		catList.set(0, categoryPanel);
+		
 		return catList;
 	}
 	public String getCatTitle() {
