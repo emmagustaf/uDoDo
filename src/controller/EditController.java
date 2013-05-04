@@ -14,6 +14,7 @@ public class EditController implements ActionListener{
 			EditModel model = (EditModel) e.getSource();
 			if()
 		}
+
 			
 	}
 }

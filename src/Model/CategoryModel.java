@@ -11,7 +11,7 @@ public class CategoryModel {
 	private String catTitle;
 	private CategoryView view;
 	private CategoryPanel panel;
-	private CategoryPanelModel panelModel;
+	private CategoryModel panelModel;
 	
 	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
 
@@ -35,11 +35,5 @@ public class CategoryModel {
 	}
 	public void removeCategory (CategoryPanelModel panelModel){
 		catList.remove(panelModel);
-	}
-	
-	public void updateCategoryView() {
-		view.add((Component) catList);
-		view.repaint();
-		view.revalidate();
 	}
 }
