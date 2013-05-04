@@ -12,7 +12,7 @@ public class EditController implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {		
 		if(e.getSource() instanceof EditModel){
 			EditModel model = (EditModel) e.getSource();
-			
+			if()
 		}
 			
 	}
