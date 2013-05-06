@@ -71,12 +71,12 @@ public class GUIView extends JPanel {
 		
 
 		topPanel.add(top);
-		setLayout(new BorderLayout());
-		this.add(topPanel, BorderLayout.NORTH);
-		this.add(headerPanel, BorderLayout.CENTER);
-		this.add(listPanel, BorderLayout.SOUTH);
-		this.add(categoryPanel, BorderLayout.WEST);
-		this.add(editPanel, BorderLayout.EAST);
+		//setLayout(new BorderLayout());
+		//this.add(topPanel, BorderLayout.NORTH);
+		//this.add(headerPanel, BorderLayout.CENTER);
+		//this.add(listPanel, BorderLayout.SOUTH);
+		//this.add(categoryPanel, BorderLayout.WEST);
+		//this.add(editPanel, BorderLayout.EAST);
 		
 
 		c.gridwidth = 1;
