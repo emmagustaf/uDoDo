@@ -30,6 +30,7 @@ public class CategoryView extends JPanel {
 		
 		categoryTitleInput = new JTextField();
 		categoryTitleInput.setFont(GraphicConstants.REGULARFONT);
+		categoryTitleInput.setActionCommand("newCategory");
 		panel.add(categoryTitleInput, "cell 0 0,growx,aligny center");
 		
 		addNewCategoryButton = new JButton("New");
@@ -39,6 +40,7 @@ public class CategoryView extends JPanel {
 	}
 	public void setController(CategoryController controller){
 		addNewCategoryButton.addActionListener(controller);
+		categoryTitleInput.addActionListener(controller);
 	}
 	
 	public JTextField getTextField(){
