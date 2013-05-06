@@ -10,22 +10,26 @@ public class GUIView extends JPanel {
 	private CategoryView cat;
 	private TopView top;
 	private CategoryListView listView;
+	private EditView editView;
 	private JPanel headerPanel = new JPanel();
 	private JPanel listPanel = new JPanel();
 	private JPanel categoryPanel = new JPanel();
 	private JPanel topPanel = new JPanel();
+	private JPanel editPanel = new JPanel();
 	private JPanel displayPanel = new JPanel();
 	
 	/**
-	 * Creates the frame.
+	 * Create the frame.
 	 */
 	
-	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView) {
+	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, EditView editView) {
 		
 		this.header=header;
 		this.list=list;
 		this.cat=cat;
 		this.top=top;
+		this.listView = listView;
+		this.editView=editView;
 		this.listView=listView;
 		
 		this.setMinimumSize(new Dimension(640, 490));
@@ -65,6 +69,16 @@ public class GUIView extends JPanel {
 		c.gridy = 1;
 		add(categoryPanel, c);
 		
+
+		topPanel.add(top);
+		//setLayout(new BorderLayout());
+		//this.add(topPanel, BorderLayout.NORTH);
+		//this.add(headerPanel, BorderLayout.CENTER);
+		//this.add(listPanel, BorderLayout.SOUTH);
+		//this.add(categoryPanel, BorderLayout.WEST);
+		//this.add(editPanel, BorderLayout.EAST);
+		
+
 		c.gridwidth = 1;
 		c.gridx = 0;
 		c.gridy = 2;
@@ -95,6 +109,7 @@ public class GUIView extends JPanel {
 //		this.add(categoryPanel, BorderLayout.WEST);
 		revalidate();
 		repaint();
+
 		this.setVisible(true);
 		
 	}	
