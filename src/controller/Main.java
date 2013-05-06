@@ -38,7 +38,7 @@ public class Main {
 
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(650, 500));
-		frame.setResizable(false);
+		//frame.setResizable(false);
 
 		// Add gui to window
 		frame.add(guiView);

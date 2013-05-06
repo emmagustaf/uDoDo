@@ -1,6 +1,8 @@
 package view;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 import utility.*;
 import model.*;
 
@@ -12,7 +14,9 @@ public class ListView extends JPanel {
 	 */
 	public ListView() {
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new GridLayout(1000, 1));
+		JScrollPane scrollPane = new JScrollPane(this);
+		scrollPane.createVerticalScrollBar();
+		setLayout(new GridLayout(5, 1));
 		
 	}
 	

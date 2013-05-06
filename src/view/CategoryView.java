@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.*;
+
 import utility.*;
 import controller.*;
 
@@ -16,7 +17,9 @@ public class CategoryView extends JPanel {
 	
 	public CategoryView(){
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setSize(new Dimension(153, 420));
+		setPreferredSize(new Dimension(200, 70));
+		setMinimumSize(new Dimension(200, 70));
+		setMaximumSize(new Dimension(200, 70));
 		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 0));
 		
 		JPanel panel = new JPanel();

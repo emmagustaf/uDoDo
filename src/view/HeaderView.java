@@ -4,6 +4,7 @@ import javax.swing.*;
 import controller.*;
 import java.awt.event.*;
 import java.awt.*;
+
 import utility.*;
 import model.TaskModel;
 import controller.ListController;
@@ -21,7 +22,9 @@ public class HeaderView extends JPanel{
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		setLayout(new MigLayout("", "[][391.00px][98.00px][90.00]", "[23px][][]"));
-		setSize(new Dimension(620, 62));
+		setPreferredSize(new Dimension(300, 70));
+		setMinimumSize(new Dimension(300, 70));
+		setMaximumSize(new Dimension(300, 70));
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		add(horizontalStrut, "cell 0 1");
 		taskTitleInput = new JTextField(30);
