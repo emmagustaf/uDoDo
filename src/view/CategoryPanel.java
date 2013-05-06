@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 
 import model.*;
+import controller.*;
 
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
@@ -42,6 +43,8 @@ public class CategoryPanel extends JPanel{
 
 		add(catLabel, gbc_catLabel);
 	}
+
+	
 	
 
 }

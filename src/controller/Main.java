@@ -23,6 +23,7 @@ public class Main {
 		CategoryView categoryView = new CategoryView();
 		CategoryListView categoryListView = new CategoryListView();
 		
+		
 		//ListController controller = new ListController(listView);
 		HeaderView headerView = new HeaderView();
 		

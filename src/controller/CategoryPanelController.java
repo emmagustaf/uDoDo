@@ -1,36 +1,61 @@
-//package controller;
-//
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
-//import java.awt.event.MouseEvent;
-//import java.awt.event.MouseListener;
-//
-//import model.*;
-//import view.*;
-//
-//public class CategoryPanelController implements ActionListener {
-//	private CategoryPanel panel;
-//	private CategoryModel model;
-//	
-//	
-//	public CategoryPanelController(CategoryPanel panel, CategoryModel model){
-//		this.panel=panel;
-//		this.model=model;
-//	}
-//	
-//	@Override
-//	public void actionPerformed(ActionEvent e) {
-//		if(e.getSource() instanceof CategoryPanelModel){
-//			CategoryPanelModel model = (CategoryPanelModel) e.getSource();
-//			if("panelPressed".equals(e.getActionCommand())){
-//				//If pressed the class ListModel should be updated with tasks from the chosen category
-//				
-//				}
-//		}
-//	}
-//	
-//	public String getCatTitle(){
-//		return model.getCatTitle();
-//	}
-//	
-//}
+package controller;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import model.*;
+import view.*;
+
+public class CategoryPanelController implements ActionListener {
+	private CategoryPanel categoryPanel;
+	private MouseMethods listener = new MouseMethods();
+	
+	public CategoryPanelController(CategoryPanel categoryPanel){
+		this.categoryPanel=categoryPanel;
+		
+		//categoryPanel.setController(this);
+		categoryPanel.addMouseListener(listener);
+	}
+	
+	public void actionPerformed(ActionEvent e){
+		
+	}
+	
+	private class MouseMethods implements MouseListener{
+
+		@Override
+		public void mouseEntered(MouseEvent arg0) {
+			categoryPanel.setBackground(Color.blue);
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent arg0) {
+			categoryPanel.setBackground(Color.white);
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	
+	}
+	
+}
