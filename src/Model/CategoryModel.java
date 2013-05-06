@@ -4,7 +4,6 @@ import java.awt.Component;
 import java.util.*;
 
 import view.*;
-import controller.*;
 
 public class CategoryModel {
 
