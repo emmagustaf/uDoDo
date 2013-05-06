@@ -11,7 +11,6 @@ public class CategoryListView extends JPanel{
 	public CategoryListView(){
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new GridLayout(5, 1));
-		
 	}
 	
 	public void updateView(){

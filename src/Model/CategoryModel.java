@@ -18,7 +18,9 @@ public class CategoryModel {
 	
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
-		
+
+		ListModel listModel = new ListModel();
+	
 	}
 	
 	public List getList(){
