@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import model.*;
 import view.*;
 
 public class CategoryPanelController implements ActionListener {
@@ -23,7 +22,7 @@ public class CategoryPanelController implements ActionListener {
 	public void actionPerformed(ActionEvent e){
 		
 	}
-	
+	//add mouselistener to each categorypanel to show which one is in focus
 	private class MouseMethods implements MouseListener{
 
 		@Override
