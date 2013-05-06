@@ -12,6 +12,7 @@ public class CategoryPanelController implements ActionListener {
 	private CategoryPanel categoryPanel;
 	private MouseMethods listener = new MouseMethods();
 	
+	//create a categorypanel which will be added in categoryListView
 	public CategoryPanelController(CategoryPanel categoryPanel){
 		this.categoryPanel=categoryPanel;
 		

@@ -18,7 +18,7 @@ public class CategoryController implements ActionListener{
 	private CategoryModel model;
 	private CategoryListView listView;
 	
-	
+	//set the constructor of the CategoryController
 	public CategoryController(CategoryView view, CategoryListView listView){
 		this.view=view;
 		this.listView = listView;
