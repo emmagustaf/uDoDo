@@ -15,11 +15,8 @@ public class GUIView extends JPanel {
 	private JPanel listPanel = new JPanel();
 	private JPanel categoryPanel = new JPanel();
 	private JPanel topPanel = new JPanel();
-<<<<<<< HEAD
 	private JPanel editPanel = new JPanel();
-=======
 	private JPanel displayPanel = new JPanel();
->>>>>>> ab0a973d179ea6a0b6c2e5b4db76a6928a98c6a2
 	
 	/**
 	 * Create the frame.
@@ -31,12 +28,9 @@ public class GUIView extends JPanel {
 		this.list=list;
 		this.cat=cat;
 		this.top=top;
-<<<<<<< HEAD
 		this.listView = listView;
 		this.editView=editView;
-=======
 		this.listView=listView;
->>>>>>> ab0a973d179ea6a0b6c2e5b4db76a6928a98c6a2
 		
 		this.setMinimumSize(new Dimension(640, 490));
 		this.setBackground(GraphicConstants.BACKGROUND);
