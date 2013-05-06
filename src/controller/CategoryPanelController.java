@@ -11,6 +11,7 @@ import view.*;
 public class CategoryPanelController implements ActionListener, MouseListener {
 	private CategoryPanel categoryPanel;
 	
+	//create a categorypanel which will be added in categoryListView
 	public CategoryPanelController(CategoryPanel categoryPanel){
 		this.categoryPanel=categoryPanel;
 		categoryPanel.setController(this);

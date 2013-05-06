@@ -4,7 +4,6 @@ import java.awt.Component;
 import java.util.*;
 
 import view.*;
-import controller.*;
 
 public class CategoryModel {
 
@@ -19,14 +18,16 @@ public class CategoryModel {
 	
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
+
 		ListModel listModel = new ListModel();
 	
 	}
+	
 	public List getList(){
-		CategoryPanel categoryPanel = new CategoryPanel(this);
-		this.setCatTitle("Alla");
-		catList.set(0, categoryPanel);
-		
+//		CategoryPanel categoryPanel = new CategoryPanel(this);
+//		this.setCatTitle("Alla");
+//		catList.set(0, categoryPanel);
+//		
 		return catList;
 	}
 	public String getCatTitle() {
