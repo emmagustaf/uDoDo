@@ -28,7 +28,9 @@ public class Main {
 		
 		TopView topView = new TopView();
 		
-		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView);
+		EditView editView = new EditView();
+		
+		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, editView);
 		
 		HeaderController controller = new HeaderController(headerView, listView);
 		
