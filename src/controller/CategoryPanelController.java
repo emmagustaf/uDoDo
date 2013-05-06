@@ -8,53 +8,49 @@ import java.awt.event.MouseListener;
 
 import view.*;
 
-public class CategoryPanelController implements ActionListener {
+public class CategoryPanelController implements ActionListener, MouseListener {
 	private CategoryPanel categoryPanel;
-	private MouseMethods listener = new MouseMethods();
 	
 	public CategoryPanelController(CategoryPanel categoryPanel){
 		this.categoryPanel=categoryPanel;
-		
-		//categoryPanel.setController(this);
-		categoryPanel.addMouseListener(listener);
+		categoryPanel.setController(this);
 	}
 	
 	public void actionPerformed(ActionEvent e){
 		
 	}
-	//add mouselistener to each categorypanel to show which one is in focus
-	private class MouseMethods implements MouseListener{
-
-		@Override
-		public void mouseEntered(MouseEvent arg0) {
-			categoryPanel.setBackground(Color.blue);
-			
-		}
-
-		@Override
-		public void mouseExited(MouseEvent arg0) {
-			categoryPanel.setBackground(Color.white);
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
 	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if(e.getSource() instanceof CategoryPanel){
+			categoryPanel.getModel();
+			//om den här metoden körs ska alla tasks som tillhör categorypanelns category visas i ListView
+		}
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		categoryPanel.setBackground(Color.blue);
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		categoryPanel.setBackground(Color.white);
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

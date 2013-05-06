@@ -43,6 +43,15 @@ public class CategoryPanel extends JPanel{
 
 		add(catLabel, gbc_catLabel);
 	}
+	
+	public void setController(CategoryPanelController controller){
+		this.addMouseListener(controller);
+	}
+	
+	
+	public CategoryModel getModel(){
+		return this.model;
+	}
 
 	
 	

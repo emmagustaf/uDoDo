@@ -12,6 +12,7 @@ public class CategoryModel {
 	private CategoryView view;
 	private CategoryPanel panel;
 	private CategoryModel panelModel;
+	private boolean markedStatus;
 	
 	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
 	
@@ -30,6 +31,10 @@ public class CategoryModel {
 	}
 	public String getCatTitle() {
 		return catTitle;
+	}
+	
+	public void markCategory(){
+		markedStatus = true;
 	}
 
 	public String setCatTitle(String title) {

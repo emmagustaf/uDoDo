@@ -40,7 +40,7 @@ public class HeaderController implements ActionListener{
 			if(e.getActionCommand().equals("newTask") && headerView.getTextField().getText().length() > 0){
 				TaskModel task = new TaskModel(headerView.getTextField().getText());
 				//if(mouseClicked i categoryview){
-					//TaskModel task = new TaskModel(headerView.getTextField().getText(), catListView.typGetPanel().getModel());
+					//TaskModel task = new TaskModel(headerView.getTextField().getText(), e.getSource().getModel());
 				//}else{
 					//TaskModel task = new TaskModel(headerView.getTextField().getText());
 				//}
