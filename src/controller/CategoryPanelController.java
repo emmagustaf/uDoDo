@@ -24,7 +24,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(e.getSource() instanceof CategoryPanel){
-			categoryPanel.getModel();
+			//categoryPanel.getModel();
 			//om den här metoden körs ska alla tasks som tillhör categorypanelns category visas i ListView
 		}
 		
