@@ -16,11 +16,13 @@ public class CategoryController implements ActionListener{
 
 	private CategoryView view;
 	private CategoryModel model;
-	private CategoryListView listView;
+	private CategoryListView catListView;
+	private ListView listView;
 	
 	//set the constructor of the CategoryController
-	public CategoryController(CategoryView view, CategoryListView listView){
+	public CategoryController(CategoryView view, CategoryListView catListView, ListView listView){
 		this.view=view;
+		this.catListView = catListView;
 		this.listView = listView;
 		view.setController(this);
 
@@ -38,7 +40,7 @@ public class CategoryController implements ActionListener{
 				listView.add(catPanel);
 				view.getTextField().setText("");
 				listView.updateView();
-				CategoryPanelController catController = new CategoryPanelController(catPanel);
+				CategoryPanelController catController = new CategoryPanelController(catPanel, listView);
 
 				System.out.println("category added");
 				}

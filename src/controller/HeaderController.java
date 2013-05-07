@@ -39,8 +39,15 @@ public class HeaderController implements ActionListener{
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
 			if(e.getActionCommand().equals("newTask") && headerView.getTextField().getText().length() > 0){
 				TaskModel task = new TaskModel(headerView.getTextField().getText());
-				//if(mouseClicked i categoryview){
+				
+				//här behövs det få tag på info om en panel är markerad eller inte, en panel markeras via
+				//mouselistener i categorypanelcontroller. 
+				//kanske inte behöver ha två olika konstruktorer i taskmodel, utan bara alltid skicka med
+				//typ en categorypanel/model, d
+				
+				//if(categorypanel är markerad){
 					//TaskModel task = new TaskModel(headerView.getTextField().getText(), e.getSource().getModel());
+					//e.getSource().getModel().getTaskList().add(task);
 				//}else{
 					//TaskModel task = new TaskModel(headerView.getTextField().getText());
 				//}

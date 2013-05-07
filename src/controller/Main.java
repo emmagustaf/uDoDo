@@ -35,7 +35,7 @@ public class Main {
 		
 		HeaderController controller = new HeaderController(headerView, listView);
 		
-		CategoryController catConroller = new CategoryController(categoryView, categoryListView);
+		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
 
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(650, 500));
