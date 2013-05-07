@@ -65,8 +65,7 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+		
 		}
 	}
 }
