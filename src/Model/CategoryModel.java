@@ -12,13 +12,20 @@ public class CategoryModel {
 	private CategoryView view;
 	private CategoryPanel panel;
 	private CategoryModel panelModel;
+	private boolean markedStatus;
+	private ListModel listModel;
 	
 	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
 	
 	
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
+		listModel = new ListModel();
 	
+	}
+	
+	public ListModel getTaskList(){
+		return listModel;
 	}
 	public List getList(){
 		CategoryPanel categoryPanel = new CategoryPanel(this);
@@ -29,6 +36,14 @@ public class CategoryModel {
 	}
 	public String getCatTitle() {
 		return catTitle;
+	}
+	
+	public void markCategory(){
+		markedStatus = true;
+	}
+	
+	public boolean getMarkedStatus(){
+		return markedStatus;
 	}
 
 	public String setCatTitle(String title) {

@@ -14,6 +14,7 @@ public class TaskModel {
 	private String description;
 	private Priority prio;
 	private Date deadline;
+	private ListModel listModel;
 	//private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
 	//we will have to find a way to keep track of unchecked and checked tasks
 	//I think it will be too many lists with stuff soon...
@@ -22,6 +23,11 @@ public class TaskModel {
 		this.title = title;
 		this.checked = false;
 		this.prio = Priority.NO_PRIORITY;
+	}
+	
+	public TaskModel(String title, ListModel listModel){
+		this(title);
+		this.listModel = listModel;
 		//this.uncheckedTaskList.add(this);
 	}
 	
@@ -38,6 +44,10 @@ public class TaskModel {
 				break;
 		}
 			
+	}
+	
+	public ListModel getCategory(){
+		return listModel;
 	}
 	
 	public void changeState(){

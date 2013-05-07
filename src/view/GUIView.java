@@ -50,7 +50,7 @@ public class GUIView extends JPanel {
 		listPanel.setBackground(Color.green);
 		
 		//topPanel.setMinimumSize(new Dimension(630, 62));
-		topPanel.setBackground(Color.ORANGE);
+		topPanel.setBackground(Color.ORANGE);																						topPanel.setBackground(Color.pink);
 		
 		
 		//FlowLayout flowLayout = (FlowLayout) listPanel.getLayout();

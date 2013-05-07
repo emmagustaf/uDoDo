@@ -2,9 +2,11 @@ package controller;
 import view.*;
 import model.*;
 
-import java.awt.Component;
+import java.awt.Color;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -14,14 +16,19 @@ public class CategoryController implements ActionListener{
 
 	private CategoryView view;
 	private CategoryModel model;
-	private CategoryListView listView;
+	private CategoryListView catListView;
+	private ListView listView;
 	
-	public CategoryController(CategoryView view, CategoryListView listView){
+	//set the constructor of the CategoryController
+	public CategoryController(CategoryView view, CategoryListView catListView, ListView listView){
 		this.view=view;
+		this.catListView = catListView;
+		this.listView = listView;
+		view.setController(this);
+
 		//		this.panelModel=panelModel;
 		//panelModel.setController(this);
-		view.setController(this);
-		this.listView = listView;
+		
 	}
 	//Adds actionlistener for adding new categories to the categoryview
 	@Override
@@ -33,10 +40,11 @@ public class CategoryController implements ActionListener{
 				listView.add(catPanel);
 				view.getTextField().setText("");
 				listView.updateView();
+				CategoryPanelController catController = new CategoryPanelController(catPanel, listView);
+
 				System.out.println("category added");
 				}
 		}
 	}
-	
 	
 }
