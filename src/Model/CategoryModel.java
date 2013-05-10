@@ -12,10 +12,10 @@ public class CategoryModel {
 	private CategoryView view;
 	private CategoryPanel panel;
 	private CategoryModel panelModel;
-	private boolean markedStatus;
 	private ListModel listModel;
 	
 	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
+	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
 	
 	
 	public CategoryModel(String catTitle) {
@@ -39,12 +39,15 @@ public class CategoryModel {
 	}
 	
 	public void markCategory(){
-		markedStatus = true;
+		markedList.addFirst(this);
 		System.out.println("marked");
 	}
 	
 	public boolean getMarkedStatus(){
-		return markedStatus;
+		if(markedList.getFirst().equals(this)){
+			return true;
+		}
+		return false;
 	}
 
 	public String setCatTitle(String title) {
