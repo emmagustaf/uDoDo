@@ -40,6 +40,7 @@ public class CategoryModel {
 	
 	public void markCategory(){
 		markedStatus = true;
+		System.out.println("marked");
 	}
 	
 	public boolean getMarkedStatus(){
