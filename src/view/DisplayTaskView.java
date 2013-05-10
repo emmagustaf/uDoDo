@@ -5,10 +5,13 @@ import utility.*;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import model.*;
+
+import controller.DisplayController;
+
 import java.awt.Font;
 
 
-//Denna klass ska ha en massa setters
 
 /**
  * A class to represent the view where you can see the title, description, priority and deadline of the task
@@ -17,6 +20,8 @@ import java.awt.Font;
  *
  */
 public class DisplayTaskView extends JPanel {
+	private JButton editButton;
+	private TaskModel model;
 
 	/**
 	 * Create the panel.
@@ -25,11 +30,11 @@ public class DisplayTaskView extends JPanel {
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[207.00][][]", "[][][][][][][][][]"));
 		
-		JLabel titleLabel = new JLabel("Title");
+		JLabel titleLabel = new JLabel(model.getTitle());
 		titleLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
 		add(titleLabel, "cell 0 0");
 		
-		JLabel descriptionLabel = new JLabel("Description");
+		JLabel descriptionLabel = new JLabel(model.getDescription());
 		descriptionLabel.setFont(GraphicConstants.REGULARFONT);
 		add(descriptionLabel, "cell 0 2");
 		
@@ -44,6 +49,7 @@ public class DisplayTaskView extends JPanel {
 		JButton editButton = new JButton("Edit");
 		editButton.setFont(GraphicConstants.REGULARFONT);
 		add(editButton, "cell 1 8");
+		editButton.setActionCommand("editTask");
 		
 		JButton okButton = new JButton("OK");
 		okButton.setFont(GraphicConstants.REGULARFONT);
@@ -51,6 +57,9 @@ public class DisplayTaskView extends JPanel {
 		
 		editButton.setActionCommand("editTask");
 
+	}
+	public void setController(DisplayController controller){
+		editButton.addActionListener(controller);
 	}
 	
 }

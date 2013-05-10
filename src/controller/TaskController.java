@@ -17,6 +17,7 @@ public class TaskController implements ActionListener {
 	private ListView listView;
 	private TaskPanel taskPanel;
 	private MouseMethods listener = new MouseMethods();
+	private DisplayTaskView displayView;
 
 	public TaskController(ListView listView, TaskPanel taskPanel){
 		this.listView = listView;
@@ -53,14 +54,12 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mousePressed(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
+			taskPanel.setBackground(Color.red);
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
+			//displayView.setVisible(true);
 		}
 
 		@Override
