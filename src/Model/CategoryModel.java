@@ -12,11 +12,11 @@ public class CategoryModel {
 	private CategoryView view;
 	private CategoryPanel panel;
 	private CategoryModel panelModel;
-	private boolean markedStatus;
 	private ListModel listModel;
 	
-	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
-	
+//	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
+	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
+	private CategoryListView catList = new CategoryListView();
 	
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
@@ -27,24 +27,27 @@ public class CategoryModel {
 	public ListModel getTaskList(){
 		return listModel;
 	}
-	public List getList(){
-		CategoryPanel categoryPanel = new CategoryPanel(this);
-		this.setCatTitle("Alla");
-		catList.set(0, categoryPanel);
-		
-		return catList;
-	}
+//	public List getList(){
+//		CategoryPanel categoryPanel = new CategoryPanel(this);
+//		this.setCatTitle("Alla");
+//		catList.set(0, categoryPanel);
+//		
+//		return catList;
+//	}
 	public String getCatTitle() {
 		return catTitle;
 	}
 	
 	public void markCategory(){
-		markedStatus = true;
+		markedList.addFirst(this);
 		System.out.println("marked");
 	}
 	
 	public boolean getMarkedStatus(){
-		return markedStatus;
+		if(markedList.getFirst().equals(this)){
+			return true;
+		}
+		return false;
 	}
 
 	public String setCatTitle(String title) {
@@ -55,7 +58,7 @@ public class CategoryModel {
 		CategoryPanel panel = new CategoryPanel(panelModel);
 		catList.add(panel);
 	}
-	public void removeCategory (CategoryPanelModel panelModel){
-		catList.remove(panelModel);
-	}
+//	public void removeCategory (CategoryPanelModel panelModel){
+//		catList.remove(panelModel);
+//	}
 }

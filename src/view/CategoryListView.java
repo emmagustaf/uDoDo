@@ -1,20 +1,21 @@
 package view;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import utility.GraphicConstants;
 
 import javax.swing.JPanel;
-
-import utility.GraphicConstants;
 import javax.swing.JScrollPane;
 
-public class CategoryListView extends JPanel{
-	private JScrollPane scrollPane = new JScrollPane();
+public class CategoryListView extends JScrollPane{ 
 	
+	public JPanel panel = new JPanel();
 	public CategoryListView(){
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new GridLayout(5, 1));
-		
-		add(scrollPane);
+		this.setPreferredSize(new Dimension(200, 70));
+		this.setMinimumSize(new Dimension(200, 70));
+		this.setMaximumSize(new Dimension(200, 70));
+		panel.setLayout(new GridLayout(10, 1));
 	}
 	
 	public void updateView(){

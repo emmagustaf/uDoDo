@@ -11,7 +11,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.GroupLayout.Alignment;
 public class CategoryView extends JPanel {
 	
-	private String addCategory;
+//	private String addCategory;
 	private JButton addNewCategoryButton;
 	private JTextField categoryTitleInput;
 	
