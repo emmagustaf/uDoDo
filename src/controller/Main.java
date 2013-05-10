@@ -32,8 +32,9 @@ public class Main {
 		EditView editView = new EditView();
 		
 		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, editView);
-		
-		HeaderController controller = new HeaderController(headerView, listView);
+		CategoryModel model = new CategoryModel(null);
+		CategoryPanel catPanel = new CategoryPanel(model);
+		HeaderController controller = new HeaderController(headerView, listView, catPanel);
 		
 		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
 

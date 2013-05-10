@@ -14,9 +14,9 @@ public class CategoryModel {
 	private CategoryModel panelModel;
 	private ListModel listModel;
 	
-	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
+//	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
 	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
-	
+	private CategoryListView catList = new CategoryListView();
 	
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
@@ -27,13 +27,13 @@ public class CategoryModel {
 	public ListModel getTaskList(){
 		return listModel;
 	}
-	public List getList(){
-		CategoryPanel categoryPanel = new CategoryPanel(this);
-		this.setCatTitle("Alla");
-		catList.set(0, categoryPanel);
-		
-		return catList;
-	}
+//	public List getList(){
+//		CategoryPanel categoryPanel = new CategoryPanel(this);
+//		this.setCatTitle("Alla");
+//		catList.set(0, categoryPanel);
+//		
+//		return catList;
+//	}
 	public String getCatTitle() {
 		return catTitle;
 	}
@@ -58,7 +58,7 @@ public class CategoryModel {
 		CategoryPanel panel = new CategoryPanel(panelModel);
 		catList.add(panel);
 	}
-	public void removeCategory (CategoryPanelModel panelModel){
-		catList.remove(panelModel);
-	}
+//	public void removeCategory (CategoryPanelModel panelModel){
+//		catList.remove(panelModel);
+//	}
 }

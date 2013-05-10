@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 
 import javax.swing.JButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 
@@ -25,7 +26,6 @@ public class CategoryController implements ActionListener{
 		this.catListView = catListView;
 		this.listView = listView;
 		view.setController(this);
-
 		//		this.panelModel=panelModel;
 		//panelModel.setController(this);
 		
@@ -36,12 +36,11 @@ public class CategoryController implements ActionListener{
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
 			if(e.getActionCommand().equals("newCategory") && view.getTextField().getText().length() > 0){
 				CategoryModel cat = new CategoryModel(view.getTextField().getText());
-				CategoryPanel catPanel = new CategoryPanel(cat);
-				catListView.add(catPanel);
+				CategoryPanel catPanel = new CategoryPanel(cat);				
+				catListView.getViewport().add(catPanel);
 				view.getTextField().setText("");
 				catListView.updateView();
 				CategoryPanelController catController = new CategoryPanelController(catPanel, catListView);
-
 				System.out.println("category added");
 				}
 		}
