@@ -3,8 +3,12 @@ package view;
 import utility.*;
 
 import javax.swing.*;
-import model.*;
+import javax.swing.border.LineBorder;
 
+import model.*;
+import controller.*;
+
+import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Color;
@@ -17,6 +21,10 @@ public class CategoryPanel extends JPanel{
 	public CategoryPanel(CategoryModel model) {
 		this.model=model;
 		this.setBackground(GraphicConstants.BACKGROUND);
+		setMinimumSize(new Dimension(180, 40));
+		setPreferredSize(new Dimension(180, 40));
+		setMaximumSize(new Dimension(180, 40));
+		this.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{208, 0};
@@ -30,10 +38,22 @@ public class CategoryPanel extends JPanel{
 		this.setBackground(GraphicConstants.BACKGROUND);
 
 		JLabel catLabel = new JLabel(model.getCatTitle());
+		catLabel.setBackground(Color.ORANGE);
 		catLabel.setFont(GraphicConstants.REGULARFONT);
 
 		add(catLabel, gbc_catLabel);
 	}
+	
+	public void setController(CategoryPanelController controller){
+		this.addMouseListener(controller);
+	}
+	
+	
+	public CategoryModel getModel(){
+		return this.model;
+	}
+
+	
 	
 
 }
