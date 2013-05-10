@@ -14,9 +14,10 @@ public class ListView extends JPanel {
 	 */
 	public ListView() {
 		this.setBackground(GraphicConstants.BACKGROUND);
-		JScrollPane scrollPane = new JScrollPane(this);
-		scrollPane.createVerticalScrollBar();
 		setLayout(new GridLayout(5, 1));
+		
+//		JScrollPane scrollPane = new JScrollPane();
+//		add(scrollPane);
 		
 	}
 	

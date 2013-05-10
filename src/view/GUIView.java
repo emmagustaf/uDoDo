@@ -17,6 +17,7 @@ public class GUIView extends JPanel {
 	private JPanel topPanel = new JPanel();
 	private JPanel editPanel = new JPanel();
 	private JPanel displayPanel = new JPanel();
+	private JScrollPane listScroll = new JScrollPane();
 	
 	/**
 	 * Create the frame.
@@ -84,12 +85,15 @@ public class GUIView extends JPanel {
 		c.gridy = 2;
 		add(listView, c);
 		
-		listPanel.add(list);
+		listScroll.add(list);
+		//listScroll.add(listPanel);
 		c.weightx = 0.0;
 		c.gridwidth = 1;
 		c.gridx = 1;
 		c.gridy = 2;
 		add(listPanel, c);
+		listPanel.add(listScroll);
+		
 		
 		headerPanel.add(header);
 		c.weightx = 0.0;
