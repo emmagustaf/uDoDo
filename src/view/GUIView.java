@@ -5,12 +5,12 @@ import java.awt.*;
 import javax.swing.*;
 import utility.*;
 public class GUIView extends JPanel {
-	private HeaderView header;
-	private ListView list;
-	private CategoryView cat;
-	private TopView top;
-	private CategoryListView listView;
-	private EditView editView;
+//	private HeaderView header;
+//	private ListView list;
+//	private CategoryView cat;
+//	private TopView top;
+//	private CategoryListView listView;
+//	private EditView editView;
 	private JPanel headerPanel = new JPanel();
 	private JPanel listPanel = new JPanel();
 	private JPanel categoryPanel = new JPanel();
@@ -25,13 +25,13 @@ public class GUIView extends JPanel {
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, EditView editView) {
 		
-		this.header=header;
-		this.list=list;
-		this.cat=cat;
-		this.top=top;
-		this.listView = listView;
-		this.editView=editView;
-		this.listView=listView;
+//		this.header=header;
+//		this.list = list;
+//		this.cat=cat;
+//		this.top=top;
+//		this.listView = listView;
+//		this.editView=editView;
+//		this.listView=listView;
 		
 		this.setMinimumSize(new Dimension(640, 490));
 		this.setBackground(GraphicConstants.BACKGROUND);
@@ -51,7 +51,9 @@ public class GUIView extends JPanel {
 		listPanel.setBackground(Color.green);
 		
 		//topPanel.setMinimumSize(new Dimension(630, 62));
-		topPanel.setBackground(Color.ORANGE);																						topPanel.setBackground(Color.pink);
+		topPanel.setBackground(Color.ORANGE);																						
+		topPanel.setBackground(Color.pink);
+		
 		
 		
 		//FlowLayout flowLayout = (FlowLayout) listPanel.getLayout();
@@ -85,14 +87,15 @@ public class GUIView extends JPanel {
 		c.gridy = 2;
 		add(listView, c);
 		
-		listScroll.add(list);
+		
+		listPanel.add(list);
 		//listScroll.add(listPanel);
 		c.weightx = 0.0;
 		c.gridwidth = 1;
 		c.gridx = 1;
 		c.gridy = 2;
 		add(listPanel, c);
-		listPanel.add(listScroll);
+		//listPanel.add(listScroll);
 		
 		
 		headerPanel.add(header);

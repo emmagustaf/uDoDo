@@ -20,8 +20,10 @@ public class ListController implements ActionListener {
 	}
 	
 	public void addTask(TaskPanel task){
-		listView.add(task);
+		listView.panelInScroll.add(task);
+		listView.revalidate();
 		listView.updateView();
+		System.out.println("Runs addTask in ListController");
 	}
 	
 	public void removeTask(TaskPanel task){

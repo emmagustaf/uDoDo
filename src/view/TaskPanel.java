@@ -40,16 +40,17 @@ public class TaskPanel extends JPanel {
 	public TaskPanel(TaskModel model) {
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		setMinimumSize(new Dimension(30, 20));
-		setPreferredSize(new Dimension(397, 53));
-		setSize(new Dimension(30, 20));
+		setMinimumSize(new Dimension(60, 53));
+		setPreferredSize(new Dimension(60, 53));
+		setMaximumSize(new Dimension(60, 53));
+//		setSize(new Dimension(30, 20));
 		this.model=model;
 		setLayout(new MigLayout("", "[59.00px][211.00][242.00][94.00][108.00,fill]", "[45.00px,center]"));
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("");
-		chckbxNewCheckBox.setMinimumSize(new Dimension(35, 30));
-		chckbxNewCheckBox.setMaximumSize(new Dimension(35, 30));
-		chckbxNewCheckBox.setForeground(new Color(50, 205, 50));
+//		chckbxNewCheckBox.setMinimumSize(new Dimension(35, 30));
+//		chckbxNewCheckBox.setMaximumSize(new Dimension(35, 30));
+//		chckbxNewCheckBox.setForeground(new Color(50, 205, 50));
 		chckbxNewCheckBox.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		chckbxNewCheckBox.setActionCommand(taskCheck);
 		add(chckbxNewCheckBox, "cell 0 0,alignx center,aligny center");

@@ -29,7 +29,7 @@ public class TaskController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JComponent){
 			if(e.getActionCommand().equals("deleteTask")){
-				listView.remove(taskPanel.getPanel());
+				listView.panelInScroll.remove(taskPanel.getPanel());
 				listView.updateView();
 			}else if(e.getActionCommand().equals("taskCheck")){
 				taskPanel.getModel().changeState();
