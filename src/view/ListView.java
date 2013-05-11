@@ -22,6 +22,7 @@ public class ListView extends JScrollPane {
 		this.setMinimumSize(new Dimension (300, 500));
 		this.setMaximumSize(new Dimension (300, 500));
 		this.setPreferredSize(new Dimension (300, 500));
+		this.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
 		
 		panelInScroll = new JPanel();
 //		panelInScroll.setMinimumSize(new Dimension(300, 500));
