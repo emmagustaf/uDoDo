@@ -40,9 +40,9 @@ public class TaskPanel extends JPanel {
 	public TaskPanel(TaskModel model) {
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		setMinimumSize(new Dimension(60, 53));
-		setPreferredSize(new Dimension(60, 53));
-		setMaximumSize(new Dimension(60, 53));
+		setMinimumSize(new Dimension(295, 60));
+		setPreferredSize(new Dimension(295, 60));
+		setMaximumSize(new Dimension(295, 60));
 //		setSize(new Dimension(30, 20));
 		this.model=model;
 		setLayout(new MigLayout("", "[59.00px][211.00][242.00][94.00][108.00,fill]", "[45.00px,center]"));
