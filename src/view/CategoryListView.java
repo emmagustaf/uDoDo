@@ -17,16 +17,19 @@ public class CategoryListView extends JScrollPane{
 	public CategoryListView(){
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
-		this.setPreferredSize(new Dimension(200, 70));
-		this.setMinimumSize(new Dimension(200, 70));
-		this.setMaximumSize(new Dimension(200, 1000));
+	
+		this.setMinimumSize(new Dimension(200, 500));
+		this.setMaximumSize(new Dimension(200, 500));
+		this.setPreferredSize(new Dimension(200, 500));
 		this.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
 	
 		panel = new JPanel();
-		panel.setMaximumSize(new Dimension(200, 1000));
-		panel.setMinimumSize(new Dimension(200,70));
-		panel.setPreferredSize(new Dimension(200, 395));
-		panel.setLayout(new GridLayout(15, 1));
+//		panel.setMaximumSize(new Dimension(200, 1000));
+//		panel.setMinimumSize(new Dimension(200,70));
+//		panel.setPreferredSize(new Dimension(200, 395));
+		panel.setLayout(new GridLayout(10, 1));
+		
+		this.setViewportView(panel);
 		
 	}
 	
@@ -34,6 +37,7 @@ public class CategoryListView extends JScrollPane{
 		panel.revalidate();
 		panel.repaint();
 		panel.validate();
+		
 		this.revalidate();
 		this.repaint();
 		this.setVisible(true);
