@@ -17,11 +17,12 @@ public class TaskController implements ActionListener {
 	private ListView listView;
 	private TaskPanel taskPanel;
 	private MouseMethods listener = new MouseMethods();
-	private DisplayTaskView displayView;
+	private TaskSettingView taskSetting;
 
-	public TaskController(ListView listView, TaskPanel taskPanel){
+	public TaskController(ListView listView, TaskPanel taskPanel, TaskSettingView taskSetting){
 		this.listView = listView;
 		this.taskPanel = taskPanel;
+		this.taskSetting = taskSetting;
 		taskPanel.setController(this);
 		taskPanel.addMouseListener(listener);
 	}
@@ -58,6 +59,7 @@ public class TaskController implements ActionListener {
 		@Override
 		public void mousePressed(MouseEvent arg0) {
 			taskPanel.setBackground(Color.red);
+			
 		}
 
 		@Override
@@ -67,7 +69,11 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-		
+			DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
+			DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, taskPanel.getModel());
+			taskSetting.panelInScroll.removeAll();
+			taskSetting.panelInScroll.add(displayPanel);
+			taskSetting.updateView();
 		}
 	}
 }

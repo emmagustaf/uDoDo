@@ -16,14 +16,14 @@ import javax.swing.JButton;
  * @author Hanna
  *
  */
-public class EditView extends JPanel {
+public class EditTaskPanel extends JPanel {
 	private JTextField titleTextField;
 	private JTextField descriptionTextField;
 
 	/**
 	 * Create the panel.
 	 */
-	public EditView() {
+	public EditTaskPanel() {
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[][283.00,grow]", "[][][][][][][][][][]"));
 		
