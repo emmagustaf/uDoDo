@@ -8,6 +8,7 @@ import java.util.List;
 
 import utility.GraphicConstants;
 
+import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -24,10 +25,11 @@ public class CategoryListView extends JScrollPane{
 		this.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
 	
 		panel = new JPanel();
-//		panel.setMaximumSize(new Dimension(200, 1000));
-//		panel.setMinimumSize(new Dimension(200,70));
-//		panel.setPreferredSize(new Dimension(200, 395));
-		panel.setLayout(new GridLayout(10, 1));
+		panel.setBackground(GraphicConstants.BACKGROUND);
+		panel.setMaximumSize(new Dimension(180, 500));
+		panel.setMinimumSize(new Dimension(180,500));
+		panel.setPreferredSize(new Dimension(180, 500));
+		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS ));
 		
 		this.setViewportView(panel);
 		
