@@ -18,17 +18,14 @@ public class CategoryListView extends JScrollPane{
 		this.setMinimumSize(new Dimension(210, 500));
 		this.setMaximumSize(new Dimension(210, 500));
 		this.setPreferredSize(new Dimension(210, 500));
-		this.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
+		this.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_AS_NEEDED);
 		this.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
 		
 		panel = new JPanel();
 		panel.setBackground(GraphicConstants.BACKGROUND);
-		panel.setMaximumSize(new Dimension(190, 500));
-		panel.setMinimumSize(new Dimension(190,500));
-		panel.setPreferredSize(new Dimension(190, 500));
-		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS ));
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS ));
 		
-		this.setViewportView(panel);
+		getViewport().setView(panel);
 		
 	}
 	
