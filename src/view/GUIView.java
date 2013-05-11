@@ -14,6 +14,7 @@ public class GUIView extends JPanel {
 	private JPanel headerPanel = new JPanel();
 	private JPanel listPanel = new JPanel();
 	private JPanel categoryPanel = new JPanel();
+	private JPanel categoryListPanel = new JPanel();
 	private JPanel topPanel = new JPanel();
 	private JPanel editPanel = new JPanel();
 	private JPanel displayPanel = new JPanel();
@@ -25,7 +26,7 @@ public class GUIView extends JPanel {
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, EditView editView) {
 				
-		this.setMinimumSize(new Dimension(640, 490));
+		this.setMinimumSize(new Dimension(640, 600));
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
@@ -53,11 +54,12 @@ public class GUIView extends JPanel {
 		add(categoryPanel, c);
 		
 
-		topPanel.add(top);		
+
+		categoryListPanel.add(listView);	
 		c.gridwidth = 1;
 		c.gridx = 0;
 		c.gridy = 2;
-		add(listView, c);
+		add(categoryListPanel, c);
 		
 		
 		listPanel.add(list);

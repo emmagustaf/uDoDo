@@ -39,7 +39,7 @@ public class Main {
 		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
 
 		frame.setTitle("uDoDo 1.0");
-		frame.setMinimumSize(new Dimension(650, 500));
+		frame.setMinimumSize(new Dimension(650, 700));
 		//frame.setResizable(false);
 
 		// Add gui to window
