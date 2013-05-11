@@ -1,10 +1,6 @@
 package view;
 
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.util.ArrayList;
-import java.util.List;
 
 import utility.GraphicConstants;
 
@@ -19,16 +15,17 @@ public class CategoryListView extends JScrollPane{
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
 	
-		this.setMinimumSize(new Dimension(200, 500));
-		this.setMaximumSize(new Dimension(200, 500));
-		this.setPreferredSize(new Dimension(200, 500));
+		this.setMinimumSize(new Dimension(210, 500));
+		this.setMaximumSize(new Dimension(210, 500));
+		this.setPreferredSize(new Dimension(210, 500));
 		this.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
-	
+		this.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
+		
 		panel = new JPanel();
 		panel.setBackground(GraphicConstants.BACKGROUND);
-		panel.setMaximumSize(new Dimension(180, 500));
-		panel.setMinimumSize(new Dimension(180,500));
-		panel.setPreferredSize(new Dimension(180, 500));
+		panel.setMaximumSize(new Dimension(190, 500));
+		panel.setMinimumSize(new Dimension(190,500));
+		panel.setPreferredSize(new Dimension(190, 500));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS ));
 		
 		this.setViewportView(panel);
