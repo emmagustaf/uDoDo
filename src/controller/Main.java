@@ -29,12 +29,12 @@ public class Main {
 		
 		TopView topView = new TopView();
 		
-		EditView editView = new EditView();
+		TaskSettingView taskSettings = new TaskSettingView();
 		
-		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, editView);
+		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, taskSettings);
 		CategoryModel model = new CategoryModel(null);
 		CategoryPanel catPanel = new CategoryPanel(model);
-		HeaderController controller = new HeaderController(headerView, listView, catPanel);
+		HeaderController controller = new HeaderController(headerView, listView, catPanel, taskSettings);
 		
 		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
 

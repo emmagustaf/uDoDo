@@ -12,10 +12,10 @@ import javax.swing.JComponent;
 import view.GUIView;
 
 import model.DisplayModel;
-import view.EditView;
+import view.EditTaskPanel;
 
 public class DisplayController implements ActionListener{
-	private EditView editView;
+	private EditTaskPanel editView;
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//if(e.getSource() instanceof DisplayModel){
@@ -24,10 +24,12 @@ public class DisplayController implements ActionListener{
 				//editView.setVisible(true);
 			//}
 		//}
-		if(e.getSource() instanceof JComponent){
-			if(e.getActionCommand.equals("editTask")){
-				editView.setVisible(true);
-			}
+		
+		
+//		if(e.getSource() instanceof JComponent){
+//			if(e.getActionCommand.equals("editTask")){
+//				editView.setVisible(true);
+//			}
 				
 	}
 	private class MouseMethods implements MouseListener{

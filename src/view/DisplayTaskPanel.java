@@ -19,22 +19,22 @@ import java.awt.Font;
  * @author Hanna
  *
  */
-public class DisplayTaskView extends JPanel {
+public class DisplayTaskPanel extends JPanel {
 	private JButton editButton;
 	private TaskModel model;
 
 	/**
 	 * Create the panel.
 	 */
-	public DisplayTaskView() {
+	public DisplayTaskPanel(DisplayModel displayModel, TaskModel taskModel) {
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[207.00][][]", "[][][][][][][][][]"));
 		
-		JLabel titleLabel = new JLabel(model.getTitle());
+		JLabel titleLabel = new JLabel(taskModel.getTitle());
 		titleLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
 		add(titleLabel, "cell 0 0");
 		
-		JLabel descriptionLabel = new JLabel(model.getDescription());
+		JLabel descriptionLabel = new JLabel(taskModel.getDescription());
 		descriptionLabel.setFont(GraphicConstants.REGULARFONT);
 		add(descriptionLabel, "cell 0 2");
 		

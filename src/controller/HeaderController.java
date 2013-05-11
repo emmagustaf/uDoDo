@@ -15,6 +15,7 @@ import view.CategoryPanel;
 import view.HeaderView;
 import view.ListView;
 import view.TaskPanel;
+import view.TaskSettingView;
 
 public class HeaderController implements ActionListener{
 	
@@ -22,6 +23,7 @@ public class HeaderController implements ActionListener{
 	private HeaderView headerView;
 	private CategoryListView catListView;
 	private CategoryPanel catPanel;
+	private TaskSettingView taskSetting;
 	//public HeaderController(HeaderView headerView, ListView view, CategoryListView catListView){
 		//this.headerView = headerView;
 		//headerView.setController(this);
@@ -29,11 +31,12 @@ public class HeaderController implements ActionListener{
 		//this.catListView = catListView;
 	//}
 	
-	public HeaderController(HeaderView headerView, ListView view, CategoryPanel catPanel){
+	public HeaderController(HeaderView headerView, ListView view, CategoryPanel catPanel, TaskSettingView taskSetting){
 		this.headerView = headerView;
 		headerView.setController(this);
 		this.view = view;
 		this.catPanel = catPanel;
+		this.taskSetting = taskSetting;
 	}
 	
 	@Override
@@ -58,7 +61,7 @@ public class HeaderController implements ActionListener{
 				view.updateView();
 				headerView.getTextField().setText("");
 				
-				TaskController taskController = new TaskController(view, taskPanel);
+				TaskController taskController = new TaskController(view, taskPanel, taskSetting);
 				//view.
 			}
 		}

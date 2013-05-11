@@ -16,15 +16,14 @@ public class GUIView extends JPanel {
 	private JPanel categoryPanel = new JPanel();
 	private JPanel categoryListPanel = new JPanel();
 	private JPanel topPanel = new JPanel();
-	private JPanel editPanel = new JPanel();
+	private JPanel taskSettingPanel = new JPanel();
 	private JPanel displayPanel = new JPanel();
-	private JScrollPane listScroll = new JScrollPane();
 	
 	/**
 	 * Create the frame.
 	 */
 	
-	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, EditView editView) {
+	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, TaskSettingView taskSettings) {
 				
 		this.setMinimumSize(new Dimension(640, 600));
 		this.setBackground(GraphicConstants.BACKGROUND);
@@ -32,13 +31,11 @@ public class GUIView extends JPanel {
 		GridBagConstraints c = new GridBagConstraints();
 		
 		categoryPanel.setBackground(Color.yellow);
-		
 		listPanel.setBackground(Color.green);
-		
 		topPanel.setBackground(Color.ORANGE);																						
 		topPanel.setBackground(Color.pink);
-		
-		
+		taskSettingPanel.setBackground(Color.CYAN);
+	
 		topPanel.add(top);     
 		c.weightx = 0.0;
 		c.gridwidth = 3;
@@ -52,15 +49,12 @@ public class GUIView extends JPanel {
 		c.gridx = 0;
 		c.gridy = 1;
 		add(categoryPanel, c);
-		
-
 
 		categoryListPanel.add(listView);	
 		c.gridwidth = 1;
 		c.gridx = 0;
 		c.gridy = 2;
 		add(categoryListPanel, c);
-		
 		
 		listPanel.add(list);
 		c.weightx = 0.0;
@@ -80,6 +74,13 @@ public class GUIView extends JPanel {
 		c.gridx = 2;
 		c.gridy = 1;
 		add(displayPanel, c);
+		
+		taskSettingPanel.add(taskSettings);
+		c.gridheight = 2;
+		c.gridwidth = 1;
+		c.gridx = 2;
+		c.gridy = 1;
+		add(taskSettingPanel, c);
 		
 		revalidate();
 		validate();
