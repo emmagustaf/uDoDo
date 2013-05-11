@@ -43,6 +43,7 @@ public class TaskPanel extends JPanel {
 		
 		
 		JToggleButton checkbutton = new JToggleButton("");
+		checkbutton.setToolTipText("Check task");
 		checkbutton.setBorderPainted(false);
 		checkbutton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkmark_icon&16.png")));
 		checkbutton.setAlignmentX(Component.RIGHT_ALIGNMENT);
@@ -58,6 +59,7 @@ public class TaskPanel extends JPanel {
 
 		
 		deleteTaskButton = new JButton();
+		deleteTaskButton.setToolTipText("Delete task");
 		deleteTaskButton.setBorderPainted(false);
 		deleteTaskButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
 		//deleteTaskButton.setFont(GraphicConstants.REGULARFONT);

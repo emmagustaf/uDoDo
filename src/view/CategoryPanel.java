@@ -48,6 +48,7 @@ public class CategoryPanel extends JPanel{
 		catLabel.setFont(GraphicConstants.REGULARFONT);
 
 		add(catLabel, gbc_catLabel);
+		deleteCatButton.setToolTipText("Delete category and all it's content");
 		
 		deleteCatButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
 		deleteCatButton.setBorderPainted(false);
