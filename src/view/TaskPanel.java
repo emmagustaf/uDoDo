@@ -16,6 +16,7 @@ import utility.*;
 
 import controller.TaskController;
 import javax.swing.JToggleButton;
+import java.awt.Color;
 
 /**
  * A class to represent a TaskPanel. 
@@ -49,11 +50,12 @@ public class TaskPanel extends JPanel {
 		
 		
 		
-		JToggleButton chckbxNewCheckBox = new JToggleButton("");
-		chckbxNewCheckBox.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkmark_icon&16.png")));
-		chckbxNewCheckBox.setAlignmentX(Component.RIGHT_ALIGNMENT);
-		chckbxNewCheckBox.setActionCommand(taskCheck);
-		add(chckbxNewCheckBox, "cell 0 0,alignx center,aligny center");
+		JToggleButton checkbutton = new JToggleButton("");
+		checkbutton.setBorderPainted(false);
+		checkbutton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkmark_icon&16.png")));
+		checkbutton.setAlignmentX(Component.RIGHT_ALIGNMENT);
+		checkbutton.setActionCommand(taskCheck);
+		add(checkbutton, "cell 0 0,alignx center,aligny center");
 		//GridBagConstraints gbc_chckbx = new GridBagConstraints();
 //		gbc_chckbx.gridx = 0;
 //		gbc_chckbx.gridy = 0;
@@ -71,7 +73,7 @@ public class TaskPanel extends JPanel {
 //		add(taskLabel, gbc_taskLabel);
 		
 		deleteTaskButton = new JButton();
-		deleteTaskButton.setOpaque(false);
+		deleteTaskButton.setBorderPainted(false);
 		deleteTaskButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
 		//deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
 		deleteTaskButton.setActionCommand("deleteTask");
