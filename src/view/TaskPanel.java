@@ -43,7 +43,7 @@ public class TaskPanel extends JPanel {
 		
 		
 		JToggleButton checkbutton = new JToggleButton("");
-		checkbutton.setToolTipText("Check task");
+		checkbutton.setToolTipText("Check task as completed");
 		checkbutton.setBorderPainted(false);
 		checkbutton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkmark_icon&16.png")));
 		checkbutton.setAlignmentX(Component.RIGHT_ALIGNMENT);

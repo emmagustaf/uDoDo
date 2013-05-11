@@ -21,9 +21,9 @@ public class CategoryPanel extends JPanel{
 	public CategoryPanel(CategoryModel model) {
 		this.model=model;
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setMinimumSize(new Dimension(180, 40));
-		setPreferredSize(new Dimension(180, 40));
-		setMaximumSize(new Dimension(180, 40));
+		setMinimumSize(new Dimension(200, 40));
+		setPreferredSize(new Dimension(200, 40));
+		setMaximumSize(new Dimension(200, 40));
 		//this.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
