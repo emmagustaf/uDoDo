@@ -24,7 +24,7 @@ public class CategoryView extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(GraphicConstants.BACKGROUND);
-		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 0, true));
 		add(panel);
 		panel.setLayout(new MigLayout("", "[67.00px][62.00px]", "[31.00px,grow]"));
 		
@@ -33,7 +33,7 @@ public class CategoryView extends JPanel {
 		categoryTitleInput.setActionCommand("newCategory");
 		panel.add(categoryTitleInput, "cell 0 0,growx,aligny center");
 		
-		addNewCategoryButton = new JButton("New");
+		addNewCategoryButton = new JButton("Add category");
 		addNewCategoryButton.setFont(GraphicConstants.REGULARFONT);
 		addNewCategoryButton.setActionCommand("newCategory");
 		panel.add(addNewCategoryButton, "cell 1 0,alignx right,aligny center");
