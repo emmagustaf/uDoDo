@@ -47,11 +47,11 @@ public class HeaderController implements ActionListener{
 				//kanske inte behöver ha två olika konstruktorer i taskmodel, utan bara alltid skicka med
 				//typ en categorypanel/model, 
 				
-				if(catPanel.getModel().getMarkedStatus()){
-					catPanel.getModel().getTaskList().add(task);
-				}else{
-					
-				}
+//				if(catPanel.getModel().getMarkedStatus()){
+//					catPanel.getModel().getTaskList().add(task);
+//				}else{
+//					
+//				}
 				TaskPanel taskPanel = new TaskPanel(task);
 				//view.panelInScroll.add(taskPanel);
 				view.getViewport().add(taskPanel);

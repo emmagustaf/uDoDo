@@ -43,12 +43,12 @@ public class CategoryModel {
 		System.out.println("marked");
 	}
 	
-	public boolean getMarkedStatus(){
-		if(markedList.getFirst().equals(this)){
-			return true;
-		}
-		return false;
-	}
+//	public boolean getMarkedStatus(){
+//		if(markedList.getFirst().equals(this)){
+//			return true;
+//		}
+//		return false;
+//	}
 
 	public String setCatTitle(String title) {
 		return title;
