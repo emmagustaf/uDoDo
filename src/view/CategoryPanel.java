@@ -20,7 +20,7 @@ public class CategoryPanel extends JPanel{
 	private CategoryPanelModel panelModel;
 	private JLabel catLabel;
 	private CategoryModel model;
-	private JButton deleteCatButton = new JButton("X");
+	private JButton deleteCatButton = new JButton();
 	public CategoryPanel(CategoryModel model) {
 		this.model=model;
 		this.setBackground(GraphicConstants.BACKGROUND);
@@ -30,7 +30,7 @@ public class CategoryPanel extends JPanel{
 		//this.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{177, 41, 0};
+		gridBagLayout.columnWidths = new int[]{146, 41, 0};
 		gridBagLayout.rowHeights = new int[]{111, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, Double.MIN_VALUE};
@@ -47,8 +47,10 @@ public class CategoryPanel extends JPanel{
 
 		add(catLabel, gbc_catLabel);
 		
+		deleteCatButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
 		
-		deleteCatButton.setPreferredSize(new Dimension(20, 15));
+		
+		deleteCatButton.setPreferredSize(new Dimension(15, 10));
 		deleteCatButton.setActionCommand("delete Category");
 		GridBagConstraints gbc_deleteCatButton = new GridBagConstraints();
 		gbc_deleteCatButton.anchor = GridBagConstraints.WEST;
