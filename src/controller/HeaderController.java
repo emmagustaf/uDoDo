@@ -54,7 +54,7 @@ public class HeaderController implements ActionListener{
 //				}
 				TaskPanel taskPanel = new TaskPanel(task);
 				//view.panelInScroll.add(taskPanel);
-				view.getViewport().add(taskPanel);
+				view.panelInScroll.add(taskPanel);
 				view.updateView();
 				headerView.getTextField().setText("");
 				

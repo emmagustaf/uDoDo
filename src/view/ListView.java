@@ -1,5 +1,6 @@
 package view;
 
+import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -23,11 +24,13 @@ public class ListView extends JScrollPane {
 		this.setPreferredSize(new Dimension (300, 500));
 		
 		panelInScroll = new JPanel();
-		panelInScroll.setMinimumSize(new Dimension(400, 500));
-		panelInScroll.setMaximumSize(new Dimension(400, 500));
-		panelInScroll.setPreferredSize(new Dimension(400, 500));
-		panelInScroll.setLayout(new GridLayout(5, 1));
-		add(panelInScroll);
+//		panelInScroll.setMinimumSize(new Dimension(300, 500));
+//		panelInScroll.setMaximumSize(new Dimension(300, 500));
+//		panelInScroll.setPreferredSize(new Dimension(300, 500));
+		panelInScroll.setLayout(new BoxLayout(panelInScroll, BoxLayout.Y_AXIS));
+//		add(panelInScroll);
+		getViewport().setView(panelInScroll);
+		
 		
 	}
 	
