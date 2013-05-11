@@ -25,11 +25,7 @@ public class ListView extends JScrollPane {
 		this.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
 		
 		panelInScroll = new JPanel();
-//		panelInScroll.setMinimumSize(new Dimension(300, 500));
-//		panelInScroll.setMaximumSize(new Dimension(300, 500));
-//		panelInScroll.setPreferredSize(new Dimension(300, 500));
 		panelInScroll.setLayout(new BoxLayout(panelInScroll, BoxLayout.Y_AXIS));
-//		add(panelInScroll);
 		getViewport().setView(panelInScroll);
 		
 		
@@ -43,10 +39,5 @@ public class ListView extends JScrollPane {
 		this.validate();
 		this.repaint();
 		System.out.println("updated view");
-	}
-	
-//	public JScrollPane getScrollPane(){
-//		return scrollPane;
-//	}
-	
+	}	
 }

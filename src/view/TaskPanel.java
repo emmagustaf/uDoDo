@@ -39,13 +39,12 @@ public class TaskPanel extends JPanel {
 	 */
 	public TaskPanel(TaskModel model) {
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		setMinimumSize(new Dimension(295, 60));
 		setPreferredSize(new Dimension(295, 60));
 		setMaximumSize(new Dimension(295, 60));
 //		setSize(new Dimension(30, 20));
 		this.model=model;
-		setLayout(new MigLayout("", "[59.00px][211.00][242.00][94.00][108.00,fill]", "[45.00px,center]"));
+		setLayout(new MigLayout("", "[27.00px][100.00][30.00][88.00][93.00]", "[45.00px,center]"));
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("");
 		chckbxNewCheckBox.setAlignmentX(Component.RIGHT_ALIGNMENT);
@@ -55,18 +54,12 @@ public class TaskPanel extends JPanel {
 		JLabel taskLabel = new JLabel(model.getTitle());
 		taskLabel.setSize(new Dimension(30, 20));
 		taskLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
-		add(taskLabel, "cell 1 0,alignx center,aligny center");
-		
-		Component rigidArea = Box.createRigidArea(new Dimension(20, 20));
-		add(rigidArea, "cell 2 0,alignx right");
+		add(taskLabel, "cell 1 0 3 1,alignx left,aligny center");
 		
 		deleteTaskButton = new JButton("Delete");
 		deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
 		deleteTaskButton.setActionCommand("deleteTask");
-		add(deleteTaskButton, "cell 3 0,alignx center,aligny center");
-		
-		Component rigidArea_1 = Box.createRigidArea(new Dimension(20, 20));
-		add(rigidArea_1, "cell 4 0");
+		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");
 	}
 	
 	public void setController(TaskController controller){
