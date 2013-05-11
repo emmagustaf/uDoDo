@@ -1,4 +1,4 @@
-package view;
+	package view;
 
 import java.awt.*;
 
@@ -29,6 +29,7 @@ public class CategoryView extends JPanel {
 		panel.setLayout(new MigLayout("", "[67.00px][62.00px]", "[31.00px,grow]"));
 		
 		categoryTitleInput = new JTextField();
+		
 		categoryTitleInput.setFont(GraphicConstants.REGULARFONT);
 		categoryTitleInput.setActionCommand("newCategory");
 		panel.add(categoryTitleInput, "cell 0 0,growx,aligny center");

@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
@@ -33,6 +34,7 @@ public class CategoryController implements ActionListener{
 	//Adds actionlistener for adding new categories to the categoryview
 	@Override
 	public void actionPerformed(ActionEvent e) {
+
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
 			if(e.getActionCommand().equals("newCategory") && view.getTextField().getText().length() > 0){
 				CategoryModel cat = new CategoryModel(view.getTextField().getText());
@@ -42,7 +44,7 @@ public class CategoryController implements ActionListener{
 				catListView.updateView();
 				CategoryPanelController catController = new CategoryPanelController(catPanel, catListView);
 				System.out.println("category added");
-				}
+			}		
 		}
 	}
 	

@@ -13,8 +13,6 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Color;
 import java.awt.Insets;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 public class CategoryPanel extends JPanel{
 	
 	private CategoryPanelModel panelModel;
@@ -35,6 +33,7 @@ public class CategoryPanel extends JPanel{
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
+		
 		GridBagConstraints gbc_catLabel = new GridBagConstraints();
 		gbc_catLabel.insets = new Insets(0, 0, 0, 5);
 		gbc_catLabel.gridx = 0;
