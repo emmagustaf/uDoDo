@@ -43,12 +43,12 @@ public class CategoryModel {
 		System.out.println("marked");
 	}
 	
-//	public boolean getMarkedStatus(){
-//		if(markedList.getFirst().equals(this)){
-//			return true;
-//		}
-//		return false;
-//	}
+	public boolean getMarkedStatus(){
+		if(markedList.getFirst().equals(this)){
+			return true;
+		}
+		return false;
+	}
 
 	public String setCatTitle(String title) {
 		return title;
@@ -58,7 +58,7 @@ public class CategoryModel {
 		CategoryPanel panel = new CategoryPanel(panelModel);
 		catList.add(panel);
 	}
-//	public void removeCategory (CategoryPanelModel panelModel){
-//		catList.remove(panelModel);
-//	}
+	public void removeCategory (CategoryPanel panelModel){
+		catList.remove(panelModel);
+	}
 }
