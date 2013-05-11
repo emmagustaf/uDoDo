@@ -70,10 +70,14 @@ public class TaskController implements ActionListener {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
-			DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, taskPanel.getModel());
+			DisplayController displayController = new DisplayController(taskSetting);
+			DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, displayController);
+
 			taskSetting.panelInScroll.removeAll();
 			taskSetting.panelInScroll.add(displayPanel);
 			taskSetting.updateView();
+			
+			
 		}
 	}
 }

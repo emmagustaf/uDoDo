@@ -16,6 +16,10 @@ public class DisplayModel {
 		return  task.getDescription();
 	}
 	
+	public TaskModel getTaskModel(){
+		return this.task;
+	}
+	
 	public String setTaskTitle() {
 		return title;
 	}
@@ -23,4 +27,5 @@ public class DisplayModel {
 	public String setTaskDescription(String description){
 		return description;
 	}
+
 }
