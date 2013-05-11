@@ -24,41 +24,21 @@ public class GUIView extends JPanel {
 	 */
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, EditView editView) {
-		
-//		this.header=header;
-//		this.list = list;
-//		this.cat=cat;
-//		this.top=top;
-//		this.listView = listView;
-//		this.editView=editView;
-//		this.listView=listView;
-		
+				
 		this.setMinimumSize(new Dimension(640, 490));
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		//headerPanel.setMinimumSize(new Dimension(200, 62));
-//		headerPanel.setBackground(Color.blue);
-//		headerPanel.setPreferredSize(new Dimension(650, 100));
-//		headerPanel.setMinimumSize(new Dimension(650, 100));
-//		headerPanel.setMaximumSize(new Dimension(650, 100));
-		
-		//categoryPanel.setMinimumSize(new Dimension(200, 240));
 		categoryPanel.setBackground(Color.yellow);
 		
-		//listPanel.setMinimumSize(new Dimension(150, 240));
 		listPanel.setBackground(Color.green);
 		
-		//topPanel.setMinimumSize(new Dimension(630, 62));
 		topPanel.setBackground(Color.ORANGE);																						
 		topPanel.setBackground(Color.pink);
 		
 		
-		
-		//FlowLayout flowLayout = (FlowLayout) listPanel.getLayout();
-		topPanel.add(top);
-		//c.ipady = 40;      
+		topPanel.add(top);     
 		c.weightx = 0.0;
 		c.gridwidth = 3;
 		c.gridx = 0;
@@ -73,15 +53,7 @@ public class GUIView extends JPanel {
 		add(categoryPanel, c);
 		
 
-		topPanel.add(top);
-		//setLayout(new BorderLayout());
-		//this.add(topPanel, BorderLayout.NORTH);
-		//this.add(headerPanel, BorderLayout.CENTER);
-		//this.add(listPanel, BorderLayout.SOUTH);
-		//this.add(categoryPanel, BorderLayout.WEST);
-		//this.add(editPanel, BorderLayout.EAST);
-		
-
+		topPanel.add(top);		
 		c.gridwidth = 1;
 		c.gridx = 0;
 		c.gridy = 2;
@@ -89,14 +61,11 @@ public class GUIView extends JPanel {
 		
 		
 		listPanel.add(list);
-		//listScroll.add(listPanel);
 		c.weightx = 0.0;
 		c.gridwidth = 1;
 		c.gridx = 1;
 		c.gridy = 2;
-		add(listPanel, c);
-		//listPanel.add(listScroll);
-		
+		add(listPanel, c);		
 		
 		headerPanel.add(header);
 		c.weightx = 0.0;
@@ -109,12 +78,9 @@ public class GUIView extends JPanel {
 		c.gridx = 2;
 		c.gridy = 1;
 		add(displayPanel, c);
-		//setLayout(new BorderLayout());
-		//this.add(topPanel, BorderLayout.NORTH);
-//		this.add(headerPanel, BorderLayout.CENTER);
-//		this.add(listPanel, BorderLayout.SOUTH);
-//		this.add(categoryPanel, BorderLayout.WEST);
+		
 		revalidate();
+		validate();
 		repaint();
 
 		this.setVisible(true);
