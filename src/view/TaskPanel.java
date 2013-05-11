@@ -9,15 +9,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JCheckBox;
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 
 import java.awt.Component;
 import javax.swing.JButton;
 import utility.*;
 
 import controller.TaskController;
+import javax.swing.JToggleButton;
 
 /**
  * A class to represent a TaskPanel. 
@@ -40,7 +38,7 @@ public class TaskPanel extends JPanel {
 		setMaximumSize(new Dimension(290, 60));
 //		setSize(new Dimension(30, 20));
 		this.model=model;
-		setLayout(new MigLayout("", "[27.00px][100.00][30.00][88.00][93.00]", "[45.00px,center]"));
+		setLayout(new MigLayout("", "[40.00px,left][100.00][30.00][88.00][93.00]", "[45.00px,center]"));
 		
 //		GridBagLayout gridBagLayout = new GridBagLayout();
 //		gridBagLayout.columnWidths = new int[]{32, 127, 0};
@@ -51,7 +49,8 @@ public class TaskPanel extends JPanel {
 		
 		
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("");
+		JToggleButton chckbxNewCheckBox = new JToggleButton("");
+		chckbxNewCheckBox.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkmark_icon&16.png")));
 		chckbxNewCheckBox.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		chckbxNewCheckBox.setActionCommand(taskCheck);
 		add(chckbxNewCheckBox, "cell 0 0,alignx center,aligny center");
@@ -61,7 +60,9 @@ public class TaskPanel extends JPanel {
 //		add(chckbxNewCheckBox, gbc_chckbx);
 //		
 		JLabel taskLabel = new JLabel(model.getTitle());
-		taskLabel.setSize(new Dimension(30, 20));
+		taskLabel.setMinimumSize(new Dimension(200, 30));
+		taskLabel.setMaximumSize(new Dimension(200, 30));
+		taskLabel.setPreferredSize(new Dimension(200, 30));
 		taskLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
 		add(taskLabel, "cell 1 0 3 1,alignx left,aligny center");
 //		GridBagConstraints gbc_taskLabel = new GridBagConstraints();
@@ -70,6 +71,7 @@ public class TaskPanel extends JPanel {
 //		add(taskLabel, gbc_taskLabel);
 		
 		deleteTaskButton = new JButton();
+		deleteTaskButton.setOpaque(false);
 		deleteTaskButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
 		//deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
 		deleteTaskButton.setActionCommand("deleteTask");

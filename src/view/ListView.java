@@ -25,6 +25,7 @@ public class ListView extends JScrollPane {
 		this.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
 		
 		panelInScroll = new JPanel();
+		panelInScroll.setBackground(GraphicConstants.BACKGROUND);
 		panelInScroll.setLayout(new BoxLayout(panelInScroll, BoxLayout.Y_AXIS));
 		getViewport().setView(panelInScroll);
 		

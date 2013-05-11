@@ -14,7 +14,6 @@ public class TopView extends JPanel {
 	public TopView(){
 		
 		this.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		//this.setSize(new Dimension(620, 70));
 		setPreferredSize(new Dimension(600, 70));
 		setMinimumSize(new Dimension(600, 70));
 		setMaximumSize(new Dimension(600, 70));
