@@ -50,7 +50,7 @@ public class CategoryPanel extends JPanel{
 		add(catLabel, gbc_catLabel);
 		
 		deleteCatButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
-		
+		deleteCatButton.setBorderPainted(false);
 		
 		deleteCatButton.setPreferredSize(new Dimension(15, 10));
 		deleteCatButton.setActionCommand("delete Category");
