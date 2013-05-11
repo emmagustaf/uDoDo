@@ -8,13 +8,18 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+//A class to keep a graphical list of panels each representing a category
+// the list will be represented in a scrollpane
 public class CategoryListView extends JScrollPane{ 
 	
+	//Create a panel that will be the actual container
+	// for the categorypanels 
 	public JPanel panel;
+	
+	//Set all the graphical data for the scrollpane
 	public CategoryListView(){
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
-	
 		this.setMinimumSize(new Dimension(210, 500));
 		this.setMaximumSize(new Dimension(210, 500));
 		this.setPreferredSize(new Dimension(210, 500));
@@ -28,7 +33,8 @@ public class CategoryListView extends JScrollPane{
 		getViewport().setView(panel);
 		
 	}
-	
+	// Updatemethod that will be invoked each time anything is changed in the 
+	// categorylist
 	public void updateView(){
 		panel.revalidate();
 		panel.repaint();
@@ -39,5 +45,4 @@ public class CategoryListView extends JScrollPane{
 		this.setVisible(true);
 		System.out.println("view updated");
 	}
-	
 }
