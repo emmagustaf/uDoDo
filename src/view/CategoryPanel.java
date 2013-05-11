@@ -3,7 +3,6 @@ package view;
 import utility.*;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 
 import model.*;
 import controller.*;
@@ -35,12 +34,16 @@ public class CategoryPanel extends JPanel{
 		setLayout(gridBagLayout);
 		
 		GridBagConstraints gbc_catLabel = new GridBagConstraints();
+		gbc_catLabel.anchor = GridBagConstraints.WEST;
 		gbc_catLabel.insets = new Insets(0, 0, 0, 5);
 		gbc_catLabel.gridx = 0;
 		gbc_catLabel.gridy = 0;
 		this.setBackground(GraphicConstants.BACKGROUND);
 
-		JLabel catLabel = new JLabel(model.getCatTitle());
+		catLabel = new JLabel(model.getCatTitle());
+		catLabel.setMaximumSize(new Dimension(120,30));
+		catLabel.setMinimumSize(new Dimension(120, 30));
+		catLabel.setPreferredSize(new Dimension(120,30));
 		catLabel.setBackground(Color.ORANGE);
 		catLabel.setFont(GraphicConstants.REGULARFONT);
 
