@@ -64,8 +64,7 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mouseReleased(MouseEvent arg0) {
-			//editView.setVisible(false);
-			//displayView.setVisible(true);
+			
 		}
 
 		@Override
@@ -73,7 +72,7 @@ public class TaskController implements ActionListener {
 			DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
 			
 			DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, taskPanel.getModel());
-			DisplayController displayController = new DisplayController(taskSetting, displayPanel);
+		//	DisplayController displayController = new DisplayController(taskSetting, displayPanel);
 
 			taskSetting.panelInScroll.removeAll();
 			taskSetting.panelInScroll.add(displayPanel);
