@@ -17,13 +17,15 @@ import view.EditTaskPanel;
 
 public class DisplayController implements ActionListener{
 	private TaskSettingView settingView;
-//	private DisplayTaskPanel displayPanel;
-//	private MouseMethods listener = new MouseMethods();
+	private DisplayTaskPanel displayTaskPanel;
+	private MouseMethods listener = new MouseMethods();
 	
 	
-	public DisplayController(TaskSettingView settingView){
+	public DisplayController(TaskSettingView settingView, DisplayTaskPanel displayTaskPanel){
 		this.settingView=settingView;
-//		this.displayPanel.addMouseListener(listener);
+		this.displayTaskPanel=displayTaskPanel;
+		displayTaskPanel.setController(this);
+		this.displayTaskPanel.addMouseListener(listener);
 		
 	}
 	

@@ -6,8 +6,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import model.*;
-
-import controller.DisplayController;
+import controller.*;
 
 import java.awt.Font;
 import javax.swing.ImageIcon;
@@ -22,16 +21,14 @@ import javax.swing.ImageIcon;
  */
 public class DisplayTaskPanel extends JPanel {
 	private JButton editButton;
-	private TaskModel model;
-	private DisplayController controller;
+	private TaskModel taskModel;
 
 	/**
 	 * Create the panel.
 	 */
-	public DisplayTaskPanel(DisplayModel displayModel, DisplayController controller) {
-		
-		this.controller=controller;
-		this.setController();
+	public DisplayTaskPanel(DisplayModel displayModel, TaskModel taskModel) {
+	
+		this.taskModel=taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[207.00][][]", "[][][][][][][][][]"));
 		
@@ -61,8 +58,9 @@ public class DisplayTaskPanel extends JPanel {
 		editButton.setActionCommand("editTask");
 
 	}
-	public void setController(){
+	public void setController(DisplayController controller){
 		System.out.println("Entered setController in disptaskpanel");
+
 		editButton.addActionListener(controller);
 		System.out.println("added actionlistener");
 	}

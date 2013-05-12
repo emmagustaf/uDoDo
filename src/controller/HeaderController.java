@@ -33,7 +33,7 @@ public class HeaderController implements ActionListener{
 	
 	public HeaderController(HeaderView headerView, ListView view, CategoryPanel catPanel, TaskSettingView taskSetting){
 		this.headerView = headerView;
-		headerView.setController(this);
+		this.headerView.setController(this);
 		this.view = view;
 		this.catPanel = catPanel;
 		this.taskSetting = taskSetting;
