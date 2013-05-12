@@ -64,6 +64,7 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mouseReleased(MouseEvent arg0) {
+			//editView.setVisible(false);
 			//displayView.setVisible(true);
 		}
 
