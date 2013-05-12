@@ -16,7 +16,6 @@ import model.EditModel;
 public class DisplayController implements ActionListener, MouseListener{
 	private TaskSettingView settingView;
 	private DisplayTaskPanel displayTaskPanel;
-	//private MouseMethods listener = new MouseMethods();
 	
 	
 	public DisplayController(TaskSettingView settingView, DisplayTaskPanel displayTaskPanel){
@@ -49,7 +48,6 @@ public class DisplayController implements ActionListener, MouseListener{
 				
 	}
 	
-//	private class MouseMethods implements MouseListener{
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
@@ -82,7 +80,5 @@ public class DisplayController implements ActionListener, MouseListener{
 			
 		}
 		
-		
-//	}
 
 }
