@@ -8,10 +8,8 @@ import javax.swing.JButton;
 import model.*;
 import controller.*;
 
-import java.awt.Font;
 import javax.swing.ImageIcon;
-
-
+;
 
 /**
  * A class to represent the view where you can see the title, description, priority and deadline of the task
@@ -20,9 +18,9 @@ import javax.swing.ImageIcon;
  *
  */
 public class DisplayTaskPanel extends JPanel {
-	private JButton editButton;
+	private JButton editButton = new JButton();
 	private TaskModel taskModel;
-
+	private DisplayController controller;
 	/**
 	 * Create the panel.
 	 */
@@ -48,20 +46,18 @@ public class DisplayTaskPanel extends JPanel {
 		prioLabel.setFont(GraphicConstants.REGULARFONT);
 		add(prioLabel, "cell 0 6");
 		
-		JButton editButton = new JButton("");
+		
 		editButton.setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&16.png")));
 		editButton.setBorderPainted(false);
 		editButton.setFont(GraphicConstants.REGULARFONT);
 		add(editButton, "cell 1 8");
 		editButton.setActionCommand("editTask");
-		
-		editButton.setActionCommand("editTask");
 
 	}
 	public void setController(DisplayController controller){
 		System.out.println("Entered setController in disptaskpanel");
-
 		editButton.addActionListener(controller);
+		this.addMouseListener(controller);
 		System.out.println("added actionlistener");
 	}
 	

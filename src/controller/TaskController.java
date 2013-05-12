@@ -42,8 +42,9 @@ public class TaskController implements ActionListener {
 		}
 	}
 	
-	private class MouseMethods implements MouseListener{
 
+	private class MouseMethods implements MouseListener{
+		
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
 			taskPanel.setBackground(Color.blue);
@@ -69,6 +70,7 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
+<<<<<<< HEAD
 			DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
 			
 			DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, taskPanel.getModel());
@@ -78,6 +80,18 @@ public class TaskController implements ActionListener {
 			taskSetting.panelInScroll.add(displayPanel);
 			taskSetting.updateView();
 			
+=======
+			if(e.getSource() instanceof JComponent){
+				DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
+				
+				DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, taskPanel.getModel());
+				DisplayController displayController = new DisplayController(taskSetting, displayPanel);
+	
+				taskSetting.panelInScroll.removeAll();
+				taskSetting.panelInScroll.add(displayPanel);
+				taskSetting.updateView();
+			}
+>>>>>>> 7ba90b16250bf80752e72aa887e56f5a3dac31e2
 			
 		}
 	}
