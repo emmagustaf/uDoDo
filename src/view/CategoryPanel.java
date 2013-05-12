@@ -72,6 +72,7 @@ public class CategoryPanel extends JPanel{
 	// Set controller for the panel, mouselistener will handle what 
 	// actions will be performed when the panel is clicked upon 
 	// Also set controller for the deletebutton included in the panel
+	
 	public void setController(CategoryPanelController controller){
 		this.addMouseListener(controller);
 		deleteCatButton.addActionListener(controller);
