@@ -1,26 +1,22 @@
 package view;
 
 import javax.swing.JPanel;
-import model.*;
 
 import model.TaskModel;
 import net.miginfocom.swing.MigLayout;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import java.awt.Font;
 import javax.swing.JCheckBox;
 import java.awt.Dimension;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
+
 import java.awt.Component;
 import javax.swing.JButton;
-import javax.swing.Box;
 import utility.*;
 
 import controller.TaskController;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JToggleButton;
+import java.awt.Color;
 
 /**
  * A class to represent a TaskPanel. 
@@ -32,43 +28,44 @@ public class TaskPanel extends JPanel {
 	
 	private TaskModel model;
 	private String taskCheck;
-	private String deleteTask;
 	private JButton deleteTaskButton;
 	/**
 	 * Create the panel.
 	 */
 	public TaskPanel(TaskModel model) {
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		setMinimumSize(new Dimension(30, 20));
-		setPreferredSize(new Dimension(397, 53));
-		setSize(new Dimension(30, 20));
+		setMinimumSize(new Dimension(290, 60));
+		setPreferredSize(new Dimension(290, 60));
+		setMaximumSize(new Dimension(290, 60));
+//		setSize(new Dimension(30, 20));
 		this.model=model;
-		setLayout(new MigLayout("", "[59.00px][211.00][242.00][94.00][108.00,fill]", "[45.00px,center]"));
+		setLayout(new MigLayout("", "[40.00px,left][100.00][30.00][88.00][93.00]", "[45.00px,center]"));
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("");
-		chckbxNewCheckBox.setMinimumSize(new Dimension(35, 30));
-		chckbxNewCheckBox.setMaximumSize(new Dimension(35, 30));
-		chckbxNewCheckBox.setForeground(new Color(50, 205, 50));
-		chckbxNewCheckBox.setAlignmentX(Component.RIGHT_ALIGNMENT);
-		chckbxNewCheckBox.setActionCommand(taskCheck);
-		add(chckbxNewCheckBox, "cell 0 0,alignx center,aligny center");
 		
+		JToggleButton checkbutton = new JToggleButton("");
+		checkbutton.setToolTipText("Check task as completed");
+		checkbutton.setBorderPainted(false);
+		checkbutton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkmark_icon&16.png")));
+		checkbutton.setAlignmentX(Component.RIGHT_ALIGNMENT);
+		checkbutton.setActionCommand(taskCheck);
+		add(checkbutton, "cell 0 0,alignx center,aligny center");
+
 		JLabel taskLabel = new JLabel(model.getTitle());
-		taskLabel.setSize(new Dimension(30, 20));
+		taskLabel.setMinimumSize(new Dimension(200, 30));
+		taskLabel.setMaximumSize(new Dimension(200, 30));
+		taskLabel.setPreferredSize(new Dimension(200, 30));
 		taskLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
-		add(taskLabel, "cell 1 0,alignx center,aligny center");
+		add(taskLabel, "cell 1 0 3 1,alignx left,aligny center");
+
 		
-		Component rigidArea = Box.createRigidArea(new Dimension(20, 20));
-		add(rigidArea, "cell 2 0,alignx right");
-		
-		deleteTaskButton = new JButton("Delete");
-		deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
+		deleteTaskButton = new JButton();
+		deleteTaskButton.setToolTipText("Delete task");
+		deleteTaskButton.setBorderPainted(false);
+		deleteTaskButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
+		//deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
 		deleteTaskButton.setActionCommand("deleteTask");
-		add(deleteTaskButton, "cell 3 0,alignx center,aligny center");
+		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");
 		
-		Component rigidArea_1 = Box.createRigidArea(new Dimension(20, 20));
-		add(rigidArea_1, "cell 4 0");
 	}
 	
 	public void setController(TaskController controller){

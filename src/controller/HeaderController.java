@@ -11,16 +11,19 @@ import model.ListModel;
 import model.TaskModel;
 
 import view.CategoryListView;
+import view.CategoryPanel;
 import view.HeaderView;
 import view.ListView;
 import view.TaskPanel;
+import view.TaskSettingView;
 
 public class HeaderController implements ActionListener{
 	
 	private ListView view;
 	private HeaderView headerView;
 	private CategoryListView catListView;
-	
+	private CategoryPanel catPanel;
+	private TaskSettingView taskSetting;
 	//public HeaderController(HeaderView headerView, ListView view, CategoryListView catListView){
 		//this.headerView = headerView;
 		//headerView.setController(this);
@@ -28,10 +31,12 @@ public class HeaderController implements ActionListener{
 		//this.catListView = catListView;
 	//}
 	
-	public HeaderController(HeaderView headerView, ListView view){
+	public HeaderController(HeaderView headerView, ListView view, CategoryPanel catPanel, TaskSettingView taskSetting){
 		this.headerView = headerView;
 		headerView.setController(this);
 		this.view = view;
+		this.catPanel = catPanel;
+		this.taskSetting = taskSetting;
 	}
 	
 	@Override
@@ -43,20 +48,20 @@ public class HeaderController implements ActionListener{
 				//här behövs det få tag på info om en panel är markerad eller inte, en panel markeras via
 				//mouselistener i categorypanelcontroller. 
 				//kanske inte behöver ha två olika konstruktorer i taskmodel, utan bara alltid skicka med
-				//typ en categorypanel/model, d
+				//typ en categorypanel/model, 
 				
-				//if(categorypanel är markerad){
-					//TaskModel task = new TaskModel(headerView.getTextField().getText(), e.getSource().getModel());
-					//e.getSource().getModel().getTaskList().add(task);
-				//}else{
-					//TaskModel task = new TaskModel(headerView.getTextField().getText());
-				//}
+//				if(catPanel.getModel().getMarkedStatus()){
+//					catPanel.getModel().getTaskList().add(task);
+//				}else{
+//					
+//				}
 				TaskPanel taskPanel = new TaskPanel(task);
-				view.add(taskPanel);
-				
-				headerView.getTextField().setText("");
+				//view.panelInScroll.add(taskPanel);
+				view.panelInScroll.add(taskPanel, 0);
 				view.updateView();
-				TaskController taskController = new TaskController(view, taskPanel);
+				headerView.getTextField().setText("");
+				
+				TaskController taskController = new TaskController(view, taskPanel, taskSetting);
 				//view.
 			}
 		}

@@ -17,20 +17,24 @@ public class TaskController implements ActionListener {
 	private ListView listView;
 	private TaskPanel taskPanel;
 	private MouseMethods listener = new MouseMethods();
-	private DisplayTaskView displayView;
+	private TaskSettingView taskSetting;
 
-	public TaskController(ListView listView, TaskPanel taskPanel){
+	public TaskController(ListView listView, TaskPanel taskPanel, TaskSettingView taskSetting){
 		this.listView = listView;
 		this.taskPanel = taskPanel;
+		this.taskSetting = taskSetting;
 		taskPanel.setController(this);
 		taskPanel.addMouseListener(listener);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println("entered action preformed in taskcontroller");
 		if(e.getSource() instanceof JComponent){
 			if(e.getActionCommand().equals("deleteTask")){
-				listView.remove(taskPanel.getPanel());
+				System.out.println("entered delete task");
+				System.out.println("" + taskPanel.getModel().getTitle());
+				listView.panelInScroll.remove(taskPanel);
 				listView.updateView();
 			}else if(e.getActionCommand().equals("taskCheck")){
 				taskPanel.getModel().changeState();
@@ -55,6 +59,7 @@ public class TaskController implements ActionListener {
 		@Override
 		public void mousePressed(MouseEvent arg0) {
 			taskPanel.setBackground(Color.red);
+			
 		}
 
 		@Override
@@ -65,7 +70,15 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-		
+			DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
+			DisplayController displayController = new DisplayController(taskSetting);
+			DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, displayController);
+
+			taskSetting.panelInScroll.removeAll();
+			taskSetting.panelInScroll.add(displayPanel);
+			taskSetting.updateView();
+			
+			
 		}
 	}
 }

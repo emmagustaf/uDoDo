@@ -1,4 +1,4 @@
-package view;
+	package view;
 
 import java.awt.*;
 
@@ -11,7 +11,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.GroupLayout.Alignment;
 public class CategoryView extends JPanel {
 	
-	private String addCategory;
+//	private String addCategory;
 	private JButton addNewCategoryButton;
 	private JTextField categoryTitleInput;
 	
@@ -24,16 +24,17 @@ public class CategoryView extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(GraphicConstants.BACKGROUND);
-		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 0, true));
 		add(panel);
 		panel.setLayout(new MigLayout("", "[67.00px][62.00px]", "[31.00px,grow]"));
 		
 		categoryTitleInput = new JTextField();
+		
 		categoryTitleInput.setFont(GraphicConstants.REGULARFONT);
 		categoryTitleInput.setActionCommand("newCategory");
 		panel.add(categoryTitleInput, "cell 0 0,growx,aligny center");
 		
-		addNewCategoryButton = new JButton("New");
+		addNewCategoryButton = new JButton("Add category");
 		addNewCategoryButton.setFont(GraphicConstants.REGULARFONT);
 		addNewCategoryButton.setActionCommand("newCategory");
 		panel.add(addNewCategoryButton, "cell 1 0,alignx right,aligny center");

@@ -6,23 +6,35 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JButton;
+import javax.swing.JComponent;
+
 import view.*;
 
 public class CategoryPanelController implements ActionListener, MouseListener {
 	private CategoryPanel categoryPanel;
-	
+	private CategoryListView catListView;
 	//create a categorypanel which will be added in categoryListView
 	public CategoryPanelController(CategoryPanel categoryPanel, CategoryListView catListView){
 		this.categoryPanel=categoryPanel;
 		categoryPanel.setController(this);
+		this.catListView=catListView;
 	}
-	
+	@Override
 	public void actionPerformed(ActionEvent e){
-		
+		if(e.getSource() instanceof JComponent){
+			if(e.getActionCommand().equals("delete Category")){
+				catListView.panel.remove(categoryPanel);
+				catListView.updateView();
+				System.out.println("category deleted");
+			}
+			
+		}
 	}
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
 		if(e.getSource() instanceof CategoryPanel){
 			categoryPanel.getModel().markCategory();
 			//om den här metoden körs ska alla tasks som tillhör categorypanelns category visas i ListView,

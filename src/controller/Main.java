@@ -29,16 +29,17 @@ public class Main {
 		
 		TopView topView = new TopView();
 		
-		EditView editView = new EditView();
+		TaskSettingView taskSettings = new TaskSettingView();
 		
-		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, editView);
-		
-		HeaderController controller = new HeaderController(headerView, listView);
+		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, taskSettings);
+		CategoryModel model = new CategoryModel(null);
+		CategoryPanel catPanel = new CategoryPanel(model);
+		HeaderController controller = new HeaderController(headerView, listView, catPanel, taskSettings);
 		
 		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
 
 		frame.setTitle("uDoDo 1.0");
-		frame.setMinimumSize(new Dimension(650, 500));
+		frame.setMinimumSize(new Dimension(650, 700));
 		//frame.setResizable(false);
 
 		// Add gui to window

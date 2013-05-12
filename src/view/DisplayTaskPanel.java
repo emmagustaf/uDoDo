@@ -10,6 +10,7 @@ import model.*;
 import controller.DisplayController;
 
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 
 
@@ -19,22 +20,26 @@ import java.awt.Font;
  * @author Hanna
  *
  */
-public class DisplayTaskView extends JPanel {
+public class DisplayTaskPanel extends JPanel {
 	private JButton editButton;
 	private TaskModel model;
+	private DisplayController controller;
 
 	/**
 	 * Create the panel.
 	 */
-	public DisplayTaskView() {
+	public DisplayTaskPanel(DisplayModel displayModel, DisplayController controller) {
+		
+		this.controller=controller;
+		this.setController();
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[207.00][][]", "[][][][][][][][][]"));
 		
-		JLabel titleLabel = new JLabel(model.getTitle());
+		JLabel titleLabel = new JLabel(displayModel.getTaskModel().getTitle());
 		titleLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
 		add(titleLabel, "cell 0 0");
 		
-		JLabel descriptionLabel = new JLabel(model.getDescription());
+		JLabel descriptionLabel = new JLabel(displayModel.getTaskModel().getDescription());
 		descriptionLabel.setFont(GraphicConstants.REGULARFONT);
 		add(descriptionLabel, "cell 0 2");
 		
@@ -46,20 +51,20 @@ public class DisplayTaskView extends JPanel {
 		prioLabel.setFont(GraphicConstants.REGULARFONT);
 		add(prioLabel, "cell 0 6");
 		
-		JButton editButton = new JButton("Edit");
+		JButton editButton = new JButton("");
+		editButton.setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&16.png")));
+		editButton.setBorderPainted(false);
 		editButton.setFont(GraphicConstants.REGULARFONT);
 		add(editButton, "cell 1 8");
 		editButton.setActionCommand("editTask");
 		
-		JButton okButton = new JButton("OK");
-		okButton.setFont(GraphicConstants.REGULARFONT);
-		add(okButton, "cell 2 8");
-		
 		editButton.setActionCommand("editTask");
 
 	}
-	public void setController(DisplayController controller){
+	public void setController(){
+		System.out.println("Entered setController in disptaskpanel");
 		editButton.addActionListener(controller);
+		System.out.println("added actionlistener");
 	}
 	
 }

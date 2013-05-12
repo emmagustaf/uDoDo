@@ -7,27 +7,48 @@ import java.awt.event.MouseListener;
 
 
 
-import javax.swing.JComponent;
 
-import view.GUIView;
+
+import view.*;
 
 import model.DisplayModel;
-import view.EditView;
+import model.EditModel;
+import view.EditTaskPanel;
 
 public class DisplayController implements ActionListener{
-	private EditView editView;
+	private TaskSettingView settingView;
+//	private DisplayTaskPanel displayPanel;
+//	private MouseMethods listener = new MouseMethods();
+	
+	
+	public DisplayController(TaskSettingView settingView){
+		this.settingView=settingView;
+//		this.displayPanel.addMouseListener(listener);
+		
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		//if(e.getSource() instanceof DisplayModel){
-  //		DisplayModel model = (DisplayModel) e.getSource();
-			//if("editButton".equals(e.getActionCommand())){
-				//editView.setVisible(true);
-			//}
-		//}
-		if(e.getSource() instanceof JComponent){
-			if(e.getActionCommand.equals("editTask")){
-				editView.setVisible(true);
+		System.out.println("Entered action preformed");
+		
+		if(e.getSource() instanceof DisplayModel){
+			DisplayModel model = (DisplayModel) e.getSource();
+			
+			if("editButton".equals(e.getActionCommand())){
+				EditModel editModel = new EditModel();
+				EditTaskPanel editTaskPanel = new EditTaskPanel(model.getTaskModel());
+				settingView.removeAll();
+				settingView.add(editTaskPanel);
+				settingView.updateView();
+
 			}
+		}
+		
+		
+//		if(e.getSource() instanceof JComponent){
+//			if(e.getActionCommand.equals("editTask")){
+//				editView.setVisible(true);
+//			}
 				
 	}
 	private class MouseMethods implements MouseListener{

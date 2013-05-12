@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JPanel;
 import utility.*;
+import model.TaskModel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -16,14 +17,16 @@ import javax.swing.JButton;
  * @author Hanna
  *
  */
-public class EditView extends JPanel {
+public class EditTaskPanel extends JPanel {
 	private JTextField titleTextField;
 	private JTextField descriptionTextField;
+	private TaskModel taskModel;
 
 	/**
 	 * Create the panel.
 	 */
-	public EditView() {
+	public EditTaskPanel(TaskModel taskModel) {
+		this.taskModel = taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[][283.00,grow]", "[][][][][][][][][][]"));
 		
@@ -31,7 +34,7 @@ public class EditView extends JPanel {
 		changeTitleLabel.setFont(GraphicConstants.REGULARFONT);
 		add(changeTitleLabel, "cell 0 1,alignx right");
 		
-		titleTextField = new JTextField();
+		titleTextField = new JTextField(taskModel.getTitle());
 		titleTextField.setFont(GraphicConstants.REGULARFONT);
 		add(titleTextField, "cell 1 1,growx");
 		titleTextField.setColumns(10);
@@ -40,7 +43,7 @@ public class EditView extends JPanel {
 		changeDescriptionLabel.setFont(GraphicConstants.REGULARFONT);
 		add(changeDescriptionLabel, "cell 0 3,alignx right");
 		
-		descriptionTextField = new JTextField();
+		descriptionTextField = new JTextField(taskModel.getDescription());
 		descriptionTextField.setFont(GraphicConstants.REGULARFONT);
 		add(descriptionTextField, "cell 1 3,growx");
 		descriptionTextField.setColumns(10);
