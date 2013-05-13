@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Dimension;
+
 import javax.swing.JPanel;
 import utility.*;
 import model.TaskModel;
@@ -8,6 +10,11 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import controller.*;
+import javax.swing.JTextArea;
+import javax.swing.JEditorPane;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.UIManager;
 //Här kommer vi behöva ändra statet på task
 
 
@@ -19,7 +26,7 @@ import controller.*;
  */
 public class EditTaskPanel extends JPanel {
 	private JTextField titleTextField;
-	private JTextField descriptionTextField;
+	private JEditorPane descriptionTextField;
 	private TaskModel taskModel;
 	private JButton cancelButton = new JButton("Cancel");
 	private JButton saveButton = new JButton("Save");
@@ -28,6 +35,10 @@ public class EditTaskPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public EditTaskPanel(TaskModel taskModel) {
+		
+		this.setMinimumSize(new Dimension (300, 580));
+		this.setMaximumSize(new Dimension (300, 580));
+		this.setPreferredSize(new Dimension (300, 580));
 		this.taskModel = taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[][283.00,grow]", "[][][][][][][][][][]"));
@@ -38,17 +49,19 @@ public class EditTaskPanel extends JPanel {
 		
 		titleTextField = new JTextField(taskModel.getTitle());
 		titleTextField.setFont(GraphicConstants.REGULARFONT);
-		add(titleTextField, "cell 1 1,growx");
+		add(titleTextField, "cell 1 1,alignx left");
 		titleTextField.setColumns(10);
 		
 		JLabel changeDescriptionLabel = new JLabel("Change description:");
 		changeDescriptionLabel.setFont(GraphicConstants.REGULARFONT);
-		add(changeDescriptionLabel, "cell 0 3,alignx right");
+		add(changeDescriptionLabel, "cell 0 3,alignx right,aligny top");
 		
-		descriptionTextField = new JTextField(taskModel.getDescription());
+		descriptionTextField = new JEditorPane();
+		descriptionTextField.setText(taskModel.getDescription());
+		descriptionTextField.setBorder(UIManager.getBorder("TextField.border"));
+		descriptionTextField.setPreferredSize(new Dimension(150, 90));
 		descriptionTextField.setFont(GraphicConstants.REGULARFONT);
-		add(descriptionTextField, "cell 1 3,growx");
-		descriptionTextField.setColumns(10);
+		add(descriptionTextField, "cell 1 3,alignx left");
 		
 		JLabel changePriorityLabel = new JLabel("Change priority:");
 		changePriorityLabel.setFont(GraphicConstants.REGULARFONT);

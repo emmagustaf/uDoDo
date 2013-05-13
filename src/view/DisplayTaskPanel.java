@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Dimension;
+
 import javax.swing.JPanel;
 import utility.*;
 import net.miginfocom.swing.MigLayout;
@@ -28,6 +30,10 @@ public class DisplayTaskPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public DisplayTaskPanel(DisplayModel displayModel, TaskModel taskModel) {
+		
+		this.setMinimumSize(new Dimension (300, 580));
+		this.setMaximumSize(new Dimension (300, 580));
+		this.setPreferredSize(new Dimension (300, 580));
 	
 		this.taskModel=taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
