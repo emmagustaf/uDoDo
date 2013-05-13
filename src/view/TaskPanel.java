@@ -19,7 +19,7 @@ import javax.swing.JToggleButton;
 import java.awt.Color;
 
 /**
- * A class to represent a TaskPanel. 
+ * A view-class to represent a TaskPanel. 
  * 
  * @author Hanna
  */
@@ -29,6 +29,7 @@ public class TaskPanel extends JPanel {
 	private TaskModel model;
 	private String taskCheck;
 	private JButton deleteTaskButton;
+	
 	/**
 	 * Create the panel.
 	 */

@@ -27,6 +27,7 @@ public class CategoryModel {
 	public ListModel getTaskList(){
 		return listModel;
 	}
+	
 //	public List getList(){
 //		CategoryPanel categoryPanel = new CategoryPanel(this);
 //		this.setCatTitle("Alla");
@@ -34,6 +35,7 @@ public class CategoryModel {
 //		
 //		return catList;
 //	}
+	
 	public String getCatTitle() {
 		return catTitle;
 	}
@@ -47,7 +49,9 @@ public class CategoryModel {
 		CategoryPanel panel = new CategoryPanel(panelModel);
 		//catList.add(panel);
 	}
+	
 	public void removeCategory (CategoryPanel panelModel){
 		//catList.remove(panelModel);
 	}
+	
 }
