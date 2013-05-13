@@ -17,7 +17,12 @@ public class CategoryController implements ActionListener{
 	private CategoryListView catListView;
 	private ListView listView;
 	
-	//set the constructor of the CategoryController
+	/**
+	 * 	Creates a CategoryController
+	 * @param view
+	 * @param catListView
+	 * @param listView
+	 */
 	public CategoryController(CategoryView view, CategoryListView catListView, ListView listView){
 		this.view=view;
 		this.catListView = catListView;
@@ -27,7 +32,10 @@ public class CategoryController implements ActionListener{
 		//panelModel.setController(this);
 		
 	}
-	//Adds actionlistener for adding new categories to the categoryview
+
+	/**
+	 * 	Adds actionlistener for adding new categories-button to the categoryview
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 

@@ -1,25 +1,38 @@
 package model;
 
-public class CategoryPanelModel {
-
-	private String catTitle;
-	
-	
-	//method for adding new categories 
-	public void addNewCategoryPanel(String catTitle ){
-		this.catTitle=catTitle;
-		setCatTitle(catTitle);
-	}
-	
-	public void removeCategoryPanel(){
-		
-	}
-	
-	public void setCatTitle(String catTitle){
-		this.catTitle=catTitle;
-	}
-	
-	public String getCatTitle(){
-		return catTitle;
-	}
+//public class CategoryPanelModel {
+//
+//	private String catTitle;
+//	
+//	/**
+//	 * Adds new categories 
+//	 * @param catTitle
+//	 */
+//	public void addNewCategoryPanel(String catTitle ){
+//		this.catTitle=catTitle;
+//		setCatTitle(catTitle);
+//	}
+//	
+//	/**
+//	 * Removes actual categorypanel from view
+//	 */
+//	public void removeCategoryPanel(){
+//		
+//	}
+//	
+//	/**
+//	 * Sets categorytitle
+//	 * @param catTitle
+//	 */
+//	public void setCatTitle(String catTitle){
+//		this.catTitle=catTitle;
+//	}
+//	
+//	/**
+//	 * Returns categorytitle
+//	 * @return
+//	 */
+//	public String getCatTitle(){
+//		return catTitle;
+//	}
 }

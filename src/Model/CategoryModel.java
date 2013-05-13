@@ -6,6 +6,7 @@ import java.util.*;
 import view.*;
 import controller.*;
 
+
 public class CategoryModel {
 
 	private String catTitle;
@@ -17,13 +18,19 @@ public class CategoryModel {
 //	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
 //	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
 
-	
+	/**
+	 * Creates the categoryModel
+	 * @param catTitle
+	 */
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
 		listModel = new ListModel();
 	
 	}
-	
+	/**
+	 * Returns the actual TaskList
+	 * @return
+	 */
 	public ListModel getTaskList(){
 		return listModel;
 	}
@@ -36,20 +43,35 @@ public class CategoryModel {
 //		return catList;
 //	}
 	
+	/**
+	 * Returns the title connected to the category
+	 * @return
+	 */
 	public String getCatTitle() {
 		return catTitle;
 	}
 	
-
+	/**
+	 * Sets a title of the category
+	 * @param title
+	 * @return
+	 */
 	public String setCatTitle(String title) {
 		return title;
 	}
 
+	/**
+	 * Adds a new categoryPanel 
+	 * @param title
+	 */
 	public void addNewCategory(String title) {
 		CategoryPanel panel = new CategoryPanel(panelModel);
 		//catList.add(panel);
 	}
-	
+	/**
+	 * Removes the selected category
+	 * @param panelModel
+	 */
 	public void removeCategory (CategoryPanel panelModel){
 		//catList.remove(panelModel);
 	}

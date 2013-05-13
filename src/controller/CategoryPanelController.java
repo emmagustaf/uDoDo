@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.JButton;
 import javax.swing.JComponent;
 
 import view.*;
@@ -14,12 +13,21 @@ import view.*;
 public class CategoryPanelController implements ActionListener, MouseListener {
 	private CategoryPanel categoryPanel;
 	private CategoryListView catListView;
-	//create a categorypanel which will be added in categoryListView
+
+	/**
+	 * Create a categorypanel which will be added in categoryListView
+	 * @param categoryPanel
+	 * @param catListView
+	 */
 	public CategoryPanelController(CategoryPanel categoryPanel, CategoryListView catListView){
 		this.categoryPanel=categoryPanel;
 		categoryPanel.setController(this);
 		this.catListView=catListView;
 	}
+	
+	/**
+	 * Actionhandler for the button deletecategory
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() instanceof JComponent){
@@ -32,6 +40,9 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 		}
 	}
 	
+	/**
+	 * Mouseclicked-events for when the user clicks on categorypanels
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		

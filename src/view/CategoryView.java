@@ -11,9 +11,12 @@ import javax.swing.border.LineBorder;
 import javax.swing.GroupLayout.Alignment;
 public class CategoryView extends JPanel {
 	
-//	private String addCategory;
 	private JButton addNewCategoryButton;
 	private JTextField categoryTitleInput;
+	
+	/**
+	 * A class to represent the view which will interact with the user when adding new categories
+	 */
 	
 	public CategoryView(){
 		this.setBackground(GraphicConstants.BACKGROUND);
@@ -39,11 +42,20 @@ public class CategoryView extends JPanel {
 		addNewCategoryButton.setActionCommand("newCategory");
 		panel.add(addNewCategoryButton, "cell 1 0,alignx right,aligny center");
 	}
+	
+	/**
+	 * Set controller for the button and textfield
+	 * @param controller
+	 */
 	public void setController(CategoryController controller){
 		addNewCategoryButton.addActionListener(controller);
 		categoryTitleInput.addActionListener(controller);
 	}
 	
+	/**
+	 * Returns the categorytitle that the user has typed in
+	 * @return
+	 */
 	public JTextField getTextField(){
 		return categoryTitleInput;
 	}
