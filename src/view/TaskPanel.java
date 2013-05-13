@@ -73,6 +73,10 @@ public class TaskPanel extends JPanel {
 		deleteTaskButton.addActionListener(controller);
 	}
 	
+	public TaskPanel getTaskPanel(){
+		return this;
+	}
+	
 	public TaskModel getModel(){
 		return this.model;
 	}

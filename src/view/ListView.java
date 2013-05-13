@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.BoxLayout;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -43,5 +44,21 @@ public class ListView extends JScrollPane {
 		this.revalidate();
 		this.validate();
 		this.repaint();
+		
 	}	
+	
+	public void updatePanels(){
+		//TODO På något jävla sätt skall vi sätta om texten i taskpanelerna.. 
+		//TODO Pallar inte lista ut hur än. men taskpanelens textfields skall 
+		//TODO sättas om med det nya namnet från taskmodellen
+		
+		Component[] taskPanels = new Component[panelInScroll.getComponents().length];
+		taskPanels = (Component[]) panelInScroll.getComponents();
+
+		for(int i=0; i<taskPanels.length; i++){
+			System.out.println("Was here");
+			taskPanels[i].validate();
+			taskPanels[i].repaint();
+		}
+	}
 }

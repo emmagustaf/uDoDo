@@ -36,6 +36,7 @@ public class EditController implements ActionListener{
 			}else if(e.getActionCommand().equals("save")){
 				editModel.saveChanges(editTaskPanel);
 				settingView.updateView();
+				listView.updatePanels();
 				listView.updateView();
 			}
 		}
