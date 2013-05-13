@@ -4,6 +4,8 @@ public class CategoryPanelModel {
 
 	private String catTitle;
 	
+	
+	//method for adding new categories 
 	public void addNewCategoryPanel(String catTitle ){
 		this.catTitle=catTitle;
 		setCatTitle(catTitle);

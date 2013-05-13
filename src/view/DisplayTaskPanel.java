@@ -54,6 +54,7 @@ public class DisplayTaskPanel extends JPanel {
 		editButton.setActionCommand("editTask");
 
 	}
+	
 	public void setController(DisplayController controller){
 		System.out.println("Entered setController in disptaskpanel");
 		editButton.addActionListener(controller);

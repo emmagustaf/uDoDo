@@ -16,7 +16,6 @@ import model.EditModel;
 public class DisplayController implements ActionListener, MouseListener{
 	private TaskSettingView settingView;
 	private DisplayTaskPanel displayTaskPanel;
-	//private MouseMethods listener = new MouseMethods();
 	
 	
 	public DisplayController(TaskSettingView settingView, DisplayTaskPanel displayTaskPanel){
@@ -31,30 +30,24 @@ public class DisplayController implements ActionListener, MouseListener{
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Entered action preformed");
 		
-		if(e.getSource() instanceof DisplayModel){ 
-			DisplayModel model = (DisplayModel) e.getSource();
-		
-			//if(e.getSource() instanceof JComponent){
-				if(e.getActionCommand().equals("editTask")){
-					System.out.println("Pressed editbutton");
+		if(e.getSource() instanceof JComponent){
+			if(e.getActionCommand().equals("editTask")){
+				System.out.println("Pressed editbutton");
+				if(e.getSource() instanceof DisplayModel){
+					DisplayModel model = (DisplayModel) e.getSource();
 					EditModel editModel = new EditModel();
 					EditTaskPanel editTaskPanel = new EditTaskPanel(model.getTaskModel());
 					settingView.removeAll();
 					settingView.add(editTaskPanel);
 					settingView.updateView();
-				//}
+				}
 			}
 		}
 		
-		
-//		if(e.getSource() instanceof JComponent){
-//			if(e.getActionCommand.equals("editTask")){
-//				editView.setVisible(true);
-//			}
+	
 				
 	}
 	
-//	private class MouseMethods implements MouseListener{
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
@@ -87,7 +80,5 @@ public class DisplayController implements ActionListener, MouseListener{
 			
 		}
 		
-		
-//	}
 
 }
