@@ -13,16 +13,22 @@ import java.awt.GridBagConstraints;
 import java.awt.Color;
 import java.awt.Insets;
 
-// A class for categorypanels. Each category will be represented by 
-// a panel.
+/**
+ *  A class for categorypanels. Each category will be represented by 
+ *  a panel.
+ * @author Emma
+ *
+ */
 public class CategoryPanel extends JPanel{
 	
-	private CategoryPanelModel panelModel;
 	private JLabel catLabel;
 	private CategoryModel model;
 	private JButton deleteCatButton = new JButton();
 
-	//Set all the graphical data for the panels
+	/**
+	 * Set all the graphical data for the panels 
+	 * @param model
+	 */
 	public CategoryPanel(CategoryModel model) {
 		this.model=model;
 		this.setBackground(GraphicConstants.BACKGROUND);
@@ -69,16 +75,21 @@ public class CategoryPanel extends JPanel{
 		gbc_deleteCatButton.gridy = 0;
 		add(deleteCatButton, gbc_deleteCatButton);
 	}
-	// Set controller for the panel, mouselistener will handle what 
-	// actions will be performed when the panel is clicked upon 
-	// Also set controller for the deletebutton included in the panel
+	/**
+	 *  Set controller for the panel, mouselistener will handle what 
+	 *  actions will be performed when the panel is clicked upon 
+	 *	Also set controller for the deletebutton included in the panel
+	 * @param controller
+	 */
 	
 	public void setController(CategoryPanelController controller){
 		this.addMouseListener(controller);
 		deleteCatButton.addActionListener(controller);
 	}
-	
-	// Method returning the actual model
+	/**
+	 * 	 Method returning the actual model
+	 * @return
+	 */
 	public CategoryModel getModel(){
 		return this.model;
 	}
