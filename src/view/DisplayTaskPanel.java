@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 ;
 
 /**
- * A class to represent the view where you can see the title, description, priority and deadline of the task
+ * A class to represent the view where you can see more details; the title, description, priority and deadline of the task
  *
  * @author Hanna
  *
