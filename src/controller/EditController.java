@@ -10,17 +10,15 @@ public class EditController implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {	
+		if(e.getSource() instanceof EditModel){
+			EditModel model = (EditModel) e.getSource();
+			
+		}
 		if(e.getActionCommand().equals("cancel")){
-			if(e.getSource() instanceof EditModel){
-				EditModel model = (EditModel) e.getSource();
-				
-			}
+			
 			
 		}else if(e.getActionCommand().equals("save")){
-			if(e.getSource() instanceof EditModel){
-				EditModel model = (EditModel) e.getSource();
-				
-			}
+			
 		}
 		
 		
