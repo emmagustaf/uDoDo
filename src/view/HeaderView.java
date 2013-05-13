@@ -15,23 +15,27 @@ public class HeaderView extends JPanel{
 
 	//TODO Create button "Ny" and textfield to get taskname
 	//private HeaderController controller;
+	
 	private JTextField taskTitleInput;
 	private JButton addNewTaskButton;
 	
 	public HeaderView() {
+		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		setLayout(new MigLayout("", "[][391.00px][98.00px][90.00]", "[23px][][]"));
 		setPreferredSize(new Dimension(300, 70));
 		setMinimumSize(new Dimension(300, 70));
 		setMaximumSize(new Dimension(300, 70));
+		
 		Component horizontalStrut = Box.createHorizontalStrut(20);
 		add(horizontalStrut, "cell 0 1");
+		
 		taskTitleInput = new JTextField(30);
 		taskTitleInput.setFont(GraphicConstants.REGULARFONT);
 		taskTitleInput.setActionCommand("newTask");
-		
 		this.add(taskTitleInput, "cell 1 1,alignx right,aligny center");
+		
 		addNewTaskButton = new JButton("Add");
 		addNewTaskButton.setFont(GraphicConstants.REGULARFONT);
 		this.add(addNewTaskButton, "cell 2 1,alignx center,aligny top");

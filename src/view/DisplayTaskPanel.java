@@ -63,12 +63,18 @@ public class DisplayTaskPanel extends JPanel {
 		editButton.setActionCommand("editTask");
 
 	}
+	
+	/**
+	 * Returns the actual taskmodel.
+	 * 
+	 * @return taskmodel
+	 */
 	public TaskModel getTaskModel(){
 		return this.taskModel;
 	}
 	
 	/**
-	 * Set controller for the panel. 
+	 * Sets the controller for the panel. 
 	 * Mouselistener will handle what actions will be performed when the editbutton is clicked
 	 * 
 	 * @param controller
@@ -78,5 +84,5 @@ public class DisplayTaskPanel extends JPanel {
 		editButton.addActionListener(controller);
 		this.addMouseListener(controller);
 	}
-	
+
 }

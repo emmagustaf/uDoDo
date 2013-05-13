@@ -18,6 +18,7 @@ public class ListView extends JScrollPane {
 	 * Create the panel.
 	 */
 	public ListView() {
+		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		this.setMinimumSize(new Dimension (300, 500));
 		this.setMaximumSize(new Dimension (300, 500));
@@ -27,18 +28,20 @@ public class ListView extends JScrollPane {
 		panelInScroll = new JPanel();
 		panelInScroll.setBackground(GraphicConstants.BACKGROUND);
 		panelInScroll.setLayout(new BoxLayout(panelInScroll, BoxLayout.Y_AXIS));
+		
 		getViewport().setView(panelInScroll);
 		
 		
 	}
 	
 	public void updateView(){
+		
 		panelInScroll.revalidate();
 		panelInScroll.validate();
 		panelInScroll.repaint();
+		
 		this.revalidate();
 		this.validate();
 		this.repaint();
-		System.out.println("updated view");
 	}	
 }

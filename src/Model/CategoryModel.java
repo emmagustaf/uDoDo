@@ -6,7 +6,12 @@ import java.util.*;
 import view.*;
 import controller.*;
 
-
+/**
+ * A class to represent a model of the category.
+ * 
+ * @author Hanna
+ *
+ */
 public class CategoryModel {
 
 	private String catTitle;
@@ -54,7 +59,7 @@ public class CategoryModel {
 	/**
 	 * Sets a title of the category
 	 * @param title
-	 * @return
+	 * @return 
 	 */
 	public String setCatTitle(String title) {
 		return title;

@@ -9,7 +9,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-
+/**
+ * A class to represent a CategoryController.
+ * @author Hanna
+ *
+ */
 public class CategoryController implements ActionListener{
 
 	private CategoryView view;
@@ -33,9 +37,6 @@ public class CategoryController implements ActionListener{
 		
 	}
 
-	/**
-	 * 	Adds actionlistener for adding new categories-button to the categoryview
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 

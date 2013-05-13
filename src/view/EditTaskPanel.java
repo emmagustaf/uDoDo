@@ -15,7 +15,6 @@ import javax.swing.JEditorPane;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.UIManager;
-//Här kommer vi behöva ändra statet på task
 
 
 /**
@@ -25,6 +24,7 @@ import javax.swing.UIManager;
  *
  */
 public class EditTaskPanel extends JPanel {
+	
 	private JTextField titleTextField;
 	private JEditorPane descriptionTextField;
 	private TaskModel taskModel;

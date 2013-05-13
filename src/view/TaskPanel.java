@@ -80,4 +80,5 @@ public class TaskPanel extends JPanel {
 	public TaskPanel getPanel(){
 		return this;
 	}
+	
 }
