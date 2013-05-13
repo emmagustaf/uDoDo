@@ -9,18 +9,20 @@ import model.*;
 import controller.*;
 
 import javax.swing.ImageIcon;
-;
+
 
 /**
- * A class to represent the view where you can see the title, description, priority and deadline of the task
+ * A class to represent the view where you can see more details; the title, description, priority and deadline of the task
  *
  * @author Hanna
  *
  */
 public class DisplayTaskPanel extends JPanel {
+	
 	private JButton editButton = new JButton();
 	private TaskModel taskModel;
 	private DisplayController controller;
+	
 	/**
 	 * Create the panel.
 	 */

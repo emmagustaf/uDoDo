@@ -1,13 +1,20 @@
 package model;
 
+
 public class DisplayModel {
+	
 	private String title;
 	private String description;
 	private TaskModel task;
 	
+	/**
+	 * Create a new model
+	 * @param task
+	 */
 	public DisplayModel(TaskModel task){
 		this.task=task;
 	}
+	
 	public String getTaskTitle() {
 		return task.getTitle();
 	}

@@ -14,10 +14,15 @@ import model.DisplayModel;
 import model.EditModel;
 
 public class DisplayController implements ActionListener, MouseListener{
+	
 	private TaskSettingView settingView;
 	private DisplayTaskPanel displayTaskPanel;
 	
-	
+	/**
+	 * 
+	 * @param settingView
+	 * @param displayTaskPanel
+	 */
 	public DisplayController(TaskSettingView settingView, DisplayTaskPanel displayTaskPanel){
 		this.settingView=settingView;
 		this.displayTaskPanel=displayTaskPanel;
@@ -42,10 +47,7 @@ public class DisplayController implements ActionListener, MouseListener{
 					settingView.updateView();
 				}
 			}
-		}
-		
-	
-				
+		}			
 	}
 	
 
