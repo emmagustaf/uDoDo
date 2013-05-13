@@ -59,7 +59,7 @@ public class CategoryModel {
 	/**
 	 * Sets a title of the category
 	 * @param title
-	 * @return
+	 * @return 
 	 */
 	public String setCatTitle(String title) {
 		return title;

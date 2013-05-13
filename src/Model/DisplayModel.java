@@ -23,7 +23,7 @@ public class DisplayModel {
 	/**
 	 * Returns the title of the task.
 	 * 
-	 * @return 
+	 * @return the title of the task
 	 */
 	public String getTaskTitle() {
 		return task.getTitle();
@@ -32,24 +32,34 @@ public class DisplayModel {
 	/**
 	 * Returns the description of the task
 	 * 
-	 * @return
+	 * @return the description of the task
 	 */
 	public String getTaskDescription(){
 		return  task.getDescription();
 	}
 	
 	/**
-	 *
-	 * @return
+	 * Returns the actual taskmodel.
+	 * @return task
 	 */
 	public TaskModel getTaskModel(){
 		return this.task;
 	}
 	
+	/**
+	 * Sets the title of the task
+	 * 
+	 * @return title
+	 */
 	public String setTaskTitle() {
 		return title;
 	}
 	
+	/**
+	 * Sets the Description of the task
+	 * @param description
+	 * @return description
+	 */
 	public String setTaskDescription(String description){
 		return description;
 	}
