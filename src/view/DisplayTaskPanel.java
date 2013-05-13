@@ -12,9 +12,10 @@ import javax.swing.ImageIcon;
 
 
 /**
- * A class to represent the view where you can see more details; the title, description, priority and deadline of the task
+ * A class to represent the view where you can see more details about a task, which includes
+ * the title, description, priority and deadline of the task
  *
- * @author Hanna
+ * @author Hanna Materne
  *
  */
 public class DisplayTaskPanel extends JPanel {
@@ -57,11 +58,16 @@ public class DisplayTaskPanel extends JPanel {
 
 	}
 	
+	/**
+	 * Set controller for the panel. 
+	 * Mouselistener will handle what actions will be performed when the editbutton is clicked
+	 * 
+	 * @param controller
+	 */
 	public void setController(DisplayController controller){
-		System.out.println("Entered setController in disptaskpanel");
+		
 		editButton.addActionListener(controller);
 		this.addMouseListener(controller);
-		System.out.println("added actionlistener");
 	}
 	
 }
