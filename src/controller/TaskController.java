@@ -77,19 +77,6 @@ public class TaskController implements ActionListener {
 			taskSetting.panelInScroll.removeAll();
 			taskSetting.panelInScroll.add(displayPanel);
 			taskSetting.updateView();
-			
-			
-
-			if(e.getSource() instanceof JComponent){
-				DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
-				
-				DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, taskPanel.getModel());
-				DisplayController displayController = new DisplayController(taskSetting, displayPanel);
-	
-				taskSetting.panelInScroll.removeAll();
-				taskSetting.panelInScroll.add(displayPanel);
-				taskSetting.updateView();
-			}
 
 		}
 	}
