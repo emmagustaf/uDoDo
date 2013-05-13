@@ -42,17 +42,16 @@ public class DisplayController implements ActionListener, MouseListener{
 		
 		if(e.getSource() instanceof JComponent){
 
-			settingView.removeAll();
-			settingView.add(displayTaskPanel);
+			settingView.panelInScroll.removeAll();
+			settingView.panelInScroll.add(displayTaskPanel);
 			settingView.updateView();
-		}
-		if(e.getActionCommand().equals("editTask")){
+		}else if(e.getActionCommand().equals("editTask")){
 			System.out.println("presset editbutton");
-			settingView.removeAll();
+			settingView.panelInScroll.removeAll();
 		//	EditModel editModel = new EditModel();
 			EditTaskPanel editTaskPanel = new EditTaskPanel(displayTaskPanel.getModel());
 					
-			settingView.add(editTaskPanel);
+			settingView.panelInScroll.add(editTaskPanel);
 			settingView.updateView();
 					
 			
