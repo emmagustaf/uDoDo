@@ -36,7 +36,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		
 		if(e.getSource() instanceof CategoryPanel){
-			categoryPanel.getModel().markCategory();
+			catListView.markCategory(categoryPanel);
 			//om den här metoden körs ska alla tasks som tillhör categorypanelns category visas i ListView,
 			//och categorymodelens status ska ändras till markerad, samtidigt som om det finns en categorypanel med 
 			//status markerad ska denna göras omarkerad (alltså med en metod för detta i categorymodel)

@@ -31,19 +31,20 @@ public class HeaderController implements ActionListener{
 		//this.catListView = catListView;
 	//}
 	
-	public HeaderController(HeaderView headerView, ListView view, CategoryPanel catPanel, TaskSettingView taskSetting){
+	public HeaderController(HeaderView headerView, ListView view, CategoryPanel catPanel, TaskSettingView taskSetting, CategoryListView catListView){
 		this.headerView = headerView;
 		this.headerView.setController(this);
 		this.view = view;
 		this.catPanel = catPanel;
 		this.taskSetting = taskSetting;
+		this.catListView = catListView;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
 			if(e.getActionCommand().equals("newTask") && headerView.getTextField().getText().length() > 0){
-				TaskModel task = new TaskModel(headerView.getTextField().getText());
+				TaskModel task = new TaskModel(headerView.getTextField().getText(), catListView.getMarkedPanel());
 				
 				//här behövs det få tag på info om en panel är markerad eller inte, en panel markeras via
 				//mouselistener i categorypanelcontroller. 

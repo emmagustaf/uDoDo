@@ -15,8 +15,8 @@ public class CategoryModel {
 	private ListModel listModel;
 	
 //	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
-	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
-	private CategoryListView catList = new CategoryListView();
+//	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
+
 	
 	public CategoryModel(String catTitle) {
 		this.catTitle = catTitle;
@@ -38,17 +38,6 @@ public class CategoryModel {
 		return catTitle;
 	}
 	
-	public void markCategory(){
-		markedList.addFirst(this);
-		System.out.println("marked");
-	}
-	
-	public boolean getMarkedStatus(){
-		if(markedList.getFirst().equals(this)){
-			return true;
-		}
-		return false;
-	}
 
 	public String setCatTitle(String title) {
 		return title;
@@ -56,9 +45,9 @@ public class CategoryModel {
 
 	public void addNewCategory(String title) {
 		CategoryPanel panel = new CategoryPanel(panelModel);
-		catList.add(panel);
+		//catList.add(panel);
 	}
 	public void removeCategory (CategoryPanel panelModel){
-		catList.remove(panelModel);
+		//catList.remove(panelModel);
 	}
 }

@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Dimension;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 import utility.GraphicConstants;
 
@@ -8,13 +10,17 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import model.CategoryModel;
+
 //A class to keep a graphical list of panels each representing a category
 // the list will be represented in a scrollpane
 public class CategoryListView extends JScrollPane{ 
 	
-	//Create a panel that will be the actual container
+	//Create a panel that will be the actual container 
 	// for the categorypanels 
 	public JPanel panel;
+	
+	private Deque<CategoryPanel> catDeque = new ArrayDeque<CategoryPanel>();
 	
 	//Set all the graphical data for the scrollpane
 	public CategoryListView(){
@@ -30,6 +36,10 @@ public class CategoryListView extends JScrollPane{
 		panel.setBackground(GraphicConstants.BACKGROUND);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS ));
 		
+		CategoryPanel defaultCatPanel = new CategoryPanel(new CategoryModel("Alla"));
+		this.add(defaultCatPanel);
+		addToCatList(defaultCatPanel);
+		
 		getViewport().setView(panel);
 		
 	}
@@ -44,5 +54,19 @@ public class CategoryListView extends JScrollPane{
 		this.repaint();
 		this.setVisible(true);
 		System.out.println("view updated");
+	}
+	
+	public void addToCatList(CategoryPanel catPanel){
+		catDeque.addLast(catPanel);
+	}
+	
+	public void markCategory(CategoryPanel catPanel){
+		catDeque.addFirst(catPanel);
+		System.out.println("marked");
+	}
+	
+	public CategoryPanel getMarkedPanel(){
+		System.out.println("getpanel working");
+		return catDeque.getFirst();
 	}
 }
