@@ -39,14 +39,9 @@ public class DisplayController implements ActionListener, MouseListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource() instanceof JComponent){
+		System.out.println("entered");
 
-			settingView.panelInScroll.removeAll();
-			settingView.panelInScroll.add(displayTaskPanel);
-			settingView.updateView();
-
-		}else if(e.getActionCommand().equals("editTask")){
+		if(e.getActionCommand().equals("editTask")){
 			System.out.println("presset editbutton");
 			settingView.panelInScroll.removeAll();
 
