@@ -14,6 +14,7 @@ public class DisplayModel {
 	
 	/**
 	 * Create a new model
+	 * 
 	 * @param task
 	 */
 	public DisplayModel(TaskModel task){
@@ -40,6 +41,7 @@ public class DisplayModel {
 	
 	/**
 	 * Returns the actual taskmodel.
+	 * 
 	 * @return task
 	 */
 	public TaskModel getTaskModel(){
@@ -57,6 +59,7 @@ public class DisplayModel {
 	
 	/**
 	 * Sets the Description of the task
+	 * 
 	 * @param description
 	 * @return description
 	 */
