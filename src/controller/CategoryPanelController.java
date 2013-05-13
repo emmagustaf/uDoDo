@@ -10,6 +10,11 @@ import javax.swing.JComponent;
 
 import view.*;
 
+/**
+ * A class to represent a controller for the CategoryPanel.
+ * @author Hanna
+ *
+ */
 public class CategoryPanelController implements ActionListener, MouseListener {
 	private CategoryPanel categoryPanel;
 	private CategoryListView catListView;

@@ -6,7 +6,12 @@ import java.util.*;
 import view.*;
 import controller.*;
 
-
+/**
+ * A class to represent a model of the category.
+ * 
+ * @author Hanna
+ *
+ */
 public class CategoryModel {
 
 	private String catTitle;
