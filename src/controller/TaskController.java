@@ -72,7 +72,7 @@ public class TaskController implements ActionListener {
 			DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
 			
 			DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, taskPanel.getModel());
-			DisplayController displayController = new DisplayController(taskSetting, displayPanel);
+			DisplayController displayController = new DisplayController(listView, taskSetting, displayPanel);
 
 			taskSetting.panelInScroll.removeAll();
 			taskSetting.panelInScroll.add(displayPanel);

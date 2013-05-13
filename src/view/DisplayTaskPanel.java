@@ -63,7 +63,7 @@ public class DisplayTaskPanel extends JPanel {
 		editButton.setActionCommand("editTask");
 
 	}
-	public TaskModel getModel(){
+	public TaskModel getTaskModel(){
 		return this.taskModel;
 	}
 	

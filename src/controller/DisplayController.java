@@ -20,6 +20,7 @@ import model.EditModel;
  */
 public class DisplayController implements ActionListener, MouseListener{
 	
+	private ListView listView;
 	private TaskSettingView settingView;
 	private DisplayTaskPanel displayTaskPanel;
 
@@ -29,7 +30,8 @@ public class DisplayController implements ActionListener, MouseListener{
 	 * @param settingView
 	 * @param displayTaskPanel
 	 */
-	public DisplayController(TaskSettingView settingView, DisplayTaskPanel displayTaskPanel){
+	public DisplayController(ListView listView, TaskSettingView settingView, DisplayTaskPanel displayTaskPanel){
+		this.listView=listView;
 		this.settingView=settingView;
 		this.displayTaskPanel=displayTaskPanel;
 		displayTaskPanel.setController(this);
@@ -45,8 +47,9 @@ public class DisplayController implements ActionListener, MouseListener{
 			System.out.println("presset editbutton");
 			settingView.panelInScroll.removeAll();
 
-		//	EditModel editModel = new EditModel();
-			EditTaskPanel editTaskPanel = new EditTaskPanel(displayTaskPanel.getModel());
+			EditModel editModel = new EditModel();
+			EditTaskPanel editTaskPanel = new EditTaskPanel(displayTaskPanel.getTaskModel());
+			EditController editController = new EditController(listView, settingView, editTaskPanel, editModel);
 					
 			settingView.panelInScroll.add(editTaskPanel);
 			settingView.updateView();
