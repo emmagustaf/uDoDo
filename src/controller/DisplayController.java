@@ -22,7 +22,7 @@ public class DisplayController implements ActionListener, MouseListener{
 	
 	private TaskSettingView settingView;
 	private DisplayTaskPanel displayTaskPanel;
-	
+
 	/**
 	 * Create the controller. 
 	 * 
@@ -44,19 +44,20 @@ public class DisplayController implements ActionListener, MouseListener{
 
 			settingView.removeAll();
 			settingView.add(displayTaskPanel);
-	
-			if(e.getActionCommand().equals("editTask")){
-	
-					EditModel editModel = new EditModel();
-					EditTaskPanel editTaskPanel = new EditTaskPanel(displayTaskPanel.getModel());
+			settingView.updateView();
+		}
+		if(e.getActionCommand().equals("editTask")){
+			System.out.println("presset editbutton");
+			settingView.removeAll();
+		//	EditModel editModel = new EditModel();
+			EditTaskPanel editTaskPanel = new EditTaskPanel(displayTaskPanel.getModel());
 					
-					settingView.add(editTaskPanel);
-					settingView.updateView();
+			settingView.add(editTaskPanel);
+			settingView.updateView();
 					
 			
-				}
-			
-		}			
+		}		
+				
 	}
 	
 
@@ -64,7 +65,6 @@ public class DisplayController implements ActionListener, MouseListener{
 		public void mouseClicked(MouseEvent e) {
 			
 			if(e.getSource() instanceof DisplayTaskPanel){
-				System.out.println("Clicked Panel");
 			}
 		}
 

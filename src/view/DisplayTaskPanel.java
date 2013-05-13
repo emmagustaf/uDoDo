@@ -60,6 +60,7 @@ public class DisplayTaskPanel extends JPanel {
 	public TaskModel getModel(){
 		return this.taskModel;
 	}
+
 	
 	/**
 	 * Set controller for the panel. 
