@@ -84,6 +84,5 @@ public class DisplayTaskPanel extends JPanel {
 		editButton.addActionListener(controller);
 		this.addMouseListener(controller);
 	}
-	
-	
+
 }

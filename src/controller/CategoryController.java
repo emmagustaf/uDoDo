@@ -37,9 +37,6 @@ public class CategoryController implements ActionListener{
 		
 	}
 
-	/**
-	 * 	Adds actionlistener for adding new categories-button to the categoryview
-	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
