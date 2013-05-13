@@ -29,6 +29,7 @@ public class TaskPanel extends JPanel {
 	private TaskModel model;
 	private String taskCheck;
 	private JButton deleteTaskButton;
+	
 	/**
 	 * Create the panel.
 	 */

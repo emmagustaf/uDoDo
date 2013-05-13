@@ -8,7 +8,7 @@ public class DisplayModel {
 	private TaskModel task;
 	
 	/**
-	 * 
+	 * Create a new model
 	 * @param task
 	 */
 	public DisplayModel(TaskModel task){
