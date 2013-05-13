@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import view.CategoryPanel;
+
 public class TaskModel {
 	private enum Priority{
 		HIGH_PRIORITY, NO_PRIORITY
@@ -14,7 +16,7 @@ public class TaskModel {
 	private String description;
 	private Priority prio;
 	private Date deadline;
-	private ListModel listModel;
+	private CategoryPanel catPanel;
 	//private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
 	//we will have to find a way to keep track of unchecked and checked tasks
 	//I think it will be too many lists with stuff soon...
@@ -25,9 +27,10 @@ public class TaskModel {
 		this.prio = Priority.NO_PRIORITY;
 	}
 	
-	public TaskModel(String title, ListModel listModel){
+	public TaskModel(String title, CategoryPanel catPanel){
 		this(title);
-		this.listModel = listModel;
+		this.catPanel = catPanel;
+		
 		//this.uncheckedTaskList.add(this);
 	}
 	
@@ -46,8 +49,8 @@ public class TaskModel {
 			
 	}
 	
-	public ListModel getCategory(){
-		return listModel;
+	public CategoryModel getCategory(){
+		return catPanel.getModel();
 	}
 	
 	public void changeState(){

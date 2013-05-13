@@ -7,7 +7,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-
+import controller.*;
 //Här kommer vi behöva ändra statet på task
 
 
@@ -21,7 +21,9 @@ public class EditTaskPanel extends JPanel {
 	private JTextField titleTextField;
 	private JTextField descriptionTextField;
 	private TaskModel taskModel;
-
+	private JButton cancelButton = new JButton("Cancel");
+	private JButton saveButton = new JButton("Save");
+	
 	/**
 	 * Create the panel.
 	 */
@@ -56,23 +58,31 @@ public class EditTaskPanel extends JPanel {
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(changeDeadlineLabel, "cell 0 7,alignx right");
 		
-		JButton cancelButton = new JButton("Cancel");
+		
 		cancelButton.setFont(GraphicConstants.REGULARFONT);
+		cancelButton.setActionCommand("cancel");
 		add(cancelButton, "flowx,cell 1 9,alignx right");
 		
-		JButton saveButton = new JButton("Save");
+	
 		saveButton.setFont(GraphicConstants.REGULARFONT);
+		saveButton.setActionCommand("save");
 		add(saveButton, "cell 1 9,alignx right");
 		
 	
 
 	}
+	
 	public String getTitleTextField(){
 		return titleTextField.getText();
 	}
+	
 	public String getDescriptionTextField(){
 		return descriptionTextField.getText();
 	}
 	
+	public void setController(EditController controller){
+		saveButton.addActionListener(controller);
+		cancelButton.addActionListener(controller);
+	}
 
 }

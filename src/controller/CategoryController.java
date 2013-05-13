@@ -37,6 +37,7 @@ public class CategoryController implements ActionListener{
 				CategoryPanel catPanel = new CategoryPanel(cat);				
 				catListView.panel.add(catPanel);
 				view.getTextField().setText("");
+				catListView.addToCatList(catPanel);
 				catListView.updateView();
 				CategoryPanelController catController = new CategoryPanelController(catPanel, catListView);
 				System.out.println("category added");
