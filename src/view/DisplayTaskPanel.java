@@ -57,6 +57,9 @@ public class DisplayTaskPanel extends JPanel {
 		editButton.setActionCommand("editTask");
 
 	}
+	public TaskModel getModel(){
+		return this.taskModel;
+	}
 	
 	/**
 	 * Set controller for the panel. 

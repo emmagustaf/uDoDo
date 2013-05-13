@@ -29,10 +29,14 @@ public class TaskSettingView extends JScrollPane{
 	}
 	
 	public void updateView(){
-		panelInScroll.validate();
+		
+		panelInScroll.revalidate();
 		panelInScroll.repaint();
-		this.validate();
+		panelInScroll.validate();
+		
+		this.revalidate();
 		this.repaint();
+		this.setVisible(true);
 	}
 
 }
