@@ -1,10 +1,15 @@
 package model;
 
+
 public class DisplayModel {
 	private String title;
 	private String description;
 	private TaskModel task;
 	
+	/**
+	 * 
+	 * @param task
+	 */
 	public DisplayModel(TaskModel task){
 		this.task=task;
 	}
