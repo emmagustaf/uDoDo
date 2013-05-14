@@ -9,7 +9,7 @@ public class GraphicConstants {
 	public final static Font SMALLHEADINGFONT = (new Font("Tahoma", Font.BOLD, 14));
 	public final static Font HEADINGFONT = (new Font("Tahoma", Font.BOLD, 18));
 	
-	public final static Color BACKGROUND = Color.WHITE;
+	public final static Color BACKGROUND = (new Color(67, 67, 67));
 	public final static Color FOREGROUND = Color.BLACK;
 
 }
