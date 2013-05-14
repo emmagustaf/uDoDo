@@ -49,36 +49,52 @@ public class TaskModel {
 			
 	}
 	
+	public void changeState(){
+		checked = !checked;
+	}
+	
+	public Priority getPrio(){
+		return prio;
+	}
+	
+	public String getTitle(){
+		return title;
+	}
+	
+	public String getDescription(){
+		return description;
+	}
+	
+	public Date getDeadline(){
+		return deadline;
+	}
+	
+	public void setTitle(String title){
+		this.title=title;
+	}
+	
+	public void setDescription(String description){
+		this.description=description;
+	}
+	
+	public void setPrio(Priority prio){
+		this.prio=prio;
+	}
+	
+	public void setDeadline(Date deadline){
+		this.deadline=deadline;
+	}
+	
 	public CategoryModel getCategory(){
 		return catPanel.getModel();
 	}
 	
-	public void changeState(){
-		checked = !checked;
-	}
-	public Priority getPrio(){
-		return prio;
-	}
-	public String getTitle(){
-		return title;
-	}
-	public String getDescription(){
-		return description;
-	}
-	public Date getDeadline(){
-		return deadline;
-	}
-	public void setTitle(String title){
-		this.title=title;
-	}
-	public void setDescription(String description){
-		this.description=description;
-	}
-	public void setPrio(Priority prio){
-		this.prio=prio;
-	}
-	public void setDeadline(Date deadline){
-		this.deadline=deadline;
+	/**
+	 * Sets the category of the task.
+	 * 
+	 */
+	public void setCategory(){
+	
 	}
 }
 
