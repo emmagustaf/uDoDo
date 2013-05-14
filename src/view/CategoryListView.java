@@ -54,7 +54,7 @@ public class CategoryListView extends JScrollPane{
 		
 		CategoryPanel completedDefaultCatPan = new CategoryPanel(new CategoryModel("Avklarat"));
 		this.add(completedDefaultCatPan);
-		addToCatList(completedDefaultCatPan);
+		addDefaultToCatList(completedDefaultCatPan);
 		
 		getViewport().setView(panel);
 		
@@ -89,8 +89,8 @@ public class CategoryListView extends JScrollPane{
 	/**
 	 * Adds defaultcategory in deque
 	 */
-	public void addDefaultToCatList(CategoryPanel defaultCatPanel){
-		catDeque.addFirst(defaultCatPanel);
+	public void addDefaultToCatList(CategoryPanel catPanel){
+		catDeque.addFirst(catPanel);
 	}
 	
 	/**
