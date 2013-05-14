@@ -31,7 +31,9 @@ public class EditController implements ActionListener{
 //			TaskModel model = panel.getTaskModel();
 		
 			if(e.getActionCommand().equals("cancel")){
-				
+				System.out.println("Entered action commant in cancel.");
+				editModel.cancelChanges(settingView);
+				listView.updateView();
 				
 			}else if(e.getActionCommand().equals("save")){
 				editModel.saveChanges(editTaskPanel);

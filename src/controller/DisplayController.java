@@ -51,7 +51,7 @@ public class DisplayController implements ActionListener, MouseListener{
 			EditTaskPanel editTaskPanel = new EditTaskPanel(displayTaskPanel.getTaskModel());
 			EditController editController = new EditController(listView, settingView, editTaskPanel, editModel);
 					
-			settingView.panelInScroll.add(editTaskPanel);
+			settingView.panelInScroll.add(editTaskPanel, 0);
 			settingView.updateView();
 					
 			

@@ -15,11 +15,12 @@ public class TaskSettingView extends JScrollPane{
 	public TaskSettingView(){
 	
 	this.setBackground(GraphicConstants.BACKGROUND);
+	this.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
 	this.setMinimumSize(new Dimension (300, 580));
 	this.setMaximumSize(new Dimension (300, 580));
 	this.setPreferredSize(new Dimension (300, 580));
 	
-	this.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
+	
 	
 	panelInScroll = new JPanel();
 	panelInScroll.setBackground(GraphicConstants.BACKGROUND);
