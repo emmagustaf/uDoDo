@@ -33,24 +33,33 @@ public class EditController implements ActionListener{
 //			TaskModel model = panel.getTaskModel();
 		
 			if(e.getActionCommand().equals("cancel")){
-				
+				toDisplayTask();
 				System.out.println("Entered action commant in cancel.");
-				editModel.cancelChanges(settingView);
-				DisplayModel model = new DisplayModel(editTaskPanel.getTaskModel());
-				displayTaskPanel = new DisplayTaskPanel(model, editTaskPanel.getTaskModel());
-				settingView.panelInScroll.add(displayTaskPanel);
 				settingView.updateView();
 				listView.updateView();
 				
 				
 			}else if(e.getActionCommand().equals("save")){
-				editModel.saveChanges(editTaskPanel);
+				saveChanges();
 				settingView.updateView();
 				listView.updatePanels();
 				listView.updateView();
 			}
 		}
 		
+	}
+	
+	private void toDisplayTask(){
+		settingView.panelInScroll.removeAll();
+		DisplayModel model = new DisplayModel(editTaskPanel.getTaskModel());
+		displayTaskPanel = new DisplayTaskPanel(model, editTaskPanel.getTaskModel());
+		displayController = new DisplayController(listView, settingView, displayTaskPanel);
+		settingView.panelInScroll.add(displayTaskPanel);
+	}
+	
+	private void saveChanges(){
+		editTaskPanel.getTaskModel().setTitle(editTaskPanel.getTitleTextField());
+		editTaskPanel.getTaskModel().setDescription(editTaskPanel.getDescriptionTextField());
 	}
 	
 	
