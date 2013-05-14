@@ -31,6 +31,9 @@ public class EditTaskPanel extends JPanel {
 	private JButton cancelButton;
 	private JButton saveButton;
 	private DisplayTaskPanel displayTaskPanel;
+	private JTextField deadlineInput;
+	private JLabel currentDeadlineLabel;
+	private JLabel deadlineLabel;
 	/**
 	 * Create the panel.
 	 */
@@ -41,7 +44,7 @@ public class EditTaskPanel extends JPanel {
 		this.setPreferredSize(new Dimension (300, 580));
 		this.taskModel = taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new MigLayout("", "[][283.00,grow]", "[][][][][][][][][][]"));
+		setLayout(new MigLayout("", "[][283.00,grow]", "[][][][][][][][][][][]"));
 		
 		JLabel changeTitleLabel = new JLabel("Change title:");
 		changeTitleLabel.setFont(GraphicConstants.REGULARFONT);
@@ -67,19 +70,31 @@ public class EditTaskPanel extends JPanel {
 		changePriorityLabel.setFont(GraphicConstants.REGULARFONT);
 		add(changePriorityLabel, "cell 0 5,alignx right");
 		
+		deadlineLabel = new JLabel("Current Deadline:");
+		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
+		add(deadlineLabel, "cell 0 7,alignx right");
+		
+		currentDeadlineLabel = new JLabel(""+ taskModel.getDeadline());
+		currentDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
+		add(currentDeadlineLabel, "cell 1 7,alignx center");
+		
 		JLabel changeDeadlineLabel = new JLabel("Change deadline:");
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
-		add(changeDeadlineLabel, "cell 0 7,alignx right");
+		add(changeDeadlineLabel, "cell 0 8,alignx trailing");
+		
+		deadlineInput = new JTextField(""+ taskModel.todaysDateToString());
+		add(deadlineInput, "cell 1 8,growx");
+		deadlineInput.setColumns(10);
 		
 		cancelButton = new JButton("cancel");
 		cancelButton.setFont(GraphicConstants.REGULARFONT);
 		cancelButton.setActionCommand("cancel");
-		add(cancelButton, "flowx,cell 1 9,alignx right");
+		add(cancelButton, "flowx,cell 1 10,alignx right");
 		
 		saveButton = new JButton("save");
 		saveButton.setFont(GraphicConstants.REGULARFONT);
 		saveButton.setActionCommand("save");
-		add(saveButton, "cell 1 9,alignx right");
+		add(saveButton, "cell 1 10,alignx right");
 		
 	
 
@@ -99,7 +114,9 @@ public class EditTaskPanel extends JPanel {
 	public TaskModel getTaskModel(){
 		return taskModel;
 	}
-	
+	public String deadline(){
+		return deadlineInput.toString();
+	}
 	public void setController(EditController controller){
 		saveButton.addActionListener(controller);
 		cancelButton.addActionListener(controller);
