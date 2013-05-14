@@ -8,7 +8,6 @@ import view.*;
 public class EditModel {
 	
 	private EditTaskPanel editTaskPanel;
-	private DisplayTaskPanel displayTaskPanel;
 	
 	public EditModel(){
 	}
@@ -21,7 +20,6 @@ public class EditModel {
 	public void cancelChanges(TaskSettingView settingView){
 		
 		settingView.panelInScroll.removeAll();
-	//	settingView.panelInScroll.add(editTaskPanel.getDisplayTaskPanel());
 		System.out.println("ended cancelchanges in editmodel");
 	}
 	
