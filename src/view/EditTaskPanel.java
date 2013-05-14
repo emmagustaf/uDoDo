@@ -28,8 +28,8 @@ public class EditTaskPanel extends JPanel {
 	private JTextField titleTextField;
 	private JEditorPane descriptionTextField;
 	private TaskModel taskModel;
-	private JButton cancelButton = new JButton("Cancel");
-	private JButton saveButton = new JButton("Save");
+	private JButton cancelButton;
+	private JButton saveButton;
 	
 	/**
 	 * Create the panel.
@@ -71,12 +71,12 @@ public class EditTaskPanel extends JPanel {
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(changeDeadlineLabel, "cell 0 7,alignx right");
 		
-		
+		cancelButton = new JButton("cancel");
 		cancelButton.setFont(GraphicConstants.REGULARFONT);
 		cancelButton.setActionCommand("cancel");
 		add(cancelButton, "flowx,cell 1 9,alignx right");
 		
-	
+		saveButton = new JButton("save");
 		saveButton.setFont(GraphicConstants.REGULARFONT);
 		saveButton.setActionCommand("save");
 		add(saveButton, "cell 1 9,alignx right");
@@ -91,6 +91,10 @@ public class EditTaskPanel extends JPanel {
 	
 	public String getDescriptionTextField(){
 		return descriptionTextField.getText();
+	}
+	
+	public TaskModel getTaskModel(){
+		return taskModel;
 	}
 	
 	public void setController(EditController controller){

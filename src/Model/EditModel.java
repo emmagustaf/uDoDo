@@ -7,7 +7,11 @@ import view.EditTaskPanel;
 public class EditModel {
 	
 	public EditModel(){
-		
+	}
+	
+	public void saveChanges(EditTaskPanel editTaskPanel){
+		editTaskPanel.getTaskModel().setTitle(editTaskPanel.getTitleTextField());
+		editTaskPanel.getTaskModel().setDescription(editTaskPanel.getDescriptionTextField());
 	}
 	
 	 
