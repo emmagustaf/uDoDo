@@ -25,6 +25,7 @@ public class DisplayTaskPanel extends JPanel {
 	private JButton editButton = new JButton();
 	private TaskModel taskModel;
 	private DisplayController controller;
+	private DisplayModel displayModel;
 	
 	/**
 	 * Create the panel.
@@ -56,11 +57,11 @@ public class DisplayTaskPanel extends JPanel {
 		add(prioLabel, "cell 0 6");
 		
 		
-		editButton.setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&16.png")));
-		editButton.setBorderPainted(false);
-		editButton.setFont(GraphicConstants.REGULARFONT);
-		add(editButton, "cell 1 8");
-		editButton.setActionCommand("editTask");
+		getEditButton().setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&16.png")));
+		getEditButton().setBorderPainted(false);
+		getEditButton().setFont(GraphicConstants.REGULARFONT);
+		add(getEditButton(), "cell 1 8");
+		getEditButton().setActionCommand("editTask");
 
 	}
 	
@@ -72,6 +73,14 @@ public class DisplayTaskPanel extends JPanel {
 	public TaskModel getTaskModel(){
 		return this.taskModel;
 	}
+	/**
+	 * Returns the actual displaymodel
+	 * 
+	 * @return
+	 */
+	public DisplayModel getDisplayModel(){
+		return this.displayModel;
+	}
 	
 	/**
 	 * Sets the controller for the panel. 
@@ -81,8 +90,22 @@ public class DisplayTaskPanel extends JPanel {
 	 */
 	public void setController(DisplayController controller){
 		
-		editButton.addActionListener(controller);
+		getEditButton().addActionListener(controller);
 		this.addMouseListener(controller);
+	}
+
+	/**
+	 * @return the editButton
+	 */
+	public JButton getEditButton() {
+		return editButton;
+	}
+
+	/**
+	 * @param editButton the editButton to set
+	 */
+	public void setEditButton(JButton editButton) {
+		this.editButton = editButton;
 	}
 
 }
