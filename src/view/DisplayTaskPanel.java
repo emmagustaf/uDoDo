@@ -73,14 +73,14 @@ public class DisplayTaskPanel extends JPanel {
 	public TaskModel getTaskModel(){
 		return this.taskModel;
 	}
-	/**
-	 * Returns the actual displaymodel
-	 * 
-	 * @return
-	 */
-	public DisplayModel getDisplayModel(){
-		return this.displayModel;
-	}
+//	/**
+//	 * Returns the actual displaymodel
+//	 * 
+//	 * @return
+//	 */
+//	public DisplayModel getDisplayModel(){
+//		return this.displayModel;
+//	}
 	
 	/**
 	 * Sets the controller for the panel. 

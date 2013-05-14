@@ -59,31 +59,32 @@ public class DisplayController implements ActionListener, MouseListener{
 		}		
 				
 	}
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			
-			if(e.getSource() instanceof DisplayTaskPanel){
-			}
-		}
 
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			displayTaskPanel.setBackground(Color.blue);
-		}
+	@Override
+	public void mouseClicked(MouseEvent e) {
 
-		@Override
-		public void mouseExited(MouseEvent e) {
-			displayTaskPanel.setBackground(Color.white);			
+		if (e.getSource() instanceof DisplayTaskPanel) {
 		}
+	}
 
-		@Override
-		public void mousePressed(MouseEvent e) {
-			
-		}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		displayTaskPanel.setBackground(Color.blue);
+	}
 
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			
-		}
-		
+	@Override
+	public void mouseExited(MouseEvent e) {
+		displayTaskPanel.setBackground(Color.white);
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+
+	}
+
 }
