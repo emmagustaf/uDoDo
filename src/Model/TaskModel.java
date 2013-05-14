@@ -25,6 +25,7 @@ public class TaskModel {
 		this.title = title;
 		this.checked = false;
 		this.prio = Priority.NO_PRIORITY;
+		this.deadline = null;
 	}
 	
 	public TaskModel(String title, CategoryPanel catPanel){
@@ -65,10 +66,6 @@ public class TaskModel {
 		return description;
 	}
 	
-	public Date getDeadline(){
-		return deadline;
-	}
-	
 	public void setTitle(String title){
 		this.title=title;
 	}
@@ -79,6 +76,10 @@ public class TaskModel {
 	
 	public void setPrio(Priority prio){
 		this.prio=prio;
+	}
+	
+	public Date getDeadline(){
+		return deadline;
 	}
 	
 	public void setDeadline(Date deadline){
