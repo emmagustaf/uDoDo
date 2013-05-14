@@ -13,6 +13,8 @@ public class EditController implements ActionListener{
 	private TaskSettingView settingView;
 	private EditTaskPanel editTaskPanel;
 	private EditModel editModel;
+	private DisplayTaskPanel displayTaskPanel;
+	private DisplayController displayController;
 	
 	public EditController(ListView listView, TaskSettingView settingView, EditTaskPanel editTaskPanel, EditModel editModel){
 		this.listView = listView;
@@ -31,9 +33,15 @@ public class EditController implements ActionListener{
 //			TaskModel model = panel.getTaskModel();
 		
 			if(e.getActionCommand().equals("cancel")){
+				
 				System.out.println("Entered action commant in cancel.");
 				editModel.cancelChanges(settingView);
+				DisplayModel model = new DisplayModel(editTaskPanel.getTaskModel());
+				displayTaskPanel = new DisplayTaskPanel(model, editTaskPanel.getTaskModel());
+				settingView.panelInScroll.add(displayTaskPanel);
+				settingView.updateView();
 				listView.updateView();
+				
 				
 			}else if(e.getActionCommand().equals("save")){
 				editModel.saveChanges(editTaskPanel);

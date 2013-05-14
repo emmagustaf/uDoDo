@@ -30,7 +30,7 @@ public class EditTaskPanel extends JPanel {
 	private TaskModel taskModel;
 	private JButton cancelButton;
 	private JButton saveButton;
-	
+	private DisplayTaskPanel displayTaskPanel;
 	/**
 	 * Create the panel.
 	 */
@@ -71,10 +71,10 @@ public class EditTaskPanel extends JPanel {
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(changeDeadlineLabel, "cell 0 7,alignx right");
 		
-		cancelButton = new JButton("cancel");
-		cancelButton.setFont(GraphicConstants.REGULARFONT);
-		cancelButton.setActionCommand("cancel");
-		add(cancelButton, "flowx,cell 1 9,alignx right");
+		setCancelButton(new JButton("cancel"));
+		getCancelButton().setFont(GraphicConstants.REGULARFONT);
+		getCancelButton().setActionCommand("cancel");
+		add(getCancelButton(), "flowx,cell 1 9,alignx right");
 		
 		saveButton = new JButton("save");
 		saveButton.setFont(GraphicConstants.REGULARFONT);
@@ -84,7 +84,25 @@ public class EditTaskPanel extends JPanel {
 	
 
 	}
+	public DisplayTaskPanel getDisplayTaskPanel(){
+		return displayTaskPanel;
+	}
 	
+	/**
+	 * @return the cancelButton
+	 */
+	public JButton getCancelButton() {
+		return cancelButton;
+	}
+
+	/**
+	 * @param cancelButton the cancelButton to set
+	 */
+	public void setCancelButton(JButton cancelButton) {
+		this.cancelButton = cancelButton;
+	}
+	
+
 	public String getTitleTextField(){
 		return titleTextField.getText();
 	}
@@ -99,7 +117,7 @@ public class EditTaskPanel extends JPanel {
 	
 	public void setController(EditController controller){
 		saveButton.addActionListener(controller);
-		cancelButton.addActionListener(controller);
+		getCancelButton().addActionListener(controller);
 	}
 
 }

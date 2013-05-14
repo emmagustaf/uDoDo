@@ -23,7 +23,8 @@ public class DisplayController implements ActionListener, MouseListener{
 	private ListView listView;
 	private TaskSettingView settingView;
 	private DisplayTaskPanel displayTaskPanel;
-
+	private EditTaskPanel editTaskPanel;
+	
 	/**
 	 * Create the controller. 
 	 * 
@@ -48,7 +49,7 @@ public class DisplayController implements ActionListener, MouseListener{
 			settingView.panelInScroll.removeAll();
 
 			EditModel editModel = new EditModel();
-			EditTaskPanel editTaskPanel = new EditTaskPanel(displayTaskPanel.getTaskModel());
+			this.editTaskPanel = new EditTaskPanel(displayTaskPanel.getTaskModel());
 			EditController editController = new EditController(listView, settingView, editTaskPanel, editModel);
 					
 			settingView.panelInScroll.add(editTaskPanel, 0);
@@ -58,8 +59,6 @@ public class DisplayController implements ActionListener, MouseListener{
 		}		
 				
 	}
-	
-
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			
