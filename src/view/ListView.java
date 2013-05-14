@@ -57,6 +57,7 @@ public class ListView extends JScrollPane {
 
 		for(int i=0; i<taskPanels.length; i++){
 			System.out.println("Was here");
+			((TaskPanel)taskPanels[i]).setTitle();
 			taskPanels[i].validate();
 			taskPanels[i].repaint();
 		}

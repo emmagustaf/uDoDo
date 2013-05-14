@@ -60,6 +60,8 @@ public class EditController implements ActionListener{
 	private void saveChanges(){
 		editTaskPanel.getTaskModel().setTitle(editTaskPanel.getTitleTextField());
 		editTaskPanel.getTaskModel().setDescription(editTaskPanel.getDescriptionTextField());
+		listView.updatePanels();
+		toDisplayTask();
 	}
 	
 	
