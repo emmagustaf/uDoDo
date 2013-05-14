@@ -15,6 +15,10 @@ import javax.swing.GroupLayout.Alignment;
 
 public class TopView extends JPanel {
 	
+	/**
+	 * A view representing the toolbar of the application.
+	 */
+	
 	public TopView(){
 		
 		this.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
