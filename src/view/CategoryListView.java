@@ -87,12 +87,12 @@ public class CategoryListView extends JScrollPane{
 		
 	}
 	
-	/**
-	 * Adds defaultcategory in deque
-	 */
-	public void addDefaultToCatList(CategoryPanel catPanel){
-		catDeque.addFirst(catPanel);
-	}
+//	/**
+//	 * Adds defaultcategory in deque
+//	 */
+//	public void addDefaultToCatList(CategoryPanel catPanel){
+//		catDeque.addFirst(catPanel);
+//	}
 	
 	/**
 	 * Marks a categorypanel in deque
@@ -111,6 +111,7 @@ public class CategoryListView extends JScrollPane{
 	
 	public CategoryPanel getMarkedPanel(){
 		System.out.println("getpanel working");
-		return catDeque.getFirst();
+		return null;
+		//return catDeque.getFirst();
 	}
 }
