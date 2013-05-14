@@ -20,6 +20,7 @@ public class CategoryModel {
 	private CategoryModel panelModel;
 	private ListModel listModel;
 	
+	
 //	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
 //	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
 
@@ -73,12 +74,22 @@ public class CategoryModel {
 		CategoryPanel panel = new CategoryPanel(panelModel);
 		//catList.add(panel);
 	}
+	
 	/**
 	 * Removes the selected category
 	 * @param panelModel
 	 */
 	public void removeCategory (CategoryPanel panelModel){
 		//catList.remove(panelModel);
+	}
+	
+	/**
+	 * Gets the categorymodel
+	 * 
+	 * @return categorymodel
+	 */
+	public CategoryModel getCategory(){
+		return panelModel;
 	}
 	
 }
