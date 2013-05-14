@@ -13,8 +13,8 @@ import javax.swing.JScrollPane;
 import model.CategoryModel;
 
 /**
- * A class to keep a graphical list of panels each representing a category
- *	the list will be represented in a scrollpane
+ * A class to keep a graphical list of panels each representing a category.
+ * The list will be represented in a scrollpane
  * @author Emma
  *
  */
