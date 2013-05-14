@@ -10,6 +10,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+
+
 import model.CategoryModel;
 
 /**
@@ -47,14 +49,13 @@ public class CategoryListView extends JScrollPane{
 		panel.setBackground(GraphicConstants.BACKGROUND);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS ));
 		
-		CategoryPanel defaultCatPanel = new CategoryPanel(new CategoryModel("Alla"));
-		this.add(defaultCatPanel);
-		addToCatList(defaultCatPanel);
+		DefaultCategoryPanelAll allDefaultCatPan = new DefaultCategoryPanelAll();
+		panel.add(allDefaultCatPan);
 		
 		
-		CategoryPanel completedDefaultCatPan = new CategoryPanel(new CategoryModel("Avklarat"));
-		this.add(completedDefaultCatPan);
-		addDefaultToCatList(completedDefaultCatPan);
+		DefaultCategoryPanel completedDefaultCatPan = new DefaultCategoryPanel();
+		panel.add(completedDefaultCatPan);
+		
 		
 		getViewport().setView(panel);
 		

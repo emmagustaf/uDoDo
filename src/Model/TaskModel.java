@@ -1,10 +1,12 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import view.CategoryPanel;
+import view.*;
 
 public class TaskModel {
 	private enum Priority{
@@ -15,8 +17,9 @@ public class TaskModel {
 	private String title;
 	private String description;
 	private Priority prio;
-	private Date deadline;
+	private Calendar deadline;
 	private CategoryPanel catPanel;
+	private EditTaskPanel editTaskPanel;
 	//private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
 	//we will have to find a way to keep track of unchecked and checked tasks
 	//I think it will be too many lists with stuff soon...
@@ -78,13 +81,34 @@ public class TaskModel {
 		this.prio=prio;
 	}
 	
-	public Date getDeadline(){
-		return deadline;
+	public String getDeadline(){
+		if(deadline==null){
+			return "No deadline for this task";
+		}else{
+			String todaysDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
+		return todaysDate;
+		}
 	}
 	
-	public void setDeadline(Date deadline){
+	public void setDeadline(Calendar deadline){
+		String year = editTaskPanel.deadline().substring(0,4);
+		String month = editTaskPanel.deadline().substring(4, 5);
+		String day = editTaskPanel.deadline().substring(5, 6);
+		deadline.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
 		this.deadline=deadline;
 	}
+	public String deadlineToString(Calendar deadline){
+		this.deadline=deadline;
+		String year = editTaskPanel.deadline().substring(0,4);
+		String month = editTaskPanel.deadline().substring(4, 5);
+		String day = editTaskPanel.deadline().substring(5, 6);
+		return year+"/"+month+"/"+day;
+	}
+	public String todaysDateToString(){
+		String todaysDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
+		return todaysDate;
+	}
+	
 	
 	public CategoryModel getCategory(){
 		return catPanel.getModel();
