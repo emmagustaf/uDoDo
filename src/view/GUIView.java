@@ -32,7 +32,7 @@ public class GUIView extends JPanel {
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, TaskSettingView taskSettings) {
 				
-		this.setMinimumSize(new Dimension(640, 600));
+		this.setMinimumSize(new Dimension(700, 750));
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
