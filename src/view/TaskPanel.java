@@ -29,6 +29,7 @@ public class TaskPanel extends JPanel {
 	private TaskModel model;
 	private String taskCheck;
 	private JButton deleteTaskButton;
+	private JLabel taskLabel;
 	
 	/**
 	 * Create the panel.
@@ -51,7 +52,7 @@ public class TaskPanel extends JPanel {
 		checkbutton.setActionCommand(taskCheck);
 		add(checkbutton, "cell 0 0,alignx center,aligny center");
 
-		JLabel taskLabel = new JLabel(model.getTitle());
+		taskLabel = new JLabel(model.getTitle());
 		taskLabel.setMinimumSize(new Dimension(200, 30));
 		taskLabel.setMaximumSize(new Dimension(200, 30));
 		taskLabel.setPreferredSize(new Dimension(200, 30));
@@ -69,6 +70,10 @@ public class TaskPanel extends JPanel {
 		
 	}
 	
+	public void setTitle(String s){
+		taskLabel.setText(s);
+	}
+	
 	public void setController(TaskController controller){
 		deleteTaskButton.addActionListener(controller);
 	}
@@ -79,10 +84,6 @@ public class TaskPanel extends JPanel {
 	
 	public TaskModel getModel(){
 		return this.model;
-	}
-	
-	public TaskPanel getPanel(){
-		return this;
 	}
 	
 }
