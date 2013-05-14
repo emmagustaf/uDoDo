@@ -35,6 +35,7 @@ public class TaskPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public TaskPanel(TaskModel model) {
+		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setMinimumSize(new Dimension(290, 60));
 		setPreferredSize(new Dimension(290, 60));
@@ -70,10 +71,10 @@ public class TaskPanel extends JPanel {
 		
 	}
 	
-	public void setTitle(String s){
-		taskLabel.setText(s);
+	public void setTitle(){
+		taskLabel.setText(model.getTitle());
 	}
-	
+
 	public void setController(TaskController controller){
 		deleteTaskButton.addActionListener(controller);
 	}
