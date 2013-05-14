@@ -20,9 +20,9 @@ public class CategoryView extends JPanel {
 	
 	public CategoryView(){
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setPreferredSize(new Dimension(200, 70));
-		setMinimumSize(new Dimension(200, 70));
-		setMaximumSize(new Dimension(200, 70));
+		setPreferredSize(new Dimension(210, 70));
+		setMinimumSize(new Dimension(210, 70));
+		setMaximumSize(new Dimension(210, 70));
 		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 0));
 		
 		JPanel panel = new JPanel();

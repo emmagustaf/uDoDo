@@ -8,17 +8,37 @@ import utility.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class TopView extends JPanel {
 	
 	public TopView(){
 		
 		this.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		setPreferredSize(new Dimension(600, 70));
-		setMinimumSize(new Dimension(600, 70));
-		setMaximumSize(new Dimension(600, 70));
+		setPreferredSize(new Dimension(830, 130));
+		setMinimumSize(new Dimension(830, 130));
+		setMaximumSize(new Dimension(830, 130));
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new MigLayout("", "[]", "[]"));
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(TopView.class.getResource("/utility/icons/uDoDo.banner.jpg")));
+		GroupLayout groupLayout = new GroupLayout(this);
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addComponent(label)
+					.addContainerGap(506, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addComponent(label)
+					.addContainerGap(37, Short.MAX_VALUE))
+		);
+		setLayout(groupLayout);
 		setVisible(true);
 	
 	}

@@ -29,10 +29,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 		categoryPanel.setController(this);
 		this.catListView=catListView;
 	}
-	
-	/**
-	 * Actionhandler for the button deletecategory
-	 */
+
 	@Override
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() instanceof JComponent){
