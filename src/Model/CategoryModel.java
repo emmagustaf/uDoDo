@@ -84,7 +84,7 @@ public class CategoryModel {
 	}
 	
 	/**
-	 * Gets the categorymodel
+	 * Returns the categorymodel
 	 * 
 	 * @return categorymodel
 	 */

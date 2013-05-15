@@ -6,20 +6,27 @@ import javax.swing.JPanel;
 
 
 import utility.*;
+import model.*;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
+
+import controller.CategoryPanelController;
 
 
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
-public class DefaultCategoryPanel extends JPanel {
+public class DefaultCategoryPanel extends JPanel{
+	
+	private CategoryModel categoryModel; 
 
 	/**
 	 * Create the panel.
 	 */
 	public DefaultCategoryPanel() {
+		
+		this.categoryModel = categoryModel;
 		
 		setBackground(GraphicConstants.BACKGROUND);
 		setMinimumSize(new Dimension(200, 40));
@@ -47,5 +54,9 @@ public class DefaultCategoryPanel extends JPanel {
 		
 		
 	}
+	
+	public void setController(CategoryPanelController controller){
+		this.addMouseListener(controller);
+	}	
 
 }

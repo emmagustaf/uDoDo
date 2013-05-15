@@ -6,6 +6,7 @@ import java.util.Deque;
 
 import utility.GraphicConstants;
 
+import controller.*;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -50,10 +51,12 @@ public class CategoryListView extends JScrollPane{
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS ));
 		
 		DefaultCategoryPanelAll allDefaultCatPan = new DefaultCategoryPanelAll();
+//		CategoryPanelController allCatController = new CategoryPanelController(allDefaultCatPan, this);
 		panel.add(allDefaultCatPan);
 		
-		
 		DefaultCategoryPanel completedDefaultCatPan = new DefaultCategoryPanel();
+//		CategoryPanelController checkedCatController = new CategoryPanelController(completedDefaultCatPan, this);
+
 		panel.add(completedDefaultCatPan);
 		
 		

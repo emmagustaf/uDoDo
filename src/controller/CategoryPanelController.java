@@ -25,14 +25,14 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	 * @param catListView
 	 */
 	public CategoryPanelController(CategoryPanel categoryPanel, CategoryListView catListView){
-		this.categoryPanel=categoryPanel;
+		this.categoryPanel= categoryPanel;
 		categoryPanel.setController(this);
 		this.catListView=catListView;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e){
-		if(e.getSource() instanceof JComponent){
+		if(e.getSource() instanceof CategoryPanel){
 			if(e.getActionCommand().equals("delete Category")){
 				catListView.panel.remove(categoryPanel);
 				catListView.updateView();

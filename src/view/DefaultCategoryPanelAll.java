@@ -10,6 +10,8 @@ import java.awt.GridBagConstraints;
 
 import javax.swing.JLabel;
 
+import controller.CategoryPanelController;
+
 public class DefaultCategoryPanelAll extends JPanel {
 
 	/**
