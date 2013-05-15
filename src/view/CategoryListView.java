@@ -26,12 +26,12 @@ public class CategoryListView extends JScrollPane{
 	
 	/**
 	 * 	Create a panel that will be the actual container 
-	 *	 for the categorypanels 
+	 *	 for the added categorypanels 
 	 */
 	
 	public JPanel panel;
 	
-	private Deque<CategoryPanel> catDeque = new ArrayDeque<CategoryPanel>();
+	private Deque<AddedCategoryPanel> catDeque = new ArrayDeque<AddedCategoryPanel>();
 	
 	/**
 	 * 	Set all the graphical data for the scrollpane
@@ -50,14 +50,18 @@ public class CategoryListView extends JScrollPane{
 		panel.setBackground(GraphicConstants.BACKGROUND);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS ));
 		
-		DefaultCategoryPanelAll allDefaultCatPan = new DefaultCategoryPanelAll();
+		StartCategoryPanel all = new StartCategoryPanel();
+		all.setTitle("Alla");
+		//DefaultCategoryPanelAll allDefaultCatPan = new DefaultCategoryPanelAll();
 //		CategoryPanelController allCatController = new CategoryPanelController(allDefaultCatPan, this);
-		panel.add(allDefaultCatPan);
+		panel.add(all);
 		
-		DefaultCategoryPanel completedDefaultCatPan = new DefaultCategoryPanel();
+		StartCategoryPanel completed = new StartCategoryPanel();
+		completed.setTitle("Avklarade");
+	//	DefaultCategoryPanel completedDefaultCatPan = new DefaultCategoryPanel();
 //		CategoryPanelController checkedCatController = new CategoryPanelController(completedDefaultCatPan, this);
 
-		panel.add(completedDefaultCatPan);
+		panel.add(completed);
 		
 		
 		getViewport().setView(panel);
@@ -85,7 +89,7 @@ public class CategoryListView extends JScrollPane{
 	 * @param catPanel
 	 */
 	
-	public void addToCatList(CategoryPanel catPanel){
+	public void addToCatList(AddedCategoryPanel catPanel){
 		catDeque.addLast(catPanel);
 		
 	}
@@ -102,7 +106,7 @@ public class CategoryListView extends JScrollPane{
 	 * @param catPanel
 	 */
 	
-	public void markCategory(CategoryPanel catPanel){
+	public void markCategory(AddedCategoryPanel catPanel){
 		catDeque.addFirst(catPanel);
 		System.out.println("marked");
 	}

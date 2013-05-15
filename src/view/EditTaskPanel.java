@@ -39,7 +39,7 @@ public class EditTaskPanel extends JPanel {
 	private JLabel currentDeadlineLabel;
 	private JLabel deadlineLabel;
 	private JButton calendarButton;
-	public JCalendar calendar;
+	private JCalendar calendar;
 	/**
 	 * Create the panel.
 	 */

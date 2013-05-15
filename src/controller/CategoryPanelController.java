@@ -16,23 +16,24 @@ import view.*;
  *
  */
 public class CategoryPanelController implements ActionListener, MouseListener {
-	private CategoryPanel categoryPanel;
+	private AddedCategoryPanel categoryPanel;
 	private CategoryListView catListView;
-
+	private StartCategoryPanel staticCategoryPanel;
 	/**
 	 * Create a categorypanel which will be added in categoryListView
 	 * @param categoryPanel
 	 * @param catListView
 	 */
-	public CategoryPanelController(CategoryPanel categoryPanel, CategoryListView catListView){
+	public CategoryPanelController(AddedCategoryPanel categoryPanel, CategoryListView catListView){
 		this.categoryPanel= categoryPanel;
 		categoryPanel.setController(this);
+	
 		this.catListView=catListView;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e){
-		if(e.getSource() instanceof CategoryPanel){
+		if(e.getSource() instanceof JComponent){
 			if(e.getActionCommand().equals("delete Category")){
 				catListView.panel.remove(categoryPanel);
 				catListView.updateView();
@@ -48,7 +49,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
-		if(e.getSource() instanceof CategoryPanel){
+		if(e.getSource() instanceof AddedCategoryPanel){
 			catListView.markCategory(categoryPanel);
 			//om den här metoden körs ska alla tasks som tillhör categorypanelns category visas i ListView,
 			//och categorymodelens status ska ändras till markerad, samtidigt som om det finns en categorypanel med 
@@ -61,16 +62,15 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		categoryPanel.setBackground(Color.blue);
+		
+			categoryPanel.setBackground(Color.blue);
 		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		categoryPanel.setBackground(Color.white);
-		
+			categoryPanel.setBackground(Color.white);
 	}
-
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub

@@ -11,7 +11,7 @@ import model.ListModel;
 import model.TaskModel;
 
 import view.CategoryListView;
-import view.CategoryPanel;
+import view.AddedCategoryPanel;
 import view.HeaderView;
 import view.ListView;
 import view.TaskPanel;
@@ -22,7 +22,7 @@ public class HeaderController implements ActionListener{
 	private ListView view;
 	private HeaderView headerView;
 	private CategoryListView catListView;
-	private CategoryPanel catPanel;
+	private AddedCategoryPanel catPanel;
 	private TaskSettingView taskSetting;
 	//public HeaderController(HeaderView headerView, ListView view, CategoryListView catListView){
 		//this.headerView = headerView;
@@ -31,7 +31,7 @@ public class HeaderController implements ActionListener{
 		//this.catListView = catListView;
 	//}
 	
-	public HeaderController(HeaderView headerView, ListView view, CategoryPanel catPanel, TaskSettingView taskSetting, CategoryListView catListView){
+	public HeaderController(HeaderView headerView, ListView view, AddedCategoryPanel catPanel, TaskSettingView taskSetting, CategoryListView catListView){
 		this.headerView = headerView;
 		this.headerView.setController(this);
 		this.view = view;

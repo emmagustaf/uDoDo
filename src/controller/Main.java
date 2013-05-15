@@ -33,10 +33,10 @@ public class Main {
 		
 		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, taskSettings);
 		CategoryModel model = new CategoryModel(null);
-		CategoryPanel catPanel = new CategoryPanel(model);
+		AddedCategoryPanel catPanel = new AddedCategoryPanel(model);
 		HeaderController controller = new HeaderController(headerView, listView, catPanel, taskSettings, categoryListView);
 		
-		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
+		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView, null);
 
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(700, 750));

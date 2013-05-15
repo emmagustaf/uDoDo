@@ -50,10 +50,10 @@ public class EditController implements ActionListener{
 				listView.updateView();
 			}else if(e.getActionCommand().equals("calendar")){
 				
-				editTaskPanel.calendar.setVisible(true);
+				editTaskPanel.getCalendar().setVisible(true);
 				JDateTextField text = new JDateTextField();
-				//text.setCalendar(editTaskPanel.calendar.getCalendar());
-				editTaskPanel.setCurrentDeadlineLabel(editTaskPanel.calendar.getCalendar());
+				editTaskPanel.getCalendar().getCalendar();
+				//editTaskPanel.setCurrentDeadlineLabel(editTaskPanel.getCalendar());
 				//editTaskPanel.setCurrentDeadlineLabel(text);
 
 				settingView.updateView();

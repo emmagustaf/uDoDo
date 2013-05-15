@@ -16,12 +16,12 @@ public class CategoryModel {
 
 	private String catTitle;
 	private CategoryView view;
-	private CategoryPanel panel;
+	private AddedCategoryPanel panel;
 	private CategoryModel panelModel;
 	private ListModel listModel;
 	
 	
-//	private List <CategoryPanel> catList= new ArrayList <CategoryPanel> ();
+//	private List <AddedCategoryPanel> catList= new ArrayList <AddedCategoryPanel> ();
 //	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
 
 	/**
@@ -71,7 +71,7 @@ public class CategoryModel {
 	 * @param title
 	 */
 	public void addNewCategory(String title) {
-		CategoryPanel panel = new CategoryPanel(panelModel);
+		AddedCategoryPanel panel = new AddedCategoryPanel(panelModel);
 		//catList.add(panel);
 	}
 	
