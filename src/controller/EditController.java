@@ -49,7 +49,7 @@ public class EditController implements ActionListener{
 			}else if(e.getActionCommand().equals("calendar")){
 				
 				editTaskPanel.calendar.setVisible(true);
-				editTaskPanel.calendar.setCalendar();
+				editTaskPanel.calendar.setCalendar(editTaskPanel.calendar.getCalendar());
 			}
 		}
 		
