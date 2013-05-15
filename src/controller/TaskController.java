@@ -2,6 +2,7 @@ package controller;
 
 
 import model.*;
+import utility.GraphicConstants;
 import view.*;
 
 import java.awt.Color;
@@ -46,19 +47,19 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
-			taskPanel.setBackground(Color.blue);
+			taskPanel.setBackground(GraphicConstants.BUTTONHOVER);
+			taskPanel.setForeground(GraphicConstants.FOREGROUND);
 			
 		}
 
 		@Override
 		public void mouseExited(MouseEvent arg0) {
-			taskPanel.setBackground(Color.white);
-			
+			taskPanel.setBackground(GraphicConstants.BACKGROUND);
+			taskPanel.setForeground(GraphicConstants.FOREGROUND);
 		}
 
 		@Override
 		public void mousePressed(MouseEvent arg0) {
-			taskPanel.setBackground(Color.red);
 			
 		}
 
@@ -69,6 +70,10 @@ public class TaskController implements ActionListener {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			
+			taskPanel.setBackground(GraphicConstants.BUTTONPRESSED);
+			taskPanel.setForeground(GraphicConstants.BUTTONPRESSEDFOREGROUND);
+			
 			DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
 			
 			DisplayTaskPanel displayPanel = new DisplayTaskPanel(displayModel, taskPanel.getModel());
