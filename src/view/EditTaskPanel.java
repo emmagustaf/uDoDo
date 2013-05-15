@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 import utility.*;
 import model.TaskModel;
 import net.miginfocom.swing.MigLayout;
+
+import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -15,7 +17,7 @@ import javax.swing.JEditorPane;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.UIManager;
-
+import calendar.*;
 
 /**
  * A class to represent the view where you can edit a task.
@@ -82,8 +84,11 @@ public class EditTaskPanel extends JPanel {
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(changeDeadlineLabel, "cell 0 8,alignx trailing");
 		
-		deadlineInput = new JTextField(""+ taskModel.todaysDateToString());
-		add(deadlineInput, "cell 1 8,growx");
+		JCalendar calendar = new JCalendar(null, "Calendar", true, 0);
+		JButton calendarButton = new JButton("Set date");
+		add(calendarButton, "cell 1 8,growx");
+		
+		calendar.setVisible(true);
 		deadlineInput.setColumns(10);
 		
 		cancelButton = new JButton("cancel");
