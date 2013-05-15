@@ -1,4 +1,5 @@
 package controller;
+import utility.GraphicConstants;
 import view.*;
 import model.*;
 
@@ -30,11 +31,10 @@ public class CategoryController implements ActionListener, MouseListener{
 	 * @param catListView
 	 * @param listView
 	 */
-	public CategoryController(CategoryView view, CategoryListView catListView, ListView listView, StartCategoryPanel startCategoryPanel){
+	public CategoryController(CategoryView view, CategoryListView catListView, ListView listView){
 		this.view=view;
 		this.catListView = catListView;
 		this.listView = listView;
-		this.startCategoryPanel = startCategoryPanel;
 		view.setController(this);
 		
 		//		this.panelModel=panelModel;
@@ -67,12 +67,12 @@ public class CategoryController implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		startCategoryPanel.setBackground(Color.blue);
+		startCategoryPanel.setBackground(Color.white);
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		startCategoryPanel.setBackground(Color.white);		
+		startCategoryPanel.setBackground(GraphicConstants.BACKGROUND);		
 	}
 
 	@Override

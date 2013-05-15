@@ -36,7 +36,7 @@ public class Main {
 		AddedCategoryPanel catPanel = new AddedCategoryPanel(model);
 		HeaderController controller = new HeaderController(headerView, listView, catPanel, taskSettings, categoryListView);
 		
-		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView, null);
+		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
 
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(700, 750));

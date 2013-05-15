@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JComponent;
 
+import utility.GraphicConstants;
 import view.*;
 
 /**
@@ -18,7 +19,7 @@ import view.*;
 public class CategoryPanelController implements ActionListener, MouseListener {
 	private AddedCategoryPanel categoryPanel;
 	private CategoryListView catListView;
-	private StartCategoryPanel staticCategoryPanel;
+	private StartCategoryPanel startCategoryPanel;
 	/**
 	 * Create a categorypanel which will be added in categoryListView
 	 * @param categoryPanel
@@ -29,6 +30,10 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 		categoryPanel.setController(this);
 	
 		this.catListView=catListView;
+	}
+	public CategoryPanelController(StartCategoryPanel startCategoryPanel){
+		this.startCategoryPanel=startCategoryPanel;
+		startCategoryPanel.setController(this);
 	}
 
 	@Override
@@ -62,14 +67,20 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		
-			categoryPanel.setBackground(Color.blue);
-		
+		if(arg0.getComponent() instanceof AddedCategoryPanel){
+			categoryPanel.setBackground(Color.white);
+		}else if(arg0.getComponent() instanceof StartCategoryPanel){
+			startCategoryPanel.setBackground(Color.white);	
+		}
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-			categoryPanel.setBackground(Color.white);
+		if(arg0.getComponent() instanceof AddedCategoryPanel){	
+			categoryPanel.setBackground(GraphicConstants.BACKGROUND);
+		}else if(arg0.getComponent() instanceof StartCategoryPanel){
+			startCategoryPanel.setBackground(GraphicConstants.BACKGROUND);	
+		}
 	}
 	@Override
 	public void mousePressed(MouseEvent arg0) {
