@@ -36,6 +36,8 @@ public class EditTaskPanel extends JPanel {
 	private JTextField deadlineInput;
 	private JLabel currentDeadlineLabel;
 	private JLabel deadlineLabel;
+	private JButton calendarButton;
+	public JCalendar calendar;
 	/**
 	 * Create the panel.
 	 */
@@ -84,12 +86,11 @@ public class EditTaskPanel extends JPanel {
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(changeDeadlineLabel, "cell 0 8,alignx trailing");
 		
-		JCalendar calendar = new JCalendar(null, "Calendar", true, 0);
-		JButton calendarButton = new JButton("Set date");
+		calendar = new JCalendar(null, "Calendar", true, calendar.RIGHT_SPINNER);
+		calendarButton = new JButton("Set date");
+		calendarButton.setActionCommand("calendar");
 		add(calendarButton, "cell 1 8,growx");
-		
-		calendar.setVisible(true);
-		deadlineInput.setColumns(10);
+		//deadlineInput.setColumns(10);
 		
 		cancelButton = new JButton("cancel");
 		cancelButton.setFont(GraphicConstants.REGULARFONT);
@@ -104,6 +105,16 @@ public class EditTaskPanel extends JPanel {
 	
 
 	}
+	public JCalendar getCalendar(){
+		return calendar;
+	}
+	public JLabel getCurrentDeadlineLabel(){
+		return currentDeadlineLabel;
+	}
+	public void setCurrentDeadlineLabel(JLabel currentDeadlineLabel){
+		 this.currentDeadlineLabel=currentDeadlineLabel;
+	}
+	
 	public DisplayTaskPanel getDisplayTaskPanel(){
 		return displayTaskPanel;
 	}
@@ -125,6 +136,7 @@ public class EditTaskPanel extends JPanel {
 	public void setController(EditController controller){
 		saveButton.addActionListener(controller);
 		cancelButton.addActionListener(controller);
+		calendarButton.addActionListener(controller);
 	}
 
 }

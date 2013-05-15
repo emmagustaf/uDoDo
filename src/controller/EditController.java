@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import calendar.JDateTextField;
+
 import model.*;
 import view.*;
 
@@ -44,6 +46,10 @@ public class EditController implements ActionListener{
 				settingView.updateView();
 				listView.updatePanels();
 				listView.updateView();
+			}else if(e.getActionCommand().equals("calendar")){
+				
+				editTaskPanel.calendar.setVisible(true);
+				editTaskPanel.calendar.setCalendar();
 			}
 		}
 		
