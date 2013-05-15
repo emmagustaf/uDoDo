@@ -369,7 +369,9 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
     protected void drawDays()
     {
         Calendar cDate = (Calendar) calendar.clone();
+        
         cDate.set(Calendar.DAY_OF_MONTH, 1);
+        
         int dayOfWeek = cDate.get(Calendar.DAY_OF_WEEK);
 
         int i = 7;
@@ -423,11 +425,13 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
         cDate.add(Calendar.MONTH, 1);
         cDate.add(Calendar.DAY_OF_MONTH, -1);
         int lastDay = cDate.get(Calendar.DAY_OF_MONTH);
+        
         if( iDay > lastDay )
             iDay = lastDay;
 
         int k = day;
         day = iDay;
+        
         if(selectedDay != null)
         {
             selectedDay.setBackground(oldDayBackgroundColor);
@@ -481,6 +485,7 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
     public void setForeground(Color color)
     {
         super.setForeground(color);
+        
         if(days != null)
         {
             for(int i=7; i<49; i++)
@@ -502,6 +507,7 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
     {
         JButton jbutton = (JButton)focusevent.getSource();
         String s = jbutton.getText();
+        
         if(s != null && !s.equals(""))
             actionPerformed(new ActionEvent(focusevent.getSource(), 0, null));
     }
@@ -538,6 +544,7 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
     public void setEnabled(boolean flag)
     {
         super.setEnabled(flag);
+        
         for(short s=0; s<days.length; s++)
             if(days[s] != null)
                 days[s].setEnabled(flag);
@@ -559,6 +566,7 @@ class JYearChooser extends JSpinNumberField
     public JYearChooser(int year)
     {
         super(0,9999,year);
+        
         dayChooser = null;
         addFocusListener(this);
     }
@@ -598,6 +606,7 @@ class JYearChooser extends JSpinNumberField
     public void focusGained(FocusEvent e)
     {
         Object object = e.getSource();
+        
         if(object instanceof JTextComponent)
             ((JTextComponent)object).selectAll();
     }
@@ -643,6 +652,7 @@ class JMonthChooser extends JPanel implements ItemListener, AdjustmentListener
         setLayout(new BorderLayout());
 
         comboBox = new JComboBox();
+        
         for(int i=0; i <MONTHS.length; i++)
             comboBox.addItem(MONTHS[i]);
         comboBox.addItemListener(this);
@@ -653,6 +663,7 @@ class JMonthChooser extends JPanel implements ItemListener, AdjustmentListener
             scrollBar = new JScrollBar(JScrollBar.VERTICAL,(12-month),0,-10000, 10000);
             scrollBar.setPreferredSize(new Dimension(scrollBar.getPreferredSize().width, getPreferredSize().height));
             scrollBar.setVisibleAmount(0);
+        
             if(spinner == RIGHT_SPINNER)
                 add(scrollBar, "East");
             else
