@@ -50,13 +50,13 @@ public class CategoryListView extends JScrollPane{
 		panel.setBackground(GraphicConstants.BACKGROUND);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS ));
 		
-		StartCategoryPanel all = new StartCategoryPanel();
+		StartCategoryPanel all = new StartCategoryPanel(null);
 		all.setTitle("Alla");
 		//DefaultCategoryPanelAll allDefaultCatPan = new DefaultCategoryPanelAll();
 //		CategoryPanelController allCatController = new CategoryPanelController(allDefaultCatPan, this);
 		panel.add(all);
 		
-		StartCategoryPanel completed = new StartCategoryPanel();
+		StartCategoryPanel completed = new StartCategoryPanel(null);
 		completed.setTitle("Avklarade");
 	//	DefaultCategoryPanel completedDefaultCatPan = new DefaultCategoryPanel();
 //		CategoryPanelController checkedCatController = new CategoryPanelController(completedDefaultCatPan, this);
@@ -116,7 +116,7 @@ public class CategoryListView extends JScrollPane{
 	 * @return
 	 */
 	
-	public CategoryPanel getMarkedPanel(){
+	public AddedCategoryPanel getMarkedPanel(){
 		System.out.println("getpanel working");
 		return null;
 		//return catDeque.getFirst();

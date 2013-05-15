@@ -19,7 +19,7 @@ import view.*;
 public class CategoryPanelController implements ActionListener, MouseListener {
 	private AddedCategoryPanel categoryPanel;
 	private CategoryListView catListView;
-	private StartCategoryPanel startCategoryPanel;
+	private StartCategoryPanel startCategoryPanel = new StartCategoryPanel(null);;
 	/**
 	 * Create a categorypanel which will be added in categoryListView
 	 * @param categoryPanel
@@ -28,12 +28,8 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	public CategoryPanelController(AddedCategoryPanel categoryPanel, CategoryListView catListView){
 		this.categoryPanel= categoryPanel;
 		categoryPanel.setController(this);
-	
 		this.catListView=catListView;
-	}
-	public CategoryPanelController(StartCategoryPanel startCategoryPanel){
-		this.startCategoryPanel=startCategoryPanel;
-		startCategoryPanel.setController(this);
+		
 	}
 
 	@Override
@@ -42,7 +38,6 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 			if(e.getActionCommand().equals("delete Category")){
 				catListView.panel.remove(categoryPanel);
 				catListView.updateView();
-				System.out.println("category deleted");
 			}
 			
 		}
@@ -67,20 +62,14 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		if(arg0.getComponent() instanceof AddedCategoryPanel){
-			categoryPanel.setBackground(Color.white);
-		}else if(arg0.getComponent() instanceof StartCategoryPanel){
-			startCategoryPanel.setBackground(Color.white);	
-		}
+		arg0.getComponent().setBackground(Color.white);
+		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		if(arg0.getComponent() instanceof AddedCategoryPanel){	
-			categoryPanel.setBackground(GraphicConstants.BACKGROUND);
-		}else if(arg0.getComponent() instanceof StartCategoryPanel){
-			startCategoryPanel.setBackground(GraphicConstants.BACKGROUND);	
-		}
+		arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
+	
 	}
 	@Override
 	public void mousePressed(MouseEvent arg0) {

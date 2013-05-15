@@ -19,6 +19,7 @@ public class CategoryModel {
 	private AddedCategoryPanel panel;
 	private CategoryModel panelModel;
 	private ListModel listModel;
+	private StartCategoryPanel startPanel;
 	
 	
 //	private List <AddedCategoryPanel> catList= new ArrayList <AddedCategoryPanel> ();
@@ -42,8 +43,6 @@ public class CategoryModel {
 	}
 	
 //	public List getList(){
-//		CategoryPanel categoryPanel = new CategoryPanel(this);
-//		this.setCatTitle("Alla");
 //		catList.set(0, categoryPanel);
 //		
 //		return catList;
@@ -79,7 +78,7 @@ public class CategoryModel {
 	 * Removes the selected category
 	 * @param panelModel
 	 */
-	public void removeCategory (CategoryPanel panelModel){
+	public void removeCategory (AddedCategoryPanel panelModel){
 		//catList.remove(panelModel);
 	}
 	

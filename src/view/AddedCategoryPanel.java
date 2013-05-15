@@ -11,17 +11,17 @@ public class AddedCategoryPanel extends StartCategoryPanel {
 
 	private JButton deleteCatButton = new JButton();
 	private CategoryModel model;
-
+	private CategoryPanelController controller;
 	
 	public AddedCategoryPanel(CategoryModel model){
-		super();
+		super(model);
 		super.setTitle(model.getCatTitle());
 		this.model=model;
 		this.setToolTipText("" + model.getCatTitle());
 		
 		deleteCatButton.setToolTipText("Delete category and all it's content");
 		
-		deleteCatButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
+		deleteCatButton.setIcon(new ImageIcon(AddedCategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
 		deleteCatButton.setBorderPainted(false);
 		
 		deleteCatButton.setPreferredSize(new Dimension(15, 10));

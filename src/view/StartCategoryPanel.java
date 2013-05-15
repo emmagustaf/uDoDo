@@ -18,8 +18,9 @@ public class StartCategoryPanel extends JPanel {
 	
 	/**
 	 * Create the panel.
+	 * @param categoryModel 
 	 */
-	public StartCategoryPanel() {
+	public StartCategoryPanel(CategoryModel categoryModel) {
 		
 		this.categoryModel = categoryModel;
 		

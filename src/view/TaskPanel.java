@@ -64,7 +64,7 @@ public class TaskPanel extends JPanel {
 		deleteTaskButton = new JButton();
 		deleteTaskButton.setToolTipText("Delete task");
 		deleteTaskButton.setBorderPainted(false);
-		deleteTaskButton.setIcon(new ImageIcon(CategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
+		deleteTaskButton.setIcon(new ImageIcon(AddedCategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
 		//deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
 		deleteTaskButton.setActionCommand("deleteTask");
 		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");

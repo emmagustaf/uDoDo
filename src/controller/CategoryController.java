@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  * @author Hanna
  *
  */
-public class CategoryController implements ActionListener, MouseListener{
+public class CategoryController implements ActionListener{
 
 	private CategoryView view;
 	private CategoryModel model;
@@ -57,34 +57,6 @@ public class CategoryController implements ActionListener, MouseListener{
 				System.out.println("category added");
 			}		
 		}
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		startCategoryPanel.setBackground(Color.white);
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-		startCategoryPanel.setBackground(GraphicConstants.BACKGROUND);		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 }
