@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import java.util.*;
 
+import calendar.JCalendar;
 import calendar.JDateTextField;
 
 import model.*;
@@ -49,7 +51,13 @@ public class EditController implements ActionListener{
 			}else if(e.getActionCommand().equals("calendar")){
 				
 				editTaskPanel.calendar.setVisible(true);
-				editTaskPanel.calendar.setCalendar(editTaskPanel.calendar.getCalendar());
+				JDateTextField text = new JDateTextField();
+				//text.setCalendar(editTaskPanel.calendar.getCalendar());
+				editTaskPanel.setCurrentDeadlineLabel(editTaskPanel.calendar.getCalendar());
+				//editTaskPanel.setCurrentDeadlineLabel(text);
+
+				settingView.updateView();
+				
 			}
 		}
 		

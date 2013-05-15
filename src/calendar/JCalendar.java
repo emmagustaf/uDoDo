@@ -457,7 +457,6 @@ class JDayChooser extends JPanel implements ActionListener, KeyListener, FocusLi
         setDay(day);
         drawDays();
     }
-
     public void setYear(int year)
     {
         calendar.set(Calendar.YEAR, year);

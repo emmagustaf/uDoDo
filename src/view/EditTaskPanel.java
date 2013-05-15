@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Dimension;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.swing.JPanel;
 import utility.*;
@@ -111,8 +113,10 @@ public class EditTaskPanel extends JPanel {
 	public JLabel getCurrentDeadlineLabel(){
 		return currentDeadlineLabel;
 	}
-	public void setCurrentDeadlineLabel(JLabel currentDeadlineLabel){
-		 this.currentDeadlineLabel=currentDeadlineLabel;
+	public void setCurrentDeadlineLabel(Calendar calendar){
+		String date = new SimpleDateFormat("yyyyMMdd").format(calendar);
+		JLabel currentDeadline = new JLabel (date);
+		currentDeadlineLabel=currentDeadline;
 	}
 	
 	public DisplayTaskPanel getDisplayTaskPanel(){
