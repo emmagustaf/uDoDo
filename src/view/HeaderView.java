@@ -11,6 +11,12 @@ import controller.ListController;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.border.LineBorder;
 
+/**
+ * A class to represent the view where the user can add new tasks.
+ * 
+ * @author Hanna
+ *
+ */
 public class HeaderView extends JPanel{
 
 	//TODO Create button "Ny" and textfield to get taskname
