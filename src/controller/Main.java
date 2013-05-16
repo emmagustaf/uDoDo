@@ -31,8 +31,13 @@ public class Main {
 		
 		TaskSettingView taskSettings = new TaskSettingView();
 		
-		StartCategoryPanel allCatPanel = new StartCategoryPanel(new CategoryModel("All Tasks"));
-		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(new CategoryModel("Finished Tasks"));
+		CategoryModel allModel = new CategoryModel("All Tasks");
+		CategoryModel finishedModel = new CategoryModel("Finished Tasks");
+		
+		StartCategoryPanel allCatPanel = new StartCategoryPanel(allModel);
+		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
+		allCatPanel.setTitle("All Tasks");
+		finishedCatPanel.setTitle("Finished Tasks");
 		categoryListView.panel.add(finishedCatPanel);
 		categoryListView.panel.add(allCatPanel);
 		allCatPanel.setVisible(true);
