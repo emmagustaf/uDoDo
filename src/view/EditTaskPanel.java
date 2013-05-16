@@ -3,6 +3,7 @@ package view;
 import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.JPanel;
 import utility.*;
@@ -112,9 +113,11 @@ public class EditTaskPanel extends JPanel {
 	}
 
 	public void setCurrentDeadlineLabel(JDateTextField currentDeadline){
-		//String date = new SimpleDateFormat("yyyyMMdd").format(calendar);
+		Date date = currentDeadline.getDate();
+//		String text = currentDeadline.formateDatecurrentDeadlineLabel.US_SHORT_DATE);
 		//currentDeadline = new JLabel (date);
-		currentDeadline.setFormat(currentDeadlineLabel.US_SHORT_DATE);
+//		currentDeadline.setText(text);
+		//currentDeadline.setFormat(currentDeadlineLabel.US_SHORT_DATE);
 		currentDeadlineLabel=currentDeadline;
 	}
 	public JDateTextField getCurrentDeadlineLabel(){
@@ -128,7 +131,9 @@ public class EditTaskPanel extends JPanel {
 	public String getTitleTextField(){
 		return titleTextField.getText();
 	}
-	
+	public JDateTextField setJDateTextField(JDateTextField textField){
+		return this.currentDeadlineLabel=textField;
+	}
 	public String getDescriptionTextField(){
 		return descriptionTextField.getText();
 	}
@@ -143,6 +148,10 @@ public class EditTaskPanel extends JPanel {
 		saveButton.addActionListener(controller);
 		cancelButton.addActionListener(controller);
 		calendarButton.addActionListener(controller);
+	}
+	public JDateTextField getJDateTextField() {
+
+		return currentDeadlineLabel;
 	}
 
 }

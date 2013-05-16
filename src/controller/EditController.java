@@ -23,6 +23,7 @@ public class EditController implements ActionListener{
 	private DisplayTaskPanel displayTaskPanel;
 	private DisplayController displayController;
 	private Calendar calendar;
+	private JDateTextField text = new JDateTextField();
 	
 	public EditController(ListView listView, TaskSettingView settingView, EditTaskPanel editTaskPanel, EditModel editModel){
 		this.listView = listView;
@@ -57,10 +58,14 @@ public class EditController implements ActionListener{
 				editTaskPanel.getCalendar().setVisible(true);
 				if(editTaskPanel.getCalendar().isOkPressed()){
 					
-					JDateTextField text = new JDateTextField();
 					text.setCalendar(calendar);
 					//editTaskPanel.getCalendar().setCalendar();
-					editTaskPanel.setCurrentDeadlineLabel(text);
+					text.formateDate(editTaskPanel.getCalendar().getCalendar(), text.US_SHORT_DATE);
+					editTaskPanel.setCurrentDeadlineLabel(editTaskPanel.setJDateTextField(text));
+					
+					System.out.println("changed date");
+					settingView.updateView();
+
 				}
 				settingView.updateView();
 				
