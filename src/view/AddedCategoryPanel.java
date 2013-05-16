@@ -19,6 +19,7 @@ public class AddedCategoryPanel extends StartCategoryPanel {
 	private CategoryModel model;
 	private CategoryPanelController controller;
 	
+	
 	/**
 	 * Create the panel.
 	 * @param model
