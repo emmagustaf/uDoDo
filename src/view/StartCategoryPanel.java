@@ -47,6 +47,7 @@ public class StartCategoryPanel extends JPanel {
 		gbc_defaultLabel.gridy = 0;
 		
 		add(categoryLabel, gbc_defaultLabel);
+		setVisible(true);
 		
 		
 	}
