@@ -41,7 +41,7 @@ public class AddedCategoryPanel extends StartCategoryPanel {
 	 */
 	
 	public void setController(CategoryPanelController controller){
-		this.addMouseListener(controller);
+		super.setController(controller);
 		deleteCatButton.addActionListener(controller);
 	}
 	

@@ -25,10 +25,11 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	 * @param categoryPanel
 	 * @param catListView
 	 */
-	public CategoryPanelController(AddedCategoryPanel categoryPanel, CategoryListView catListView){
-		this.categoryPanel= categoryPanel;
-		categoryPanel.setController(this);
+	public CategoryPanelController(StartCategoryPanel startCategoryPanel, CategoryListView catListView){
 		this.catListView=catListView;
+		this.startCategoryPanel= startCategoryPanel;
+		startCategoryPanel.setController(this);
+
 		
 	}
 
