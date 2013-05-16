@@ -5,13 +5,17 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import utility.*;
 import java.awt.*;
-
+/**
+ * A class to represent a the view which will interact 
+ * with the user when adding tasks.
+ *
+ */
 public class ListView extends JScrollPane {
 	
 	public JPanel panelInScroll;
 	
 	/**
-	 * Create the list view with a new panel in it.
+	 * Create the listview with a new panel in it.
 	 */
 	public ListView() {
 		
