@@ -14,6 +14,7 @@ import view.CategoryListView;
 import view.AddedCategoryPanel;
 import view.HeaderView;
 import view.ListView;
+import view.StartCategoryPanel;
 import view.TaskPanel;
 import view.TaskSettingView;
 
@@ -22,7 +23,7 @@ public class HeaderController implements ActionListener{
 	private ListView view;
 	private HeaderView headerView;
 	private CategoryListView catListView;
-	private AddedCategoryPanel catPanel;
+	private StartCategoryPanel catPanel;
 	private TaskSettingView taskSetting;
 	//public HeaderController(HeaderView headerView, ListView view, CategoryListView catListView){
 		//this.headerView = headerView;
@@ -31,7 +32,7 @@ public class HeaderController implements ActionListener{
 		//this.catListView = catListView;
 	//}
 	
-	public HeaderController(HeaderView headerView, ListView view, AddedCategoryPanel catPanel, TaskSettingView taskSetting, CategoryListView catListView){
+	public HeaderController(HeaderView headerView, ListView view, StartCategoryPanel catPanel, TaskSettingView taskSetting, CategoryListView catListView){
 		this.headerView = headerView;
 		this.headerView.setController(this);
 		this.view = view;
@@ -49,12 +50,12 @@ public class HeaderController implements ActionListener{
 				//här behövs det få tag på info om en panel är markerad eller inte, en panel markeras via
 				//mouselistener i categorypanelcontroller. 
 				//kanske inte behöver ha två olika konstruktorer i taskmodel, utan bara alltid skicka med
-				//typ en categorypanel/model, 
+				//typ en categorypanel/model
 				
 //				if(catPanel.getModel().getMarkedStatus()){
 //					catPanel.getModel().getTaskList().add(task);
 //				}else{
-//					
+//
 //				}
 				TaskPanel taskPanel = new TaskPanel(task);
 				view.panelInScroll.add(taskPanel, 0);

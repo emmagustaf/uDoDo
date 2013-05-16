@@ -31,12 +31,27 @@ public class Main {
 		
 		TaskSettingView taskSettings = new TaskSettingView();
 		
+		StartCategoryPanel allCatPanel = new StartCategoryPanel(new CategoryModel("All Tasks"));
+		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(new CategoryModel("Finished Tasks"));
+		categoryListView.panel.add(finishedCatPanel);
+		categoryListView.panel.add(allCatPanel);
+		allCatPanel.setVisible(true);
+		finishedCatPanel.setVisible(true);
+		
+		CategoryPanelController catPanController = new CategoryPanelController(allCatPanel, categoryListView);
+		CategoryPanelController catPanController2 = new CategoryPanelController(finishedCatPanel, categoryListView);
+		
+	
 		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, taskSettings);
-		CategoryModel model = new CategoryModel(null);
-		AddedCategoryPanel catPanel = new AddedCategoryPanel(model);
-		HeaderController controller = new HeaderController(headerView, listView, catPanel, taskSettings, categoryListView);
+		
+		categoryListView.updateView();
+		//CategoryModel model = new CategoryModel(null);
+		//AddedCategoryPanel catPanel = new AddedCategoryPanel(model);
+		HeaderController controller = new HeaderController(headerView, listView, allCatPanel, taskSettings, categoryListView);
 		
 		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
+		
+		
 
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(700, 750));
