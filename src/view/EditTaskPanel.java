@@ -113,11 +113,6 @@ public class EditTaskPanel extends JPanel {
 	}
 
 	public void setCurrentDeadlineLabel(JDateTextField currentDeadline){
-		Date date = currentDeadline.getDate();
-//		String text = currentDeadline.formateDatecurrentDeadlineLabel.US_SHORT_DATE);
-		//currentDeadline = new JLabel (date);
-//		currentDeadline.setText(text);
-		//currentDeadline.setFormat(currentDeadlineLabel.US_SHORT_DATE);
 		currentDeadlineLabel=currentDeadline;
 	}
 	public JDateTextField getCurrentDeadlineLabel(){

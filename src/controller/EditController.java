@@ -56,16 +56,15 @@ public class EditController implements ActionListener{
 			}else if(e.getActionCommand().equals("calendar")){
 				
 				editTaskPanel.getCalendar().setVisible(true);
+				editTaskPanel.getCalendar().setEnabled(true);
 				if(editTaskPanel.getCalendar().isOkPressed()){
+					Date date = new Date();
+//					editTaskPanel.getCalendar().setCalendar(calendar);
+					editTaskPanel.getCalendar().setDate(date);
+					//editTaskPanel.getJDateTextField().setCalendar(editTaskPanel.getCalendar().getCalendar());
+					editTaskPanel.getJDateTextField().setDate(date);
 					
-					text.setCalendar(calendar);
-					//editTaskPanel.getCalendar().setCalendar();
-					text.formateDate(editTaskPanel.getCalendar().getCalendar(), text.US_SHORT_DATE);
-					editTaskPanel.setCurrentDeadlineLabel(editTaskPanel.setJDateTextField(text));
-					
-					System.out.println("changed date");
-					settingView.updateView();
-
+					System.out.println(""+ editTaskPanel.getJDateTextField().getText());
 				}
 				settingView.updateView();
 				
