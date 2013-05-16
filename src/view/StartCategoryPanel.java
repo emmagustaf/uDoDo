@@ -58,4 +58,8 @@ public class StartCategoryPanel extends JPanel {
 		this.addMouseListener(controller);
 		System.out.println("added controller");
 	}
+	
+	public CategoryModel getModel(){
+		return categoryModel;
+	}
 }

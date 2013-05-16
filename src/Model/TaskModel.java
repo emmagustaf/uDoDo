@@ -18,7 +18,7 @@ public class TaskModel {
 	private String description;
 	private Priority prio;
 	private Calendar deadline;
-	private AddedCategoryPanel catPanel;
+	private StartCategoryPanel catPanel;
 	private EditTaskPanel editTaskPanel;
 	//private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
 	//we will have to find a way to keep track of unchecked and checked tasks
@@ -31,7 +31,7 @@ public class TaskModel {
 		this.deadline = null;
 	}
 	
-	public TaskModel(String title, AddedCategoryPanel catPanel){
+	public TaskModel(String title, StartCategoryPanel catPanel){
 		this(title);
 		this.catPanel = catPanel;
 		

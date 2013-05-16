@@ -31,7 +31,8 @@ public class CategoryListView extends JScrollPane{
 	
 	public JPanel panel;
 	
-	private Deque<AddedCategoryPanel> catDeque = new ArrayDeque<AddedCategoryPanel>();
+	private Deque<StartCategoryPanel> catDeque = new ArrayDeque<StartCategoryPanel>();
+	private Deque<StartCategoryPanel> lastCatDeque = new ArrayDeque<StartCategoryPanel>();
 	
 	/**
 	 * 	Set all the graphical data for the scrollpane
@@ -75,7 +76,7 @@ public class CategoryListView extends JScrollPane{
 	 * @param catPanel
 	 */
 	
-	public void addToCatList(AddedCategoryPanel catPanel){
+	public void addToCatList(StartCategoryPanel catPanel){
 		catDeque.addLast(catPanel);
 		
 	}
@@ -92,7 +93,7 @@ public class CategoryListView extends JScrollPane{
 	 * @param catPanel
 	 */
 	
-	public void markCategory(AddedCategoryPanel catPanel){
+	public void markCategory(StartCategoryPanel catPanel){
 		catDeque.addFirst(catPanel);
 		System.out.println("marked");
 	}
@@ -102,10 +103,18 @@ public class CategoryListView extends JScrollPane{
 	 * @return
 	 */
 	
-	public AddedCategoryPanel getMarkedPanel(){
+	public StartCategoryPanel getMarkedPanel(){
 		System.out.println("getpanel working");
-		return null;
-		//return catDeque.getFirst();
+		return catDeque.getFirst();
+	}
+	
+	
+	public void markLastCategory(StartCategoryPanel catPanel){
+		lastCatDeque.addFirst(catPanel);
+	}
+	
+	public StartCategoryPanel getLastMarkedPanel(){
+		return lastCatDeque.getFirst();
 	}
 	
 }

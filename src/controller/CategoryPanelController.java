@@ -19,7 +19,8 @@ import view.*;
 public class CategoryPanelController implements ActionListener, MouseListener {
 	private AddedCategoryPanel categoryPanel;
 	private CategoryListView catListView;
-	private StartCategoryPanel startCategoryPanel = new StartCategoryPanel(null);;
+	private StartCategoryPanel startCategoryPanel;
+	
 	/**
 	 * Create a categorypanel which will be added in categoryListView
 	 * @param categoryPanel
@@ -27,7 +28,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	 */
 	public CategoryPanelController(StartCategoryPanel startCategoryPanel, CategoryListView catListView){
 		this.catListView=catListView;
-		this.startCategoryPanel= startCategoryPanel;
+		this.startCategoryPanel = startCategoryPanel;
 		startCategoryPanel.setController(this);
 
 		
@@ -50,8 +51,14 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
-		if(e.getSource() instanceof AddedCategoryPanel){
-			catListView.markCategory(categoryPanel);
+		if(e.getSource() instanceof StartCategoryPanel){
+			//if(!(StartCategoryPanel)e.getComponent().getMarkedPanel().equals(catListView.getLastMarkedPanel())){
+				
+			//}
+			catListView.markCategory((StartCategoryPanel)e.getComponent());
+			e.getComponent().setBackground(Color.white);
+			//catListView.markLastCategory((StartCategoryPanel)e.getComponent());
+			catListView.updateView();
 			//om den här metoden körs ska alla tasks som tillhör categorypanelns category visas i ListView,
 			//och categorymodelens status ska ändras till markerad, samtidigt som om det finns en categorypanel med 
 			//status markerad ska denna göras omarkerad (alltså med en metod för detta i categorymodel)
@@ -63,14 +70,21 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		arg0.getComponent().setBackground(Color.white);
-		
+		//if(!arg0.getComponent().equals(catListView.getMarkedPanel())){
+			//arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
+		//}else{
+			arg0.getComponent().setBackground(Color.white);
+			System.out.println("background changed");
+		//}
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
-	
+		if(catListView.getMarkedPanel().equals(null) || !catListView.getMarkedPanel().equals(arg0.getComponent())){
+			arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
+			System.out.println("mouseExited works");
+		}
+		
 	}
 	@Override
 	public void mousePressed(MouseEvent arg0) {
