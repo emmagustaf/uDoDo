@@ -90,24 +90,24 @@ public class TaskModel {
 		}
 	}
 	
-	public void setDeadline(Calendar deadline){
-		String year = editTaskPanel.deadline().substring(0,4);
-		String month = editTaskPanel.deadline().substring(4, 5);
-		String day = editTaskPanel.deadline().substring(5, 6);
-		deadline.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
-		this.deadline=deadline;
-	}
-	public String deadlineToString(Calendar deadline){
-		this.deadline=deadline;
-		String year = editTaskPanel.deadline().substring(0,4);
-		String month = editTaskPanel.deadline().substring(4, 5);
-		String day = editTaskPanel.deadline().substring(5, 6);
-		return year+"/"+month+"/"+day;
-	}
-	public String todaysDateToString(){
-		String todaysDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
-		return todaysDate;
-	}
+//	public void setDeadline(Calendar deadline){
+//		String year = editTaskPanel.deadline().substring(0,4);
+//		String month = editTaskPanel.deadline().substring(4, 5);
+//		String day = editTaskPanel.deadline().substring(5, 6);
+//		deadline.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
+//		this.deadline=deadline;
+//	}
+//	public String deadlineToString(Calendar deadline){
+//		this.deadline=deadline;
+//		String year = editTaskPanel.deadline().substring(0,4);
+//		String month = editTaskPanel.deadline().substring(4, 5);
+//		String day = editTaskPanel.deadline().substring(5, 6);
+//		return year+"/"+month+"/"+day;
+//	}
+//	public String todaysDateToString(){
+//		String todaysDate = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance().getTime());
+//		return todaysDate;
+//	}
 	
 	
 	public CategoryModel getCategory(){

@@ -36,7 +36,7 @@ public class EditTaskPanel extends JPanel {
 	private JButton saveButton;
 	private DisplayTaskPanel displayTaskPanel;
 	private JTextField deadlineInput;
-	private JLabel currentDeadlineLabel;
+	private JDateTextField currentDeadlineLabel= new JDateTextField();
 	private JLabel deadlineLabel;
 	private JButton calendarButton;
 	private JCalendar calendar;
@@ -80,7 +80,7 @@ public class EditTaskPanel extends JPanel {
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(deadlineLabel, "cell 0 7,alignx right");
 		
-		currentDeadlineLabel = new JLabel(""+ taskModel.getDeadline());
+		setCurrentDeadlineLabel(currentDeadlineLabel);
 		currentDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(currentDeadlineLabel, "cell 1 7,alignx center");
 		
@@ -110,13 +110,15 @@ public class EditTaskPanel extends JPanel {
 	public JCalendar getCalendar(){
 		return calendar;
 	}
-	public JLabel getCurrentDeadlineLabel(){
-		return currentDeadlineLabel;
-	}
-	public void setCurrentDeadlineLabel(Calendar calendar){
-		String date = new SimpleDateFormat("yyyyMMdd").format(calendar);
-		JLabel currentDeadline = new JLabel (date);
+
+	public void setCurrentDeadlineLabel(JDateTextField currentDeadline){
+		//String date = new SimpleDateFormat("yyyyMMdd").format(calendar);
+		//currentDeadline = new JLabel (date);
+		currentDeadline.setFormat(currentDeadlineLabel.US_SHORT_DATE);
 		currentDeadlineLabel=currentDeadline;
+	}
+	public JDateTextField getCurrentDeadlineLabel(){
+		return currentDeadlineLabel;
 	}
 	
 	public DisplayTaskPanel getDisplayTaskPanel(){
