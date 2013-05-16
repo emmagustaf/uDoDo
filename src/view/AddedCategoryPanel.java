@@ -6,13 +6,24 @@ import javax.swing.*;
 
 import model.CategoryModel;
 import controller.CategoryPanelController;
-
+/**
+ * A class to represent the panels which are added when user wants to add them.
+ * This class extends StartCategoryPanel
+ * 
+ * @author Hanna
+ *
+ */
 public class AddedCategoryPanel extends StartCategoryPanel {
 
 	private JButton deleteCatButton = new JButton();
 	private CategoryModel model;
 	private CategoryPanelController controller;
 	
+	
+	/**
+	 * Create the panel.
+	 * @param model
+	 */
 	public AddedCategoryPanel(CategoryModel model){
 		super(model);
 		super.setTitle(model.getCatTitle());

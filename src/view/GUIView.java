@@ -8,7 +8,6 @@ import utility.*;
 /**
  * This view-class is the base of a window. It will add panels to create a GUI
  * 
- * @author Hanna
  *
  */
 public class GUIView extends JPanel {

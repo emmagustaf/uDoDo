@@ -3,6 +3,7 @@ package view;
 import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.JPanel;
 import utility.*;
@@ -36,7 +37,7 @@ public class EditTaskPanel extends JPanel {
 	private JButton saveButton;
 	private DisplayTaskPanel displayTaskPanel;
 	private JTextField deadlineInput;
-	private JLabel currentDeadlineLabel;
+	private JDateTextField currentDeadlineLabel= new JDateTextField();
 	private JLabel deadlineLabel;
 	private JButton calendarButton;
 	private JCalendar calendar;
@@ -80,7 +81,7 @@ public class EditTaskPanel extends JPanel {
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(deadlineLabel, "cell 0 7,alignx right");
 		
-		currentDeadlineLabel = new JLabel(""+ taskModel.getDeadline());
+		setCurrentDeadlineLabel(currentDeadlineLabel);
 		currentDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(currentDeadlineLabel, "cell 1 7,alignx center");
 		
@@ -110,13 +111,12 @@ public class EditTaskPanel extends JPanel {
 	public JCalendar getCalendar(){
 		return calendar;
 	}
-	public JLabel getCurrentDeadlineLabel(){
-		return currentDeadlineLabel;
-	}
-	public void setCurrentDeadlineLabel(Calendar calendar){
-		String date = new SimpleDateFormat("yyyyMMdd").format(calendar);
-		JLabel currentDeadline = new JLabel (date);
+
+	public void setCurrentDeadlineLabel(JDateTextField currentDeadline){
 		currentDeadlineLabel=currentDeadline;
+	}
+	public JDateTextField getCurrentDeadlineLabel(){
+		return currentDeadlineLabel;
 	}
 	
 	public DisplayTaskPanel getDisplayTaskPanel(){
@@ -126,7 +126,9 @@ public class EditTaskPanel extends JPanel {
 	public String getTitleTextField(){
 		return titleTextField.getText();
 	}
-	
+	public JDateTextField setJDateTextField(JDateTextField textField){
+		return this.currentDeadlineLabel=textField;
+	}
 	public String getDescriptionTextField(){
 		return descriptionTextField.getText();
 	}
@@ -141,6 +143,10 @@ public class EditTaskPanel extends JPanel {
 		saveButton.addActionListener(controller);
 		cancelButton.addActionListener(controller);
 		calendarButton.addActionListener(controller);
+	}
+	public JDateTextField getJDateTextField() {
+
+		return currentDeadlineLabel;
 	}
 
 }

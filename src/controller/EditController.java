@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import calendar.JCalendar;
@@ -19,6 +22,8 @@ public class EditController implements ActionListener{
 	private EditModel editModel;
 	private DisplayTaskPanel displayTaskPanel;
 	private DisplayController displayController;
+	private Calendar calendar;
+	private JDateTextField text = new JDateTextField();
 	
 	public EditController(ListView listView, TaskSettingView settingView, EditTaskPanel editTaskPanel, EditModel editModel){
 		this.listView = listView;
@@ -51,11 +56,16 @@ public class EditController implements ActionListener{
 			}else if(e.getActionCommand().equals("calendar")){
 				
 				editTaskPanel.getCalendar().setVisible(true);
-				JDateTextField text = new JDateTextField();
-				editTaskPanel.getCalendar().getCalendar();
-				//editTaskPanel.setCurrentDeadlineLabel(editTaskPanel.getCalendar());
-				//editTaskPanel.setCurrentDeadlineLabel(text);
-
+				editTaskPanel.getCalendar().setEnabled(true);
+				if(editTaskPanel.getCalendar().isOkPressed()){
+					Date date = new Date();
+//					editTaskPanel.getCalendar().setCalendar(calendar);
+					editTaskPanel.getCalendar().setDate(date);
+					//editTaskPanel.getJDateTextField().setCalendar(editTaskPanel.getCalendar().getCalendar());
+					editTaskPanel.getJDateTextField().setDate(date);
+					
+					System.out.println(""+ editTaskPanel.getJDateTextField().getText());
+				}
 				settingView.updateView();
 				
 			}
