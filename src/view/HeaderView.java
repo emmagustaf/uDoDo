@@ -25,6 +25,10 @@ public class HeaderView extends JPanel{
 	private JTextField taskTitleInput;
 	private JButton addNewTaskButton;
 	
+	/**
+	 * Create the view.
+	 * 
+	 */
 	public HeaderView() {
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
