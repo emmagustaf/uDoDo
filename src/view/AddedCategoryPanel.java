@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import javax.swing.*;
 
+import utility.GraphicConstants;
+
 import model.CategoryModel;
 import controller.CategoryPanelController;
 /**
@@ -29,6 +31,8 @@ public class AddedCategoryPanel extends StartCategoryPanel {
 		super.setTitle(model.getCatTitle());
 		this.model=model;
 		this.setToolTipText("" + model.getCatTitle());
+		this.setBackground(GraphicConstants.BACKGROUND);
+		setForeground(GraphicConstants.FOREGROUND);
 		
 		deleteCatButton.setToolTipText("Delete category and all it's content");
 		

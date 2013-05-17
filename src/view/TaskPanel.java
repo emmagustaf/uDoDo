@@ -37,6 +37,7 @@ public class TaskPanel extends JPanel {
 	public TaskPanel(TaskModel model) {
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
+		this.setForeground(GraphicConstants.FOREGROUND);
 		setMinimumSize(new Dimension(290, 60));
 		setPreferredSize(new Dimension(290, 60));
 		setMaximumSize(new Dimension(290, 60));

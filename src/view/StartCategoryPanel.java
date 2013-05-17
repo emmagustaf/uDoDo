@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -24,7 +25,7 @@ public class StartCategoryPanel extends JPanel {
 		
 		this.categoryModel = categoryModel;
 		
-		setBackground(GraphicConstants.BACKGROUND);
+		this.setBackground(GraphicConstants.BACKGROUND);
 		setMinimumSize(new Dimension(200, 40));
 		setMaximumSize(new Dimension(200, 40));
 		setPreferredSize(new Dimension(200, 40));
@@ -40,6 +41,7 @@ public class StartCategoryPanel extends JPanel {
 		categoryLabel.setMaximumSize(new Dimension(120,30));
 		categoryLabel.setMinimumSize(new Dimension(120,30));
 		categoryLabel.setPreferredSize(new Dimension(120,30));
+		categoryLabel.setForeground(GraphicConstants.FOREGROUND);
 		
 		GridBagConstraints gbc_defaultLabel = new GridBagConstraints();
 		gbc_defaultLabel.anchor = GridBagConstraints.WEST;
@@ -61,5 +63,9 @@ public class StartCategoryPanel extends JPanel {
 	
 	public CategoryModel getModel(){
 		return categoryModel;
+	}
+	
+	public void setTextColor(Color c){
+		categoryLabel.setForeground(c);
 	}
 }

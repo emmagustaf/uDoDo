@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -51,15 +52,28 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
+		if(!isSelected(e.getComponent())){
+			
+			catListView.markCategory((StartCategoryPanel)(e.getComponent()));
+			e.getComponent().setBackground(GraphicConstants.BUTTONPRESSED);
+			((StartCategoryPanel)(e.getComponent())).setTextColor(GraphicConstants.BUTTONPRESSEDFOREGROUND);
+			
+			catListView.getLastMarkedPanel().setBackground(GraphicConstants.BACKGROUND);
+			((StartCategoryPanel)(e.getComponent())).setTextColor(GraphicConstants.FOREGROUND);
+			
+			catListView.updateView();
+		}
+		
+		
+		
 		if(e.getSource() instanceof StartCategoryPanel){
 			//if(!(StartCategoryPanel)e.getComponent().getMarkedPanel().equals(catListView.getLastMarkedPanel())){
 				
 			//}
-			catListView.markCategory((StartCategoryPanel)e.getComponent());
 			e.getComponent().setBackground(Color.white);
 			//catListView.markLastCategory((StartCategoryPanel)e.getComponent());
-			catListView.updateView();
-			catListView.getLastMarkedPanel().setBackground(GraphicConstants.BACKGROUND);
+			
+		
 			//om den här metoden körs ska alla tasks som tillhör categorypanelns category visas i ListView,
 			//och categorymodelens status ska ändras till markerad, samtidigt som om det finns en categorypanel med 
 			//status markerad ska denna göras omarkerad (alltså med en metod för detta i categorymodel)
@@ -71,33 +85,40 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		//if(!arg0.getComponent().equals(catListView.getMarkedPanel())){
-			//arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
-		//}else{
-			arg0.getComponent().setBackground(Color.white);
-			System.out.println("background changed");
-		//}
+		
+		if(!isSelected(arg0.getComponent())){
+			arg0.getComponent().setBackground(GraphicConstants.BUTTONHOVER);
+			((StartCategoryPanel)(arg0.getComponent())).setTextColor(GraphicConstants.FOREGROUND);
+		}
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		if(catListView.getMarkedPanel().equals(null) || !catListView.getMarkedPanel().equals(arg0.getComponent())){
+		if(!isSelected(arg0.getComponent())){
 			arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
-			System.out.println("mouseExited works");
-			catListView.markLastCategory(catListView.getMarkedPanel());
 		}
+//		if(catListView.getMarkedPanel().equals(null) || !isSelected(arg0.getComponent())){
+//			arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
+//			System.out.println("mouseExited works");
+//			catListView.markLastCategory(catListView.getMarkedPanel());
+//		}
 		
 	}
 	
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public boolean isSelected(Component panel){
+		return (catListView.getMarkedPanel().equals(panel) || catListView.getMarkedPanel().equals(null));
 		
 	}
 	
