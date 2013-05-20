@@ -38,8 +38,8 @@ public class Main {
 		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
 		allCatPanel.setTitle("All Tasks");
 		finishedCatPanel.setTitle("Finished Tasks");
-		categoryListView.panel.add(finishedCatPanel);
 		categoryListView.panel.add(allCatPanel);
+		categoryListView.panel.add(finishedCatPanel);
 		allCatPanel.setVisible(true);
 		finishedCatPanel.setVisible(true);
 		

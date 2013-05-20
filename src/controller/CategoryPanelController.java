@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 
 import utility.GraphicConstants;
 import view.*;
@@ -39,7 +40,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() instanceof JComponent){
 			if(e.getActionCommand().equals("delete Category")){
-				catListView.panel.remove(categoryPanel);
+				catListView.panel.remove(startCategoryPanel);
 				catListView.updateView();
 			}
 			
@@ -51,34 +52,15 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
-		if(!isSelected(e.getComponent())){
-			
-			catListView.markCategory((StartCategoryPanel)(e.getComponent()));
-			e.getComponent().setBackground(GraphicConstants.BUTTONPRESSED);
-			((StartCategoryPanel)(e.getComponent())).setTextColor(GraphicConstants.BUTTONPRESSEDFOREGROUND);
-			
-			catListView.getLastMarkedPanel().setBackground(GraphicConstants.BACKGROUND);
-			((StartCategoryPanel)(e.getComponent())).setTextColor(GraphicConstants.FOREGROUND);
-			
-			catListView.updateView();
-		}
-		
-		
-		
 		if(e.getSource() instanceof StartCategoryPanel){
-			//if(!(StartCategoryPanel)e.getComponent().getMarkedPanel().equals(catListView.getLastMarkedPanel())){
-				
-			//}
-			e.getComponent().setBackground(Color.white);
-			//catListView.markLastCategory((StartCategoryPanel)e.getComponent());
+			catListView.markCategory((StartCategoryPanel)e.getComponent());
+			e.getComponent().setBackground(GraphicConstants.BUTTONPRESSED);
+			((StartCategoryPanel)e.getComponent()).setTextColor(GraphicConstants.BUTTONPRESSEDFOREGROUND);
 			
-		
-			//om den här metoden körs ska alla tasks som tillhör categorypanelns category visas i ListView,
-			//och categorymodelens status ska ändras till markerad, samtidigt som om det finns en categorypanel med 
-			//status markerad ska denna göras omarkerad (alltså med en metod för detta i categorymodel)
-			//man kanske kan lösa detta genom att lägga in de cats som klickats på i en lista, och så tar man fram den
-			//caten som senast lagts till i listan
+			if(!catListView.getLastMarkedList().isEmpty()){
+				catListView.getLastMarkedPanel().setBackground(GraphicConstants.BACKGROUND);
+				catListView.getLastMarkedPanel().setTextColor(GraphicConstants.FOREGROUND);
+			}
 		}
 		
 	}
@@ -86,22 +68,22 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		
-		if(!isSelected(arg0.getComponent())){
+		if(catListView.getMarkedList().isEmpty() || !isSelected(arg0.getComponent())){ 
 			arg0.getComponent().setBackground(GraphicConstants.BUTTONHOVER);
-			((StartCategoryPanel)(arg0.getComponent())).setTextColor(GraphicConstants.FOREGROUND);
+			
 		}
+		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		if(!isSelected(arg0.getComponent())){
+		
+		if(catListView.getMarkedList().isEmpty() || !isSelected(arg0.getComponent())){
 			arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
+			
+		}else{
+			catListView.markLastCategory((StartCategoryPanel)arg0.getComponent());
 		}
-//		if(catListView.getMarkedPanel().equals(null) || !isSelected(arg0.getComponent())){
-//			arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
-//			System.out.println("mouseExited works");
-//			catListView.markLastCategory(catListView.getMarkedPanel());
-//		}
 		
 	}
 	
@@ -117,8 +99,14 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 		
 	}
 	
-	public boolean isSelected(Component panel){
-		return (catListView.getMarkedPanel().equals(panel) || catListView.getMarkedPanel().equals(null));
+	public boolean isSelected(Component comp){
+		
+		if(comp instanceof StartCategoryPanel){
+			return catListView.getMarkedPanel().equals((StartCategoryPanel)comp);
+			
+		}else{
+			return false;
+		}
 		
 	}
 	
