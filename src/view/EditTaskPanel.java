@@ -130,7 +130,6 @@ public class EditTaskPanel extends JPanel {
 	}
 	public String getJDateTextField(){
 		dateTextField.getCalendar();
-		
 		dateTextField.setDate(calendar.getDate());
 		return dateTextField.getText();
 	}

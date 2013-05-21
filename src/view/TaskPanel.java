@@ -43,9 +43,9 @@ public class TaskPanel extends JPanel {
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		this.setForeground(GraphicConstants.FOREGROUND);
-		setMinimumSize(new Dimension(290, 90));
-		setPreferredSize(new Dimension(290, 90));
-		setMaximumSize(new Dimension(290, 90));
+		setMinimumSize(new Dimension(290, 80));
+		setPreferredSize(new Dimension(290, 72));
+		setMaximumSize(new Dimension(290, 80));
 //		setSize(new Dimension(30, 20));
 		this.model=model;
 		setLayout(new MigLayout("", "[40.00px,left][100.00][30.00][88.00][93.00]", "[45.00px,center][][]"));
@@ -77,7 +77,7 @@ public class TaskPanel extends JPanel {
 		deleteTaskButton.setActionCommand("deleteTask");
 		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");
 		
-		deadlineLabel = new JLabel("Deadline:	" + model.getDeadline());
+		deadlineLabel = new JLabel(model.getDeadline());
 		deadlineLabel.setMinimumSize(new Dimension(150, 15));
 		deadlineLabel.setMaximumSize(new Dimension(150, 15));
 		deadlineLabel.setPreferredSize(new Dimension(150, 15));
