@@ -37,6 +37,10 @@ public class TaskPanel extends JPanel {
 	 */
 	public TaskPanel(TaskModel model) {
 		
+		this.model=model;
+		model.getCategory().getTaskList().add(this);
+		System.out.println(model.getTitle() + " skapad");
+		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		this.setForeground(GraphicConstants.FOREGROUND);
 		setMinimumSize(new Dimension(290, 90));
@@ -45,6 +49,7 @@ public class TaskPanel extends JPanel {
 //		setSize(new Dimension(30, 20));
 		this.model=model;
 		setLayout(new MigLayout("", "[40.00px,left][100.00][30.00][88.00][93.00]", "[45.00px,center][][]"));
+
 		
 		
 		JToggleButton checkbutton = new JToggleButton("");
@@ -60,6 +65,7 @@ public class TaskPanel extends JPanel {
 		taskLabel.setMaximumSize(new Dimension(200, 30));
 		taskLabel.setPreferredSize(new Dimension(200, 30));
 		taskLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
+		taskLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(taskLabel, "cell 1 0 3 1,alignx left,aligny center");
 
 		

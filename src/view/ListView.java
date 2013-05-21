@@ -60,4 +60,31 @@ public class ListView extends JScrollPane {
 			taskPanels[i].repaint();
 		}
 	}
+	
+	public void displayTasks(StartCategoryPanel catPanel){
+		
+		int size = catPanel.getModel().getTaskList().size();
+		
+		for(int i = size - 1; i >= 0; i = i - 1){
+			
+			this.add(catPanel.getModel().getTaskList().get(i));
+		}
+		
+		this.updatePanels();
+		this.updateView();
+	}
+	
+	public void hideTasks(CategoryListView catListView){
+		
+		if(!catListView.getLastMarkedList().isEmpty()){
+			
+			int size = catListView.getLastMarkedPanel().getModel().getTaskList().size();
+			
+			for(int i = size - 1; i >= 0; i = i - 1){
+				this.remove(catListView.getLastMarkedPanel().getModel().getTaskList().get(i));
+			}
+		}
+		this.updatePanels();
+		this.updateView();
+	}
 }

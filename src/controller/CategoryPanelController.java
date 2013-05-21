@@ -22,14 +22,16 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	private AddedCategoryPanel categoryPanel;
 	private CategoryListView catListView;
 	private StartCategoryPanel startCategoryPanel;
+	private ListView listView;
 	
 	/**
 	 * Create a categorypanel which will be added in categoryListView
 	 * @param categoryPanel
 	 * @param catListView
 	 */
-	public CategoryPanelController(StartCategoryPanel startCategoryPanel, CategoryListView catListView){
+	public CategoryPanelController(StartCategoryPanel startCategoryPanel, CategoryListView catListView, ListView listView){
 		this.catListView=catListView;
+		this.listView = listView;
 		this.startCategoryPanel = startCategoryPanel;
 		startCategoryPanel.setController(this);
 
@@ -53,7 +55,11 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(e.getSource() instanceof StartCategoryPanel){
+	
 			catListView.markCategory((StartCategoryPanel)e.getComponent());
+			listView.displayTasks((StartCategoryPanel)e.getComponent());
+			listView.hideTasks(catListView);
+			
 			e.getComponent().setBackground(GraphicConstants.BUTTONPRESSED);
 			((StartCategoryPanel)e.getComponent()).setTextColor(GraphicConstants.BUTTONPRESSEDFOREGROUND);
 			
@@ -61,6 +67,10 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 				catListView.getLastMarkedPanel().setBackground(GraphicConstants.BACKGROUND);
 				catListView.getLastMarkedPanel().setTextColor(GraphicConstants.FOREGROUND);
 			}
+			
+			catListView.updateView();
+			listView.updateView();
+			
 		}
 		
 	}
@@ -83,7 +93,11 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 			
 		}else{
 			catListView.markLastCategory((StartCategoryPanel)arg0.getComponent());
+		
 		}
+		
+		catListView.updateView();
+		
 		
 	}
 	

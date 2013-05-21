@@ -2,22 +2,24 @@ package model;
 
 import java.util.ArrayList;
 
-public class ListModel extends ArrayList<TaskModel> {
+import view.TaskPanel;
+
+public class ListModel extends ArrayList<TaskPanel> {
 	
 
 	//public ListModel(){
 		//ArrayList<TaskModel> taskList = new ArrayList<TaskModel>();
 	//}
 	
-	public ArrayList<TaskModel> getTaskList(){
+	public ArrayList<TaskPanel> getTaskList(){
 		return this;
 	}
 	
-	public void addTask(TaskModel task){
+	public void addTask(TaskPanel task){
 		this.add(task);
 	}
 	
-	public void removeTask(TaskModel task){
+	public void removeTask(TaskPanel task){
 		this.remove(task);
 	}
 
