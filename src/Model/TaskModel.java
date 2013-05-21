@@ -57,6 +57,11 @@ public class TaskModel {
 		checked = !checked;
 	}
 	
+	public boolean getState(){
+		return checked;
+		
+	}
+	
 	public Priority getPrio(){
 		return prio;
 	}

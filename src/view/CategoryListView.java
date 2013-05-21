@@ -34,6 +34,7 @@ public class CategoryListView extends JScrollPane{
 	private Deque<StartCategoryPanel> catDeque = new ArrayDeque<StartCategoryPanel>();
 	private Deque<StartCategoryPanel> lastCatDeque = new ArrayDeque<StartCategoryPanel>();
 	private StartCategoryPanel defaultCategory;
+	private StartCategoryPanel finishedCategory;
 	
 	/**
 	 * 	Set all the graphical data for the scrollpane
@@ -100,6 +101,16 @@ public class CategoryListView extends JScrollPane{
 		return defaultCategory;
 	}
 	
+	public void setFinishedCategory(StartCategoryPanel catPanel){
+		this.finishedCategory = catPanel;
+		
+	}
+	
+	
+	public StartCategoryPanel getFinishedCategory(){
+		return finishedCategory;
+		
+	}
 	
 	/**
 	 * Marks a categorypanel in deque

@@ -39,6 +39,7 @@ public class TaskController implements ActionListener {
 				listView.updateView();
 			}else if(e.getActionCommand().equals("taskCheck")){
 				taskPanel.getModel().changeState();
+				//taskPanel.getModel().getCategory().getTaskList().add(taskPanel);
 			}
 		}
 	}

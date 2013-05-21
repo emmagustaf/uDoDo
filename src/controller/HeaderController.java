@@ -25,12 +25,6 @@ public class HeaderController implements ActionListener{
 	private CategoryListView catListView;
 	private StartCategoryPanel catPanel;
 	private TaskSettingView taskSetting;
-	//public HeaderController(HeaderView headerView, ListView view, CategoryListView catListView){
-		//this.headerView = headerView;
-		//headerView.setController(this);
-		//this.view = view;
-		//this.catListView = catListView;
-	//}
 	
 	public HeaderController(HeaderView headerView, ListView view, StartCategoryPanel catPanel, TaskSettingView taskSetting, CategoryListView catListView){
 		this.headerView = headerView;
@@ -59,11 +53,6 @@ public class HeaderController implements ActionListener{
 				//kanske inte behöver ha två olika konstruktorer i taskmodel, utan bara alltid skicka med
 				//typ en categorypanel/model
 				
-//				if(catPanel.getModel().getMarkedStatus()){
-//					catPanel.getModel().getTaskList().add(task);
-//				}else{
-//
-//				}
 				TaskPanel taskPanel = new TaskPanel(task);
 				view.panelInScroll.add(taskPanel, 0);
 				view.updateView();
