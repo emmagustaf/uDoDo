@@ -30,6 +30,7 @@ public class TaskPanel extends JPanel {
 	private String taskCheck;
 	private JButton deleteTaskButton;
 	private JLabel taskLabel;
+	private JLabel deadlineLabel;
 	
 	/**
 	 * Create the panel.
@@ -38,12 +39,12 @@ public class TaskPanel extends JPanel {
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		this.setForeground(GraphicConstants.FOREGROUND);
-		setMinimumSize(new Dimension(290, 60));
-		setPreferredSize(new Dimension(290, 60));
-		setMaximumSize(new Dimension(290, 60));
+		setMinimumSize(new Dimension(290, 90));
+		setPreferredSize(new Dimension(290, 90));
+		setMaximumSize(new Dimension(290, 90));
 //		setSize(new Dimension(30, 20));
 		this.model=model;
-		setLayout(new MigLayout("", "[40.00px,left][100.00][30.00][88.00][93.00]", "[45.00px,center]"));
+		setLayout(new MigLayout("", "[40.00px,left][100.00][30.00][88.00][93.00]", "[45.00px,center][][]"));
 		
 		
 		JToggleButton checkbutton = new JToggleButton("");
@@ -70,10 +71,20 @@ public class TaskPanel extends JPanel {
 		deleteTaskButton.setActionCommand("deleteTask");
 		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");
 		
+		deadlineLabel = new JLabel(model.getDeadline());
+		deadlineLabel.setMinimumSize(new Dimension(200, 30));
+		deadlineLabel.setMaximumSize(new Dimension(200, 30));
+		deadlineLabel.setPreferredSize(new Dimension(200, 30));
+		deadlineLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
+		add(deadlineLabel, "cell 1 1,alignx left,aligny center");
+		
 	}
 	
 	public void setTitle(){
 		taskLabel.setText(model.getTitle());
+	}
+	public void setDeadline(){
+		deadlineLabel.setText(model.getDeadline());
 	}
 
 	public void setController(TaskController controller){

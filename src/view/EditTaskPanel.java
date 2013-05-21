@@ -37,10 +37,11 @@ public class EditTaskPanel extends JPanel {
 	private JButton saveButton;
 	private DisplayTaskPanel displayTaskPanel;
 	private JTextField deadlineInput;
-	private JDateTextField currentDeadlineLabel= new JDateTextField();
+	private JDateTextField jDateTextField;
 	private JLabel deadlineLabel;
 	private JButton calendarButton;
 	private JCalendar calendar;
+	private JLabel label;
 	/**
 	 * Create the panel.
 	 */
@@ -81,9 +82,9 @@ public class EditTaskPanel extends JPanel {
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(deadlineLabel, "cell 0 7,alignx right");
 		
-		setCurrentDeadlineLabel(currentDeadlineLabel);
-		currentDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
-		add(currentDeadlineLabel, "cell 1 7,alignx center");
+		jDateTextField = new JDateTextField();
+		jDateTextField.setFont(GraphicConstants.REGULARFONT);
+		add(jDateTextField, "cell 1 7,alignx center");
 		
 		JLabel changeDeadlineLabel = new JLabel("Change deadline:");
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
@@ -111,13 +112,6 @@ public class EditTaskPanel extends JPanel {
 	public JCalendar getCalendar(){
 		return calendar;
 	}
-
-	public void setCurrentDeadlineLabel(JDateTextField currentDeadline){
-		currentDeadlineLabel=currentDeadline;
-	}
-	public JDateTextField getCurrentDeadlineLabel(){
-		return currentDeadlineLabel;
-	}
 	
 	public DisplayTaskPanel getDisplayTaskPanel(){
 		return displayTaskPanel;
@@ -126,8 +120,15 @@ public class EditTaskPanel extends JPanel {
 	public String getTitleTextField(){
 		return titleTextField.getText();
 	}
-	public JDateTextField setJDateTextField(JDateTextField textField){
-		return this.currentDeadlineLabel=textField;
+	public JDateTextField getJDateTextField(){
+		return jDateTextField;
+	}
+	public JTextField setDateTextField(JDateTextField textField){
+		return this.jDateTextField=textField;
+	}
+	public JTextField getJTextField() {
+
+		return jDateTextField;
 	}
 	public String getDescriptionTextField(){
 		return descriptionTextField.getText();
@@ -144,9 +145,6 @@ public class EditTaskPanel extends JPanel {
 		cancelButton.addActionListener(controller);
 		calendarButton.addActionListener(controller);
 	}
-	public JDateTextField getJDateTextField() {
-
-		return currentDeadlineLabel;
-	}
+	
 
 }
