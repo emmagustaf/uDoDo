@@ -78,10 +78,10 @@ public class TaskPanel extends JPanel {
 		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");
 		
 		deadlineLabel = new JLabel(model.getDeadline());
-		deadlineLabel.setMinimumSize(new Dimension(200, 30));
-		deadlineLabel.setMaximumSize(new Dimension(200, 30));
-		deadlineLabel.setPreferredSize(new Dimension(200, 30));
-		deadlineLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
+		deadlineLabel.setMinimumSize(new Dimension(150, 15));
+		deadlineLabel.setMaximumSize(new Dimension(150, 15));
+		deadlineLabel.setPreferredSize(new Dimension(150, 15));
+		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(deadlineLabel, "cell 1 1,alignx left,aligny center");
 		
 	}
@@ -90,6 +90,7 @@ public class TaskPanel extends JPanel {
 		taskLabel.setText(model.getTitle());
 	}
 	public void setDeadline(){
+		
 		deadlineLabel.setText(model.getDeadline());
 	}
 

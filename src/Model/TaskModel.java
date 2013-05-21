@@ -93,8 +93,11 @@ public class TaskModel {
 		this.deadlineLabel.setText(deadline);
 	}
 	public String getDeadline(){
-	
-		return deadline;
+		if(deadline==null){
+			return "No deadline for this task";
+		}else{
+		return "Deadline:	" + deadline;
+		}
 	}
 
 	public CategoryModel getCategory(){

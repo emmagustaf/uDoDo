@@ -26,6 +26,7 @@ public class DisplayTaskPanel extends JPanel {
 	private TaskModel taskModel;
 	private DisplayController controller;
 	private DisplayModel displayModel;
+	private JLabel deadlineLabel;
 	
 	/**
 	 * Create the panel.
@@ -38,7 +39,7 @@ public class DisplayTaskPanel extends JPanel {
 	
 		this.taskModel=taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new MigLayout("", "[207.00][][]", "[][][][][][][][][]"));
+		setLayout(new MigLayout("", "[207.00][][][]", "[][][][][][][][][]"));
 		
 		JLabel titleLabel = new JLabel(displayModel.getTaskModel().getTitle());
 		titleLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
@@ -52,6 +53,10 @@ public class DisplayTaskPanel extends JPanel {
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(deadlineLabel, "cell 0 4");
 		
+		deadlineLabel = new JLabel(taskModel.getDeadline());
+		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
+		add(deadlineLabel, "cell 1 4");
+		
 		JLabel prioLabel = new JLabel("Priority");
 		prioLabel.setFont(GraphicConstants.REGULARFONT);
 		add(prioLabel, "cell 0 6");
@@ -60,7 +65,7 @@ public class DisplayTaskPanel extends JPanel {
 		getEditButton().setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&16.png")));
 		getEditButton().setBorderPainted(false);
 		getEditButton().setFont(GraphicConstants.REGULARFONT);
-		add(getEditButton(), "cell 1 8");
+		add(getEditButton(), "cell 2 8");
 		getEditButton().setActionCommand("editTask");
 
 	}
