@@ -96,7 +96,7 @@ public class TaskModel {
 		if(deadline==null){
 			return "No deadline for this task";
 		}else{
-		return "Deadline:	" + deadline;
+		return deadline;
 		}
 	}
 

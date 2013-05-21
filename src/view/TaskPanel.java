@@ -77,7 +77,7 @@ public class TaskPanel extends JPanel {
 		deleteTaskButton.setActionCommand("deleteTask");
 		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");
 		
-		deadlineLabel = new JLabel(model.getDeadline());
+		deadlineLabel = new JLabel("Deadline:	" + model.getDeadline());
 		deadlineLabel.setMinimumSize(new Dimension(150, 15));
 		deadlineLabel.setMaximumSize(new Dimension(150, 15));
 		deadlineLabel.setPreferredSize(new Dimension(150, 15));

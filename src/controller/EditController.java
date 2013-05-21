@@ -58,13 +58,7 @@ public class EditController implements ActionListener{
 				editTaskPanel.getCalendar().setVisible(true);
 				editTaskPanel.getCalendar().setEnabled(true);
 				if(editTaskPanel.getCalendar().isOkPressed()){
-					Date date = new Date();
-//					editTaskPanel.getCalendar().setCalendar(calendar);
-					editTaskPanel.getCalendar().setDate(date);
-					editTaskPanel.getCalendar().getDayChooser();
-					//editTaskPanel.getJDateTextField().setCalendar(editTaskPanel.getCalendar().getCalendar());
-					//editTaskPanel.getJDateTextField().setDate(date);
-					editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());
+					setDate();
 					System.out.println("" + editTaskPanel.getJDateTextField() );
 				}
 				settingView.updateView();
@@ -81,11 +75,13 @@ public class EditController implements ActionListener{
 		displayController = new DisplayController(listView, settingView, displayTaskPanel);
 		settingView.panelInScroll.add(displayTaskPanel);
 	}
-	
+	private void setDate(){
+		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());
+		listView.updatePanels();
+	}
 	private void saveChanges(){
 		editTaskPanel.getTaskModel().setTitle(editTaskPanel.getTitleTextField());
 		editTaskPanel.getTaskModel().setDescription(editTaskPanel.getDescriptionTextField());
-		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());		
 		listView.updatePanels();
 		toDisplayTask();
 	}
