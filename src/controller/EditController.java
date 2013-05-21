@@ -59,7 +59,6 @@ public class EditController implements ActionListener{
 				editTaskPanel.getCalendar().setEnabled(true);
 				if(editTaskPanel.getCalendar().isOkPressed()){
 					setDate();
-					System.out.println("" + editTaskPanel.getJDateTextField() );
 				}
 				settingView.updateView();
 				
