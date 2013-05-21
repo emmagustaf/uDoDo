@@ -37,11 +37,12 @@ public class EditTaskPanel extends JPanel {
 	private JButton saveButton;
 	private DisplayTaskPanel displayTaskPanel;
 	private JTextField deadlineInput;
-	private JDateTextField jDateTextField;
+	private JLabel dateLabel;
 	private JLabel deadlineLabel;
 	private JButton calendarButton;
 	private JCalendar calendar;
-	private JLabel label;
+	private JDateTextField dateTextField;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -82,9 +83,10 @@ public class EditTaskPanel extends JPanel {
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		add(deadlineLabel, "cell 0 7,alignx right");
 		
-		jDateTextField = new JDateTextField();
-		jDateTextField.setFont(GraphicConstants.REGULARFONT);
-		add(jDateTextField, "cell 1 7,alignx center");
+		
+		dateLabel = new JLabel("" + taskModel.getDeadline());
+		dateLabel.setFont(GraphicConstants.REGULARFONT);
+		add(dateLabel, "cell 1 7,alignx center");
 		
 		JLabel changeDeadlineLabel = new JLabel("Change deadline:");
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
@@ -95,6 +97,9 @@ public class EditTaskPanel extends JPanel {
 		calendarButton.setActionCommand("calendar");
 		add(calendarButton, "cell 1 8,growx");
 		//deadlineInput.setColumns(10);
+		
+		dateTextField = new JDateTextField();
+		dateTextField.setText("" + taskModel.getDeadline());
 		
 		cancelButton = new JButton("cancel");
 		cancelButton.setFont(GraphicConstants.REGULARFONT);
@@ -120,15 +125,14 @@ public class EditTaskPanel extends JPanel {
 	public String getTitleTextField(){
 		return titleTextField.getText();
 	}
-	public JDateTextField getJDateTextField(){
-		return jDateTextField;
+	public String getDeadline(){
+		return deadlineLabel.getText();
 	}
-	public JTextField setDateTextField(JDateTextField textField){
-		return this.jDateTextField=textField;
-	}
-	public JTextField getJTextField() {
-
-		return jDateTextField;
+	public String getJDateTextField(){
+		
+		
+		dateTextField.setDate(calendar.getDate());
+		return dateTextField.getText();
 	}
 	public String getDescriptionTextField(){
 		return descriptionTextField.getText();
@@ -137,9 +141,7 @@ public class EditTaskPanel extends JPanel {
 	public TaskModel getTaskModel(){
 		return taskModel;
 	}
-	public String deadline(){
-		return deadlineInput.toString();
-	}
+	
 	public void setController(EditController controller){
 		saveButton.addActionListener(controller);
 		cancelButton.addActionListener(controller);

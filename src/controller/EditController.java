@@ -61,11 +61,11 @@ public class EditController implements ActionListener{
 					Date date = new Date();
 //					editTaskPanel.getCalendar().setCalendar(calendar);
 					editTaskPanel.getCalendar().setDate(date);
+					editTaskPanel.getCalendar().getDayChooser();
 					//editTaskPanel.getJDateTextField().setCalendar(editTaskPanel.getCalendar().getCalendar());
-					editTaskPanel.getJDateTextField().setDate(date);
-					editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJTextField().getText());
-					
-					System.out.println(""+ editTaskPanel.getJTextField().getText() + editTaskPanel.getTaskModel().getDeadline());
+					//editTaskPanel.getJDateTextField().setDate(date);
+					editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());
+					System.out.println("" + editTaskPanel.getJDateTextField() );
 				}
 				settingView.updateView();
 				
@@ -85,7 +85,7 @@ public class EditController implements ActionListener{
 	private void saveChanges(){
 		editTaskPanel.getTaskModel().setTitle(editTaskPanel.getTitleTextField());
 		editTaskPanel.getTaskModel().setDescription(editTaskPanel.getDescriptionTextField());
-		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField().getText());		
+		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());		
 		listView.updatePanels();
 		toDisplayTask();
 	}
