@@ -39,6 +39,7 @@ public class Main {
 		categoryListView.getMarkedList().clear();
 		categoryListView.getLastMarkedList().clear();
 		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
+		categoryListView.setFinishedCategory(finishedCatPanel);
 		allCatPanel.setTitle("All Tasks");
 		finishedCatPanel.setTitle("Finished Tasks");
 		categoryListView.panel.add(allCatPanel);
