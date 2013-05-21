@@ -29,11 +29,13 @@ public class TaskModel {
 		this.checked = false;
 		this.prio = Priority.NO_PRIORITY;
 		this.deadline = null;
+		
 	}
 	
 	public TaskModel(String title, StartCategoryPanel catPanel){
 		this(title);
 		this.catPanel = catPanel;
+		//catPanel.getModel().getTaskList().add(this);
 		
 		//this.uncheckedTaskList.add(this);
 	}
@@ -112,6 +114,11 @@ public class TaskModel {
 	
 	public CategoryModel getCategory(){
 		return catPanel.getModel();
+	}
+	
+	
+	public StartCategoryPanel getCatPanel(){
+		return catPanel;
 	}
 	
 	/**

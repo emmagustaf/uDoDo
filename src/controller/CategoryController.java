@@ -53,7 +53,7 @@ public class CategoryController implements ActionListener{
 				view.getTextField().setText("");
 				catListView.addToCatList(catPanel);
 				catListView.updateView();
-				CategoryPanelController catController = new CategoryPanelController(catPanel, catListView);
+				CategoryPanelController catController = new CategoryPanelController(catPanel, catListView, listView);
 				System.out.println("category added");
 			}		
 		}

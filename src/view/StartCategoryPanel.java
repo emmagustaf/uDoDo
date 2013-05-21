@@ -55,17 +55,27 @@ public class StartCategoryPanel extends JPanel {
 	}
 	public void setTitle(String title){
 		categoryLabel.setText(title);
+		
+	}
+	
+	public String getTitle(){
+		return categoryLabel.getText();
+		
 	}
 	public void setController(CategoryPanelController controller){
 		this.addMouseListener(controller);
 		System.out.println("added controller");
+		
 	}
 	
 	public CategoryModel getModel(){
 		return categoryModel;
+		
 	}
 	
 	public void setTextColor(Color c){
 		categoryLabel.setForeground(c);
+		
 	}
+	
 }

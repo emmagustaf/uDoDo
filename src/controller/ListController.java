@@ -33,7 +33,7 @@ public class ListController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource().equals("deleteTask")){
-			listModel.removeTask(((TaskPanel)((JButton) e.getSource()).getParent()).getModel());
+			listModel.removeTask(((TaskPanel)((JButton) e.getSource()).getParent()));
 		}
 	}
 

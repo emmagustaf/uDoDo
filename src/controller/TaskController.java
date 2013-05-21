@@ -30,7 +30,7 @@ public class TaskController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("entered action preformed in taskcontroller");
+		System.out.println("entered action performed in taskcontroller");
 		if(e.getSource() instanceof JComponent){
 			if(e.getActionCommand().equals("deleteTask")){
 				System.out.println("entered delete task");

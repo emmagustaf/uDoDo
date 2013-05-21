@@ -33,6 +33,7 @@ public class CategoryListView extends JScrollPane{
 	
 	private Deque<StartCategoryPanel> catDeque = new ArrayDeque<StartCategoryPanel>();
 	private Deque<StartCategoryPanel> lastCatDeque = new ArrayDeque<StartCategoryPanel>();
+	private StartCategoryPanel defaultCategory;
 	
 	/**
 	 * 	Set all the graphical data for the scrollpane
@@ -81,12 +82,24 @@ public class CategoryListView extends JScrollPane{
 		
 	}
 	
-//	/**
-//	 * Adds defaultcategory in deque
-//	 */
-//	public void addDefaultToCatList(CategoryPanel catPanel){
-//		catDeque.addFirst(catPanel);
-//	}
+	/**
+	 * Sets a default category to use when creating new tasks in HeaderController
+	 * in case no category panel is marked
+	 */
+	public void setDefaultCategory(StartCategoryPanel catPanel){
+		this.defaultCategory = catPanel;
+		
+	}
+	
+	/**
+	 * Returns the default category
+	 * 
+	 * @return the default StartCategoryPanel
+	 */
+	public StartCategoryPanel getDefaultCategory(){
+		return defaultCategory;
+	}
+	
 	
 	/**
 	 * Marks a categorypanel in deque
@@ -94,6 +107,7 @@ public class CategoryListView extends JScrollPane{
 	 */
 	
 	public void markCategory(StartCategoryPanel catPanel){
+		catDeque.remove(catPanel);
 		catDeque.addFirst(catPanel);
 		System.out.println("marked");
 	}
@@ -129,9 +143,12 @@ public class CategoryListView extends JScrollPane{
 	
 	public Deque<StartCategoryPanel> getMarkedList(){
 		return catDeque;
+		
 	}
 	
 	public Deque<StartCategoryPanel> getLastMarkedList(){
 		return lastCatDeque;
+		
 	}
+	
 }
