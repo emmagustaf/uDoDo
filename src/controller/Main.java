@@ -17,7 +17,9 @@ public class Main {
 	public static void main(String[] args) {
 		
 		try{
-			UIManager.setLookAndFeel("javax.swing.plaf.basic.BasicLookAndFeel");
+			System.setProperty("apple.laf.useScreenMenuBar", "true");
+			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "uDoDo");
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 			
 		}
 		catch(Exception e){
