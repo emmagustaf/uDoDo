@@ -13,12 +13,12 @@ import utility.*;
  *
  */
 public class GUIView extends JPanel {
-//	private HeaderView header;
-//	private ListView list;
-//	private CategoryView cat;
-//	private TopView top;
-//	private CategoryListView listView;
-//	private EditView editView;
+	private HeaderView header;
+	private ListView list;
+	private CategoryView cat;
+	private TopView top;
+	private CategoryListView listView;
+	private TaskSettingView taskSettings;
 	private JPanel headerPanel = new JPanel();
 	private JPanel listPanel = new JPanel();
 	private JPanel categoryPanel = new JPanel();
@@ -27,6 +27,8 @@ public class GUIView extends JPanel {
 	private JPanel taskSettingPanel = new JPanel();
 	private JPanel displayPanel = new JPanel();
 	private List<JPanel> panelList = new ArrayList<JPanel>();
+	private List<JScrollPane> scrollViewList = new ArrayList<JScrollPane>();
+	private List<JPanel> viewList = new ArrayList<JPanel>();
 	
 	/**
 	 * Create the frame.
@@ -34,6 +36,15 @@ public class GUIView extends JPanel {
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, TaskSettingView taskSettings) {
 				
+		this.list = list;
+		this.cat = cat;
+		this.top = top;
+		this.listView = listView;
+		this.taskSettings = taskSettings;
+		this.addViewsToList();
+		this.addScrollViewsToList();
+		
+		
 		this.setMinimumSize(new Dimension(700, 750));
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new GridBagLayout());
@@ -92,13 +103,16 @@ public class GUIView extends JPanel {
 		c.gridy = 1;
 		add(taskSettingPanel, c);
 		
-		revalidate();
-		validate();
-		repaint();
-
+		this.updateGUI();
 		this.setVisible(true);
 		
 	}	
+	
+	public void updateGUI(){
+		this.revalidate();
+		this.validate();
+		this.repaint();
+	}
 	
 	public List<JPanel> getPanels(){
 		return panelList;
@@ -114,6 +128,35 @@ public class GUIView extends JPanel {
 		panelList.add(topPanel);
 		panelList.add(taskSettingPanel);
 		panelList.add(displayPanel);
+		
+	}
+	
+	public void addScrollViewsToList(){
+	
+		scrollViewList.add(list);
+		scrollViewList.add(listView);
+		scrollViewList.add(taskSettings);
+		
+	}
+	
+	
+	public List<JScrollPane> getScrollViews(){
+		
+		return scrollViewList;
+		
+	}
+	
+	public void addViewsToList(){
+		
+		viewList.add(header);
+		viewList.add(cat);
+		viewList.add(top);
+		
+	}
+	
+	public List<JPanel> getViews(){
+		
+		return viewList;
 		
 	}
 	

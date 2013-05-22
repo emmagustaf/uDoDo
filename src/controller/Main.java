@@ -13,11 +13,15 @@ import javax.swing.JMenu;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JMenuItem;
 import javax.swing.AbstractAction;
+import javax.swing.JToggleButton;
+
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
 
 public class Main {
+	private static final ButtonGroup buttonGroup = new ButtonGroup();
 	
 
 	/**
@@ -106,6 +110,29 @@ public class Main {
 		
 		
 		ColorSettings colorSettings = new ColorSettings(guiView);
+		
+		MenuController menuController = new MenuController(colorSettings);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnSettings = new JMenu("Settings");
+		menuBar.add(mnSettings);
+		
+		JMenu mnTheme = new JMenu("Theme");
+		mnSettings.add(mnTheme);
+		
+		JRadioButtonMenuItem purpleHaze = new JRadioButtonMenuItem("Purple Haze");
+		buttonGroup.add(purpleHaze);
+		purpleHaze.addActionListener(menuController);
+		purpleHaze.setActionCommand("Purple haze");
+		mnTheme.add(purpleHaze);
+		
+		JRadioButtonMenuItem greyhound = new JRadioButtonMenuItem("Greyhound");
+		buttonGroup.add(greyhound);
+		greyhound.addActionListener(menuController);
+		greyhound.setActionCommand("Greyhound");
+		mnTheme.add(greyhound);
 		
 	
 
