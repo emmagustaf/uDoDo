@@ -27,10 +27,11 @@ public class Main {
 	public static void main(String[] args) {
 		
 		try{
-			System.setProperty("apple.laf.useScreenMenuBar", "true");
-			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "uDoDo");
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 			
+			//System.setProperty("apple.laf.useScreenMenuBar", "true");
+			//System.setProperty("com.apple.mrj.application.apple.menu.about.name", "uDoDo");
+			//UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		}
 		catch(Exception e){
 			
@@ -56,15 +57,22 @@ public class Main {
 		CategoryModel finishedModel = new CategoryModel("Finished Tasks");
 		
 		StartCategoryPanel allCatPanel = new StartCategoryPanel(allModel);
+		
 		categoryListView.setDefaultCategory(allCatPanel);
 		categoryListView.getMarkedList().clear();
 		categoryListView.getLastMarkedList().clear();
+		
 		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
+		
 		categoryListView.setFinishedCategory(finishedCatPanel);
+		
 		allCatPanel.setTitle("All Tasks");
+		
 		finishedCatPanel.setTitle("Finished Tasks");
+		
 		categoryListView.panel.add(allCatPanel);
 		categoryListView.panel.add(finishedCatPanel);
+		
 		allCatPanel.setVisible(true);
 		finishedCatPanel.setVisible(true);
 		
@@ -77,6 +85,7 @@ public class Main {
 		categoryListView.updateView();
 		//CategoryModel model = new CategoryModel(null);
 		//AddedCategoryPanel catPanel = new AddedCategoryPanel(model);
+		
 		HeaderController controller = new HeaderController(headerView, listView, allCatPanel, taskSettings, categoryListView);
 		
 		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
