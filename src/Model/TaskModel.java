@@ -90,6 +90,7 @@ public class TaskModel {
 		this.deadline=deadline;
 	}
 	public void setDeadlineLabel(String deadline){
+		deadlineLabel = new JLabel ();
 		this.deadlineLabel.setText(deadline);
 	}
 	public String getDeadline(){

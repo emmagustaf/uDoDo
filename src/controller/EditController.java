@@ -76,6 +76,8 @@ public class EditController implements ActionListener{
 	}
 	private void setDate(){
 		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());
+		editTaskPanel.getDeadlineLabel().revalidate();
+		editTaskPanel.getDeadlineLabel().repaint();
 		listView.updatePanels();
 	}
 	private void saveChanges(){
