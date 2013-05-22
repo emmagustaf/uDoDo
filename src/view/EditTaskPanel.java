@@ -128,6 +128,9 @@ public class EditTaskPanel extends JPanel {
 	public String getDeadline(){
 		return deadlineLabel.getText();
 	}
+	public JLabel getDeadlineLabel(){
+		return this.deadlineLabel;
+	}
 	public String getJDateTextField(){
 		dateTextField.getCalendar();
 		dateTextField.setDate(calendar.getDate());
