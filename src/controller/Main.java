@@ -18,10 +18,10 @@ public class Main {
 		
 		try{
 			
-			//System.setProperty("apple.laf.useScreenMenuBar", "true");
-			//System.setProperty("com.apple.mrj.application.apple.menu.about.name", "uDoDo");
-			//UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			System.setProperty("apple.laf.useScreenMenuBar", "true");
+			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "uDoDo");
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			
 		}
 		catch(Exception e){
 			
