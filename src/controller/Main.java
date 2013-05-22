@@ -5,11 +5,21 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
+import utility.ColorSettings;
 import view.*;
 import model.*;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JMenuItem;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
+import java.awt.event.ActionListener;
 
 public class Main {
 	
+
 	/**
 	 * @param args
 	 */
@@ -78,12 +88,17 @@ public class Main {
 		//frame.setResizable(false);
 
 		// Add gui to window
-		frame.add(guiView);
+		frame.getContentPane().add(guiView);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// pack() will do the layout of the window so it gets the correct size
 		frame.pack();
+		
+		
+		ColorSettings colorSettings = new ColorSettings(guiView);
+		
+	
 
 		// Open the window
 		frame.setVisible(true);
