@@ -3,7 +3,9 @@ package utility;
 import java.awt.*;
 import java.util.List;
 
+import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import view.GUIView;
 
@@ -15,16 +17,26 @@ public class ColorSettings {
 		this.view = view;
 	}
 	
-	public void changeColor(){
+	public void changeColor(String theme){
 		
-		List<JPanel> panelList = view.getPanels();
+		//List<JPanel> panelList = view.getPanels();
+		//List<JPanel> viewList = view.getViews();
+		//List<JScrollPane> scrollViewList = view.getScrollViews();
 		
-		for(int i = 0; i < view.getPanels().size(); i++){
+		for(int i = 0; i < view.getViews().size(); i++){
 			
-			if(panelList.get(0).getBackground().equals(GraphicConstants.BACKGROUND)){
-				panelList.get(i).setBackground(GraphicConstants.SWITCHBACKGROUND);
-			}else{
-				panelList.get(i).setBackground(GraphicConstants.BACKGROUND);
+			if(theme.equals("Purple haze")){
+			
+				view.setBackground(GraphicConstants.PURPLEHAZE);
+				view.getViews().get(i).setBackground(GraphicConstants.PURPLEHAZE);
+				view.updateGUI();
+				
+			}else if(theme.equals("Greyhound")){
+				
+				view.setBackground(GraphicConstants.BACKGROUND);
+				view.getViews().get(i).setBackground(GraphicConstants.BACKGROUND);
+				view.updateGUI();
+		
 			}
 		}
 	}
