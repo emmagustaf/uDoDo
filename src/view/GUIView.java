@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 import utility.*;
@@ -24,6 +26,7 @@ public class GUIView extends JPanel {
 	private JPanel topPanel = new JPanel();
 	private JPanel taskSettingPanel = new JPanel();
 	private JPanel displayPanel = new JPanel();
+	private List<JPanel> panelList = new ArrayList<JPanel>();
 	
 	/**
 	 * Create the frame.
@@ -41,6 +44,7 @@ public class GUIView extends JPanel {
 		topPanel.setBackground(Color.ORANGE);																						
 		topPanel.setBackground(Color.pink);
 		taskSettingPanel.setBackground(Color.CYAN);
+		this.addPanelsToList();
 	
 		topPanel.add(top);     
 		c.weightx = 0.0;
@@ -95,4 +99,22 @@ public class GUIView extends JPanel {
 		this.setVisible(true);
 		
 	}	
+	
+	public List<JPanel> getPanels(){
+		return panelList;
+		
+		
+	}
+	
+	public void addPanelsToList(){
+		panelList.add(categoryListPanel);
+		panelList.add(headerPanel);
+		panelList.add(categoryPanel);
+		panelList.add(listPanel);
+		panelList.add(topPanel);
+		panelList.add(taskSettingPanel);
+		panelList.add(displayPanel);
+		
+	}
+	
 }
