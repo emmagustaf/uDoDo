@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JComponent;
 
+import utility.GraphicConstants;
 import view.*;
 
 import model.DisplayModel;
@@ -69,12 +70,11 @@ public class DisplayController implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		displayTaskPanel.setBackground(Color.blue);
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		displayTaskPanel.setBackground(Color.white);
+		displayTaskPanel.setBackground(GraphicConstants.BUTTONPRESSEDFOREGROUND);
 	}
 
 	@Override
