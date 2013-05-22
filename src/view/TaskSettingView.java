@@ -27,7 +27,7 @@ public class TaskSettingView extends JScrollPane{
 		panelInScroll.setBackground(GraphicConstants.BACKGROUND);
 		panelInScroll.setLayout(new BoxLayout(panelInScroll, BoxLayout.Y_AXIS));
 	
-	getViewport().setView(panelInScroll);
+		getViewport().setView(panelInScroll);
 	
 	}
 	
