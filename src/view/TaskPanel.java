@@ -43,11 +43,12 @@ public class TaskPanel extends JPanel {
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		this.setForeground(GraphicConstants.FOREGROUND);
+		
 		setMinimumSize(new Dimension(290, 80));
 		setPreferredSize(new Dimension(290, 72));
 		setMaximumSize(new Dimension(290, 80));
 //		setSize(new Dimension(30, 20));
-		this.model=model;
+
 		setLayout(new MigLayout("", "[40.00px,left][100.00][30.00][88.00][93.00]", "[45.00px,center][][]"));
 
 		
@@ -89,8 +90,8 @@ public class TaskPanel extends JPanel {
 	public void setTitle(){
 		taskLabel.setText(model.getTitle());
 	}
-	public void setDeadline(){
-		
+	
+	public void setDeadline(){	
 		deadlineLabel.setText(model.getDeadline());
 	}
 
@@ -107,3 +108,5 @@ public class TaskPanel extends JPanel {
 	}
 	
 }
+
+
