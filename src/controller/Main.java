@@ -3,6 +3,7 @@ package controller;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 import view.*;
 import model.*;
@@ -14,6 +15,14 @@ public class Main {
 	 */
 	
 	public static void main(String[] args) {
+		
+		try{
+			UIManager.setLookAndFeel("javax.swing.plaf.basic.BasicLookAndFeel");
+			
+		}
+		catch(Exception e){
+			
+		}
 		
 		JFrame frame = new JFrame();
 		
