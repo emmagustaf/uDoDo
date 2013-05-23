@@ -27,8 +27,7 @@ public class GUIView extends JPanel {
 	private JPanel taskSettingPanel = new JPanel();
 	private JPanel displayPanel = new JPanel();
 	private List<JPanel> panelList = new ArrayList<JPanel>();
-	private List<JScrollPane> scrollViewList = new ArrayList<JScrollPane>();
-	private List<JPanel> viewList = new ArrayList<JPanel>();
+	private List<JComponent> viewList = new ArrayList<JComponent>();
 	
 	/**
 	 * Create the frame.
@@ -36,13 +35,7 @@ public class GUIView extends JPanel {
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, TaskSettingView taskSettings) {
 				
-		this.list = list;
-		this.cat = cat;
-		this.top = top;
-		this.listView = listView;
-		this.taskSettings = taskSettings;
-		this.addViewsToList();
-		this.addScrollViewsToList();
+		this.addViewsToList(header, list, cat, top, listView, taskSettings);
 		
 		
 		this.setMinimumSize(new Dimension(700, 750));
@@ -131,30 +124,19 @@ public class GUIView extends JPanel {
 		
 	}
 	
-	public void addScrollViewsToList(){
-	
-		scrollViewList.add(list);
-		scrollViewList.add(listView);
-		scrollViewList.add(taskSettings);
-		
-	}
-	
-	
-	public List<JScrollPane> getScrollViews(){
-		
-		return scrollViewList;
-		
-	}
-	
-	public void addViewsToList(){
-		
+	public void addViewsToList(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, TaskSettingView taskSettings) {
+			
+		viewList.add(list);
+		viewList.add(listView);
+		viewList.add(taskSettings);
 		viewList.add(header);
 		viewList.add(cat);
 		viewList.add(top);
 		
 	}
 	
-	public List<JPanel> getViews(){
+	
+	public List<JComponent> getViews(){
 		
 		return viewList;
 		
