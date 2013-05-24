@@ -43,11 +43,11 @@ public class GUIView extends JPanel {
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		categoryPanel.setBackground(Color.yellow);
-		listPanel.setBackground(Color.green);
-		topPanel.setBackground(Color.ORANGE);																						
-		topPanel.setBackground(Color.pink);
-		taskSettingPanel.setBackground(Color.CYAN);
+		//categoryPanel.setBackground(Color.yellow);
+		//listPanel.setBackground(Color.green);
+		//topPanel.setBackground(Color.ORANGE);																						
+		//topPanel.setBackground(Color.pink);
+		//taskSettingPanel.setBackground(Color.CYAN);
 		this.addPanelsToList();
 	
 		topPanel.add(top);     
