@@ -42,6 +42,9 @@ public class ColorSettings {
 				
 			}else if(theme.equals("Greyhound")){
 				
+				if(viewList.get(i) instanceof JScrollPane){
+					((JScrollPane)viewList.get(i)).getViewport().getView().setBackground(GraphicConstants.BACKGROUND);
+				}
 				view.setBackground(GraphicConstants.BACKGROUND);
 				viewList.get(i).setBackground(GraphicConstants.BACKGROUND);
 				view.updateGUI();
