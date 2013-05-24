@@ -23,7 +23,6 @@ public class ColorSettings {
 		
 		//List<JPanel> panelList = view.getPanels();
 		List<JComponent> viewList = view.getViews();
-		//List<JScrollPane> scrollViewList = view.getScrollViews();
 		
 		for(int i = 0; i < viewList.size(); i++){
 			
