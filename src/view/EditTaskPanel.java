@@ -48,15 +48,16 @@ public class EditTaskPanel extends JPanel {
 	 */
 	public EditTaskPanel(TaskModel taskModel) {
 		
-		this.setMinimumSize(new Dimension (300, 580));
-		this.setMaximumSize(new Dimension (300, 580));
-		this.setPreferredSize(new Dimension (300, 580));
+		this.setMinimumSize(new Dimension (300, 500));
+		this.setMaximumSize(new Dimension (300, 500));
+		this.setPreferredSize(new Dimension (300, 500));
 		this.taskModel = taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[][283.00,grow]", "[][][][][][][][][][][]"));
 		
 		JLabel changeTitleLabel = new JLabel("Change title:");
 		changeTitleLabel.setFont(GraphicConstants.REGULARFONT);
+		changeTitleLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(changeTitleLabel, "cell 0 1,alignx right");
 		
 		titleTextField = new JTextField(taskModel.getTitle());
@@ -66,6 +67,7 @@ public class EditTaskPanel extends JPanel {
 		
 		JLabel changeDescriptionLabel = new JLabel("Change description:");
 		changeDescriptionLabel.setFont(GraphicConstants.REGULARFONT);
+		changeDescriptionLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(changeDescriptionLabel, "cell 0 3,alignx right,aligny top");
 		
 		descriptionTextField = new JEditorPane();
@@ -77,19 +79,23 @@ public class EditTaskPanel extends JPanel {
 		
 		JLabel changePriorityLabel = new JLabel("Change priority:");
 		changePriorityLabel.setFont(GraphicConstants.REGULARFONT);
+		changePriorityLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(changePriorityLabel, "cell 0 5,alignx right");
 		
 		deadlineLabel = new JLabel("Current Deadline:");
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
+		deadlineLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(deadlineLabel, "cell 0 7,alignx right");
 		
 		
 		dateLabel = new JLabel("" + taskModel.getDeadline());
 		dateLabel.setFont(GraphicConstants.REGULARFONT);
+		dateLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(dateLabel, "cell 1 7,alignx center");
 		
 		JLabel changeDeadlineLabel = new JLabel("Change deadline:");
 		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
+		changeDeadlineLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(changeDeadlineLabel, "cell 0 8,alignx trailing");
 		
 		calendar = new JCalendar(null, "Calendar", true, calendar.RIGHT_SPINNER);
@@ -99,6 +105,7 @@ public class EditTaskPanel extends JPanel {
 		//deadlineInput.setColumns(10);
 		
 		dateTextField = new JDateTextField();
+		dateTextField.setForeground(GraphicConstants.FOREGROUND);
 		dateTextField.setText("" + taskModel.getDeadline());
 		
 		cancelButton = new JButton("cancel");
