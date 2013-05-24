@@ -7,6 +7,8 @@ import utility.*;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JTextField;
+
 import model.*;
 import controller.*;
 
@@ -45,9 +47,16 @@ public class DisplayTaskPanel extends JPanel {
 		titleLabel.setFont(GraphicConstants.SMALLHEADINGFONT);
 		add(titleLabel, "cell 0 0");
 		
-		JLabel descriptionLabel = new JLabel(displayModel.getTaskModel().getDescription());
+		//JLabel descriptionLabel = new JLabel(displayModel.getTaskModel().getDescription());
+		JTextField descriptionLabel = new JTextField(displayModel.getTaskModel().getDescription());
+		descriptionLabel.setEditable(false);
+		descriptionLabel.setBackground(GraphicConstants.BACKGROUND);
+		descriptionLabel.setBorder(null);
+		descriptionLabel.setMinimumSize(new Dimension (150, 20));
+		descriptionLabel.setMaximumSize(new Dimension(200, 20));
+		descriptionLabel.setPreferredSize(new Dimension(200, 20));
 		descriptionLabel.setFont(GraphicConstants.REGULARFONT);
-		add(descriptionLabel, "cell 0 2");
+		add(descriptionLabel, "cell 0 2 3 1,grow");
 		
 		JLabel deadlineLabel = new JLabel("Deadline");
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
