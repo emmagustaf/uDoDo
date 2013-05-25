@@ -7,7 +7,6 @@ import java.awt.*;
 
 import utility.*;
 import model.TaskModel;
-import controller.ListController;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.border.LineBorder;
 
@@ -38,7 +37,8 @@ public class HeaderView extends JPanel{
 		setMinimumSize(new Dimension(300, 70));
 		setMaximumSize(new Dimension(300, 70));
 		
-		taskTitleInput = new JTextField(25);
+		taskTitleInput = new HintTextField("Add task...", 25);
+		taskTitleInput.setForeground(Color.gray);
 		taskTitleInput.setFont(GraphicConstants.REGULARFONT);
 		taskTitleInput.setActionCommand("newTask");
 		this.add(taskTitleInput, "cell 0 0 1 2,growx,aligny center");

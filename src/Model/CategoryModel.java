@@ -22,7 +22,7 @@ public class CategoryModel implements Serializable{
 	private CategoryView view;
 	private AddedCategoryPanel panel;
 	private CategoryModel panelModel;
-	private ListModel listModel;
+	private List<TaskModel> taskList;
 	private StartCategoryPanel startPanel;
 	
 	
@@ -34,7 +34,7 @@ public class CategoryModel implements Serializable{
 	 * @param catTitle
 	 */
 	public CategoryModel(String catTitle) {
-		listModel = new ListModel();
+		taskList = new ArrayList<TaskModel>();
 		this.catTitle = catTitle;
 	
 	}
@@ -43,8 +43,8 @@ public class CategoryModel implements Serializable{
 	 * Returns the actual TaskList
 	 * @return
 	 */
-	public ListModel getTaskList(){
-		return listModel;
+	public List<TaskModel> getTaskList(){
+		return taskList;
 	}
 
 	/**
