@@ -98,7 +98,9 @@ public class TaskPanel extends JPanel {
 
 	public void setController(TaskController controller){
 		deleteTaskButton.addActionListener(controller);
+		this.addMouseListener(controller);
 	}
+
 	
 	public TaskPanel getTaskPanel(){
 		return this;

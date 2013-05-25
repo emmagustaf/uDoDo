@@ -23,14 +23,16 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	private CategoryListView catListView;
 	private StartCategoryPanel startCategoryPanel;
 	private ListView listView;
+	private TaskSettingView taskSetting;
 	
 	/**
 	 * Create a categorypanel which will be added in categoryListView
 	 * @param categoryPanel
 	 * @param catListView
 	 */
-	public CategoryPanelController(StartCategoryPanel startCategoryPanel, CategoryListView catListView, ListView listView){
+	public CategoryPanelController(TaskSettingView taskSetting, StartCategoryPanel startCategoryPanel, CategoryListView catListView, ListView listView){
 		this.catListView=catListView;
+		this.taskSetting = taskSetting;
 		this.listView = listView;
 		this.startCategoryPanel = startCategoryPanel;
 		startCategoryPanel.setController(this);
@@ -57,7 +59,8 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 		if(e.getSource() instanceof StartCategoryPanel){
 	
 			catListView.markCategory((StartCategoryPanel)e.getComponent());
-			listView.displayTasks(((StartCategoryPanel)e.getComponent()).getModel());
+			listView.displayTasks(((StartCategoryPanel)e.getComponent()).getModel(), taskSetting, catListView);
+			//listView.addControllers(taskSetting, catListView);
 			
 			
 			e.getComponent().setBackground(GraphicConstants.BUTTONPRESSED);
