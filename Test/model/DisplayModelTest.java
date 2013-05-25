@@ -11,6 +11,7 @@ public class DisplayModelTest {
 	public void getTaskTitleTest() {
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setTitle("test");
+		
 		assertEquals("test", taskModel.getTitle());
 	}
 	
@@ -18,6 +19,7 @@ public class DisplayModelTest {
 	public void setTaskTitleTest(){
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setTitle("test");
+		
 		assertEquals("test", taskModel.getTitle());
 	}
 	
@@ -25,6 +27,7 @@ public class DisplayModelTest {
 	public void getTaskDescriptionTest(){
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setDescription("test");
+		
 		assertEquals("test", taskModel.getDescription());
 	}
 	
@@ -32,6 +35,7 @@ public class DisplayModelTest {
 	public void setTaskDescriptionTest() {
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setDescription("test");
+		
 		assertEquals("test", taskModel.getDescription());
 	}
 
@@ -39,7 +43,9 @@ public class DisplayModelTest {
 	public void getTaskModelTest() {
 		TaskModel taskModel = new TaskModel(null);
 		TaskModel taskMod = new TaskModel(null);
+		
 		DisplayModel displayModel = new DisplayModel(taskModel);
+		
 		assertTrue(taskModel == displayModel.getTaskModel());
 		assertTrue(taskMod != displayModel.getTaskModel());
 	}
