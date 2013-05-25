@@ -33,15 +33,15 @@ public class HeaderView extends JPanel{
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setBorder(null);
-		setLayout(new MigLayout("", "[189.00px][66.00px]", "[-13.00px][42.00,grow,fill][12.00]"));
+		setLayout(new MigLayout("", "[208.00px][53.00px]", "[-13.00px][42.00,grow,fill][12.00]"));
 		setPreferredSize(new Dimension(300, 70));
 		setMinimumSize(new Dimension(300, 70));
 		setMaximumSize(new Dimension(300, 70));
 		
-		taskTitleInput = new JTextField(20);
+		taskTitleInput = new JTextField(25);
 		taskTitleInput.setFont(GraphicConstants.REGULARFONT);
 		taskTitleInput.setActionCommand("newTask");
-		this.add(taskTitleInput, "cell 0 0 1 2,alignx left,aligny center");
+		this.add(taskTitleInput, "cell 0 0 1 2,growx,aligny center");
 		
 		addNewTaskButton = new JButton("Ok");
 		addNewTaskButton.setMinimumSize(new Dimension(50, 29));
@@ -54,7 +54,7 @@ public class HeaderView extends JPanel{
 		addNewTaskButton.setBorder(null);
 		addNewTaskButton.setBackground(new Color(30, 144, 255));
 		addNewTaskButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-		this.add(addNewTaskButton, "cell 1 1,alignx center,aligny top");
+		this.add(addNewTaskButton, "cell 1 1,alignx right,aligny top");
 		addNewTaskButton.setActionCommand("newTask");
 	}
 	
