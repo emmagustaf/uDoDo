@@ -126,7 +126,7 @@ public class CategoryListView extends JScrollPane{
 	 */
 	
 	public void markCategory(StartCategoryPanel catPanel){
-		catDeque.remove(catPanel);
+		//catDeque.remove(catPanel);
 		catDeque.addFirst(catPanel);
 		System.out.println("marked");
 	}
