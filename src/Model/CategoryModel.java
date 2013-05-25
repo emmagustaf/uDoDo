@@ -56,30 +56,30 @@ public class CategoryModel {
 		return catTitle;
 	}
 	
-	/**
-	 * Adds a new categoryPanel 
-	 * @param title
-	 */
-	public void addNewCategory(String title) {
-		AddedCategoryPanel panel = new AddedCategoryPanel(panelModel);
-		//catList.add(panel);
-	}
-	
-	/**
-	 * Removes the selected category
-	 * @param panelModel
-	 */
-	public void removeCategory (AddedCategoryPanel panelModel){
-		//catList.remove(panelModel);
-	}
-	
-	/**
-	 * Returns the categorymodel
-	 * 
-	 * @return categorymodel
-	 */
-	public CategoryModel getCategory(){
-		return panelModel;
-	}
+//	/**
+//	 * Adds a new categoryPanel 
+//	 * @param title
+//	 */
+//	public void addNewCategory(String title) {
+//		AddedCategoryPanel panel = new AddedCategoryPanel(panelModel);
+//		//catList.add(panel);
+//	}
+//	
+//	/**
+//	 * Removes the selected category
+//	 * @param panelModel
+//	 */
+//	public void removeCategory (AddedCategoryPanel panelModel){
+//		//catList.remove(panelModel);
+//	}
+//	
+//	/**
+//	 * Returns the categorymodel
+//	 * 
+//	 * @return categorymodel
+//	 */
+//	public CategoryModel getCategory(){
+//		return panelModel;
+//	}
 	
 }

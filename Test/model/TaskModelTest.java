@@ -7,54 +7,46 @@ import org.junit.Test;
 public class TaskModelTest {
 
 	@Test
-/*	public void changePriorityTest() {
-		fail("Not yet implemented");
-	}
-	
-	public void changeStateTest(){
-		fail("NOOOOT YEEET IMPLEMENTED");
-	}
-
-	public boolean getStateTest(){
-		return true;
-	}*/
-	
 	public void getTitleTest(){
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setTitle("test");
-		assertTrue(taskModel.getTitle() == "test");
+		assertEquals("test", taskModel.getTitle());
 	}
 	
+	@Test
 	public void getDescriptionTest(){
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setDescription("test");
-		assertTrue(taskModel.getDescription() == "test");
+		assertEquals("test", taskModel.getDescription());
 	}
 	
+	@Test
 	public void setTitleTest(){
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setTitle("test");
-		assertTrue(taskModel.getTitle() == "test");
+		assertEquals("test", taskModel.getTitle());
 	}
 	
+	@Test
 	public void setDescriptionTest(){
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setDescription("test");
-		assertTrue(taskModel.getDescription() == "test");
+		assertEquals("test", taskModel.getDescription());
 	}
 	
+	@Test
 	public void getDeadlineTest(){
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setDeadline("2013-05-26");
-		assertTrue(taskModel.getDeadline() == "2013-05-26");
+		assertEquals("2013-05-26",taskModel.getDeadline());
 	}
 	
+	@Test
 	public void setDeadlineTest(){
 		TaskModel taskModel = new TaskModel(null);
-		
+		taskModel.setDeadline("2013-05-26");
+		assertEquals("2013-05-26", taskModel.getDeadline());
+	
 	}
-	
-	
-	
 	
 }
