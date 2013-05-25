@@ -9,12 +9,13 @@ import controller.*;
 public class Save {
 
 	public static void saveFiles() {
-		
+
 		ObjectOutputStream outputStream = null;
 
 		try {
 
-			outputStream = new ObjectOutputStream(new FileOutputStream("AllTask.ser"));
+			outputStream = new ObjectOutputStream(new FileOutputStream(
+					"AllTask.ser"));
 			outputStream.writeObject(AllTaskListModel.getInstance());
 			outputStream.close();
 		} catch (IOException io) {
