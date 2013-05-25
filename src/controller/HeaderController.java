@@ -55,7 +55,7 @@ public class HeaderController implements ActionListener{
 				}else{
 					
 					task = new TaskModel(headerView.getTextField().getText(), catListView.getMarkedPanel().getModel());
-					System.out.println("task belongs to cat: " + task.getCategory().getCatTitle());
+					System.out.println("task belongs to category: " + task.getCategory().getCatTitle());
 				}
 				
 				TaskPanel taskPanel = new TaskPanel(task);

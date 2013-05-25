@@ -46,12 +46,14 @@ public class ListView extends JScrollPane {
 	 */
 	public void updateView(){
 		
-		panelInScroll.revalidate();
+//		this.updatePanels();
+		
+		panelInScroll.validate();
 		panelInScroll.repaint();
 		
 		this.revalidate();
 		this.repaint();
-		this.updatePanels();
+		
 	}	
 	
 	/**
