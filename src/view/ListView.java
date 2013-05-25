@@ -68,9 +68,10 @@ public class ListView extends JScrollPane {
 		for(int i = size - 1; i >= 0; i = i - 1){
 			
 			this.add(catPanel.getModel().getTaskList().get(i));
+			catPanel.getModel().getTaskList().get(i).validate();
+			catPanel.getModel().getTaskList().get(i).repaint();
 		}
 		
-		this.updatePanels();
 		this.updateView();
 	}
 	
@@ -87,4 +88,5 @@ public class ListView extends JScrollPane {
 		this.updatePanels();
 		this.updateView();
 	}
+	
 }

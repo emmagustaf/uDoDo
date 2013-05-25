@@ -58,7 +58,7 @@ public class HeaderController implements ActionListener{
 				view.updateView();
 				headerView.getTextField().setText("");
 				
-				TaskController taskController = new TaskController(view, taskPanel, taskSetting);
+				TaskController taskController = new TaskController(view, taskPanel, taskSetting, catListView);
 				//view.
 			}
 		}
