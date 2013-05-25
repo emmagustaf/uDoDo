@@ -28,14 +28,14 @@ public class DisplayModelTest {
 	}
 	
 	@Test
-	public void setTaskDescriptionTest(){
+	public void setTaskDescriptionTest() {
 		TaskModel taskModel = new TaskModel(null);
 		taskModel.setDescription("test");
 		assertEquals("test", taskModel.getDescription());
 	}
 
 	@Test
-	public void getTaskModelTest(){
+	public void getTaskModelTest() {
 		TaskModel taskModel = new TaskModel(null);
 	}
 }
