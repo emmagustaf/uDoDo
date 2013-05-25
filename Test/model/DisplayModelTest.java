@@ -37,6 +37,5 @@ public class DisplayModelTest {
 	@Test
 	public void getTaskModelTest(){
 		TaskModel taskModel = new TaskModel(null);
-		//assertEquals
 	}
 }
