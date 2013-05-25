@@ -119,7 +119,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	public boolean isSelected(Component comp){
 		
 		if(comp instanceof StartCategoryPanel){
-			return catListView.getMarkedPanel().equals((StartCategoryPanel)comp);
+			return catListView.getMarkedPanel().equals(comp);
 			
 		}else{
 			return false;
