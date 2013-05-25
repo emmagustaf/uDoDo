@@ -40,24 +40,29 @@ public class EditController implements ActionListener{
 			
 //			DisplayTaskPanel panel = (DisplayTaskPanel)((JButton) e.getSource()).getParent();
 //			TaskModel model = panel.getTaskModel();
-		
+			
+			//Cancels editing
 			if(e.getActionCommand().equals("cancel")){
 				toDisplayTask();
 				System.out.println("Entered action commant in cancel.");
 				settingView.updateView();
 				listView.updateView();
 				
-				
+			//Saves all updates in edittaskpanel
 			}else if(e.getActionCommand().equals("save")){
 				setDate();
 				saveChanges();
 				settingView.updateView();
 				listView.updatePanels();
 				listView.updateView();
+				
+			// Enables the calendar pop-up
 			}else if(e.getActionCommand().equals("calendar")){
 				
 				editTaskPanel.getCalendar().setVisible(true);
 				editTaskPanel.getCalendar().setEnabled(true);
+				
+				//Updates the deadlinelabel in edittaskpanel before saving to all panels
 				if(editTaskPanel.getCalendar().isOkPressed()){
 					editTaskPanel.deadlineLabel.setText(editTaskPanel.getJDateTextField());
 				}
