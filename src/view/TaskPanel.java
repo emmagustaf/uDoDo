@@ -54,9 +54,13 @@ public class TaskPanel extends JPanel {
 		
 		
 		JToggleButton checkbutton = new JToggleButton("");
-		checkbutton.setToolTipText("Check task as completed");
+		checkbutton.setRolloverSelectedIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
+		checkbutton.setRolloverIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
+		checkbutton.setRolloverEnabled(true);
+		checkbutton.setSelectedIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
+		checkbutton.setToolTipText("Change state of task");
 		checkbutton.setBorderPainted(false);
-		checkbutton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkmark_icon&16.png")));
+		checkbutton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkbox_unchecked_icon&16.png")));
 		checkbutton.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		checkbutton.setActionCommand(taskCheck);
 		add(checkbutton, "cell 0 0,alignx center,aligny center");
@@ -71,9 +75,10 @@ public class TaskPanel extends JPanel {
 
 		
 		deleteTaskButton = new JButton();
+		deleteTaskButton.setRolloverIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/delete.icon.hover.png")));
 		deleteTaskButton.setToolTipText("Delete task");
 		deleteTaskButton.setBorderPainted(false);
-		deleteTaskButton.setIcon(new ImageIcon(AddedCategoryPanel.class.getResource("/utility/icons/delete_icon&16.png")));
+		deleteTaskButton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/delete_icon&16.png")));
 		//deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
 		deleteTaskButton.setActionCommand("deleteTask");
 		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");

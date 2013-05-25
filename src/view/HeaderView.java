@@ -32,23 +32,29 @@ public class HeaderView extends JPanel{
 	public HeaderView() {
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		setLayout(new MigLayout("", "[][391.00px][98.00px][90.00]", "[23px][][]"));
+		setBorder(null);
+		setLayout(new MigLayout("", "[189.00px][66.00px]", "[-13.00px][42.00,grow,fill][12.00]"));
 		setPreferredSize(new Dimension(300, 70));
 		setMinimumSize(new Dimension(300, 70));
 		setMaximumSize(new Dimension(300, 70));
 		
-		Component horizontalStrut = Box.createHorizontalStrut(20);
-		add(horizontalStrut, "cell 0 1");
-		
-		taskTitleInput = new JTextField(30);
+		taskTitleInput = new JTextField(20);
 		taskTitleInput.setFont(GraphicConstants.REGULARFONT);
 		taskTitleInput.setActionCommand("newTask");
-		this.add(taskTitleInput, "cell 1 1,alignx right,aligny center");
+		this.add(taskTitleInput, "cell 0 0 1 2,alignx left,aligny center");
 		
-		addNewTaskButton = new JButton("Add");
-		addNewTaskButton.setFont(GraphicConstants.REGULARFONT);
-		this.add(addNewTaskButton, "cell 2 1,alignx center,aligny top");
+		addNewTaskButton = new JButton("Ok");
+		addNewTaskButton.setMinimumSize(new Dimension(50, 29));
+		addNewTaskButton.setMaximumSize(new Dimension(50, 29));
+		addNewTaskButton.setPreferredSize(new Dimension(50, 29));
+		addNewTaskButton.setOpaque(true);
+		addNewTaskButton.setForeground(new Color(255, 255, 255));
+		addNewTaskButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		addNewTaskButton.setBorderPainted(false);
+		addNewTaskButton.setBorder(null);
+		addNewTaskButton.setBackground(new Color(30, 144, 255));
+		addNewTaskButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+		this.add(addNewTaskButton, "cell 1 1,alignx center,aligny top");
 		addNewTaskButton.setActionCommand("newTask");
 	}
 	

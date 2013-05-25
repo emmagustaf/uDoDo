@@ -81,9 +81,11 @@ public class DisplayTaskPanel extends JPanel {
 		prioLabel.setFont(GraphicConstants.REGULARFONT);
 		prioLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(prioLabel, "cell 0 8");
+		editButton.setRolloverIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/setting.edit.hover.png")));
+		editButton.setToolTipText("change task");
 		
 		
-		getEditButton().setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&16.png")));
+		getEditButton().setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&24.png")));
 		getEditButton().setBorderPainted(false);
 		add(getEditButton(), "cell 2 10,alignx left,aligny top");
 		getEditButton().setActionCommand("editTask");
