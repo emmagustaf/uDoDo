@@ -3,8 +3,14 @@ package view;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import controller.TaskController;
+
+import model.CategoryModel;
 import utility.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * A class to represent a the view which will interact 
  * with the user when adding tasks.
@@ -13,6 +19,8 @@ import java.awt.*;
 public class ListView extends JScrollPane {
 	
 	public JPanel panelInScroll;
+	
+	private List<TaskPanel> panelList = new ArrayList<TaskPanel>();
 	
 	/**
 	 * Create the listview with a new panel in it.
@@ -43,6 +51,7 @@ public class ListView extends JScrollPane {
 		
 		this.revalidate();
 		this.repaint();
+		this.updatePanels();
 	}	
 	
 	/**
@@ -61,30 +70,36 @@ public class ListView extends JScrollPane {
 		}
 	}
 	
-	public void displayTasks(StartCategoryPanel catPanel){
+	public void displayTasks(CategoryModel catModel, TaskSettingView taskSetting, CategoryListView catListView){
 		
-		int size = catPanel.getModel().getTaskList().size();
+		this.removeAll();
+		
+		int size = catModel.getTaskList().size();
 		
 		for(int i = size - 1; i >= 0; i = i - 1){
 			
-			this.add(catPanel.getModel().getTaskList().get(i));
+			TaskPanel taskPanel = new TaskPanel(catModel.getTaskList().get(i));
+			panelInScroll.add(taskPanel);
+			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
+			System.out.println("display task: " + catModel.getTaskList().get(i).getTitle());
+			taskPanel.validate();
+			taskPanel.repaint();
+			panelList.add(taskPanel);
+			
 		}
 		
-		this.updatePanels();
 		this.updateView();
 	}
 	
-	public void hideTasks(CategoryListView catListView){
-		
-		if(!catListView.getLastMarkedList().isEmpty()){
-			
-			int size = catListView.getLastMarkedPanel().getModel().getTaskList().size();
-			
-			for(int i = size - 1; i >= 0; i = i - 1){
-				this.remove(catListView.getLastMarkedPanel().getModel().getTaskList().get(i));
-			}
-		}
-		this.updatePanels();
-		this.updateView();
-	}
+	
+//	public void addControllers(TaskSettingView taskSetting, CategoryListView catListView){
+//		
+//		int size = panelList.size();
+//		if(size != 0){
+//			for(int i = 0; i <= size; i++){
+//				TaskController taskController = new TaskController(this, panelList.get(i), taskSetting, catListView);
+//		
+//			}
+//		}
+//	}
 }

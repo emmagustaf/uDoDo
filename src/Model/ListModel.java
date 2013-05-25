@@ -4,22 +4,20 @@ import java.util.ArrayList;
 
 import view.TaskPanel;
 
-public class ListModel extends ArrayList<TaskPanel> {
+public class ListModel extends ArrayList<TaskModel> {
 	
-
-	//public ListModel(){
-		//ArrayList<TaskModel> taskList = new ArrayList<TaskModel>();
-	//}
 	
-	public ArrayList<TaskPanel> getTaskList(){
+	public ArrayList<TaskModel> getTaskList(){
 		return this;
 	}
 	
-	public void addTask(TaskPanel task){
+	//behövs inte
+	public void addTask(TaskModel task){
 		this.add(task);
 	}
 	
-	public void removeTask(TaskPanel task){
+	//behövs inte
+	public void removeTask(TaskModel task){
 		this.remove(task);
 	}
 

@@ -13,19 +13,19 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JComponent;
 
-public class TaskController implements ActionListener {
+public class TaskController implements ActionListener, MouseListener {
 	private ListModel listModel;
 	private ListView listView;
 	private TaskPanel taskPanel;
-	private MouseMethods listener = new MouseMethods();
 	private TaskSettingView taskSetting;
+	private CategoryListView catListView;
 
-	public TaskController(ListView listView, TaskPanel taskPanel, TaskSettingView taskSetting){
+	public TaskController(ListView listView, TaskPanel taskPanel, TaskSettingView taskSetting, CategoryListView catListView){
 		this.listView = listView;
 		this.taskPanel = taskPanel;
+		this.catListView = catListView;
 		this.taskSetting = taskSetting;
 		taskPanel.setController(this);
-		taskPanel.addMouseListener(listener);
 	}
 
 	@Override
@@ -36,16 +36,17 @@ public class TaskController implements ActionListener {
 				System.out.println("entered delete task");
 				System.out.println("" + taskPanel.getModel().getTitle());
 				listView.panelInScroll.remove(taskPanel);
+				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel.getModel());
 				listView.updateView();
 			}else if(e.getActionCommand().equals("taskCheck")){
 				taskPanel.getModel().changeState();
-				//taskPanel.getModel().getCategory().getTaskList().add(taskPanel);
+				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel);
+				catListView.getFinishedCategory().getTaskList().add(taskPanel.getModel());
+				listView.updateView();
 			}
 		}
 	}
 	
-	private class MouseMethods implements MouseListener{
-
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
 			taskPanel.setBackground(GraphicConstants.BUTTONHOVER);
@@ -85,5 +86,4 @@ public class TaskController implements ActionListener {
 			taskSetting.updateView();
 
 		}
-	}
 }

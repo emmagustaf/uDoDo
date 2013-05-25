@@ -12,7 +12,7 @@ import utility.GraphicConstants;
 import view.*;
 
 import model.DisplayModel;
-import model.EditModel;
+
 
 /**
  * A class to represent a controller 
@@ -49,9 +49,8 @@ public class DisplayController implements ActionListener, MouseListener{
 			System.out.println("presset editbutton");
 			settingView.panelInScroll.removeAll();
 
-			EditModel editModel = new EditModel();
 			this.editTaskPanel = new EditTaskPanel(displayTaskPanel.getTaskModel());
-			EditController editController = new EditController(listView, settingView, editTaskPanel, editModel);
+			EditController editController = new EditController(listView, settingView, editTaskPanel);
 					
 			settingView.panelInScroll.add(editTaskPanel, 0);
 			settingView.updateView();

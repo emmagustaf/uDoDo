@@ -38,7 +38,6 @@ public class TaskPanel extends JPanel {
 	public TaskPanel(TaskModel model) {
 		
 		this.model=model;
-		model.getCategory().getTaskList().add(this);
 		System.out.println(model.getTitle() + " skapad");
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
@@ -104,7 +103,9 @@ public class TaskPanel extends JPanel {
 
 	public void setController(TaskController controller){
 		deleteTaskButton.addActionListener(controller);
+		this.addMouseListener(controller);
 	}
+
 	
 	public TaskPanel getTaskPanel(){
 		return this;

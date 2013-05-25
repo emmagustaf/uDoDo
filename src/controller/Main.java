@@ -62,13 +62,13 @@ public class Main {
 		
 		StartCategoryPanel allCatPanel = new StartCategoryPanel(allModel);
 		
-		categoryListView.setDefaultCategory(allCatPanel);
+		categoryListView.setDefaultCategory(allModel);
 		categoryListView.getMarkedList().clear();
 		categoryListView.getLastMarkedList().clear();
 		
 		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
 		
-		categoryListView.setFinishedCategory(finishedCatPanel);
+		categoryListView.setFinishedCategory(finishedModel);
 		
 		allCatPanel.setTitle("All Tasks");
 		
@@ -80,8 +80,8 @@ public class Main {
 		allCatPanel.setVisible(true);
 		finishedCatPanel.setVisible(true);
 		
-		CategoryPanelController catPanController = new CategoryPanelController(allCatPanel, categoryListView, listView);
-		CategoryPanelController catPanController2 = new CategoryPanelController(finishedCatPanel, categoryListView, listView);
+		CategoryPanelController catPanController = new CategoryPanelController(taskSettings, allCatPanel, categoryListView, listView);
+		CategoryPanelController catPanController2 = new CategoryPanelController(taskSettings, finishedCatPanel, categoryListView, listView);
 		
 	
 		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, taskSettings);
@@ -92,7 +92,7 @@ public class Main {
 		
 		HeaderController controller = new HeaderController(headerView, listView, allCatPanel, taskSettings, categoryListView);
 		
-		CategoryController catConroller = new CategoryController(categoryView, categoryListView, listView);
+		CategoryController catConroller = new CategoryController(taskSettings, categoryView, categoryListView, listView);
 		
 		
 
