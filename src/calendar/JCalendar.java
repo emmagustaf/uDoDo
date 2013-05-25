@@ -630,77 +630,70 @@ class JMonthChooser extends JPanel implements ItemListener, AdjustmentListener
     private JComboBox comboBox;
     private JScrollBar scrollBar;
 
-    public JMonthChooser()
-    {
-        this(0, Calendar.getInstance(Locale.getDefault()).get(Calendar.MONTH));
-    }
+	public JMonthChooser() {
+		this(0, Calendar.getInstance(Locale.getDefault()).get(Calendar.MONTH));
+	}
 
-    public JMonthChooser(int spinner, int month)
-    {
-        dayChooser = null;
-        yearChooser = null;
+	public JMonthChooser(int spinner, int month) {
+		dayChooser = null;
+		yearChooser = null;
 
-        setLayout(new BorderLayout());
+		setLayout(new BorderLayout());
 
-        comboBox = new JComboBox();
-        
-        for(int i=0; i <MONTHS.length; i++)
-            comboBox.addItem(MONTHS[i]);
-        comboBox.addItemListener(this);
-        add(comboBox, "Center");
+		comboBox = new JComboBox();
 
-        if(spinner != NO_SPINNER)
-        {
-            scrollBar = new JScrollBar(JScrollBar.VERTICAL,(12-month),0,-10000, 10000);
-            scrollBar.setPreferredSize(new Dimension(scrollBar.getPreferredSize().width, getPreferredSize().height));
-            scrollBar.setVisibleAmount(0);
-        
-            if(spinner == RIGHT_SPINNER)
-                add(scrollBar, "East");
-            else
-                add(scrollBar, "West");
+		for (int i = 0; i < MONTHS.length; i++)
+			comboBox.addItem(MONTHS[i]);
+		comboBox.addItemListener(this);
+		add(comboBox, "Center");
 
-            scrollBar.addAdjustmentListener(this);
-        }
+		if (spinner != NO_SPINNER) {
+			scrollBar = new JScrollBar(JScrollBar.VERTICAL, (12 - month), 0,
+					-10000, 10000);
+			scrollBar.setPreferredSize(new Dimension(scrollBar
+					.getPreferredSize().width, getPreferredSize().height));
+			scrollBar.setVisibleAmount(0);
 
-        setMonth(month, true);
-    }
+			if (spinner == RIGHT_SPINNER)
+				add(scrollBar, "East");
+			else
+				add(scrollBar, "West");
 
-    public void itemStateChanged(ItemEvent itemevent)
-    {
-        int index = comboBox.getSelectedIndex();
-        if(index >= 0)
-            setMonth(index, false);
-    }
+			scrollBar.addAdjustmentListener(this);
+		}
 
-    public void adjustmentValueChanged(AdjustmentEvent adjustmentevent)
-    {
+		setMonth(month, true);
+	}
 
-        boolean flag = true;
-        int newBarValue = adjustmentevent.getValue();
-        if(newBarValue > oldBarValue)
-            flag = false;
+	public void itemStateChanged(ItemEvent itemevent) {
+		int index = comboBox.getSelectedIndex();
+		if (index >= 0)
+			setMonth(index, false);
+	}
 
-        oldBarValue = newBarValue;
+	public void adjustmentValueChanged(AdjustmentEvent adjustmentevent) {
 
-        int j = getMonth();
-        if(flag)
-        {
-            if(++j == 12)
-            {
-                j = 0;
-                if(yearChooser != null)
-                    yearChooser.setYear(yearChooser.getYear() + 1);
-            }
-        }
-        else if(--j == -1)
-        {
-            j = 11;
-            if(yearChooser != null)
-                yearChooser.setYear(yearChooser.getYear() - 1);
-        }
-        setMonth(j);
-    }
+		boolean flag = true;
+		int newBarValue = adjustmentevent.getValue();
+		if (newBarValue > oldBarValue)
+			flag = false;
+
+		oldBarValue = newBarValue;
+
+		int j = getMonth();
+		if (flag) {
+			if (++j == 12) {
+				j = 0;
+				if (yearChooser != null)
+					yearChooser.setYear(yearChooser.getYear() + 1);
+			}
+		} else if (--j == -1) {
+			j = 11;
+			if (yearChooser != null)
+				yearChooser.setYear(yearChooser.getYear() - 1);
+		}
+		setMonth(j);
+	}
 
 	private void setMonth(int month, boolean bCombo) {
 		int j = this.month;

@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+
 public class DisplayModelTest {
 
 	@Test
@@ -42,4 +43,5 @@ public class DisplayModelTest {
 		assertTrue(taskModel == displayModel.getTaskModel());
 		assertTrue(taskMod != displayModel.getTaskModel());
 	}
+	
 }
