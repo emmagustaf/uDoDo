@@ -711,53 +711,47 @@ class JMonthChooser extends JPanel implements ItemListener, AdjustmentListener
         setMonth(j);
     }
 
-    private void setMonth(int month, boolean bCombo)
-    {
-        int j = this.month;
+	private void setMonth(int month, boolean bCombo) {
+		int j = this.month;
 
-        if(month < 0)
-            this.month = 0;
-        else if(month > 11)
-            this.month = 11;
-        else
-            this.month = month;
+		if (month < 0)
+			this.month = 0;
+		else if (month > 11)
+			this.month = 11;
+		else
+			this.month = month;
 
-        if(bCombo)
-            comboBox.setSelectedIndex(this.month);
+		if (bCombo)
+			comboBox.setSelectedIndex(this.month);
 
-        if(dayChooser != null)
-            dayChooser.setMonth(this.month);
+		if (dayChooser != null)
+			dayChooser.setMonth(this.month);
 
-        firePropertyChange("month", j, this.month);
-    }
+		firePropertyChange("month", j, this.month);
+	}
 
-    public void setMonth(int i)
-    {
-        setMonth(i, true);
-    }
+	public void setMonth(int i) {
+		setMonth(i, true);
+	}
 
-    public int getMonth()
-    {
-        return month;
-    }
+	public int getMonth() {
+		return month;
+	}
 
-    public void setDayChooser(JDayChooser jdaychooser)
-    {
-        dayChooser = jdaychooser;
-    }
+	public void setDayChooser(JDayChooser jdaychooser) {
+		dayChooser = jdaychooser;
+	}
 
-    public void setYearChooser(JYearChooser jyearchooser)
-    {
-        yearChooser = jyearchooser;
-    }
+	public void setYearChooser(JYearChooser jyearchooser) {
+		yearChooser = jyearchooser;
+	}
 
-    public void setEnabled(boolean flag)
-    {
-        super.setEnabled(flag);
-        comboBox.setEnabled(flag);
-        if(scrollBar != null)
-            scrollBar.setEnabled(flag);
-    }
+	public void setEnabled(boolean flag) {
+		super.setEnabled(flag);
+		comboBox.setEnabled(flag);
+		if (scrollBar != null)
+			scrollBar.setEnabled(flag);
+	}
 
     public static void main(String args[])
     {

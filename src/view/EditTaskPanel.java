@@ -21,6 +21,10 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.UIManager;
 import calendar.*;
+import javax.swing.ImageIcon;
+import java.awt.Cursor;
+import java.awt.Color;
+import java.awt.Font;
 
 /**
  * A class to represent the view where you can edit a task.
@@ -52,7 +56,7 @@ public class EditTaskPanel extends JPanel {
 		this.setPreferredSize(new Dimension (300, 500));
 		this.taskModel = taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new MigLayout("", "[][172.00][99.00]", "[][][][][][][][][][][][]"));
+		setLayout(new MigLayout("", "[][172.00][99.00]", "[][][][][][][][][][][][89.00]"));
 		
 		JLabel changeTitleLabel = new JLabel("Set new title");
 		changeTitleLabel.setFont(GraphicConstants.REGULARFONT);
@@ -61,7 +65,7 @@ public class EditTaskPanel extends JPanel {
 		
 		titleTextField = new JTextField(taskModel.getTitle());
 		titleTextField.setFont(GraphicConstants.REGULARFONT);
-		add(titleTextField, "cell 1 1,growx");
+		add(titleTextField, "cell 1 1,alignx left");
 		titleTextField.setColumns(15);
 		
 		JLabel changeDescriptionLabel = new JLabel("Change description");
@@ -70,6 +74,7 @@ public class EditTaskPanel extends JPanel {
 		add(changeDescriptionLabel, "cell 1 3,alignx left,aligny top");
 		
 		descriptionTextField = new JEditorPane();
+		descriptionTextField.setAlignmentX(1.0f);
 		descriptionTextField.setMaximumSize(new Dimension(230, 125));
 		descriptionTextField.setPreferredSize(new Dimension(230, 125));
 		descriptionTextField.setMinimumSize(new Dimension(230, 125));
@@ -83,20 +88,24 @@ public class EditTaskPanel extends JPanel {
 		changePriorityLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(changePriorityLabel, "cell 1 6,alignx left");
 		
-		deadlineLabel = new JLabel("Current deadline");
-		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
-		deadlineLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(deadlineLabel, "cell 1 8,alignx left");
+		dateLabel = new JLabel("Current deadline");
+		dateLabel.setFont(GraphicConstants.REGULARFONT);
+		dateLabel.setForeground(GraphicConstants.FOREGROUND);
+		add(dateLabel, "cell 1 8,alignx left");
 		
 		calendar = new JCalendar(null, "Calendar", true, calendar.RIGHT_SPINNER);
 		
 		
-		dateLabel = new JLabel("" + taskModel.getDeadline());
-		dateLabel.setFont(GraphicConstants.REGULARFONT);
-		dateLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(dateLabel, "cell 1 9,alignx left");
+		deadlineLabel = new JLabel("" + taskModel.getDeadline());
+		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
+		deadlineLabel.setForeground(GraphicConstants.FOREGROUND);
+		add(deadlineLabel, "cell 1 9,alignx left");
 		
-		calendarButton = new JButton("Set date");
+		calendarButton = new JButton("");
+		calendarButton.setRolloverIcon(new ImageIcon(EditTaskPanel.class.getResource("/utility/icons/calendar.hover.png")));
+		calendarButton.setIcon(new ImageIcon(EditTaskPanel.class.getResource("/utility/icons/calendar_1_icon&32.png")));
+		calendarButton.setBorderPainted(false);
+		calendarButton.setBorder(null);
 		calendarButton.setFont(GraphicConstants.REGULARFONT);
 		calendarButton.setActionCommand("calendar");
 		add(calendarButton, "cell 2 9,alignx center");
@@ -106,14 +115,28 @@ public class EditTaskPanel extends JPanel {
 		dateTextField.setText("" + taskModel.getDeadline());
 		
 		saveButton = new JButton("Ok");
-		saveButton.setFont(GraphicConstants.REGULARFONT);
+		saveButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		saveButton.setOpaque(true);
+		saveButton.setBorderPainted(false);
+		saveButton.setForeground(new Color(255, 255, 255));
+		saveButton.setMinimumSize(new Dimension(50, 35));
+		saveButton.setBorder(null);
+		saveButton.setBackground(new Color(30, 144, 255));
+		saveButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		saveButton.setActionCommand("save");
-		add(saveButton, "cell 1 11,alignx right");
+		add(saveButton, "cell 1 11,alignx right,aligny bottom");
 		
-		cancelButton = new JButton("cancel");
-		cancelButton.setFont(GraphicConstants.REGULARFONT);
+		cancelButton = new JButton("Cancel");
+		cancelButton.setRolloverEnabled(true);
+		cancelButton.setPreferredSize(new Dimension(100, 35));
+		cancelButton.setOpaque(true);
+		cancelButton.setForeground(new Color(255, 255, 255));
+		cancelButton.setBackground(new Color(30, 144, 255));
+		cancelButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cancelButton.setBorder(null);
+		cancelButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		cancelButton.setActionCommand("cancel");
-		add(cancelButton, "flowx,cell 2 11,alignx right");
+		add(cancelButton, "flowx,cell 2 11,alignx left,aligny bottom");
 		
 	
 

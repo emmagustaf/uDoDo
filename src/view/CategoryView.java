@@ -23,24 +23,28 @@ public class CategoryView extends JPanel {
 		setPreferredSize(new Dimension(210, 70));
 		setMinimumSize(new Dimension(210, 70));
 		setMaximumSize(new Dimension(210, 70));
-		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 0));
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(GraphicConstants.BACKGROUND);
-		//panel.setBorder(new LineBorder(new Color(0, 0, 0), 0, true));
-		add(panel);
-		panel.setLayout(new MigLayout("", "[67.00px][62.00px]", "[31.00px,grow]"));
+		setLayout(new MigLayout("", "[129.00px][75px]", "[49.00px]"));
 		
 		categoryTitleInput = new JTextField();
+		categoryTitleInput.setColumns(20);
+		add(categoryTitleInput, "cell 0 0,alignx left,aligny center");
 		
 		categoryTitleInput.setFont(GraphicConstants.REGULARFONT);
 		categoryTitleInput.setActionCommand("newCategory");
-		panel.add(categoryTitleInput, "cell 0 0,growx,aligny center");
 		
-		addNewCategoryButton = new JButton("Add category");
-		addNewCategoryButton.setFont(GraphicConstants.REGULARFONT);
+		addNewCategoryButton = new JButton("Ok");
+		addNewCategoryButton.setBorder(null);
+		addNewCategoryButton.setMargin(new Insets(0, 1, 0, 1));
+		addNewCategoryButton.setPreferredSize(new Dimension(50, 29));
+		addNewCategoryButton.setMinimumSize(new Dimension(50, 29));
+		add(addNewCategoryButton, "cell 1 0,alignx center,aligny center");
+		addNewCategoryButton.setBorderPainted(false);
+		addNewCategoryButton.setOpaque(true);
+		addNewCategoryButton.setMaximumSize(new Dimension(50, 29));
+		addNewCategoryButton.setForeground(new Color(255, 255, 255));
+		addNewCategoryButton.setBackground(new Color(30, 144, 255));
+		addNewCategoryButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		addNewCategoryButton.setActionCommand("newCategory");
-		panel.add(addNewCategoryButton, "cell 1 0,alignx right,aligny center");
 	}
 	
 	/**
