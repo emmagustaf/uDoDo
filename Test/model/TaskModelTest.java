@@ -43,10 +43,18 @@ public class TaskModelTest {
 		assertTrue(taskModel.getDescription() == "test");
 	}
 	
-	public void getDeadLineTest(){
+	public void getDeadlineTest(){
+		TaskModel taskModel = new TaskModel(null);
+		taskModel.setDeadline("2013-05-26");
+		assertTrue(taskModel.getDeadline() == "2013-05-26");
+	}
+	
+	public void setDeadlineTest(){
 		TaskModel taskModel = new TaskModel(null);
 		
 	}
+	
+	
 	
 	
 }
