@@ -115,13 +115,14 @@ public class Main {
 		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
+
 		
 		JMenu mnSettings = new JMenu("Settings");
 		menuBar.add(mnSettings);
 		
 		JMenu mnTheme = new JMenu("Theme");
 		mnSettings.add(mnTheme);
-		
+
 		JRadioButtonMenuItem purpleHaze = new JRadioButtonMenuItem("Purple Haze");
 		buttonGroup.add(purpleHaze);
 		purpleHaze.addActionListener(menuController);

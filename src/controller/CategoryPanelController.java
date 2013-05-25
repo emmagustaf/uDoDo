@@ -19,6 +19,7 @@ import view.*;
  *
  */
 public class CategoryPanelController implements ActionListener, MouseListener {
+	
 	private AddedCategoryPanel categoryPanel;
 	private CategoryListView catListView;
 	private StartCategoryPanel startCategoryPanel;
@@ -42,6 +43,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e){
+		
 		if(e.getSource() instanceof JComponent){
 			if(e.getActionCommand().equals("delete Category")){
 				catListView.panel.remove(startCategoryPanel);
@@ -50,12 +52,10 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 			
 		}
 	}
-	
-	/**
-	 * Mouseclicked-events for when the user clicks on categorypanels
-	 */
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
 		if(e.getSource() instanceof StartCategoryPanel){
 	
 			catListView.markCategory((StartCategoryPanel)e.getComponent());
@@ -80,51 +80,50 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		
-		if(catListView.getMarkedList().isEmpty() || !isSelected(arg0.getComponent())){ 
-			((StartCategoryPanel)arg0.getComponent()).setBackground(GraphicConstants.BUTTONHOVER);
-			
+
+		if (catListView.getMarkedList().isEmpty() || !isSelected(arg0.getComponent())) {
+			arg0.getComponent().setBackground(GraphicConstants.BUTTONHOVER);
+
 		}
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		
-		if(catListView.getMarkedList().isEmpty() || !isSelected(arg0.getComponent())){
+
+		if (catListView.getMarkedList().isEmpty()
+				|| !isSelected(arg0.getComponent())) {
 			arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
-			
-		}else{
-			catListView.markLastCategory((StartCategoryPanel)arg0.getComponent());
-		
+
+		} else {
+			catListView.markLastCategory((StartCategoryPanel) arg0
+					.getComponent());
+
 		}
-		
+
 		catListView.updateView();
-		
-		
+
 	}
-	
+
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 
-		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+
 	}
-	
-	public boolean isSelected(Component comp){
-		
-		if(comp instanceof StartCategoryPanel){
+
+	public boolean isSelected(Component comp) {
+
+		if (comp instanceof StartCategoryPanel) {
 			return catListView.getMarkedPanel().equals(comp);
-			
-		}else{
+
+		} else {
 			return false;
 		}
-		
+
 	}
-	
+
 }

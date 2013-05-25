@@ -55,6 +55,8 @@ public class CategoryListView extends JScrollPane{
 
 		getViewport().setView(panel);
 		
+		
+		
 	}
 	
 	/**
