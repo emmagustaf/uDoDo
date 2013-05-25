@@ -43,12 +43,13 @@ public class HeaderController implements ActionListener{
 				TaskModel task;
 				if(catListView.getMarkedList().isEmpty()){
 				
-					task = new TaskModel(headerView.getTextField().getText());
-					AllTaskListModel.getInstance().add(task);
+					task = new TaskModel(headerView.getTextField().getText(), catListView.getDefaultCategory());
+					//AllTaskListModel.getInstance().add(task);
 				
 				}else{
 					
 					task = new TaskModel(headerView.getTextField().getText(), catListView.getMarkedPanel().getModel());
+					System.out.println("task belongs to cat: " + task.getCategory().getCatTitle());
 				}
 				//här behövs det få tag på info om en panel är markerad eller inte, en panel markeras via
 				//mouselistener i categorypanelcontroller. 
