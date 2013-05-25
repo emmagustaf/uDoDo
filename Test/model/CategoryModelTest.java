@@ -8,14 +8,14 @@ import org.junit.Test;
 
 public class CategoryModelTest {
 	
-/*	@Test
+	@Test
 	public void getCatTitleTest(){
 		CategoryModel categoryModel = new CategoryModel(null);
 		
 
 		assertEquals(categoryModel == categoryModel.getCatTitle());	
 		
-	}*/
+	}
 	
 	@Test
 	public void getTaskListTest(){
