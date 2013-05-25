@@ -7,9 +7,9 @@ import view.TaskPanel;
 public class ListModel extends ArrayList<TaskModel> {
 	
 	
-	public ArrayList<TaskModel> getTaskList(){
-		return this;
-	}
+	//public ArrayList<TaskModel> getTaskList(){
+		//return this;
+	//}
 	
 	//behövs inte
 	public void addTask(TaskModel task){

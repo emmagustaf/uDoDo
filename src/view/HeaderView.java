@@ -7,7 +7,6 @@ import java.awt.*;
 
 import utility.*;
 import model.TaskModel;
-import controller.ListController;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.border.LineBorder;
 
