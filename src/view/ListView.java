@@ -41,7 +41,7 @@ public class ListView extends JScrollPane {
 //			TaskPanel panel= new TaskPanel(AllTaskListModel.getInstance().get(i));
 //			panelInScroll.add(panel);
 //		}
-		
+	
 		getViewport().setView(panelInScroll);
 		
 	}
@@ -93,19 +93,26 @@ public class ListView extends JScrollPane {
 
 			
 			System.out.println("display task: " + catModel.getTaskList().get(i).getTitle());
-			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
-			this.updateView();
 			
+			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
 			for(int j=0; j<AllTaskListModel.getInstance().size(); j++){
 				TaskPanel panel= new TaskPanel(AllTaskListModel.getInstance().get(j));
-				panel.getModel().getCategory();
-				panel.setController(taskController);
-				panelInScroll.add(panel);
+				
+				Component[] taskPanels = new Component[panelInScroll.getComponents().length];
+				taskPanels = (Component[]) panelInScroll.getComponents();
+				
+				for(int k=0; k<taskPanels.length; k++){
+					
+					((TaskPanel)taskPanels[k]).getModel().getCategory();
+					((TaskPanel)taskPanels[k]).setController(taskController);
+					panelInScroll.add(((TaskPanel)taskPanels[k]));
+					updatePanels();
+				}
 			
-			}
+			this.updateView();
 		}
 		
 		this.updateView();
+		}
 	}
-	
 }

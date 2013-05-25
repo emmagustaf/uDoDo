@@ -48,6 +48,7 @@ public class Main {
 		JFrame frame = new JFrame();
 		
 		ListView listView = new ListView();
+		
 		//CategoryController catController= new CategoryController();
 		CategoryView categoryView = new CategoryView();
 		CategoryListView categoryListView = new CategoryListView();
@@ -98,7 +99,7 @@ public class Main {
 		CategoryController catConroller = new CategoryController(taskSettings, categoryView, categoryListView, listView);
 		
 		
-
+		listView.displayTasks(finishedModel, taskSettings, categoryListView);
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(700, 750));
 		//frame.setResizable(false);
