@@ -27,7 +27,7 @@ public class DisplayModel {
 	 * @return the title of the task
 	 */
 	public String getTaskTitle() {
-		return task.getTitle();
+		return this.title;
 	}
 
 	/**
@@ -53,8 +53,8 @@ public class DisplayModel {
 	 * 
 	 * @return title
 	 */
-	public String setTaskTitle() {
-		return title;
+	public void setTaskTitle(TaskModel taskmodel) {
+		this.title=taskmodel.getTitle();
 	}
 	
 	/**
