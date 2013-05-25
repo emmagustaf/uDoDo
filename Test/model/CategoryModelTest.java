@@ -7,7 +7,9 @@ import org.junit.Test;
 public class CategoryModelTest {
 
 	@Test
-	public void test() {
+	public void addNewCategoryTest() {
+		CategoryModel categoryModel = new CategoryModel(null);
+		
 		fail("Not yet implemented");
 	}
 
