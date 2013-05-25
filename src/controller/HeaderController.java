@@ -37,13 +37,19 @@ public class HeaderController implements ActionListener{
 	}
 	
 	@Override
+	/**
+	 * Creates a new TaskPanel and TaskModel, adds the panel to ListView.
+	 * If a category is marked in the CategoryListView, the new task is added to that category.
+	 * If no category, or the Finished-tasks-category is marked, the task is added to the default category.
+	 */
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
 			if(e.getActionCommand().equals("newTask") && headerView.getTextField().getText().length() > 0){
 				TaskModel task;
-				if(catListView.getMarkedList().isEmpty()){
+				if(catListView.getMarkedList().isEmpty() || catListView.getMarkedPanel().getModel().getCatTitle().equals("Finished Tasks")){
 				
 					task = new TaskModel(headerView.getTextField().getText(), catListView.getDefaultCategory());
+					System.out.println("task belongs to cat: " + task.getCategory().getCatTitle());
 					//AllTaskListModel.getInstance().add(task);
 				
 				}else{
@@ -51,10 +57,6 @@ public class HeaderController implements ActionListener{
 					task = new TaskModel(headerView.getTextField().getText(), catListView.getMarkedPanel().getModel());
 					System.out.println("task belongs to cat: " + task.getCategory().getCatTitle());
 				}
-				//här behövs det få tag på info om en panel är markerad eller inte, en panel markeras via
-				//mouselistener i categorypanelcontroller. 
-				//kanske inte behöver ha två olika konstruktorer i taskmodel, utan bara alltid skicka med
-				//typ en categorypanel/model
 				
 				TaskPanel taskPanel = new TaskPanel(task);
 				view.panelInScroll.add(taskPanel, 0);

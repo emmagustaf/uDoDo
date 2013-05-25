@@ -91,15 +91,4 @@ public class ListView extends JScrollPane {
 		this.updateView();
 	}
 	
-	
-//	public void addControllers(TaskSettingView taskSetting, CategoryListView catListView){
-//		
-//		int size = panelList.size();
-//		if(size != 0){
-//			for(int i = 0; i <= size; i++){
-//				TaskController taskController = new TaskController(this, panelList.get(i), taskSetting, catListView);
-//		
-//			}
-//		}
-//	}
 }
