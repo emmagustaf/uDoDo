@@ -91,13 +91,11 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 
-		if (catListView.getMarkedList().isEmpty()
-				|| !isSelected(arg0.getComponent())) {
+		if (catListView.getMarkedList().isEmpty() || !isSelected(arg0.getComponent())) {
 			arg0.getComponent().setBackground(GraphicConstants.BACKGROUND);
 
 		} else {
-			catListView.markLastCategory((StartCategoryPanel) arg0
-					.getComponent());
+			catListView.markLastCategory((StartCategoryPanel)arg0.getComponent());
 
 		}
 
