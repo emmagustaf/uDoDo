@@ -1,14 +1,21 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
+import utility.*;
 import javax.swing.JLabel;
 
 
 import view.*;
 
-public class TaskModel {
+public class TaskModel implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3243208829863896513L;
+
+
 	private enum Priority{
 		HIGH_PRIORITY, NO_PRIORITY
 	}
@@ -36,7 +43,7 @@ public class TaskModel {
 		this.catModel = catModel;
 		catModel.getTaskList().add(this);
 		AllTaskListModel.getInstance().add(this);
-		
+		Save.saveFiles();
 		//this.uncheckedTaskList.add(this);
 	}
 	
