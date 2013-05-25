@@ -49,7 +49,8 @@ public class CategoryController implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
-			if(e.getActionCommand().equals("newCategory") && view.getTextField().getText().length() > 0){
+			if(e.getActionCommand().equals("newCategory") && (view.getTextField().getText().length() > 0) && 
+					(!view.getTextField().getText().equals("Add category..."))){
 				CategoryModel cat = new CategoryModel(view.getTextField().getText());
 				AddedCategoryPanel catPanel = new AddedCategoryPanel(cat);		
 				catListView.panel.add(catPanel);

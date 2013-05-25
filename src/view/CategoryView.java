@@ -25,8 +25,8 @@ public class CategoryView extends JPanel {
 		setMaximumSize(new Dimension(210, 70));
 		setLayout(new MigLayout("", "[129.00px][75px]", "[49.00px]"));
 		
-		categoryTitleInput = new JTextField();
-		categoryTitleInput.setColumns(20);
+		categoryTitleInput = new HintTextField("Add category...", 20);
+		categoryTitleInput.setForeground(Color.gray);
 		add(categoryTitleInput, "cell 0 0,alignx left,aligny center");
 		
 		categoryTitleInput.setFont(GraphicConstants.REGULARFONT);
