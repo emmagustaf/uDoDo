@@ -33,6 +33,7 @@ public class DisplayTaskPanel extends JPanel {
 	private DisplayController controller;
 	private DisplayModel displayModel;
 	private JLabel deadlineLabel;
+	private JLabel deadlineLabel_1;
 	
 	/**
 	 * Create the panel.
@@ -45,12 +46,12 @@ public class DisplayTaskPanel extends JPanel {
 	
 		this.taskModel=taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new MigLayout("", "[207.00][][][]", "[][][][][][][][][]"));
+		setLayout(new MigLayout("", "[110.00][][][]", "[][][][][][][][][][][]"));
 		
 		JLabel titleLabel = new JLabel(displayModel.getTaskModel().getTitle());
 		titleLabel.setFont(GraphicConstants.HEADINGFONT);
 		titleLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(titleLabel, "cell 0 0");
+		add(titleLabel, "cell 0 0 2 1");
 		
 		//JLabel descriptionLabel = new JLabel(displayModel.getTaskModel().getDescription());
 		JTextPane descriptionLabel = new JTextPane();
@@ -58,33 +59,33 @@ public class DisplayTaskPanel extends JPanel {
 		descriptionLabel.setDragEnabled(false);
 		descriptionLabel.setEditable(false);
 		descriptionLabel.setBorder(null);
-		descriptionLabel.setMinimumSize(new Dimension (150, 50));
-		descriptionLabel.setMaximumSize(new Dimension(200, 90));
-		descriptionLabel.setPreferredSize(new Dimension(200, 20));
+		descriptionLabel.setMinimumSize(new Dimension (230, 30));
+		descriptionLabel.setMaximumSize(new Dimension(230, 125));
+		descriptionLabel.setPreferredSize(new Dimension(230, 125));
 		descriptionLabel.setFont(GraphicConstants.REGULARFONT);
 		descriptionLabel.setBackground(GraphicConstants.BACKGROUND);
 		descriptionLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(descriptionLabel, "cell 0 2 3 1,alignx left,aligny top");
+		add(descriptionLabel, "cell 0 2 2 2,alignx left,aligny top");
 		
 		JLabel deadlineLabel = new JLabel("Deadline");
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		deadlineLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(deadlineLabel, "cell 0 4");
+		add(deadlineLabel, "cell 0 5");
 		
-		deadlineLabel = new JLabel(taskModel.getDeadline());
-		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
-		deadlineLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(deadlineLabel, "cell 1 4");
+		deadlineLabel_1 = new JLabel(taskModel.getDeadline());
+		deadlineLabel_1.setFont(GraphicConstants.REGULARBOLDFONT);
+		deadlineLabel_1.setForeground(GraphicConstants.FOREGROUND);
+		add(deadlineLabel_1, "cell 0 6");
 		
 		JLabel prioLabel = new JLabel("Priority");
 		prioLabel.setFont(GraphicConstants.REGULARFONT);
 		prioLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(prioLabel, "cell 0 6");
+		add(prioLabel, "cell 0 8");
 		
 		
 		getEditButton().setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&16.png")));
 		getEditButton().setBorderPainted(false);
-		add(getEditButton(), "cell 2 8");
+		add(getEditButton(), "cell 2 10,alignx left,aligny top");
 		getEditButton().setActionCommand("editTask");
 
 	}

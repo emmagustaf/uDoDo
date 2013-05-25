@@ -53,70 +53,70 @@ public class EditTaskPanel extends JPanel {
 		this.setPreferredSize(new Dimension (300, 500));
 		this.taskModel = taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new MigLayout("", "[][283.00,grow]", "[][][][][][][][][][][]"));
+		setLayout(new MigLayout("", "[][172.00][99.00]", "[][][][][][][][][][][][]"));
 		
-		JLabel changeTitleLabel = new JLabel("Change title:");
+		JLabel changeTitleLabel = new JLabel("Set new title");
 		changeTitleLabel.setFont(GraphicConstants.REGULARFONT);
 		changeTitleLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(changeTitleLabel, "cell 0 1,alignx right");
+		add(changeTitleLabel, "cell 1 0,alignx left");
 		
 		titleTextField = new JTextField(taskModel.getTitle());
 		titleTextField.setFont(GraphicConstants.REGULARFONT);
-		add(titleTextField, "cell 1 1,alignx left");
-		titleTextField.setColumns(10);
+		add(titleTextField, "cell 1 1,growx");
+		titleTextField.setColumns(15);
 		
-		JLabel changeDescriptionLabel = new JLabel("Change description:");
+		JLabel changeDescriptionLabel = new JLabel("Change description");
 		changeDescriptionLabel.setFont(GraphicConstants.REGULARFONT);
 		changeDescriptionLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(changeDescriptionLabel, "cell 0 3,alignx right,aligny top");
+		add(changeDescriptionLabel, "cell 1 3,alignx left,aligny top");
 		
 		descriptionTextField = new JEditorPane();
+		descriptionTextField.setMaximumSize(new Dimension(230, 125));
+		descriptionTextField.setPreferredSize(new Dimension(230, 125));
+		descriptionTextField.setMinimumSize(new Dimension(230, 125));
 		descriptionTextField.setText(taskModel.getDescription());
 		descriptionTextField.setBorder(UIManager.getBorder("TextField.border"));
-		descriptionTextField.setPreferredSize(new Dimension(150, 90));
 		descriptionTextField.setFont(GraphicConstants.REGULARFONT);
-		add(descriptionTextField, "cell 1 3,alignx left");
+		add(descriptionTextField, "cell 1 4 2 1,growx");
 		
-		JLabel changePriorityLabel = new JLabel("Change priority:");
+		JLabel changePriorityLabel = new JLabel("Change priority");
 		changePriorityLabel.setFont(GraphicConstants.REGULARFONT);
 		changePriorityLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(changePriorityLabel, "cell 0 5,alignx right");
+		add(changePriorityLabel, "cell 1 6,alignx left");
 		
-		deadlineLabel = new JLabel("Current Deadline:");
+		deadlineLabel = new JLabel("Current deadline");
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		deadlineLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(deadlineLabel, "cell 0 7,alignx right");
+		add(deadlineLabel, "cell 1 8,alignx left");
+		
+		calendar = new JCalendar(null, "Calendar", true, calendar.RIGHT_SPINNER);
 		
 		
 		dateLabel = new JLabel("" + taskModel.getDeadline());
 		dateLabel.setFont(GraphicConstants.REGULARFONT);
 		dateLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(dateLabel, "cell 1 7,alignx center");
+		add(dateLabel, "cell 1 9,alignx left");
 		
-		JLabel changeDeadlineLabel = new JLabel("Change deadline:");
-		changeDeadlineLabel.setFont(GraphicConstants.REGULARFONT);
-		changeDeadlineLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(changeDeadlineLabel, "cell 0 8,alignx trailing");
-		
-		calendar = new JCalendar(null, "Calendar", true, calendar.RIGHT_SPINNER);
 		calendarButton = new JButton("Set date");
+		calendarButton.setFont(GraphicConstants.REGULARFONT);
 		calendarButton.setActionCommand("calendar");
-		add(calendarButton, "cell 1 8,growx");
+		add(calendarButton, "cell 2 9,alignx center");
 		//deadlineInput.setColumns(10);
 		
 		dateTextField = new JDateTextField();
+		dateTextField.setFont(GraphicConstants.SMALLHEADINGFONT);
 		dateTextField.setForeground(GraphicConstants.FOREGROUND);
 		dateTextField.setText("" + taskModel.getDeadline());
+		
+		saveButton = new JButton("Ok");
+		saveButton.setFont(GraphicConstants.REGULARFONT);
+		saveButton.setActionCommand("save");
+		add(saveButton, "cell 1 11,alignx right");
 		
 		cancelButton = new JButton("cancel");
 		cancelButton.setFont(GraphicConstants.REGULARFONT);
 		cancelButton.setActionCommand("cancel");
-		add(cancelButton, "flowx,cell 1 10,alignx right");
-		
-		saveButton = new JButton("save");
-		saveButton.setFont(GraphicConstants.REGULARFONT);
-		saveButton.setActionCommand("save");
-		add(saveButton, "cell 1 10,alignx right");
+		add(cancelButton, "flowx,cell 2 11,alignx right");
 		
 	
 
