@@ -5,11 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
-import calendar.JCalendar;
 import calendar.JDateTextField;
 
 import model.*;
@@ -40,33 +37,42 @@ public class EditController implements ActionListener{
 			
 //			DisplayTaskPanel panel = (DisplayTaskPanel)((JButton) e.getSource()).getParent();
 //			TaskModel model = panel.getTaskModel();
-		
+			
+			//Cancels editing
 			if(e.getActionCommand().equals("cancel")){
 				toDisplayTask();
 				System.out.println("Entered action commant in cancel.");
 				settingView.updateView();
 				listView.updateView();
 				
-				
+			//Saves all updates in edittaskpanel
 			}else if(e.getActionCommand().equals("save")){
+				setDate();
 				saveChanges();
 				settingView.updateView();
 				listView.updatePanels();
 				listView.updateView();
+				
+			// Enables the calendar pop-up
 			}else if(e.getActionCommand().equals("calendar")){
 				
 				editTaskPanel.getCalendar().setVisible(true);
 				editTaskPanel.getCalendar().setEnabled(true);
+				
+				//Updates the deadlinelabel in edittaskpanel before saving to all panels
 				if(editTaskPanel.getCalendar().isOkPressed()){
-					setDate();
+					editTaskPanel.deadlineLabel.setText(editTaskPanel.getJDateTextField());
 				}
-				settingView.updateView();
+				
 				
 			}
+			settingView.updateView();
 		}
 		
 	}
-	
+	/**
+	 * Returns the user to displayTaskPanel after canceling
+	 */
 	private void toDisplayTask(){
 		settingView.panelInScroll.removeAll();
 		DisplayModel model = new DisplayModel(editTaskPanel.getTaskModel());
@@ -74,16 +80,19 @@ public class EditController implements ActionListener{
 		displayController = new DisplayController(listView, settingView, displayTaskPanel);
 		settingView.panelInScroll.add(displayTaskPanel);
 	}
+	/**
+	 * Sets the selected date as deadline
+	 */
 	private void setDate(){
 		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());
-		editTaskPanel.getDeadlineLabel().revalidate();
-		editTaskPanel.getDeadlineLabel().repaint();
 		listView.updatePanels();
 	}
+	/**
+	 * Saves all changes made in edittaskpanel
+	 */
 	private void saveChanges(){
 		editTaskPanel.getTaskModel().setTitle(editTaskPanel.getTitleTextField());
 		editTaskPanel.getTaskModel().setDescription(editTaskPanel.getDescriptionTextField());
-		
 		listView.updatePanels();
 		toDisplayTask();
 	}
