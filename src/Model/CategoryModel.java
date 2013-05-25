@@ -30,8 +30,8 @@ public class CategoryModel {
 	 * @param catTitle
 	 */
 	public CategoryModel(String catTitle) {
-		this.catTitle = catTitle;
 		listModel = new ListModel();
+		this.catTitle = catTitle;
 	
 	}
 	/**

@@ -57,8 +57,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 		if(e.getSource() instanceof StartCategoryPanel){
 	
 			catListView.markCategory((StartCategoryPanel)e.getComponent());
-			listView.hideTasks(catListView);
-			listView.displayTasks((StartCategoryPanel)e.getComponent());
+			listView.displayTasks(((StartCategoryPanel)e.getComponent()).getModel());
 			
 			
 			e.getComponent().setBackground(GraphicConstants.BUTTONPRESSED);

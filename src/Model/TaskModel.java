@@ -17,7 +17,7 @@ public class TaskModel {
 	private String title;
 	private String description;
 	private Priority prio;
-	private StartCategoryPanel catPanel;
+	private CategoryModel catModel;
 	private EditTaskPanel editTaskPanel;
 	private String deadline;
 	private JLabel deadlineLabel = new JLabel();
@@ -31,10 +31,11 @@ public class TaskModel {
 		this.prio = Priority.NO_PRIORITY;
 	}
 	
-	public TaskModel(String title, StartCategoryPanel catPanel){
+	public TaskModel(String title, CategoryModel catModel){
 		this(title);
-		this.catPanel = catPanel;
-		//catPanel.getModel().getTaskList().add(this);
+		this.catModel = catModel;
+		catModel.getTaskList().add(this);
+		AllTaskListModel.getInstance().add(this);
 		
 		//this.uncheckedTaskList.add(this);
 	}
@@ -102,20 +103,19 @@ public class TaskModel {
 	}
 
 	public CategoryModel getCategory(){
-		return catPanel.getModel();
+		return catModel;
 	}
+	 
+	
+	//public StartCategoryPanel getCatPanel(){
+		//return catPanel;
+	//}
 	
 	
-	public StartCategoryPanel getCatPanel(){
-		return catPanel;
-	}
-	
-	/**
-	 * Sets the category of the task.
-	 * 
-	 */
-	public void setCategory(){
-	
+	public void changeCategory(CategoryModel catModel){
+		catModel.getTaskList().remove(this);
+		CategoryModel model = catModel;
+		model.getTaskList().add(this);
 	}
 
 

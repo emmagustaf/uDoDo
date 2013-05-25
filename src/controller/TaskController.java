@@ -38,12 +38,12 @@ public class TaskController implements ActionListener {
 				System.out.println("entered delete task");
 				System.out.println("" + taskPanel.getModel().getTitle());
 				listView.panelInScroll.remove(taskPanel);
-				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel);
+				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel.getModel());
 				listView.updateView();
 			}else if(e.getActionCommand().equals("taskCheck")){
 				taskPanel.getModel().changeState();
 				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel);
-				catListView.getFinishedCategory().getModel().getTaskList().add(taskPanel);
+				catListView.getFinishedCategory().getModel().getTaskList().add(taskPanel.getModel());
 				listView.updateView();
 			}
 		}

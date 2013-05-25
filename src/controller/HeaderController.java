@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
+import model.AllTaskListModel;
 import model.CategoryModel;
 import model.ListModel;
 import model.TaskModel;
@@ -42,11 +43,12 @@ public class HeaderController implements ActionListener{
 				TaskModel task;
 				if(catListView.getMarkedList().isEmpty()){
 				
-					task = new TaskModel(headerView.getTextField().getText(), catListView.getDefaultCategory());
+					task = new TaskModel(headerView.getTextField().getText());
+					AllTaskListModel.getInstance().add(task);
 				
 				}else{
 					
-					task = new TaskModel(headerView.getTextField().getText(), catListView.getMarkedPanel());
+					task = new TaskModel(headerView.getTextField().getText(), catListView.getMarkedPanel().getModel());
 				}
 				//här behövs det få tag på info om en panel är markerad eller inte, en panel markeras via
 				//mouselistener i categorypanelcontroller. 

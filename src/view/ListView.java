@@ -3,6 +3,8 @@ package view;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import model.CategoryModel;
 import utility.*;
 import java.awt.*;
 /**
@@ -43,6 +45,7 @@ public class ListView extends JScrollPane {
 		
 		this.revalidate();
 		this.repaint();
+		this.updatePanels();
 	}	
 	
 	/**
@@ -61,31 +64,19 @@ public class ListView extends JScrollPane {
 		}
 	}
 	
-	public void displayTasks(StartCategoryPanel catPanel){
+	public void displayTasks(CategoryModel catModel){
 		
-		int size = catPanel.getModel().getTaskList().size();
+		this.removeAll();
+		
+		int size = catModel.getTaskList().size();
 		
 		for(int i = size - 1; i >= 0; i = i - 1){
 			
-			this.add(catPanel.getModel().getTaskList().get(i));
-			catPanel.getModel().getTaskList().get(i).validate();
-			catPanel.getModel().getTaskList().get(i).repaint();
+			TaskPanel taskPanel = new TaskPanel(catModel.getTaskList().get(i));
+			this.add(taskPanel);
+			
 		}
 		
-		this.updateView();
-	}
-	
-	public void hideTasks(CategoryListView catListView){
-		
-		if(!catListView.getLastMarkedList().isEmpty()){
-			
-			int size = catListView.getLastMarkedPanel().getModel().getTaskList().size();
-			
-			for(int i = size - 1; i >= 0; i = i - 1){
-				this.remove(catListView.getLastMarkedPanel().getModel().getTaskList().get(i));
-			}
-		}
-		this.updatePanels();
 		this.updateView();
 	}
 	
