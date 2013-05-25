@@ -34,6 +34,7 @@ public class CategoryModel {
 		this.catTitle = catTitle;
 	
 	}
+	
 	/**
 	 * Returns the actual TaskList
 	 * @return
@@ -41,13 +42,7 @@ public class CategoryModel {
 	public ListModel getTaskList(){
 		return listModel;
 	}
-	
-//	public List getList(){
-//		catList.set(0, categoryPanel);
-//		
-//		return catList;
-//	}
-	
+
 	/**
 	 * Returns the title connected to the category
 	 * @return
@@ -55,31 +50,5 @@ public class CategoryModel {
 	public String getCatTitle() {
 		return catTitle;
 	}
-	
-//	/**
-//	 * Adds a new categoryPanel 
-//	 * @param title
-//	 */
-//	public void addNewCategory(String title) {
-//		AddedCategoryPanel panel = new AddedCategoryPanel(panelModel);
-//		//catList.add(panel);
-//	}
-//	
-//	/**
-//	 * Removes the selected category
-//	 * @param panelModel
-//	 */
-//	public void removeCategory (AddedCategoryPanel panelModel){
-//		//catList.remove(panelModel);
-//	}
-//	
-//	/**
-//	 * Returns the categorymodel
-//	 * 
-//	 * @return categorymodel
-//	 */
-//	public CategoryModel getCategory(){
-//		return panelModel;
-//	}
 	
 }

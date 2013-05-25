@@ -37,5 +37,9 @@ public class DisplayModelTest {
 	@Test
 	public void getTaskModelTest() {
 		TaskModel taskModel = new TaskModel(null);
+		TaskModel taskMod = new TaskModel(null);
+		DisplayModel displayModel = new DisplayModel(taskModel);
+		assertTrue(taskModel == displayModel.getTaskModel());
+		assertTrue(taskMod != displayModel.getTaskModel());
 	}
 }
