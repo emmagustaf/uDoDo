@@ -20,7 +20,7 @@ public class TaskModel {
 	private StartCategoryPanel catPanel;
 	private EditTaskPanel editTaskPanel;
 	private String deadline;
-	private JLabel deadlineLabel;
+	private JLabel deadlineLabel = new JLabel();
 	//private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
 	//we will have to find a way to keep track of unchecked and checked tasks
 	//I think it will be too many lists with stuff soon...
@@ -90,9 +90,9 @@ public class TaskModel {
 		this.deadline=deadline;
 	}
 	public void setDeadlineLabel(String deadline){
-		deadlineLabel = new JLabel ();
-		this.deadlineLabel.setText(deadline);
+		deadlineLabel.setText(deadline);
 	}
+	
 	public String getDeadline(){
 		if(deadline==null){
 			return "No deadline for this task";

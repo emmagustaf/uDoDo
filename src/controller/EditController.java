@@ -49,6 +49,7 @@ public class EditController implements ActionListener{
 				
 				
 			}else if(e.getActionCommand().equals("save")){
+				setDate();
 				saveChanges();
 				settingView.updateView();
 				listView.updatePanels();
@@ -58,11 +59,12 @@ public class EditController implements ActionListener{
 				editTaskPanel.getCalendar().setVisible(true);
 				editTaskPanel.getCalendar().setEnabled(true);
 				if(editTaskPanel.getCalendar().isOkPressed()){
-					setDate();
+					editTaskPanel.deadlineLabel.setText(editTaskPanel.getJDateTextField());
 				}
-				settingView.updateView();
+				
 				
 			}
+			settingView.updateView();
 		}
 		
 	}
@@ -76,14 +78,11 @@ public class EditController implements ActionListener{
 	}
 	private void setDate(){
 		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());
-		editTaskPanel.getDeadlineLabel().revalidate();
-		editTaskPanel.getDeadlineLabel().repaint();
 		listView.updatePanels();
 	}
 	private void saveChanges(){
 		editTaskPanel.getTaskModel().setTitle(editTaskPanel.getTitleTextField());
 		editTaskPanel.getTaskModel().setDescription(editTaskPanel.getDescriptionTextField());
-		
 		listView.updatePanels();
 		toDisplayTask();
 	}
