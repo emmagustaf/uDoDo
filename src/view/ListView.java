@@ -47,6 +47,7 @@ public class ListView extends JScrollPane {
 		
 //		this.updatePanels();
 		
+		panelInScroll.revalidate();
 		panelInScroll.validate();
 		panelInScroll.repaint();
 		
@@ -73,18 +74,19 @@ public class ListView extends JScrollPane {
 	
 	public void displayTasks(CategoryModel catModel, TaskSettingView taskSetting, CategoryListView catListView){
 		
-		this.removeAll();
+		panelInScroll.removeAll();
+
 		
 		int size = catModel.getTaskList().size();
 		
 		for(int i = size - 1; i >= 0; i = i - 1){
 			
 			TaskPanel taskPanel = new TaskPanel(catModel.getTaskList().get(i));
+
 			panelInScroll.add(taskPanel);
-			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
+			this.updateView();
 			System.out.println("display task: " + catModel.getTaskList().get(i).getTitle());
-			taskPanel.validate();
-			taskPanel.repaint();
+			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
 			
 		}
 		
