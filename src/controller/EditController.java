@@ -73,7 +73,9 @@ public class EditController implements ActionListener{
 		}
 		
 	}
-	
+	/**
+	 * Returns the user to displayTaskPanel after canceling
+	 */
 	private void toDisplayTask(){
 		settingView.panelInScroll.removeAll();
 		DisplayModel model = new DisplayModel(editTaskPanel.getTaskModel());
@@ -81,10 +83,16 @@ public class EditController implements ActionListener{
 		displayController = new DisplayController(listView, settingView, displayTaskPanel);
 		settingView.panelInScroll.add(displayTaskPanel);
 	}
+	/**
+	 * Sets the selected date as deadline
+	 */
 	private void setDate(){
 		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());
 		listView.updatePanels();
 	}
+	/**
+	 * Saves all changes made in edittaskpanel
+	 */
 	private void saveChanges(){
 		editTaskPanel.getTaskModel().setTitle(editTaskPanel.getTitleTextField());
 		editTaskPanel.getTaskModel().setDescription(editTaskPanel.getDescriptionTextField());
