@@ -21,25 +21,25 @@ import java.text.SimpleDateFormat;
  */
 public class JDateTextField extends JTextField
 {
-    public static final int US_SHORT_DATE = 11;
-    public static final int IN_SHORT_DATE = 12;
-    public static final int LONG_DATE = 13;
+	public static final int US_SHORT_DATE = 11;
+	public static final int IN_SHORT_DATE = 12;
+	public static final int LONG_DATE = 13;
 
-    private static final char FW_SLASH = '/';
-    private static final char DASH = '-';
+	private static final char FW_SLASH = '/';
+	private static final char DASH = '-';
 
-    private static final String FM_US_SHORT_DATE = "MM/dd/yyyy";
-    private static final String FM_IN_SHORT_DATE = "dd/MM/yyyy";
-    private static final String FM_LONG_DATE = "dd-MMM-yyyy";
+	private static final String FM_US_SHORT_DATE = "MM/dd/yyyy";
+	private static final String FM_IN_SHORT_DATE = "dd/MM/yyyy";
+	private static final String FM_LONG_DATE = "dd-MMM-yyyy";
 
-    private static final DateFormatSymbols   dfSymb  = new DateFormatSymbols();
-    private static final String  SHORT_MONTHS[] = dfSymb.getShortMonths();
+	private static final DateFormatSymbols dfSymb = new DateFormatSymbols();
+	private static final String SHORT_MONTHS[] = dfSymb.getShortMonths();
 
-    private static final String NULL_SHORT_DATE = "//";
-    private static final String NULL_LONG_DATE = "--";
+	private static final String NULL_SHORT_DATE = "//";
+	private static final String NULL_LONG_DATE = "--";
 
-    private int format = US_SHORT_DATE;
-    private String mask = FM_US_SHORT_DATE;
+	private int format = US_SHORT_DATE;
+	private String mask = FM_US_SHORT_DATE;
 
     Calendar date = null;
 
