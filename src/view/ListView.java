@@ -6,6 +6,7 @@ import javax.swing.JScrollPane;
 
 import controller.TaskController;
 
+import model.AllTaskListModel;
 import model.CategoryModel;
 import utility.*;
 import java.awt.*;
@@ -31,11 +32,16 @@ public class ListView extends JScrollPane {
 		this.setMinimumSize(new Dimension (300, 500));
 		this.setMaximumSize(new Dimension (300, 500));
 		this.setPreferredSize(new Dimension (300, 500));
-
+		
 		panelInScroll = new JPanel();
 		panelInScroll.setBackground(GraphicConstants.BACKGROUND);
 		panelInScroll.setLayout(new BoxLayout(panelInScroll, BoxLayout.Y_AXIS));
 		
+//		for(int i=0; i<AllTaskListModel.getInstance().size(); i++){
+//			TaskPanel panel= new TaskPanel(AllTaskListModel.getInstance().get(i));
+//			panelInScroll.add(panel);
+//		}
+	
 		getViewport().setView(panelInScroll);
 		
 	}
@@ -84,13 +90,29 @@ public class ListView extends JScrollPane {
 			TaskPanel taskPanel = new TaskPanel(catModel.getTaskList().get(i));
 
 			panelInScroll.add(taskPanel);
-			this.updateView();
-			System.out.println("display task: " + catModel.getTaskList().get(i).getTitle());
-			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
+
 			
+			System.out.println("display task: " + catModel.getTaskList().get(i).getTitle());
+			
+			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
+			for(int j=0; j<AllTaskListModel.getInstance().size(); j++){
+				TaskPanel panel= new TaskPanel(AllTaskListModel.getInstance().get(j));
+				
+				Component[] taskPanels = new Component[panelInScroll.getComponents().length];
+				taskPanels = (Component[]) panelInScroll.getComponents();
+				
+				for(int k=0; k<taskPanels.length; k++){
+					
+					((TaskPanel)taskPanels[k]).getModel().getCategory();
+					((TaskPanel)taskPanels[k]).setController(taskController);
+					panelInScroll.add(((TaskPanel)taskPanels[k]));
+					updatePanels();
+				}
+			
+			this.updateView();
 		}
 		
 		this.updateView();
+		}
 	}
-	
 }

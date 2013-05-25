@@ -6,8 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 import utility.ColorSettings;
+import utility.Read;
 import view.*;
 import model.*;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JRadioButtonMenuItem;
@@ -19,7 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
-
+import utility.*;
 public class Main {
 	private static final ButtonGroup buttonGroup = new ButtonGroup();
 	
@@ -29,6 +31,8 @@ public class Main {
 	 */
 	
 	public static void main(String[] args) {
+		
+		Read.readFromFile();
 		
 		try{
 			
@@ -95,7 +99,7 @@ public class Main {
 		CategoryController catConroller = new CategoryController(taskSettings, categoryView, categoryListView, listView);
 		
 		
-
+		listView.displayTasks(finishedModel, taskSettings, categoryListView);
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(700, 750));
 		//frame.setResizable(false);

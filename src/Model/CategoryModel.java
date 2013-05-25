@@ -5,20 +5,24 @@ import java.util.*;
 
 import view.*;
 import controller.*;
-
+import java.io.*;
 /**
  * A class to represent a model of the category.
  * 
  * @author Hanna
  *
  */
-public class CategoryModel {
+public class CategoryModel implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 349685488686548422L;
 	private String catTitle;
 	private CategoryView view;
 	private AddedCategoryPanel panel;
 	private CategoryModel panelModel;
-	private ListModel listModel;
+	private List<TaskModel> taskList;
 	private StartCategoryPanel startPanel;
 	
 	
@@ -30,7 +34,7 @@ public class CategoryModel {
 	 * @param catTitle
 	 */
 	public CategoryModel(String catTitle) {
-		listModel = new ListModel();
+		taskList = new ArrayList<TaskModel>();
 		this.catTitle = catTitle;
 	
 	}
@@ -39,8 +43,8 @@ public class CategoryModel {
 	 * Returns the actual TaskList
 	 * @return
 	 */
-	public ListModel getTaskList(){
-		return listModel;
+	public List<TaskModel> getTaskList(){
+		return taskList;
 	}
 
 	/**
