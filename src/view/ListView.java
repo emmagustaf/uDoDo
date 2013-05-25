@@ -78,7 +78,7 @@ public class ListView extends JScrollPane {
 		for(int i = size - 1; i >= 0; i = i - 1){
 			
 			TaskPanel taskPanel = new TaskPanel(catModel.getTaskList().get(i));
-			panelInScroll.add(taskPanel);
+			panelInScroll.add(taskPanel, 0);
 			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
 			System.out.println("display task: " + catModel.getTaskList().get(i).getTitle());
 			taskPanel.validate();
