@@ -22,7 +22,6 @@ public class MenuController implements ActionListener{
 		if(e.getSource() instanceof JRadioButtonMenuItem){
 			colorSettings.changeColor(e.getActionCommand());
 		}
-		
 	}
 
 }

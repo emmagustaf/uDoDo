@@ -7,8 +7,9 @@ import org.junit.Test;
 public class ListModelTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void getTaskListTest() {
+		ListModel listModel = new ListModel();
+		
 	}
 
 }
