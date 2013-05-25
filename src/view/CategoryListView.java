@@ -54,11 +54,12 @@ public class CategoryListView extends JScrollPane{
 		panel.setBackground(GraphicConstants.BACKGROUND);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS ));
 
-//		for(int i=0; i<AllTaskListModel.getInstance().size(); i++){
-//			CategoryModel cModel = new CategoryModel(AllTaskListModel.getInstance().get(i).getCategory().getCatTitle());
-//			AddedCategoryPanel cPanel = new AddedCategoryPanel (cModel);
-//			panel.add(cPanel);
-//		}
+		for(int i=0; i<AllTaskListModel.getInstance().size(); i++){
+			AllTaskListModel.getInstance().get(i).getCategory();
+			AddedCategoryPanel cPanel = new AddedCategoryPanel (AllTaskListModel.getInstance().get(i).getCategory());
+			
+			panel.add(cPanel);
+		}
 		getViewport().setView(panel);
 		
 		
