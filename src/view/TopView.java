@@ -28,7 +28,7 @@ public class TopView extends JPanel {
 		this.setBackground(GraphicConstants.BACKGROUND);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(TopView.class.getResource("/utility/icons/uDoDo.banner.jpg")));
+		label.setIcon(new ImageIcon(TopView.class.getResource("/utility/icons/uDoDo.banner.png")));
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)

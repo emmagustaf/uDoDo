@@ -57,15 +57,6 @@ public class CategoryModel {
 	}
 	
 	/**
-	 * Sets a title of the category
-	 * @param title
-	 * @return 
-	 */
-	public String setCatTitle(String title) {
-		return title;
-	}
-
-	/**
 	 * Adds a new categoryPanel 
 	 * @param title
 	 */

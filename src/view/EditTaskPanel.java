@@ -36,13 +36,12 @@ public class EditTaskPanel extends JPanel {
 	private JButton cancelButton;
 	private JButton saveButton;
 	private DisplayTaskPanel displayTaskPanel;
-	private JTextField deadlineInput;
 	private JLabel dateLabel;
-	private JLabel deadlineLabel;
 	private JButton calendarButton;
 	private JCalendar calendar;
 	private JDateTextField dateTextField;
-	
+	public JLabel deadlineLabel;
+
 	/**
 	 * Create the panel.
 	 */
@@ -104,8 +103,6 @@ public class EditTaskPanel extends JPanel {
 		//deadlineInput.setColumns(10);
 		
 		dateTextField = new JDateTextField();
-		dateTextField.setFont(GraphicConstants.SMALLHEADINGFONT);
-		dateTextField.setForeground(GraphicConstants.FOREGROUND);
 		dateTextField.setText("" + taskModel.getDeadline());
 		
 		saveButton = new JButton("Ok");
@@ -132,12 +129,7 @@ public class EditTaskPanel extends JPanel {
 	public String getTitleTextField(){
 		return titleTextField.getText();
 	}
-	public String getDeadline(){
-		return deadlineLabel.getText();
-	}
-	public JLabel getDeadlineLabel(){
-		return this.deadlineLabel;
-	}
+	
 	public String getJDateTextField(){
 		dateTextField.getCalendar();
 		dateTextField.setDate(calendar.getDate());
@@ -156,6 +148,4 @@ public class EditTaskPanel extends JPanel {
 		cancelButton.addActionListener(controller);
 		calendarButton.addActionListener(controller);
 	}
-	
-
 }
