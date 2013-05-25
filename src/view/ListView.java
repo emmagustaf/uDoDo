@@ -6,6 +6,7 @@ import javax.swing.JScrollPane;
 
 import controller.TaskController;
 
+import model.AllTaskListModel;
 import model.CategoryModel;
 import utility.*;
 import java.awt.*;
@@ -31,10 +32,15 @@ public class ListView extends JScrollPane {
 		this.setMinimumSize(new Dimension (300, 500));
 		this.setMaximumSize(new Dimension (300, 500));
 		this.setPreferredSize(new Dimension (300, 500));
-
+		
 		panelInScroll = new JPanel();
 		panelInScroll.setBackground(GraphicConstants.BACKGROUND);
 		panelInScroll.setLayout(new BoxLayout(panelInScroll, BoxLayout.Y_AXIS));
+		
+//		for(int i=0; i<AllTaskListModel.getInstance().size(); i++){
+//			TaskPanel panel= new TaskPanel(AllTaskListModel.getInstance().get(i));
+//			panelInScroll.add(panel);
+//		}
 		
 		getViewport().setView(panelInScroll);
 		
@@ -84,10 +90,10 @@ public class ListView extends JScrollPane {
 			TaskPanel taskPanel = new TaskPanel(catModel.getTaskList().get(i));
 
 			panelInScroll.add(taskPanel);
-			this.updateView();
 
 			System.out.println("display task: " + catModel.getTaskList().get(i).getTitle());
 			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
+			this.updateView();
 			
 		}
 		

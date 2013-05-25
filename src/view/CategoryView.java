@@ -6,9 +6,13 @@ import utility.*;
 import controller.*;
 
 import javax.swing.*;
+
 import net.miginfocom.swing.MigLayout;
+
 import javax.swing.border.LineBorder;
 import javax.swing.GroupLayout.Alignment;
+
+
 public class CategoryView extends JPanel {
 	
 	private JButton addNewCategoryButton;
@@ -19,6 +23,7 @@ public class CategoryView extends JPanel {
 	 */
 	
 	public CategoryView(){
+		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setPreferredSize(new Dimension(210, 70));
 		setMinimumSize(new Dimension(210, 70));
@@ -52,7 +57,9 @@ public class CategoryView extends JPanel {
 	 * @param controller
 	 */
 	public void setController(CategoryController controller){
+		
 		addNewCategoryButton.addActionListener(controller);
+		
 		categoryTitleInput.addActionListener(controller);
 	}
 	
@@ -61,7 +68,9 @@ public class CategoryView extends JPanel {
 	 * @return
 	 */
 	public JTextField getTextField(){
+		
 		return categoryTitleInput;
 	}
 
+	
 }

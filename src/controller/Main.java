@@ -6,8 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 import utility.ColorSettings;
+import utility.Read;
 import view.*;
 import model.*;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JRadioButtonMenuItem;
@@ -19,7 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
-
+import utility.*;
 public class Main {
 	private static final ButtonGroup buttonGroup = new ButtonGroup();
 	
@@ -29,6 +31,8 @@ public class Main {
 	 */
 	
 	public static void main(String[] args) {
+		
+		Read.readFromFile();
 		
 		try{
 			
@@ -44,7 +48,6 @@ public class Main {
 		JFrame frame = new JFrame();
 		
 		ListView listView = new ListView();
-		
 		//CategoryController catController= new CategoryController();
 		CategoryView categoryView = new CategoryView();
 		CategoryListView categoryListView = new CategoryListView();

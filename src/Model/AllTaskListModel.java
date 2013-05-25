@@ -1,8 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.io.*;
 
-public class AllTaskListModel extends ArrayList<TaskModel> {
+public class AllTaskListModel extends ArrayList<TaskModel> implements Serializable {
 	
 	private static AllTaskListModel instance;
 	

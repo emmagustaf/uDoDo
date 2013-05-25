@@ -47,6 +47,8 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 		if(e.getSource() instanceof JComponent){
 			if(e.getActionCommand().equals("delete Category")){
 				catListView.panel.remove(startCategoryPanel);
+				startCategoryPanel.getModel().getTaskList().clear();
+				listView.displayTasks(startCategoryPanel.getModel(), taskSetting, catListView);
 				catListView.updateView();
 			}
 			

@@ -5,15 +5,19 @@ import java.util.*;
 
 import view.*;
 import controller.*;
-
+import java.io.*;
 /**
  * A class to represent a model of the category.
  * 
  * @author Hanna
  *
  */
-public class CategoryModel {
+public class CategoryModel implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 349685488686548422L;
 	private String catTitle;
 	private CategoryView view;
 	private AddedCategoryPanel panel;
