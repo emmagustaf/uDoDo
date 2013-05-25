@@ -19,113 +19,104 @@ import java.beans.PropertyChangeListener;
  * @version : 1.0
  * @jdk version tested on : 1.4
  */
-public class JCalendar extends JDialog implements PropertyChangeListener
-{
-    protected JYearChooser yearChooser;
-    protected JMonthChooser monthChooser;
-    protected JDayChooser dayChooser;
+public class JCalendar extends JDialog implements PropertyChangeListener {
+	protected JYearChooser yearChooser;
+	protected JMonthChooser monthChooser;
+	protected JDayChooser dayChooser;
 
-    public static final int RIGHT_SPINNER = 0;
-    public static final int LEFT_SPINNER = 1;
-    public static final int NO_SPINNER = 2;
+	public static final int RIGHT_SPINNER = 0;
+	public static final int LEFT_SPINNER = 1;
+	public static final int NO_SPINNER = 2;
 
-    protected JButton btnOk;
-    protected JButton btnCancel;
+	protected JButton btnOk;
+	protected JButton btnCancel;
 
-    protected boolean okPressed = false;
+	protected boolean okPressed = false;
 
-    private Calendar calendar;
+	private Calendar calendar;
 
-    public JCalendar(Frame parent, String title, boolean modal)
-    {
-        this(parent, title, modal, 0);
-    }
+	public JCalendar(Frame parent, String title, boolean modal) {
+		this(parent, title, modal, 0);
+	}
 
-    // monthSpinner can have following values
-    // RIGHT_SPINNER, LEFT_SPINNER, NO_SPINNER
-    // Default is RIGHT_SPINNER
-    public JCalendar(Frame parent, String title, boolean modal, int monthSpinner)
-    {
-        super(parent, title, modal);
-        init(monthSpinner);
-    }
+	// monthSpinner can have following values
+	// RIGHT_SPINNER, LEFT_SPINNER, NO_SPINNER
+	// Default is RIGHT_SPINNER
+	public JCalendar(Frame parent, String title, boolean modal, int monthSpinner) {
+		super(parent, title, modal);
+		init(monthSpinner);
+	}
 
-    public JCalendar(Dialog parent, String title, boolean modal)
-    {
-        super(parent, title, modal);
-        init(0);
-    }
+	public JCalendar(Dialog parent, String title, boolean modal) {
+		super(parent, title, modal);
+		init(0);
+	}
 
-    private void init(int monthSpinner)
-    {
-        okPressed = false;
+	private void init(int monthSpinner) {
+		okPressed = false;
 
-        getContentPane().setLayout(new BorderLayout());
-        calendar = Calendar.getInstance();
+		getContentPane().setLayout(new BorderLayout());
+		calendar = Calendar.getInstance();
 
-        dayChooser = new JDayChooser(calendar.get(Calendar.DAY_OF_MONTH));
-        monthChooser = new JMonthChooser(monthSpinner, calendar.get(Calendar.MONTH));
-        yearChooser = new JYearChooser(calendar.get(Calendar.YEAR));
-        btnOk = new JButton("Ok");
-        btnCancel = new JButton("Cancel");
+		dayChooser = new JDayChooser(calendar.get(Calendar.DAY_OF_MONTH));
+		monthChooser = new JMonthChooser(monthSpinner,
+				calendar.get(Calendar.MONTH));
+		yearChooser = new JYearChooser(calendar.get(Calendar.YEAR));
+		btnOk = new JButton("Ok");
+		btnCancel = new JButton("Cancel");
 
-        monthChooser.setYearChooser(yearChooser);
-        monthChooser.setDayChooser(dayChooser);
-        yearChooser.setDayChooser(dayChooser);
+		monthChooser.setYearChooser(yearChooser);
+		monthChooser.setDayChooser(dayChooser);
+		yearChooser.setDayChooser(dayChooser);
 
-        JPanel pnlTop = new JPanel();
-        pnlTop.setLayout(new GridLayout(1, 3));
-        pnlTop.add(monthChooser);
-        pnlTop.add(yearChooser);
+		JPanel pnlTop = new JPanel();
+		pnlTop.setLayout(new GridLayout(1, 3));
+		pnlTop.add(monthChooser);
+		pnlTop.add(yearChooser);
 
-        JPanel pnlBottom = new JPanel();
-        pnlBottom.add(btnOk);
-        pnlBottom.add(btnCancel);
+		JPanel pnlBottom = new JPanel();
+		pnlBottom.add(btnOk);
+		pnlBottom.add(btnCancel);
 
-        getContentPane().add(pnlTop, "North");
-        getContentPane().add(dayChooser, "Center");
-        getContentPane().add(pnlBottom, "South");
+		getContentPane().add(pnlTop, "North");
+		getContentPane().add(dayChooser, "Center");
+		getContentPane().add(pnlBottom, "South");
 
-        pack();
-        setResizable(false);
+		pack();
+		setResizable(false);
 
-        dayChooser.addPropertyChangeListener(this);
-        monthChooser.addPropertyChangeListener(this);
-        yearChooser.addPropertyChangeListener(this);
+		dayChooser.addPropertyChangeListener(this);
+		monthChooser.addPropertyChangeListener(this);
+		yearChooser.addPropertyChangeListener(this);
 
-        SymAction lSymAction = new SymAction();
-        btnOk.addActionListener(lSymAction);
-        btnCancel.addActionListener(lSymAction);
-    }
+		SymAction lSymAction = new SymAction();
+		btnOk.addActionListener(lSymAction);
+		btnCancel.addActionListener(lSymAction);
+	}
 
-    class SymAction implements ActionListener
-    {
-        public void actionPerformed(ActionEvent event)
-        {
-            Object object = event.getSource();
-            if (object == btnOk)
-                btnOk_ActionPerformed(event);
-            else if (object == btnCancel)
-                btnCancel_ActionPerformed(event);
-        }
-    }
+	class SymAction implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
+			Object object = event.getSource();
+			if (object == btnOk)
+				btnOk_ActionPerformed(event);
+			else if (object == btnCancel)
+				btnCancel_ActionPerformed(event);
+		}
+	}
 
-    private void btnOk_ActionPerformed(ActionEvent event)
-    {
-        okPressed = true;
-        closeWindow();
-    }
+	private void btnOk_ActionPerformed(ActionEvent event) {
+		okPressed = true;
+		closeWindow();
+	}
 
-    private void btnCancel_ActionPerformed(ActionEvent event)
-    {
-        okPressed = false;
-        closeWindow();
-    }
+	private void btnCancel_ActionPerformed(ActionEvent event) {
+		okPressed = false;
+		closeWindow();
+	}
 
-    private void closeWindow()
-    {
-        setVisible(false);
-        dispose();
+	private void closeWindow() {
+		setVisible(false);
+		dispose();
     }
 
     private void setCalendar(Calendar date, boolean flag)
