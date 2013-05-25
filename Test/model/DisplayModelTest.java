@@ -15,7 +15,7 @@ public class DisplayModelTest {
 	
 	@Test
 	public void setTaskTitleTest(){
-		TaskModel taskModel = new TaskModel("testing");
+		TaskModel taskModel = new TaskModel(null);
 		taskModel.setTitle("test");
 		assertEquals("test", taskModel.getTitle());
 	}
@@ -33,11 +33,9 @@ public class DisplayModelTest {
 		taskModel.setDescription("test");
 		assertEquals("test", taskModel.getDescription());
 	}
-
-	@Test
-	public void getTaskModelTest(){
-		TaskModel taskModel = new TaskModel(null);
-		
-		
-	}
+//
+//	@Test
+//	public void getTaskModelTest(){
+//		TaskModel taskModel = new TaskModel(null);
+//	}
 }

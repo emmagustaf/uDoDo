@@ -12,5 +12,16 @@ public class CategoryModelTest {
 		
 		fail("Not yet implemented");
 	}
-
+	
+	@Test
+	public void getCatTitleTest(){
+		CategoryModel categoryModel = new CategoryModel(null);
+		
+	}
+	
+	@Test
+	public void getTaskListTest(){
+		ListModel listModel = new ListModel();
+		
+	}
 }
