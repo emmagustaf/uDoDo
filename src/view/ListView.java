@@ -20,7 +20,6 @@ public class ListView extends JScrollPane {
 	
 	public JPanel panelInScroll;
 	
-	private List<TaskPanel> panelList = new ArrayList<TaskPanel>();
 	
 	/**
 	 * Create the listview with a new panel in it.
@@ -84,7 +83,6 @@ public class ListView extends JScrollPane {
 			System.out.println("display task: " + catModel.getTaskList().get(i).getTitle());
 			taskPanel.validate();
 			taskPanel.repaint();
-			panelList.add(taskPanel);
 			
 		}
 		
