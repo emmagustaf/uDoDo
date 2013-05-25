@@ -10,9 +10,7 @@ public class CategoryModelTest {
 	
 	@Test
 	public void getCatTitleTest(){
-		CategoryModel categoryModel = new CategoryModel(null);
-		
-
+		CategoryModel categoryModel = new CategoryModel("test");
 		assertEquals(categoryModel == categoryModel.getCatTitle());	
 		
 	}
