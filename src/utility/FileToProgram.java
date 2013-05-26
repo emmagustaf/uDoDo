@@ -22,17 +22,19 @@ public class FileToProgram {
 
 			listView.panelInScroll.add(panel);
 
-		}
-		for (int j = 0; j < AllCategoryListModel.getInstance().size(); j++) {
-			AddedCategoryPanel catPanel = new AddedCategoryPanel(
-					AllCategoryListModel.getInstance().get(j));
-			if (catPanel.getTitle() != null) {
-				CategoryPanelController catPanelController = new CategoryPanelController(
-						taskSettingView, catPanel, catListView, listView);
-				catPanel.setController(catPanelController);
-			
-			catListView.panel.add(catPanel);
-		
+			for (int j = 0; j < AllCategoryListModel.getInstance().size(); j++) {
+				AddedCategoryPanel catPanel = new AddedCategoryPanel(
+						AllCategoryListModel.getInstance().get(j));
+				if (catPanel.getTitle() != null) {
+					CategoryPanelController catPanelController = new CategoryPanelController(
+							taskSettingView, catPanel, catListView, listView);
+
+					catPanel.setController(catPanelController);
+					catPanel.getModel().getTaskList().add(panel.getModel());
+
+					catListView.panel.add(catPanel);
+
+				}
 			}
 		}
 	}
