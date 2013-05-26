@@ -14,7 +14,7 @@ public class Read {
 	public static void readFromFile() {
 
 		ObjectInputStream inputStream = null;
-		ArrayList<TaskModel> obj = new ArrayList();
+		ArrayList<TaskModel> obj = new ArrayList<TaskModel>();
 		try {
 			inputStream = new ObjectInputStream(new FileInputStream("AllTask.ser"));
 			obj = null;
@@ -49,7 +49,7 @@ public class Read {
 	public static void readCategories(){
 
 		ObjectInputStream inputStream = null;
-		ArrayList<CategoryModel> obj = new ArrayList();
+		ArrayList<CategoryModel> obj = new ArrayList<CategoryModel>();
 		try {
 			inputStream = new ObjectInputStream(new FileInputStream("AllCategories.ser"));
 			obj = null;

@@ -45,7 +45,7 @@ public class TaskController implements ActionListener, MouseListener {
 				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel.getModel());
 			
 				listView.updateView();
-
+				
 				AllTaskListModel.getInstance().remove(taskPanel.getModel());
 				Save.saveFiles();
 				
