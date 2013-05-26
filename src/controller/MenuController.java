@@ -19,13 +19,15 @@ public class MenuController implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource() instanceof JRadioButtonMenuItem){
+
+		if (e.getSource() instanceof JRadioButtonMenuItem) {
 			colorSettings.changeColor(e.getActionCommand());
-			
-			if(e.getActionCommand().equals("About")){
-				JOptionPane.showMessageDialog(null, "<html><b>uDoDo</b></html>\n \t \t \t version 1.0", "About us", JOptionPane.INFORMATION_MESSAGE);
-				
+
+			if (e.getActionCommand().equals("About")) {
+				JOptionPane.showMessageDialog(null,
+						"<html><b>uDoDo</b></html>\n \t Version 1.0",
+						"About us", JOptionPane.INFORMATION_MESSAGE);
+
 			}
 		}
 		
