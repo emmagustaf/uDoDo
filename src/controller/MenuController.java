@@ -8,26 +8,29 @@ import javax.swing.JRadioButtonMenuItem;
 
 import utility.ColorSettings;
 
-public class MenuController implements ActionListener{
-	
+public class MenuController implements ActionListener {
+
 	private ColorSettings colorSettings;
-	
-	public MenuController(ColorSettings colorSettings){
+
+	public MenuController(ColorSettings colorSettings) {
 		this.colorSettings = colorSettings;
-		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource() instanceof JRadioButtonMenuItem){
+
+		if (e.getSource() instanceof JRadioButtonMenuItem) {
 			colorSettings.changeColor(e.getActionCommand());
-			
-			if(e.getActionCommand().equals("About")){
-				JOptionPane.showMessageDialog(null, "uDoDo");
+
+			if (e.getActionCommand().equals("About")) {
+				JOptionPane.showMessageDialog(null,
+						"<html><b>uDoDo</b></html>\n \t Version 1.0",
+						"About us", JOptionPane.INFORMATION_MESSAGE);
+
 			}
 		}
-		
+
 	}
 
 }

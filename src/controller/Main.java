@@ -120,32 +120,37 @@ public class Main {
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
-		
 		JMenu mnSettings = new JMenu("Settings");
 		menuBar.add(mnSettings);
-		
+
 		JMenu mnTheme = new JMenu("Theme");
 		mnSettings.add(mnTheme);
-		
+
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 
-		JRadioButtonMenuItem purpleHaze = new JRadioButtonMenuItem("Purple Haze");
+		JRadioButtonMenuItem purpleHaze = new JRadioButtonMenuItem(
+				"Purple Haze");
 		buttonGroup.add(purpleHaze);
 		purpleHaze.addActionListener(menuController);
 		purpleHaze.setActionCommand("Purple haze");
 		mnTheme.add(purpleHaze);
-		
+
 		JRadioButtonMenuItem greyhound = new JRadioButtonMenuItem("Greyhound");
 		buttonGroup.add(greyhound);
 		greyhound.addActionListener(menuController);
 		greyhound.setActionCommand("Greyhound");
 		mnTheme.add(greyhound);
-		
+
 		JRadioButtonMenuItem mnAbout = new JRadioButtonMenuItem("About us");
 		mnAbout.addActionListener(menuController);
 		mnAbout.setActionCommand("About");
 		mnHelp.add(mnAbout);
+		
+		JRadioButtonMenuItem menyHelp = new JRadioButtonMenuItem("Help");
+		menyHelp.addActionListener(menuController);
+		menyHelp.setActionCommand("Help");
+		mnHelp.add(menyHelp);
 
 		// Open the window
 		frame.setVisible(true);
