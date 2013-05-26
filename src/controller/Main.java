@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
+//import com.apple.resources.*;
 
 //import com.sun.j3d.utils.geometry.Box;
 
@@ -34,13 +35,13 @@ public class Main {
 	 */
 	
 	public static void main(String[] args) {
-		
+		System.out.println("" + UIManager.getSystemLookAndFeelClassName());
 		
 		try{
 			
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "uDoDo");
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			UIManager.setLookAndFeel("com.apple.laf.AquaLookAndFeel");
 			
 		}
 		catch(Exception e){
