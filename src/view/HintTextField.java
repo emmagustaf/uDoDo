@@ -13,30 +13,33 @@ public class HintTextField extends JTextField implements FocusListener {
 	private static final long serialVersionUID = 1L;
 	private String hint;
 	private int col;
-	
+
 	/**
 	 * creates a new hinted text field
-	 * @param hint the hint to show
-	 * @param col number of columns of the textfield
+	 * 
+	 * @param hint
+	 *            the hint to show
+	 * @param col
+	 *            number of columns of the textfield
 	 */
-	public HintTextField(String hint, int col){
-		
+	public HintTextField(String hint, int col) {
+
 		super(hint, col);
-		this.hint=hint;
-		this.col=col;
+		this.hint = hint;
+		this.col = col;
 		super.addFocusListener(this);
 	}
 
 	/**
 	 * deletes the hint when focus is gained.
 	 */
-    @Override
-    public void focusGained(FocusEvent e) {
-    	super.setEnabled(true);
-        if(this.getText().isEmpty()) {
-            super.setText("");
-        }
-    }
+	@Override
+	public void focusGained(FocusEvent e) {
+		super.setEnabled(true);
+		if (this.getText().isEmpty()) {
+			super.setText("");
+		}
+	}
     /**
      * Sets the hint if textfield is empty
      */
