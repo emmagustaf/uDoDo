@@ -25,6 +25,7 @@ public class ListView extends JScrollPane {
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		this.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
+		
 		this.setMinimumSize(new Dimension (300, 500));
 		this.setMaximumSize(new Dimension (300, 500));
 		this.setPreferredSize(new Dimension (300, 500));
@@ -41,6 +42,7 @@ public class ListView extends JScrollPane {
 	 * Updates the the view, except every individual task panels in the view.
 	 */
 	public void updateView(){
+		
 		panelInScroll.revalidate();
 		panelInScroll.validate();
 		panelInScroll.repaint();
@@ -64,6 +66,7 @@ public class ListView extends JScrollPane {
 			taskPanels[i].validate();
 			taskPanels[i].repaint();
 		}
+		
 	}
 	
 	/**
@@ -75,14 +78,20 @@ public class ListView extends JScrollPane {
 	public void displayTasks(CategoryModel catModel, TaskSettingView taskSetting, CategoryListView catListView){
 		
 		panelInScroll.removeAll();
+		
 		int size = catModel.getTaskList().size();
 		
 		for(int i = size - 1; i >= 0; i = i - 1){
 			
 			TaskPanel taskPanel = new TaskPanel(catModel.getTaskList().get(i));
+			
 			panelInScroll.add(taskPanel);
+			
 			TaskController taskController = new TaskController(this, taskPanel, taskSetting, catListView);
+			
 			this.updateView();
 		}
+		
 	}
+	
 }
