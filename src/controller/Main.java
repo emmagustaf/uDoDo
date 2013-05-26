@@ -107,7 +107,7 @@ public class Main {
 		//frame.setResizable(false);
 
 		// Add gui to window
-		FileToProgram.SavedToList(listView, categoryListView);
+		FileToProgram.SavedToList(listView, categoryListView, taskSettings);
 		frame.getContentPane().add(guiView);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
