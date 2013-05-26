@@ -1,5 +1,6 @@
 package controller;
 import utility.GraphicConstants;
+import utility.Save;
 import view.*;
 import model.*;
 
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 
 import javax.swing.JButton;
@@ -54,6 +56,12 @@ public class CategoryController implements ActionListener{
 				CategoryModel cat = new CategoryModel(view.getTextField().getText());
 				AddedCategoryPanel catPanel = new AddedCategoryPanel(cat);		
 				catListView.panel.add(catPanel);
+				
+				ArrayList <CategoryModel> catList = new ArrayList<CategoryModel>();
+				catList.add(cat);
+				AllCategoryListModel.getInstance().addAll(catList);
+				Save.saveCategories();
+				
 				view.getTextField().setText("");
 				//catListView.addToCatList(catPanel);
 				catListView.updateView();

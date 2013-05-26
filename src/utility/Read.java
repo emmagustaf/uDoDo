@@ -45,4 +45,40 @@ public class Read {
 		System.out.println("Read saved state");
 		
 	}
+	@SuppressWarnings("unchecked")
+	public static void readCategories(){
+
+		ObjectInputStream inputStream = null;
+		ArrayList<CategoryModel> obj = new ArrayList();
+		try {
+			inputStream = new ObjectInputStream(new FileInputStream("AllCategories.ser"));
+			obj = null;
+			
+			while((obj = (ArrayList<CategoryModel>)inputStream.readObject()) != null){
+				if ( obj instanceof ArrayList){
+					if(obj.contains(StartCategoryPanel.class)){
+						obj.remove(StartCategoryPanel.class);
+					}
+					AllCategoryListModel.getInstance().addAll((ArrayList<CategoryModel>)obj);
+				}
+			}
+			
+		}catch (EOFException ex){
+			System.out.println("End of file reached");
+		} catch (ClassNotFoundException ex) {
+			ex.printStackTrace();
+		}catch (FileNotFoundException ex){
+			ex.printStackTrace();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}finally{
+			try{
+				if (inputStream !=null){
+					inputStream.close();
+				}
+			}catch (IOException ex){
+				ex.printStackTrace();
+			}
+		}
+	}
 }

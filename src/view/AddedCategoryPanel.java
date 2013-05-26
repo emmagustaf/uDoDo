@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import utility.GraphicConstants;
 
+import model.AllCategoryListModel;
 import model.CategoryModel;
 import controller.CategoryPanelController;
 /**
@@ -29,10 +30,14 @@ public class AddedCategoryPanel extends StartCategoryPanel {
 	public AddedCategoryPanel(CategoryModel model){
 		super(model);
 		super.setTitle(model.getCatTitle());
+		
 		this.model=model;
 		this.setToolTipText("" + model.getCatTitle());
 		this.setBackground(GraphicConstants.BACKGROUND);
+		
 		setForeground(GraphicConstants.FOREGROUND);
+		
+		deleteCatButton.setRolloverIcon(new ImageIcon(AddedCategoryPanel.class.getResource("/utility/icons/delete.icon.hover.png")));
 		
 		deleteCatButton.setToolTipText("Delete category and all it's content");
 		
@@ -41,11 +46,14 @@ public class AddedCategoryPanel extends StartCategoryPanel {
 		
 		deleteCatButton.setPreferredSize(new Dimension(15, 10));
 		deleteCatButton.setActionCommand("delete Category");
+		
 		GridBagConstraints gbc_deleteCatButton = new GridBagConstraints();
+		
 		gbc_deleteCatButton.anchor = GridBagConstraints.WEST;
 		gbc_deleteCatButton.gridx = 2;
 		gbc_deleteCatButton.gridy = 0;
 		add(deleteCatButton, gbc_deleteCatButton);
+		
 	}
 	
 	/**
