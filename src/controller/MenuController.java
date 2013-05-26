@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButtonMenuItem;
 
 import utility.ColorSettings;
@@ -21,7 +22,12 @@ public class MenuController implements ActionListener{
 		
 		if(e.getSource() instanceof JRadioButtonMenuItem){
 			colorSettings.changeColor(e.getActionCommand());
+			
+			if(e.getActionCommand().equals("About")){
+				JOptionPane.showMessageDialog(null, "uDoDo");
+			}
 		}
+		
 	}
 
 }

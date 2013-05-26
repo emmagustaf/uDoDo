@@ -44,8 +44,11 @@ public class HeaderController implements ActionListener{
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
-			if(e.getActionCommand().equals("newTask") && headerView.getTextField().getText().length() > 0){
+			if(e.getActionCommand().equals("newTask") && (headerView.getTextField().getText().length() > 0) && 
+					(!headerView.getTextField().getText().equals("Add task..."))){
+				
 				TaskModel task;
+				
 				if(catListView.getMarkedList().isEmpty() || catListView.getMarkedPanel().getModel().getCatTitle().equals("Finished Tasks")){
 				
 					task = new TaskModel(headerView.getTextField().getText(), catListView.getDefaultCategory());

@@ -3,6 +3,7 @@ package controller;
 
 import model.*;
 import utility.GraphicConstants;
+import utility.Save;
 import view.*;
 
 import java.awt.Color;
@@ -43,6 +44,9 @@ public class TaskController implements ActionListener, MouseListener {
 				listView.panelInScroll.remove(taskPanel);
 				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel.getModel());
 				listView.updateView();
+
+				AllTaskListModel.getInstance().remove(taskPanel.getModel());
+				Save.saveFiles();
 				
 			}else if(e.getActionCommand().equals("taskCheck")){
 				

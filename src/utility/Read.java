@@ -11,7 +11,7 @@ import view.*;
 public class Read {
 	
 	@SuppressWarnings("unchecked")
-	public static ArrayList <TaskModel> readFromFile() {
+	public static void readFromFile() {
 
 		ObjectInputStream inputStream = null;
 		ArrayList<TaskModel> obj = new ArrayList();
@@ -44,7 +44,6 @@ public class Read {
 			}
 		}
 		System.out.println("Read saved state");
-		return obj;
 		
 	}
 }
