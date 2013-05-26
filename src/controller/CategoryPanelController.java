@@ -10,7 +10,9 @@ import java.awt.event.MouseListener;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import utility.GraphicConstants;
+import model.AllTaskListModel;
+
+import utility.*;
 import view.*;
 
 /**
@@ -50,6 +52,8 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 				startCategoryPanel.getModel().getTaskList().clear();
 				listView.displayTasks(startCategoryPanel.getModel(), taskSetting, catListView);
 				catListView.updateView();
+				AllTaskListModel.getInstance().remove(startCategoryPanel);
+				Save.saveFiles();
 			}
 			
 		}

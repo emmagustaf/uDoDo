@@ -10,14 +10,18 @@ public class FileToProgram {
 	
 		Read.readFromFile();
 		CategoryModel catModel;
-		//TaskController taskController = new TaskController();
+		TaskSettingView taskSettingView = new TaskSettingView();
+		
 		for(int i=0; i<AllTaskListModel.getInstance().size(); i++){
 			TaskPanel panel= new TaskPanel(AllTaskListModel.getInstance().get(i));
-			
+			TaskController taskController = new TaskController(listView, panel, taskSettingView, catListView);
 			catModel=panel.getModel().getCategory();
 			AddedCategoryPanel catPanel = new AddedCategoryPanel(catModel);
 			
-			//panel.setController(taskController);
+			CategoryPanelController catController = new CategoryPanelController(taskSettingView, catPanel, catListView, listView);
+		
+			panel.setController(taskController);
+			catPanel.setController(catController);
 			
 			catListView.panel.add(catPanel);
 			listView.panelInScroll.add(panel);
