@@ -32,7 +32,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Read.readFromFile();
 		
 		try{
 			
@@ -99,12 +98,13 @@ public class Main {
 		CategoryController catConroller = new CategoryController(taskSettings, categoryView, categoryListView, listView);
 		
 		
-		listView.displayTasks(finishedModel, taskSettings, categoryListView);
+		
 		frame.setTitle("uDoDo 1.0");
 		frame.setMinimumSize(new Dimension(700, 750));
 		//frame.setResizable(false);
 
 		// Add gui to window
+		FileToProgram.SavedToList(listView, categoryListView);
 		frame.getContentPane().add(guiView);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
