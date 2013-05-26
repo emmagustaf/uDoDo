@@ -126,6 +126,9 @@ public class Main {
 		
 		JMenu mnTheme = new JMenu("Theme");
 		mnSettings.add(mnTheme);
+		
+		JMenu mnHelp = new JMenu("Help");
+		menuBar.add(mnHelp);
 
 		JRadioButtonMenuItem purpleHaze = new JRadioButtonMenuItem("Purple Haze");
 		buttonGroup.add(purpleHaze);
@@ -139,10 +142,9 @@ public class Main {
 		greyhound.setActionCommand("Greyhound");
 		mnTheme.add(greyhound);
 		
-		JMenu mnHelp = new JMenu("Help");
-		menuBar.add(mnHelp);
-		
 		JRadioButtonMenuItem mnAbout = new JRadioButtonMenuItem("About us");
+		mnAbout.addActionListener(menuController);
+		mnAbout.setActionCommand("About");
 		mnHelp.add(mnAbout);
 
 		// Open the window
