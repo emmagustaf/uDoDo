@@ -139,7 +139,11 @@ public class Main {
 		greyhound.setActionCommand("Greyhound");
 		mnTheme.add(greyhound);
 		
-	
+		JMenu mnHelp = new JMenu("Help");
+		menuBar.add(mnHelp);
+		
+		JRadioButtonMenuItem mnAbout = new JRadioButtonMenuItem("About us");
+		mnHelp.add(mnAbout);
 
 		// Open the window
 		frame.setVisible(true);
