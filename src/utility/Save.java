@@ -32,6 +32,5 @@ public class Save {
 			}
 
 		}
-		System.out.println("Saved AllTasks");
 	}
 }
