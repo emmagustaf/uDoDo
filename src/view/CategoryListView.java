@@ -6,21 +6,16 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 import utility.GraphicConstants;
+import model.CategoryModel;
 
-import controller.*;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 
-
-import model.AllTaskListModel;
-import model.CategoryModel;
-
 /**
  * A class to keep a graphical list of panels each representing a category.
- * The list will be represented in a scrollpane
- * @author Emma
+ * The list will be represented in a scroll pane.
  *
  */
 
@@ -28,15 +23,18 @@ public class CategoryListView extends JScrollPane{
 	
 	/**
 	 * 	Create a panel that will be the actual container 
-	 *	 for the added categorypanels 
+	 *	 for the added category panels 
 	 */
 	
 	public JPanel panel;
 	
-	private Deque<StartCategoryPanel> catDeque = new ArrayDeque<StartCategoryPanel>();
-	private Deque<StartCategoryPanel> lastCatDeque = new ArrayDeque<StartCategoryPanel>();
 	private CategoryModel defaultCategory;
 	private StartCategoryPanel finishedCategory;
+	
+	//Deque containing categorypanels. 
+	//Used to get information about marked and last marked categorys.
+	private Deque<StartCategoryPanel> catDeque = new ArrayDeque<StartCategoryPanel>();
+	private Deque<StartCategoryPanel> lastCatDeque = new ArrayDeque<StartCategoryPanel>();
 	
 	/**
 	 * 	Set all the graphical data for the scrollpane

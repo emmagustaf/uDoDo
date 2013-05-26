@@ -5,8 +5,6 @@ import utility.*;
 import javax.swing.JLabel;
 
 
-import view.*;
-
 public class TaskModel implements Serializable{
 	/**
 	 * 
