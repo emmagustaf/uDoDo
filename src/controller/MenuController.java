@@ -32,7 +32,7 @@ public class MenuController implements ActionListener {
 
 			if (e.getActionCommand().equals("Help")) {
 				JOptionPane.showMessageDialog(null,
-						"<html><b>Help</b></html> \n\t Please contact uDoDo",
+						"<html><b>Help</b></html> \n Please contact uDoDo",
 						"Help", JOptionPane.PLAIN_MESSAGE);
 			}
 
