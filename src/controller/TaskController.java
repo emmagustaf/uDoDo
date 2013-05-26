@@ -7,6 +7,7 @@ import utility.Save;
 import view.*;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -45,7 +46,7 @@ public class TaskController implements ActionListener, MouseListener {
 				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel.getModel());
 			
 				listView.updateView();
-
+				
 				AllTaskListModel.getInstance().remove(taskPanel.getModel());
 				Save.saveFiles();
 				
@@ -56,7 +57,7 @@ public class TaskController implements ActionListener, MouseListener {
 				
 				CategoryModel cModel = taskPanel.getModel().getCategory();
 				
-				if(taskPanel.getModel().getState() && !FinishedTaskList.getInstance().contains(taskPanel.getModel())){
+				if(taskPanel.getModel().isChecked() && !FinishedTaskList.getInstance().contains(taskPanel.getModel())){
 				
 					
 //					catListView.getFinishedCategoryPanel().setBackground(GraphicConstants.BUTTONPRESSED);
@@ -80,15 +81,16 @@ public class TaskController implements ActionListener, MouseListener {
 	
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
-			taskPanel.setBackground(GraphicConstants.BUTTONHOVER);
-			taskPanel.setForeground(GraphicConstants.FOREGROUND);
+			taskPanel.taskLabel.setForeground(GraphicConstants.BUTTONHOVER);
+			taskPanel.taskLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			
 		}
 
 		@Override
 		public void mouseExited(MouseEvent arg0) {
-			taskPanel.setBackground(GraphicConstants.BACKGROUND);
-			taskPanel.setForeground(GraphicConstants.FOREGROUND);
+			taskPanel.taskLabel.setForeground(GraphicConstants.FOREGROUND);
+			taskPanel.taskLabel.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+
 		}
 
 		@Override
@@ -103,9 +105,6 @@ public class TaskController implements ActionListener, MouseListener {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			
-			taskPanel.setBackground(GraphicConstants.BUTTONPRESSED);
-			taskPanel.setForeground(GraphicConstants.BUTTONPRESSEDFOREGROUND);
 			
 			DisplayModel displayModel = new DisplayModel(taskPanel.getModel());
 			

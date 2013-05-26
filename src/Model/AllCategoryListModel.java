@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AllCategoryListModel extends ArrayList<CategoryModel> implements Serializable {
+public class AllCategoryListModel extends ArrayList <CategoryModel> implements Serializable {
 	
 	private static AllCategoryListModel instance;
 	

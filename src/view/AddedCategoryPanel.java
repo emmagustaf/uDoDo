@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import utility.GraphicConstants;
 
+import model.AllCategoryListModel;
 import model.CategoryModel;
 import controller.CategoryPanelController;
 /**
@@ -52,6 +53,7 @@ public class AddedCategoryPanel extends StartCategoryPanel {
 		gbc_deleteCatButton.gridx = 2;
 		gbc_deleteCatButton.gridy = 0;
 		add(deleteCatButton, gbc_deleteCatButton);
+		
 	}
 	
 	/**
