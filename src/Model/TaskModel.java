@@ -42,10 +42,14 @@ public class TaskModel implements Serializable{
 		this(title);
 		this.catModel = catModel;
 		catModel.getTaskList().add(this);
-		AllTaskListModel.getInstance().add(this);
-		Save.saveFiles();
+		
+//		if(!AllTaskListModel.getInstance().contains(this.title)){
+//			AllTaskListModel.getInstance().add(this);
+//			Save.saveFiles();
+//		}
 		//this.uncheckedTaskList.add(this);
 	}
+	
 	
 	public void changePriority(){				//We probably will be needing a controller-class for the tasks, doing this kind of stuff but not yet! :D
 		switch (prio) {

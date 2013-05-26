@@ -22,7 +22,7 @@ import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 
-import com.sun.j3d.utils.geometry.Box;
+//import com.sun.j3d.utils.geometry.Box;
 
 import utility.*;
 public class Main {
@@ -118,7 +118,7 @@ public class Main {
 		JMenu mnSettings = new JMenu("Settings");
 		menuBar.add(mnSettings);
 
-		JMenu mnTheme = new JMenu("Theme");
+		JMenu mnTheme = new JMenu("Color Theme");
 		mnSettings.add(mnTheme);
 
 		JMenu mnHelp = new JMenu("Help");
@@ -145,7 +145,7 @@ public class Main {
 		JRadioButtonMenuItem menyHelp = new JRadioButtonMenuItem("Help");
 		menyHelp.addActionListener(menuController);
 		menyHelp.setActionCommand("Help");
-		menyHelp.setAlignmentX(Box.RIGHT);
+		//menyHelp.setAlignmentX(Box.RIGHT);
 		mnHelp.add(menyHelp);
 
 		// Open the window
