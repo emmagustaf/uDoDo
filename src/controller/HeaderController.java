@@ -5,16 +5,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
-
-import model.AllTaskListModel;
-import model.CategoryModel;
 import model.TaskModel;
 
 import view.CategoryListView;
-import view.AddedCategoryPanel;
 import view.HeaderView;
 import view.ListView;
-import view.StartCategoryPanel;
 import view.TaskPanel;
 import view.TaskSettingView;
 
