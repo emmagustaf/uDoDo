@@ -29,6 +29,13 @@ public class MenuController implements ActionListener {
 						"About us", JOptionPane.INFORMATION_MESSAGE);
 
 			}
+
+			if (e.getActionCommand().equals("Help")) {
+				JOptionPane.showMessageDialog(null,
+						"<html><b>Help</b></html> \n\t Please contact uDoDo",
+						"Help", JOptionPane.PLAIN_MESSAGE);
+			}
+
 		}
 
 	}

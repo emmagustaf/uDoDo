@@ -21,6 +21,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
+
+import com.sun.j3d.utils.geometry.Box;
+
 import utility.*;
 public class Main {
 	private static final ButtonGroup buttonGroup = new ButtonGroup();
@@ -150,6 +153,7 @@ public class Main {
 		JRadioButtonMenuItem menyHelp = new JRadioButtonMenuItem("Help");
 		menyHelp.addActionListener(menuController);
 		menyHelp.setActionCommand("Help");
+		menyHelp.setAlignmentX(Box.RIGHT);
 		mnHelp.add(menyHelp);
 
 		// Open the window
