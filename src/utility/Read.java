@@ -14,12 +14,12 @@ public class Read {
 	public static ArrayList <TaskModel> readFromFile() {
 
 		ObjectInputStream inputStream = null;
-		Object obj = new Object();
+		ArrayList<TaskModel> obj = new ArrayList();
 		try {
 			inputStream = new ObjectInputStream(new FileInputStream("AllTask.ser"));
 			obj = null;
 			
-			while((obj = inputStream.readObject()) != null){
+			while((obj = (ArrayList<TaskModel>)inputStream.readObject()) != null){
 				if ( obj instanceof ArrayList){
 					System.out.println(((ArrayList<TaskModel>)obj).toString());
 					AllTaskListModel.getInstance().addAll(((ArrayList<TaskModel>)obj));
@@ -44,7 +44,7 @@ public class Read {
 			}
 		}
 		System.out.println("Read saved state");
-		return (ArrayList<TaskModel>)obj;
+		return obj;
 		
 	}
 }

@@ -31,6 +31,7 @@ public class TaskPanel extends JPanel {
 	private JButton deleteTaskButton;
 	private JLabel taskLabel;
 	private JLabel deadlineLabel;
+	private JToggleButton checkbutton;
 	
 	/**
 	 * Create the panel.
@@ -52,7 +53,7 @@ public class TaskPanel extends JPanel {
 
 		
 		
-		JToggleButton checkbutton = new JToggleButton("");
+		checkbutton = new JToggleButton("");
 		checkbutton.setRolloverSelectedIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
 		checkbutton.setRolloverIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
 		checkbutton.setRolloverEnabled(true);
@@ -61,7 +62,7 @@ public class TaskPanel extends JPanel {
 		checkbutton.setBorderPainted(false);
 		checkbutton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkbox_unchecked_icon&16.png")));
 		checkbutton.setAlignmentX(Component.RIGHT_ALIGNMENT);
-		checkbutton.setActionCommand(taskCheck);
+		checkbutton.setActionCommand("taskCheck");
 		add(checkbutton, "cell 0 0,alignx center,aligny center");
 
 		taskLabel = new JLabel(model.getTitle());
@@ -103,6 +104,7 @@ public class TaskPanel extends JPanel {
 
 	public void setController(TaskController controller){
 		deleteTaskButton.addActionListener(controller);
+		checkbutton.addActionListener(controller);
 		this.addMouseListener(controller);
 	}
 
