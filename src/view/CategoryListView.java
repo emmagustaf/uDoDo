@@ -5,11 +5,12 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 import utility.GraphicConstants;
-import model.CategoryModel;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import Model.CategoryModel;
 
 
 /**

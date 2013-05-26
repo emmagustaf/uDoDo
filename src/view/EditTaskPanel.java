@@ -4,12 +4,13 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 import utility.*;
-import model.TaskModel;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
+import Model.TaskModel;
 import controller.*;
 import javax.swing.JEditorPane;
 import javax.swing.UIManager;

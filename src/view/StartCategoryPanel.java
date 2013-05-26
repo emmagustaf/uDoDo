@@ -8,7 +8,8 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import model.CategoryModel;
+import Model.CategoryModel;
+
 import utility.GraphicConstants;
 import controller.CategoryPanelController;
 

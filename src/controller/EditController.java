@@ -5,11 +5,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import Model.DisplayModel;
+
 import java.util.*;
 
 import calendar.JDateTextField;
 
-import model.DisplayModel;
 import modeltest.*;
 import view.*;
 

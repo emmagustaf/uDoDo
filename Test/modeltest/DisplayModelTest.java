@@ -2,11 +2,12 @@ package modeltest;
 
 import static org.junit.Assert.*;
 
-import model.CategoryModel;
-import model.DisplayModel;
-import model.TaskModel;
 
 import org.junit.Test;
+
+import Model.CategoryModel;
+import Model.DisplayModel;
+import Model.TaskModel;
 
 /**
  * A Class testning the DisplayModel

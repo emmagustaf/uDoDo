@@ -2,8 +2,6 @@ package controller;
 import utility.GraphicConstants;
 import utility.Save;
 import view.*;
-import model.AllCategoryListModel;
-import model.CategoryModel;
 import modeltest.*;
 
 import java.awt.Color;
@@ -16,6 +14,9 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
+
+import Model.AllCategoryListModel;
+import Model.CategoryModel;
 
 /**
  * A class to represent a CategoryController.

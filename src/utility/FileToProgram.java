@@ -4,12 +4,13 @@ import java.awt.Component;
 import java.sql.Array;
 import java.util.ArrayList;
 
+import Model.AllCategoryListModel;
+import Model.AllTaskListModel;
+import Model.CategoryModel;
+import Model.FinishedTaskList;
+
 import com.sun.org.apache.xpath.internal.operations.Equals;
 
-import model.AllCategoryListModel;
-import model.AllTaskListModel;
-import model.CategoryModel;
-import model.FinishedTaskList;
 import view.*;
 import modeltest.*;
 import controller.*;

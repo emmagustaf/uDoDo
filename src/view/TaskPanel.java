@@ -2,7 +2,6 @@ package view;
 
 import javax.swing.JPanel;
 
-import model.TaskModel;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.ImageIcon;
@@ -13,6 +12,7 @@ import java.awt.Component;
 import javax.swing.JButton;
 import utility.*;
 
+import Model.TaskModel;
 import controller.TaskController;
 import javax.swing.JToggleButton;
 

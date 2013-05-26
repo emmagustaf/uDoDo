@@ -5,11 +5,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import model.AllCategoryListModel;
-import model.AllTaskListModel;
-import model.CategoryModel;
-import model.FinishedTaskList;
-import model.TaskModel;
+import Model.AllCategoryListModel;
+import Model.AllTaskListModel;
+import Model.CategoryModel;
+import Model.FinishedTaskList;
+import Model.TaskModel;
+
 import modeltest.*;
 import view.*;
 

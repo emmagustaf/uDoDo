@@ -9,9 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
 
-import model.DisplayModel;
-import model.TaskModel;
 import modeltest.*;
+import Model.DisplayModel;
+import Model.TaskModel;
 import controller.*;
 import javax.swing.ImageIcon;
 

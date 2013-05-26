@@ -2,10 +2,11 @@ package modeltest;
 
 import static org.junit.Assert.*;
 
-import model.CategoryModel;
-import model.TaskModel;
 
 import org.junit.Test;
+
+import Model.CategoryModel;
+import Model.TaskModel;
 
 /**
  * A class testing the TaskModel

@@ -8,10 +8,11 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JComponent;
 
+import Model.DisplayModel;
+
 import utility.GraphicConstants;
 import view.*;
 
-import model.DisplayModel;
 
 
 /**
