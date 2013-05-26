@@ -15,9 +15,6 @@ import java.io.*;
  */
 public class CategoryModel implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 349685488686548422L;
 	private String catTitle;
 	private CategoryView view;
@@ -25,12 +22,9 @@ public class CategoryModel implements Serializable{
 	private CategoryModel panelModel;
 	private List<TaskModel> taskList;
 	private StartCategoryPanel startPanel;
-	
-//	private List <AddedCategoryPanel> catList= new ArrayList <AddedCategoryPanel> ();
-//	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
 
 	/**
-	 * Creates the categoryModel
+	 * Creates a CategoryModel, if 
 	 * @param catTitle
 	 */
 	public CategoryModel(String catTitle) {
