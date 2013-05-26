@@ -29,7 +29,7 @@ public class TaskPanel extends JPanel {
 	private TaskModel model;
 	private String taskCheck;
 	private JButton deleteTaskButton;
-	private JLabel taskLabel;
+	public JLabel taskLabel;
 	private JLabel deadlineLabel;
 	private JToggleButton checkbutton;
 	
@@ -105,7 +105,7 @@ public class TaskPanel extends JPanel {
 	public void setController(TaskController controller){
 		deleteTaskButton.addActionListener(controller);
 		checkbutton.addActionListener(controller);
-		this.addMouseListener(controller);
+		taskLabel.addMouseListener(controller);
 	}
 
 	
