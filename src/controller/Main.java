@@ -118,7 +118,7 @@ public class Main {
 		JMenu mnSettings = new JMenu("Settings");
 		menuBar.add(mnSettings);
 
-		JMenu mnTheme = new JMenu("Theme");
+		JMenu mnTheme = new JMenu("Color Theme");
 		mnSettings.add(mnTheme);
 
 		JMenu mnHelp = new JMenu("Help");
