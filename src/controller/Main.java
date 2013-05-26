@@ -146,6 +146,11 @@ public class Main {
 		mnAbout.addActionListener(menuController);
 		mnAbout.setActionCommand("About");
 		mnHelp.add(mnAbout);
+		
+		JRadioButtonMenuItem menyHelp = new JRadioButtonMenuItem("Help");
+		menyHelp.addActionListener(menuController);
+		menyHelp.setActionCommand("Help");
+		mnHelp.add(menyHelp);
 
 		// Open the window
 		frame.setVisible(true);
