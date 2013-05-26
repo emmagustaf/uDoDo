@@ -1,6 +1,5 @@
 package utility;
 
-import java.awt.Component;
 
 import model.AllTaskListModel;
 import view.*;
@@ -8,10 +7,10 @@ import model.*;
 import controller.*;
 public class FileToProgram {
 	
-	public static void SavedToList(ListView listView, CategoryListView catListView, TaskSettingView taskSettingView){
+	public static void savedToList(ListView listView, CategoryListView catListView, TaskSettingView taskSettingView){
 	
 		Read.readFromFile();
-
+		Read.readCategories();
 		
 		for(int i=0; i<AllTaskListModel.getInstance().size(); i++){
 			TaskPanel panel= new TaskPanel(AllTaskListModel.getInstance().get(i));
@@ -20,6 +19,13 @@ public class FileToProgram {
 				
 			listView.panelInScroll.add(panel);
 			
+		}
+		for(int j=0; j<AllCategoryListModel.getInstance().size(); j++){
+			AddedCategoryPanel catPanel = new AddedCategoryPanel(AllCategoryListModel.getInstance().getInstance().get(j));
+			CategoryPanelController catPanelController = new CategoryPanelController(taskSettingView, catPanel, catListView, listView);
+			catPanel.setController(catPanelController);
+			
+			catListView.panel.add(catPanel);
 		}
 		
 	}

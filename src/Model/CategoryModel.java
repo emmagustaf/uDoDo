@@ -26,7 +26,6 @@ public class CategoryModel implements Serializable{
 	private List<TaskModel> taskList;
 	private StartCategoryPanel startPanel;
 	
-	
 //	private List <AddedCategoryPanel> catList= new ArrayList <AddedCategoryPanel> ();
 //	private Deque <CategoryModel> markedList = new ArrayDeque <CategoryModel>();
 
@@ -34,14 +33,13 @@ public class CategoryModel implements Serializable{
 	 * Creates the categoryModel
 	 * @param catTitle
 	 */
-	@SuppressWarnings("unchecked")
 	public CategoryModel(String catTitle) {
 		if(!catTitle.equals("Finished Tasks") && !catTitle.equals("All Tasks")){
 			taskList = new ArrayList<TaskModel>();
 		}
 		this.catTitle = catTitle;
-		
 	}
+	
 	
 	/**
 	 * Returns the actual TaskList
