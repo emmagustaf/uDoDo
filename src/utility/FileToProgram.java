@@ -1,5 +1,7 @@
 package utility;
 
+import java.awt.Component;
+
 import com.sun.org.apache.xpath.internal.operations.Equals;
 
 import model.AllTaskListModel;
@@ -15,32 +17,33 @@ public class FileToProgram {
 		Read.readFromFile();
 		Read.readCategories();
 		Read.readFinishedTasks();
-		
+
 		for (int i = 0; i < AllTaskListModel.getInstance().size(); i++) {
-			TaskPanel panel = new TaskPanel(AllTaskListModel.getInstance().get(i));
-			TaskController taskController = new TaskController(listView, panel, taskSettingView, catListView);
+			TaskPanel panel = new TaskPanel(AllTaskListModel.getInstance().get(
+					i));
+			TaskController taskController = new TaskController(listView, panel,
+					taskSettingView, catListView);
 			panel.setController(taskController);
 
-			//listView.panelInScroll.add(panel);
-		
+			// listView.panelInScroll.add(panel);
+
 			for (int j = 0; j < AllCategoryListModel.getInstance().size(); j++) {
-				StartCategoryPanel catPanel = new AddedCategoryPanel(AllCategoryListModel.getInstance().get(j));
-				if (catPanel.getTitle() != null ) {
+				StartCategoryPanel catPanel = new AddedCategoryPanel(
+						AllCategoryListModel.getInstance().get(j));
+				if (catPanel.getTitle() != null) {
 					CategoryPanelController catPanelController = new CategoryPanelController(
 							taskSettingView, catPanel, catListView, listView);
 
 					catPanel.setController(catPanelController);
-					
-					if(catPanel.getModel().getCatTitle().equals(panel.getModel().getCategory().getCatTitle())){
+
+					if (catPanel.getModel().getCatTitle().equals(panel.getModel().getCategory().getCatTitle())) {
 						catPanel.getModel().getTaskList().add(panel.getModel());
+
 						catListView.panel.add(catPanel);
+						
 					}
-					
-					
-					
-					//catpanel addas varje gŒng loopen kšrs
-					
-					if(panel.getModel().getCategory().getCatTitle().equals("Finished Tasks")){
+
+					if (panel.getModel().getCategory().getCatTitle().equals("Finished Tasks")) {
 						FinishedTaskList.getInstance().add(panel.getModel());
 					}
 				}
