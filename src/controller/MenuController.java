@@ -24,7 +24,8 @@ public class MenuController implements ActionListener{
 			colorSettings.changeColor(e.getActionCommand());
 			
 			if(e.getActionCommand().equals("About")){
-				JOptionPane.showMessageDialog(null, "uDoDo");
+				JOptionPane.showMessageDialog(null, "<html><b>uDoDo</b></html>\n \t \t \t version 1.0", "About us", JOptionPane.INFORMATION_MESSAGE);
+				
 			}
 		}
 		
