@@ -35,11 +35,9 @@ public class GUIView extends JPanel {
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, TaskSettingView taskSettings) {
 				
-		this.addViewsToList(header, list, cat, top, listView, taskSettings);
-		
-		
+		this.addViewsToList(header, cat, top);
 		this.setMinimumSize(new Dimension(700, 750));
-		this.setBackground(GraphicConstants.BACKGROUND);
+//		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
@@ -114,21 +112,13 @@ public class GUIView extends JPanel {
 	}
 	
 	public void addPanelsToList(){
-		panelList.add(categoryListPanel);
 		panelList.add(headerPanel);
 		panelList.add(categoryPanel);
-		panelList.add(listPanel);
 		panelList.add(topPanel);
-		panelList.add(taskSettingPanel);
-		panelList.add(displayPanel);
-		
 	}
 	
-	public void addViewsToList(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, TaskSettingView taskSettings) {
-			
-		viewList.add(list);
-		viewList.add(listView);
-		viewList.add(taskSettings);
+	public void addViewsToList(HeaderView header, CategoryView cat, TopView top) {
+	
 		viewList.add(header);
 		viewList.add(cat);
 		viewList.add(top);
