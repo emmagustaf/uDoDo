@@ -5,8 +5,6 @@ import java.io.*;
 
 /**
  * A class to represent a model of a category.
- * 
- * @author Hanna
  *
  */
 public class CategoryModel implements Serializable{
