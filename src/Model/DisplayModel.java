@@ -19,6 +19,7 @@ public class DisplayModel {
 	 */
 	public DisplayModel(TaskModel task){
 		this.task=task;
+		
 	}
 	
 	/**
@@ -28,6 +29,7 @@ public class DisplayModel {
 	 */
 	public String getTaskTitle() {
 		return this.title;
+		
 	}
 
 	/**
@@ -37,6 +39,7 @@ public class DisplayModel {
 	 */
 	public String getTaskDescription(){
 		return  task.getDescription();
+		
 	}
 	
 	/**
@@ -46,6 +49,7 @@ public class DisplayModel {
 	 */
 	public TaskModel getTaskModel(){
 		return this.task;
+		
 	}
 	
 	/**
@@ -55,6 +59,7 @@ public class DisplayModel {
 	 */
 	public void setTaskTitle(TaskModel taskmodel) {
 		this.title=taskmodel.getTitle();
+		
 	}
 	
 	/**
@@ -65,6 +70,7 @@ public class DisplayModel {
 	 */
 	public void setTaskDescription(String description){
 		this.description=description;
+		
 	}
 
 }
