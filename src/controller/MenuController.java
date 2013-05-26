@@ -8,13 +8,13 @@ import javax.swing.JRadioButtonMenuItem;
 
 import utility.ColorSettings;
 
-public class MenuController implements ActionListener{
-	
+public class MenuController implements ActionListener {
+
 	private ColorSettings colorSettings;
-	
-	public MenuController(ColorSettings colorSettings){
+
+	public MenuController(ColorSettings colorSettings) {
 		this.colorSettings = colorSettings;
-		
+
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class MenuController implements ActionListener{
 
 			}
 		}
-		
+
 	}
 
 }
