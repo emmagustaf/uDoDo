@@ -27,29 +27,26 @@ public class ColorSettings {
 		for(int i = 0; i < viewList.size(); i++){
 			
 			if(theme.equals("Purple haze")){
-			
-				//view.setBackground(GraphicConstants.PURPLEHAZE);
-				if(viewList.get(i) instanceof JScrollPane){
-					((JScrollPane)viewList.get(i)).getViewport().getView().setBackground(GraphicConstants.PURPLEHAZE);
-					System.out.println("I'm a scrollpane! <3");
-				
-				}else{
 					viewList.get(i).setBackground(GraphicConstants.PURPLEHAZE);
 					System.out.println("I hate scrollpanes.");
-				}
-				
-				view.updateGUI();
-				
+					
 			}else if(theme.equals("Greyhound")){
-				
-				if(viewList.get(i) instanceof JScrollPane){
-					((JScrollPane)viewList.get(i)).getViewport().getView().setBackground(GraphicConstants.BACKGROUND);
-				}
-				view.setBackground(GraphicConstants.BACKGROUND);
+//				view.setBackground(GraphicConstants.BACKGROUND);
 				viewList.get(i).setBackground(GraphicConstants.BACKGROUND);
-				view.updateGUI();
-		
+
+			}else if(theme.equals("Green disease")){
+//				view.setBackground(GraphicConstants.GREENDISEASE);
+				viewList.get(i).setBackground(GraphicConstants.GREENDISEASE);
+
+			}else if(theme.equals("Blue jean")){
+				view.setBackground(GraphicConstants.BLUEJEAN);
+				viewList.get(i).setBackground(GraphicConstants.BLUEJEAN);
+			
+			}else if(theme.equals("Yellow submarine")){
+//				view.setBackground(GraphicConstants.YELLOWSUBMARINE);
+				viewList.get(i).setBackground(GraphicConstants.YELLOWSUBMARINE);
 			}
+			view.updateGUI();
 		}
 	}
 }
