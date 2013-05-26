@@ -8,7 +8,8 @@ import javax.swing.UIManager;
 import utility.ColorSettings;
 import utility.Read;
 import view.*;
-import model.*;
+import model.CategoryModel;
+import modeltest.*;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;

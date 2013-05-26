@@ -1,6 +1,9 @@
-package model;
+package modeltest;
 
 import static org.junit.Assert.*;
+
+import model.CategoryModel;
+import model.TaskModel;
 
 import org.junit.Test;
 

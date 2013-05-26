@@ -9,7 +9,8 @@ import java.util.*;
 
 import calendar.JDateTextField;
 
-import model.*;
+import model.DisplayModel;
+import modeltest.*;
 import view.*;
 
 public class EditController implements ActionListener{
