@@ -48,6 +48,8 @@ public class TaskController implements ActionListener, MouseListener {
 				listView.updateView();
 				
 				AllTaskListModel.getInstance().remove(taskPanel.getModel());
+				FinishedTaskList.getInstance().remove(taskPanel.getModel());
+				Save.saveFinishedTasks();
 				Save.saveFiles();
 				
 			}else if(e.getActionCommand().equals("taskCheck")){
@@ -69,6 +71,8 @@ public class TaskController implements ActionListener, MouseListener {
 					listView.panelInScroll.remove(taskPanel);
 					cModel.getTaskList().remove(taskPanel.getModel());
 					AllTaskListModel.getInstance().remove(taskPanel.getModel());
+					FinishedTaskList.getInstance().add(taskPanel.getModel());
+					Save.saveFinishedTasks();
 					Save.saveFiles();
 					//listView.displayTasks(catListView.getFinishedCategoryPanel().getModel(), taskSetting, catListView);
 					
