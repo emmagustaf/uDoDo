@@ -13,6 +13,7 @@ import model.*;
 import view.*;
 
 public class EditController implements ActionListener{
+	
 	private ListView listView;
 	private TaskSettingView settingView;
 	private EditTaskPanel editTaskPanel;
@@ -69,6 +70,7 @@ public class EditController implements ActionListener{
 		}
 		
 	}
+	
 	/**
 	 * Returns the user to displayTaskPanel after canceling
 	 */
@@ -79,6 +81,7 @@ public class EditController implements ActionListener{
 		displayController = new DisplayController(listView, settingView, displayTaskPanel);
 		settingView.panelInScroll.add(displayTaskPanel);
 	}
+	
 	/**
 	 * Sets the selected date as deadline
 	 */
@@ -86,6 +89,7 @@ public class EditController implements ActionListener{
 		editTaskPanel.getTaskModel().setDeadline(editTaskPanel.getJDateTextField());
 		listView.updatePanels();
 	}
+	
 	/**
 	 * Saves all changes made in edittaskpanel
 	 */
