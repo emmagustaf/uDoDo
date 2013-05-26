@@ -42,30 +42,12 @@ public class TaskModel implements Serializable{
 		this(title);
 		this.catModel = catModel;
 		catModel.getTaskList().add(this);
-		
-<<<<<<< HEAD
-=======
-
->>>>>>> fda466f2cdd91b7066a5f4bff6d79415c83291df
+	
 		if(AllTaskListModel.getInstance().contains(this)){
 			AllTaskListModel.getInstance().remove(this);
 		}
 		AllTaskListModel.getInstance().add(this);
 		Save.saveFiles();
-<<<<<<< HEAD
-	
-
-
-=======
-		
-
-		if(!AllTaskListModel.getInstance().contains(this)){
-			AllTaskListModel.getInstance().add(this);
-		}
-//			Save.saveFiles();
-
-		//this.uncheckedTaskList.add(this);
->>>>>>> fda466f2cdd91b7066a5f4bff6d79415c83291df
 	}
 	
 	
