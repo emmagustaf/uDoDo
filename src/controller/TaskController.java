@@ -43,6 +43,7 @@ public class TaskController implements ActionListener, MouseListener {
 				System.out.println("" + taskPanel.getModel().getTitle());
 				listView.panelInScroll.remove(taskPanel);
 				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel.getModel());
+			
 				listView.updateView();
 
 				AllTaskListModel.getInstance().remove(taskPanel.getModel());
