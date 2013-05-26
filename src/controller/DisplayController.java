@@ -8,10 +8,11 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JComponent;
 
+import Model.DisplayModel;
+
 import utility.GraphicConstants;
 import view.*;
 
-import model.DisplayModel;
 
 
 /**
@@ -25,20 +26,21 @@ public class DisplayController implements ActionListener, MouseListener{
 	private TaskSettingView settingView;
 	private DisplayTaskPanel displayTaskPanel;
 	private EditTaskPanel editTaskPanel;
-	
+
 	/**
-	 * Create the controller. 
+	 * Create the controller.
 	 * 
 	 * @param settingView
 	 * @param displayTaskPanel
 	 */
-	public DisplayController(ListView listView, TaskSettingView settingView, DisplayTaskPanel displayTaskPanel){
-		this.listView=listView;
-		this.settingView=settingView;
-		this.displayTaskPanel=displayTaskPanel;
+	public DisplayController(ListView listView, TaskSettingView settingView,
+			DisplayTaskPanel displayTaskPanel) {
+		this.listView = listView;
+		this.settingView = settingView;
+		this.displayTaskPanel = displayTaskPanel;
 		displayTaskPanel.setController(this);
 		displayTaskPanel.addMouseListener(this);
-		
+
 	}
 	
 	@Override

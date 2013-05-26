@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 /**
  * A class to represent a model of the display.
@@ -69,7 +69,7 @@ public class DisplayModel {
 	 * @return description
 	 */
 	public void setTaskDescription(String description){
-		this.description=description;
+		this.description = description;
 		
 	}
 

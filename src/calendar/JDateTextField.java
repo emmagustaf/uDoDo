@@ -19,8 +19,7 @@ import java.text.SimpleDateFormat;
  * @version : 1.0
  * @jdk version tested on : 1.4
  */
-public class JDateTextField extends JTextField
-{
+public class JDateTextField extends JTextField {
 	public static final int US_SHORT_DATE = 11;
 	public static final int IN_SHORT_DATE = 12;
 	public static final int LONG_DATE = 13;
@@ -41,65 +40,51 @@ public class JDateTextField extends JTextField
 	private int format = US_SHORT_DATE;
 	private String mask = FM_US_SHORT_DATE;
 
-    Calendar date = null;
+	Calendar date = null;
 
-    public JDateTextField()
-    {
-        this(US_SHORT_DATE);
-    }
+	public JDateTextField() {
+		this(US_SHORT_DATE);
+	}
 
-    public JDateTextField(int iFormat)
-    {
-        setFormat(iFormat);
-        super.setEditable(false);
-    }
+	public JDateTextField(int iFormat) {
+		setFormat(iFormat);
+		super.setEditable(false);
+	}
 
-    public void setText(String text)
-    {
-        try
-        {
-            setDate(text);
-        }
-        catch(ParseException pEx)
-        {
-            validateNull(null);
-        }
-    }
+	public void setText(String text) {
+		try {
+			setDate(text);
+		} catch (ParseException pEx) {
+			validateNull(null);
+		}
+	}
 
-    public String getText()
-    {
-        return getText(format);
-    }
+	public String getText() {
+		return getText(format);
+	}
 
-    public String getText(int iFormat)
-    {
-        return formateDate(date,iFormat);
-    }
+	public String getText(int iFormat) {
+		return formateDate(date, iFormat);
+	}
 
-    public void setDate(String text)
-    throws ParseException
-    {
-        if( text == null )
-            validateNull(null);
-        else
-            validateDate(text);
-    }
+	public void setDate(String text) throws ParseException {
+		if (text == null)
+			validateNull(null);
+		else
+			validateDate(text);
+	}
 
-    public void setEnabled(boolean enable)
-    {
-        super.setEnabled(enable);
+	public void setEnabled(boolean enable) {
+		super.setEnabled(enable);
 
-        if( enable )
-        {
-            setBackground(Color.white);
-            setForeground(Color.black);
-        }
-        else
-        {
-            setBackground(Color.lightGray);
-            setForeground(Color.darkGray);
-        }
-    }
+		if (enable) {
+			setBackground(Color.white);
+			setForeground(Color.black);
+		} else {
+			setBackground(Color.lightGray);
+			setForeground(Color.darkGray);
+		}
+	}
 
     public void setEditable(boolean enable)
     {

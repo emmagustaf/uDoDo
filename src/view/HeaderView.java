@@ -6,20 +6,12 @@ import java.awt.event.*;
 import java.awt.*;
 
 import utility.*;
-import model.TaskModel;
 import net.miginfocom.swing.MigLayout;
-import javax.swing.border.LineBorder;
 
 /**
  * A class to represent the view where the user can add new tasks.
- * 
- * @author Hanna
- *
  */
 public class HeaderView extends JPanel{
-
-	//TODO Create button "Ny" and textfield to get taskname
-	//private HeaderController controller;
 	
 	private JTextField taskTitleInput;
 	private JButton addNewTaskButton;
@@ -31,11 +23,11 @@ public class HeaderView extends JPanel{
 	public HeaderView() {
 		
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setBorder(null);
-		setLayout(new MigLayout("", "[208.00px][53.00px]", "[-13.00px][42.00,grow,fill][12.00]"));
-		setPreferredSize(new Dimension(300, 70));
-		setMinimumSize(new Dimension(300, 70));
-		setMaximumSize(new Dimension(300, 70));
+		this.setBorder(null);
+		this.setLayout(new MigLayout("", "[208.00px][53.00px]", "[-13.00px][42.00,grow,fill][12.00]"));
+		this.setPreferredSize(new Dimension(300, 70));
+		this.setMinimumSize(new Dimension(300, 70));
+		this.setMaximumSize(new Dimension(300, 70));
 		
 		taskTitleInput = new HintTextField("Add task...", 25);
 		taskTitleInput.setForeground(Color.gray);

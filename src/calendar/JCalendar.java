@@ -20,6 +20,7 @@ import java.beans.PropertyChangeListener;
  * @jdk version tested on : 1.4
  */
 public class JCalendar extends JDialog implements PropertyChangeListener {
+	
 	protected JYearChooser yearChooser;
 	protected JMonthChooser monthChooser;
 	protected JDayChooser dayChooser;
