@@ -15,6 +15,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JComponent;
 
 public class TaskController implements ActionListener, MouseListener {
+	
 	private ListModel listModel;
 	private ListView listView;
 	private TaskPanel taskPanel;
@@ -22,29 +23,54 @@ public class TaskController implements ActionListener, MouseListener {
 	private CategoryListView catListView;
 
 	public TaskController(ListView listView, TaskPanel taskPanel, TaskSettingView taskSetting, CategoryListView catListView){
+		
 		this.listView = listView;
 		this.taskPanel = taskPanel;
 		this.catListView = catListView;
 		this.taskSetting = taskSetting;
 		taskPanel.setController(this);
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("entered action performed in taskcontroller");
 		if(e.getSource() instanceof JComponent){
+			
 			if(e.getActionCommand().equals("deleteTask")){
+				
 				System.out.println("entered delete task");
 				System.out.println("" + taskPanel.getModel().getTitle());
 				listView.panelInScroll.remove(taskPanel);
 				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel.getModel());
 				listView.updateView();
+
 				AllTaskListModel.getInstance().remove(taskPanel.getModel());
 				Save.saveFiles();
+				
 			}else if(e.getActionCommand().equals("taskCheck")){
+				
+				System.out.println("task checked");
 				taskPanel.getModel().changeState();
-				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel);
-				catListView.getFinishedCategory().getTaskList().add(taskPanel.getModel());
+				
+				CategoryModel cModel = taskPanel.getModel().getCategory();
+				
+				if(taskPanel.getModel().getState() && !FinishedTaskList.getInstance().contains(taskPanel.getModel())){
+				
+					
+//					catListView.getFinishedCategoryPanel().setBackground(GraphicConstants.BUTTONPRESSED);
+//					catListView.getFinishedCategoryPanel().setTextColor(GraphicConstants.BUTTONPRESSEDFOREGROUND);
+//					catListView.getMarkedPanel().setBackground(GraphicConstants.BACKGROUND);
+//					catListView.getMarkedPanel().setTextColor(GraphicConstants.FOREGROUND);
+					
+					FinishedTaskList.getInstance().add(taskPanel.getModel());
+					listView.panelInScroll.remove(taskPanel);
+					cModel.getTaskList().remove(taskPanel.getModel());
+					AllTaskListModel.getInstance().remove(taskPanel.getModel());
+					//listView.displayTasks(catListView.getFinishedCategoryPanel().getModel(), taskSetting, catListView);
+					
+					
+				}
 				listView.updateView();
 			}
 		}

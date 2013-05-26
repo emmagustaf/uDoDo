@@ -36,7 +36,9 @@ public class CategoryModel implements Serializable{
 	 */
 	@SuppressWarnings("unchecked")
 	public CategoryModel(String catTitle) {
-		taskList = new ArrayList<TaskModel>();
+		if(!catTitle.equals("Finished Tasks") && !catTitle.equals("All Tasks")){
+			taskList = new ArrayList<TaskModel>();
+		}
 		this.catTitle = catTitle;
 		
 	}
@@ -46,7 +48,13 @@ public class CategoryModel implements Serializable{
 	 * @return
 	 */
 	public List<TaskModel> getTaskList(){
-		return taskList;
+		if(catTitle.equals("Finished Tasks")){
+			return FinishedTaskList.getInstance();
+		}else if(catTitle.equals("All Tasks")){
+			return AllTaskListModel.getInstance();
+		}else{
+			return taskList;
+		}
 	}
 
 	/**

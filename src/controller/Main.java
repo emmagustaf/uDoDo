@@ -21,6 +21,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
+
+import com.sun.j3d.utils.geometry.Box;
+
 import utility.*;
 public class Main {
 	private static final ButtonGroup buttonGroup = new ButtonGroup();
@@ -71,7 +74,7 @@ public class Main {
 		
 		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
 		
-		categoryListView.setFinishedCategory(finishedModel);
+		categoryListView.setFinishedCategory(finishedCatPanel);
 		
 		allCatPanel.setTitle("All Tasks");
 		
@@ -120,32 +123,38 @@ public class Main {
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 
-		
 		JMenu mnSettings = new JMenu("Settings");
 		menuBar.add(mnSettings);
-		
+
 		JMenu mnTheme = new JMenu("Theme");
 		mnSettings.add(mnTheme);
-		
+
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 
-		JRadioButtonMenuItem purpleHaze = new JRadioButtonMenuItem("Purple Haze");
+		JRadioButtonMenuItem purpleHaze = new JRadioButtonMenuItem(
+				"Purple Haze");
 		buttonGroup.add(purpleHaze);
 		purpleHaze.addActionListener(menuController);
 		purpleHaze.setActionCommand("Purple haze");
 		mnTheme.add(purpleHaze);
-		
+
 		JRadioButtonMenuItem greyhound = new JRadioButtonMenuItem("Greyhound");
 		buttonGroup.add(greyhound);
 		greyhound.addActionListener(menuController);
 		greyhound.setActionCommand("Greyhound");
 		mnTheme.add(greyhound);
-		
+
 		JRadioButtonMenuItem mnAbout = new JRadioButtonMenuItem("About us");
 		mnAbout.addActionListener(menuController);
 		mnAbout.setActionCommand("About");
 		mnHelp.add(mnAbout);
+		
+		JRadioButtonMenuItem menyHelp = new JRadioButtonMenuItem("Help");
+		menyHelp.addActionListener(menuController);
+		menyHelp.setActionCommand("Help");
+		menyHelp.setAlignmentX(Box.RIGHT);
+		mnHelp.add(menyHelp);
 
 		// Open the window
 		frame.setVisible(true);

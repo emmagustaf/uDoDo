@@ -14,12 +14,12 @@ public class Read {
 	public static void readFromFile() {
 
 		ObjectInputStream inputStream = null;
-		Object obj = new Object();
+		ArrayList<TaskModel> obj = new ArrayList();
 		try {
 			inputStream = new ObjectInputStream(new FileInputStream("AllTask.ser"));
 			obj = null;
 			
-			while((obj = inputStream.readObject()) != null){
+			while((obj = (ArrayList<TaskModel>)inputStream.readObject()) != null){
 				if ( obj instanceof ArrayList){
 					AllTaskListModel.getInstance().addAll(((ArrayList<TaskModel>)obj));
 				}

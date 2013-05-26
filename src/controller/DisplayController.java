@@ -45,18 +45,19 @@ public class DisplayController implements ActionListener, MouseListener{
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("entered");
 
-		if(e.getActionCommand().equals("editTask")){
+		if (e.getActionCommand().equals("editTask")) {
 			System.out.println("presset editbutton");
 			settingView.panelInScroll.removeAll();
 
-			this.editTaskPanel = new EditTaskPanel(displayTaskPanel.getTaskModel());
-			EditController editController = new EditController(listView, settingView, editTaskPanel);
-					
+			this.editTaskPanel = new EditTaskPanel(
+					displayTaskPanel.getTaskModel());
+			EditController editController = new EditController(listView,
+					settingView, editTaskPanel);
+
 			settingView.panelInScroll.add(editTaskPanel, 0);
 			settingView.updateView();
-					
-			
-		}		
+
+		}
 				
 	}
 
