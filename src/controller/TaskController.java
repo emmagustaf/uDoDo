@@ -17,7 +17,6 @@ import javax.swing.JComponent;
 
 public class TaskController implements ActionListener, MouseListener {
 	
-	private ListModel listModel;
 	private ListView listView;
 	private TaskPanel taskPanel;
 	private TaskSettingView taskSetting;
@@ -35,13 +34,11 @@ public class TaskController implements ActionListener, MouseListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("entered action performed in taskcontroller");
+		
 		if(e.getSource() instanceof JComponent){
 			
 			if(e.getActionCommand().equals("deleteTask")){
 				
-				System.out.println("entered delete task");
-				System.out.println("" + taskPanel.getModel().getTitle());
 				listView.panelInScroll.remove(taskPanel);
 				taskPanel.getModel().getCategory().getTaskList().remove(taskPanel.getModel());
 			
@@ -54,27 +51,23 @@ public class TaskController implements ActionListener, MouseListener {
 				
 			}else if(e.getActionCommand().equals("taskCheck")){
 				
-				System.out.println("task checked");
 				taskPanel.getModel().changeState();
 				
 				CategoryModel cModel = taskPanel.getModel().getCategory();
 				
 				if(taskPanel.getModel().isChecked() && !FinishedTaskList.getInstance().contains(taskPanel.getModel())){
-				
-					
-//					catListView.getFinishedCategoryPanel().setBackground(GraphicConstants.BUTTONPRESSED);
-//					catListView.getFinishedCategoryPanel().setTextColor(GraphicConstants.BUTTONPRESSEDFOREGROUND);
-//					catListView.getMarkedPanel().setBackground(GraphicConstants.BACKGROUND);
-//					catListView.getMarkedPanel().setTextColor(GraphicConstants.FOREGROUND);
+	
 					
 					FinishedTaskList.getInstance().add(taskPanel.getModel());
+					
 					listView.panelInScroll.remove(taskPanel);
 					cModel.getTaskList().remove(taskPanel.getModel());
 					AllTaskListModel.getInstance().remove(taskPanel.getModel());
+					
 					FinishedTaskList.getInstance().add(taskPanel.getModel());
+					
 					Save.saveFinishedTasks();
 					Save.saveFiles();
-					//listView.displayTasks(catListView.getFinishedCategoryPanel().getModel(), taskSetting, catListView);
 					
 					
 				}else if(taskPanel.getModel().isChecked() && FinishedTaskList.getInstance().contains(taskPanel.getModel())){

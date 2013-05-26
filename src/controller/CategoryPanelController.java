@@ -35,13 +35,13 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	 * @param catListView
 	 */
 	public CategoryPanelController(TaskSettingView taskSetting, StartCategoryPanel startCategoryPanel, CategoryListView catListView, ListView listView){
+		
 		this.catListView=catListView;
 		this.taskSetting = taskSetting;
 		this.listView = listView;
 		this.startCategoryPanel = startCategoryPanel;
 		startCategoryPanel.setController(this);
 
-		
 	}
 
 	@Override
@@ -49,11 +49,15 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 		
 		if(e.getSource() instanceof JComponent){
 			if(e.getActionCommand().equals("delete Category")){
+				
 				catListView.panel.remove(startCategoryPanel);
 				startCategoryPanel.getModel().getTaskList().clear();
+				
 				listView.displayTasks(startCategoryPanel.getModel(), taskSetting, catListView);
+				
 				AllCategoryListModel.getInstance().remove(startCategoryPanel.getModel());
 				AllTaskListModel.getInstance().remove(startCategoryPanel.getModel().getTaskList());
+				
 				Save.saveFiles();
 				Save.saveCategories();
 				catListView.updateView();
@@ -70,8 +74,6 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	
 			catListView.markCategory((StartCategoryPanel)e.getComponent());
 			listView.displayTasks(((StartCategoryPanel)e.getComponent()).getModel(), taskSetting, catListView);
-			//listView.addControllers(taskSetting, catListView);
-			
 			
 			e.getComponent().setBackground(GraphicConstants.BUTTONPRESSED);
 			((StartCategoryPanel)e.getComponent()).setTextColor(GraphicConstants.BUTTONPRESSEDFOREGROUND);
@@ -99,6 +101,7 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 	}
 
 	@Override
+	
 	public void mouseExited(MouseEvent arg0) {
 
 		if (catListView.getMarkedList().isEmpty() || !isSelected(arg0.getComponent())) {
@@ -123,6 +126,11 @@ public class CategoryPanelController implements ActionListener, MouseListener {
 
 	}
 
+	/**
+	 * 
+	 * @param comp
+	 * @return true if the StartCategoryPanel is marked and false if it isn't marked
+	 */
 	public boolean isSelected(Component comp) {
 
 		if (comp instanceof StartCategoryPanel) {

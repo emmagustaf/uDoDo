@@ -35,7 +35,6 @@ public class Main {
 	 */
 	
 	public static void main(String[] args) {
-		System.out.println("" + UIManager.getSystemLookAndFeelClassName());
 		
 		try{
 			
@@ -57,8 +56,6 @@ public class Main {
 		HeaderView headerView = new HeaderView();
 		TopView topView = new TopView();
 		TaskSettingView taskSettings = new TaskSettingView();
-		//CategoryController catController= new CategoryController();
-		//ListController controller = new ListController(listView);		
 		
 		CategoryModel allModel = new CategoryModel("All Tasks");
 		CategoryModel finishedModel = new CategoryModel("Finished Tasks");
@@ -87,28 +84,26 @@ public class Main {
 		
 	
 		GUIView guiView = new GUIView(headerView, listView, categoryView, topView, categoryListView, taskSettings);
-		
 		categoryListView.updateView();
-		//CategoryModel model = new CategoryModel(null);
-		//AddedCategoryPanel catPanel = new AddedCategoryPanel(model);
 		
-		HeaderController controller = new HeaderController(headerView, listView, allCatPanel, taskSettings, categoryListView);
+		HeaderController controller = new HeaderController(headerView, listView, taskSettings, categoryListView);
 		CategoryController catConroller = new CategoryController(taskSettings, categoryView, categoryListView, listView);
 
 
 		frame.setMinimumSize(new Dimension(700, 750));
-		//frame.setResizable(false);
-
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		// Add gui to window
 		FileToProgram.savedToList(listView, categoryListView, taskSettings);
 		frame.getContentPane().add(guiView);
 
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// pack() will do the layout of the window so it gets the correct size
 		frame.pack();
 		
 		
+		//creates colorsettings and controllers, enabling the programs color theme to be changed from the
+		//program frame's menu and buttons in the topview 
 		ColorSettings colorSettings = new ColorSettings(guiView);
 		
 		MenuController menuController = new MenuController(colorSettings);

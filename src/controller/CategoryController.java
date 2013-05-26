@@ -42,9 +42,6 @@ public class CategoryController implements ActionListener{
 		this.listView = listView;
 		view.setController(this);
 		
-		//		this.panelModel=panelModel;
-		//panelModel.setController(this);
-		
 	}
 
 	@Override
@@ -53,21 +50,17 @@ public class CategoryController implements ActionListener{
 		if(e.getSource() instanceof JButton || e.getSource() instanceof JTextField){
 			if(e.getActionCommand().equals("newCategory") && (view.getTextField().getText().length() > 0) && 
 					(!view.getTextField().getText().equals("Add category..."))){
+				
 				CategoryModel cat = new CategoryModel(view.getTextField().getText());
 				AddedCategoryPanel catPanel = new AddedCategoryPanel(cat);		
 				catListView.panel.add(catPanel);
-//				
-//				ArrayList <CategoryModel> catList = new ArrayList<CategoryModel>();
-//				catList.add(cat);
-//				
-//				if(AllCategoryListModel.getInstance().contains(catList)){
-//				AllCategoryListModel.getInstance().removeAll(catList);
-//				}
-//				AllCategoryListModel.getInstance().addAll(catList);
+				
+				AllCategoryListModel.getInstance().add(cat);
+				
 				Save.saveCategories();
 				
 				view.getTextField().setText("");
-				//catListView.addToCatList(catPanel);
+				
 				catListView.updateView();
 				CategoryPanelController catController = new CategoryPanelController(taskSetting, catPanel, catListView, listView);
 				System.out.println("category added");
