@@ -77,6 +77,14 @@ public class TaskController implements ActionListener, MouseListener {
 					//listView.displayTasks(catListView.getFinishedCategoryPanel().getModel(), taskSetting, catListView);
 					
 					
+				}else if(taskPanel.getModel().isChecked() && FinishedTaskList.getInstance().contains(taskPanel.getModel())){
+					
+					cModel.getTaskList().add(taskPanel.getModel());
+					listView.panelInScroll.remove(taskPanel);
+					FinishedTaskList.getInstance().remove(taskPanel.getModel());
+					AllTaskListModel.getInstance().add(taskPanel.getModel());
+					
+					
 				}
 				listView.updateView();
 			}

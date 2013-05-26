@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
-import com.apple.resources.*;
+//import com.apple.resources.*;
 
 //import com.sun.j3d.utils.geometry.Box;
 
