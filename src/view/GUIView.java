@@ -8,9 +8,7 @@ import javax.swing.*;
 import utility.*;
 
 /**
- * This view-class is the base of a window. It will add panels to create a GUI
- * 
- *
+ * This view-class is the container of all panels. It will add and organize panels to create a GUI
  */
 public class GUIView extends JPanel {
 	private HeaderView header;
@@ -30,24 +28,18 @@ public class GUIView extends JPanel {
 	private List<JComponent> viewList = new ArrayList<JComponent>();
 	
 	/**
-	 * Create the frame.
+	 * Create the container panel
 	 */
 	
 	public GUIView(HeaderView header, ListView list, CategoryView cat, TopView top, CategoryListView listView, TaskSettingView taskSettings) {
 				
 		this.addViewsToList(header, cat, top);
 		this.setMinimumSize(new Dimension(700, 750));
-//		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new GridBagLayout());
+		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-		
-		//categoryPanel.setBackground(Color.yellow);
-		//listPanel.setBackground(Color.green);
-		//topPanel.setBackground(Color.ORANGE);																						
-		//topPanel.setBackground(Color.pink);
-		//taskSettingPanel.setBackground(Color.CYAN);
 		this.addPanelsToList();
 	
+		//the GridBag to organize the placing of the panels in the container.
 		topPanel.add(top);     
 		c.weightx = 0.0;
 		c.gridwidth = 3;
@@ -99,24 +91,38 @@ public class GUIView extends JPanel {
 		
 	}	
 	
+	/**
+	 * updates the container, not the components in the container
+	 */
 	public void updateGUI(){
 		this.revalidate();
 		this.validate();
 		this.repaint();
 	}
 	
+	/**
+	 * @return list the list contains the panels to be colorchanged.
+	 */
 	public List<JPanel> getPanels(){
 		return panelList;
 		
 		
 	}
-	
+	/**
+	 * adds the choosed panels to change color of.
+	 */
 	public void addPanelsToList(){
 		panelList.add(headerPanel);
 		panelList.add(categoryPanel);
 		panelList.add(topPanel);
 	}
 	
+	/**
+	 * the Views to be colorchanged.
+	 * @param header the headerView
+	 * @param cat the categoryView
+	 * @param top the topview
+	 */
 	public void addViewsToList(HeaderView header, CategoryView cat, TopView top) {
 	
 		viewList.add(header);
@@ -125,11 +131,11 @@ public class GUIView extends JPanel {
 		
 	}
 	
-	
+	/**
+	 * @return the list containing the views to be updated.
+	 */
 	public List<JComponent> getViews(){
-		
 		return viewList;
-		
 	}
 	
 }

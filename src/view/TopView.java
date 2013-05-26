@@ -28,7 +28,7 @@ public class TopView extends JPanel {
 	JToggleButton tglbtnGreen; 
 	
 	/**
-	 * A view representing the toolbar of the application.
+	 * A view representing the Logo and the bugs to change color of the application.
 	 */
 	
 	public TopView(){
@@ -50,6 +50,7 @@ public class TopView extends JPanel {
 		tglbtnY.setRolloverIcon(new ImageIcon(TopView.class.getResource("/utility/icons/yellow.hover.png")));
 		tglbtnY.setBorder(null);
 		group.add(tglbtnY);
+		
 		tglbtnB = new JToggleButton("");
 		tglbtnB.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		tglbtnB.setRolloverIcon(new ImageIcon(TopView.class.getResource("/utility/icons/blue.hover.png")));
@@ -57,6 +58,7 @@ public class TopView extends JPanel {
 		tglbtnB.setIcon(new ImageIcon(TopView.class.getResource("/utility/icons/blue.bug.png")));
 		tglbtnB.setBorder(null);
 		group.add(tglbtnB);
+		
 		tglbtnG = new JToggleButton("");
 		tglbtnG.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		tglbtnG.setIcon(new ImageIcon(TopView.class.getResource("/utility/icons/grey.bug.png")));
@@ -64,6 +66,7 @@ public class TopView extends JPanel {
 		tglbtnG.setRolloverIcon(new ImageIcon(TopView.class.getResource("/utility/icons/gray.hover.png")));
 		tglbtnG.setBorder(null);
 		group.add(tglbtnG);
+		
 		tglbtnP = new JToggleButton("");
 		tglbtnP.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		tglbtnP.setIcon(new ImageIcon(TopView.class.getResource("/utility/icons/purple.bug.png")));
@@ -71,6 +74,7 @@ public class TopView extends JPanel {
 		tglbtnP.setRolloverIcon(new ImageIcon(TopView.class.getResource("/utility/icons/purple.hover.png")));
 		tglbtnP.setBorder(null);
 		group.add(tglbtnP);
+		
 		tglbtnGreen = new JToggleButton("");
 		tglbtnGreen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		tglbtnGreen.setRolloverIcon(new ImageIcon(TopView.class.getResource("/utility/icons/green.hover.png")));

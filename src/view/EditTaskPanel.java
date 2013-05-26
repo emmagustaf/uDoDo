@@ -1,24 +1,17 @@
 package view;
 
 import java.awt.Dimension;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 import javax.swing.JPanel;
 import utility.*;
 import model.TaskModel;
 import net.miginfocom.swing.MigLayout;
 
-import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import controller.*;
-import javax.swing.JTextArea;
 import javax.swing.JEditorPane;
-import javax.swing.border.SoftBevelBorder;
-import javax.swing.border.BevelBorder;
 import javax.swing.UIManager;
 import calendar.*;
 import javax.swing.ImageIcon;
@@ -51,13 +44,16 @@ public class EditTaskPanel extends JPanel {
 	 */
 	public EditTaskPanel(TaskModel taskModel) {
 		
+		this.taskModel = taskModel;
+		
 		this.setMinimumSize(new Dimension (300, 500));
 		this.setMaximumSize(new Dimension (300, 500));
 		this.setPreferredSize(new Dimension (300, 500));
-		this.taskModel = taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setLayout(new MigLayout("", "[][172.00][99.00]", "[][][][][][][][][][][][89.00]"));
+		this.setLayout(new MigLayout("", "[][172.00][99.00]", "[][][][][][][][][][][][89.00]"));
 		
+		
+		//Create and initialize the labels and fields of the panel
 		JLabel changeTitleLabel = new JLabel("Set new title");
 		changeTitleLabel.setFont(GraphicConstants.REGULARFONT);
 		changeTitleLabel.setForeground(GraphicConstants.FOREGROUND);
@@ -93,14 +89,16 @@ public class EditTaskPanel extends JPanel {
 		dateLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(dateLabel, "cell 1 8,alignx left");
 		
+		//Creating the calendar to set the deadline with.
 		calendar = new JCalendar(null, "Calendar", true, calendar.RIGHT_SPINNER);
 		
-		
+		//the label representing the deadline on the task.
 		deadlineLabel = new JLabel("" + taskModel.getDeadline());
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		deadlineLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(deadlineLabel, "cell 1 9,alignx left");
 		
+		//The button to display the calendar to set the deadline.
 		calendarButton = new JButton("");
 		calendarButton.setRolloverIcon(new ImageIcon(EditTaskPanel.class.getResource("/utility/icons/calendar.hover.png")));
 		calendarButton.setIcon(new ImageIcon(EditTaskPanel.class.getResource("/utility/icons/calendar_1_icon&32.png")));
@@ -109,11 +107,13 @@ public class EditTaskPanel extends JPanel {
 		calendarButton.setFont(GraphicConstants.REGULARFONT);
 		calendarButton.setActionCommand("calendar");
 		add(calendarButton, "cell 2 9,alignx center");
-		//deadlineInput.setColumns(10);
 		
+		//the text field representing the deadline of the task.
+		//This never adds to the gui but is needed to set the deadline to the task.
 		dateTextField = new JDateTextField();
 		dateTextField.setText("" + taskModel.getDeadline());
 		
+		//the button to save the changes to the task.
 		saveButton = new JButton("Ok");
 		saveButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		saveButton.setOpaque(true);
@@ -126,6 +126,7 @@ public class EditTaskPanel extends JPanel {
 		saveButton.setActionCommand("save");
 		add(saveButton, "cell 1 11,alignx right,aligny bottom");
 		
+		//The button to cancel changes made to the task
 		cancelButton = new JButton("Cancel");
 		cancelButton.setRolloverEnabled(true);
 		cancelButton.setPreferredSize(new Dimension(100, 35));
@@ -141,32 +142,59 @@ public class EditTaskPanel extends JPanel {
 	
 
 	}
+	
+	/**
+	 * @return the calendar to set date with
+	 */
 	public JCalendar getCalendar(){
 		return calendar;
 	}
 	
+	/**
+	 * @return the visual view of the task
+	 */
 	public DisplayTaskPanel getDisplayTaskPanel(){
 		return displayTaskPanel;
 	}
 
+	/**
+	 * @return the title of the task
+	 */
 	public String getTitleTextField(){
 		return titleTextField.getText();
 	}
 	
+	/**
+	 * @return the deadline of the task
+	 */
 	public String getJDateTextField(){
 		dateTextField.getCalendar();
 		dateTextField.setDate(calendar.getDate());
 		return dateTextField.getText();
 	}
+	
+	/**
+	 * @return the description of the task
+	 */
 	public String getDescriptionTextField(){
 		return descriptionTextField.getText();
 	}
 	
+	/**
+	 * @return Taskmodel the model that will be edited.
+	 */
 	public TaskModel getTaskModel(){
 		return taskModel;
 	}
 	
+	/**
+	 * Sets the controller for the panel. 
+	 * Mouselistener will handle what actions will be performed when the editbutton is clicked
+	 * 
+	 * @param controller the controller that controlls the buttons
+	 */
 	public void setController(EditController controller){
+		
 		saveButton.addActionListener(controller);
 		cancelButton.addActionListener(controller);
 		calendarButton.addActionListener(controller);

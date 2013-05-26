@@ -3,6 +3,9 @@ package utility;
 import java.awt.Color;
 import java.awt.Font;
 
+/**
+ * Utility class to represent the standard colors and fonts of the application.
+ */
 public class GraphicConstants {
 	
 	public final static Font REGULARFONT = (new Font("Tahoma", Font.PLAIN, 12));
