@@ -8,7 +8,6 @@ import javax.swing.JTextField;
 
 import model.AllTaskListModel;
 import model.CategoryModel;
-import model.ListModel;
 import model.TaskModel;
 
 import view.CategoryListView;
@@ -24,21 +23,21 @@ public class HeaderController implements ActionListener{
 	private ListView view;
 	private HeaderView headerView;
 	private CategoryListView catListView;
-	private StartCategoryPanel catPanel;
 	private TaskSettingView taskSetting;
 	
-	public HeaderController(HeaderView headerView, ListView view, StartCategoryPanel catPanel, TaskSettingView taskSetting, CategoryListView catListView){
+	public HeaderController(HeaderView headerView, ListView view, TaskSettingView taskSetting, CategoryListView catListView){
+	
 		this.headerView = headerView;
 		this.headerView.setController(this);
 		this.view = view;
-		this.catPanel = catPanel;
 		this.taskSetting = taskSetting;
 		this.catListView = catListView;
+		
 	}
 	
 	@Override
 	/**
-	 * Creates a new TaskPanel and TaskModel, adds the panel to ListView.
+	 * Creates a new and TaskModel and TaskPanel, adds a TaskController to the TaskPanel and adds the panel in ListView.
 	 * If a category is marked in the CategoryListView, the new task is added to that category.
 	 * If no category, or the Finished-tasks-category is marked, the task is added to the default category.
 	 */
@@ -52,13 +51,11 @@ public class HeaderController implements ActionListener{
 				if(catListView.getMarkedList().isEmpty() || catListView.getMarkedPanel().getModel().getCatTitle().equals("Finished Tasks")){
 				
 					task = new TaskModel(headerView.getTextField().getText(), catListView.getDefaultCategory());
-					System.out.println("task belongs to cat: " + task.getCategory().getCatTitle());
-					//AllTaskListModel.getInstance().add(task);
-				
+					
 				}else{
 					
 					task = new TaskModel(headerView.getTextField().getText(), catListView.getMarkedPanel().getModel());
-					System.out.println("task belongs to category: " + task.getCategory().getCatTitle());
+					
 				}
 				
 				TaskPanel taskPanel = new TaskPanel(task);
@@ -67,7 +64,7 @@ public class HeaderController implements ActionListener{
 				headerView.getTextField().setText("");
 				
 				TaskController taskController = new TaskController(view, taskPanel, taskSetting, catListView);
-				//view.
+				
 			}
 		}
 	}

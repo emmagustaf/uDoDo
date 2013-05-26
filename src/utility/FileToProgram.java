@@ -23,13 +23,11 @@ public class FileToProgram {
 		for (int i = 0; i < AllTaskListModel.getInstance().size(); i++) {
 			boolean getLucky = false;
 			
-			TaskPanel panel = new TaskPanel(AllTaskListModel.getInstance().get(
-					i));
+			TaskPanel panel = new TaskPanel(AllTaskListModel.getInstance().get(i));
 			TaskController taskController = new TaskController(listView, panel,
 					taskSettingView, catListView);
 			panel.setController(taskController);
-			
-			// listView.panelInScroll.add(panel);
+			panel.getModel().getCategory();
 
 			for(int k = 0; k<AllCategoryListModel.getInstance().size(); k++)
 			{
@@ -38,43 +36,25 @@ public class FileToProgram {
 					StartCategoryPanel cPanel = new AddedCategoryPanel(cm);
 					CategoryPanelController catPanelController = new CategoryPanelController(
 							taskSettingView, cPanel, catListView, listView);
-					cPanel.setController(catPanelController);
 					catListView.panel.add(cPanel);
+					cPanel.setController(catPanelController);
 					getLucky = true;
-					break;
+					
+					if (cPanel.getModel().getCatTitle().equals(panel.getModel().getCategory().getCatTitle())) {
+						cPanel.getModel().getTaskList().add(panel.getModel());
+						
+					}
+					
+				
+				}
+				
+				if (panel.getModel().getCategory().getCatTitle().equals("Finished Tasks")) {
+						FinishedTaskList.getInstance().add(panel.getModel());
 				}
 			}
 			
-			/*for (int j = 0; j < AllCategoryListModel.getInstance().size(); j++) {
-				StartCategoryPanel catPanel = new AddedCategoryPanel(
-						AllCategoryListModel.getInstance().get(j));
-				
-				CategoryModel [] catList = new CategoryModel[AllCategoryListModel.getInstance().size()];
-				if (catPanel.getTitle() != null) {
-					CategoryPanelController catPanelController = new CategoryPanelController(
-							taskSettingView, catPanel, catListView, listView);
-					
-//					for(int k = 0; k<AllCategoryListModel.getInstance().size(); k++){
-//						catList[k]=AllCategoryListModel.getInstance().get(k);
-//						StartCategoryPanel catPanel2 = new AddedCategoryPanel(catList[k]);
-//						catListView.panel.add(catPanel2);
-//					
-//						catPanel2.setController(catPanelController);
-//					}
-					
-					if (catPanel.getModel().getCatTitle().equals(panel.getModel().getCategory().getCatTitle())) {
-						catPanel.getModel().getTaskList().add(panel.getModel());
-						//catListView.panel.add(catPanel);
-						if(!catList[j].equals(AllCategoryListModel.getInstance().get(j))){
-							catList[j].setController(catPanelController);
-						}
-					}
-
-					if (panel.getModel().getCategory().getCatTitle().equals("Finished Tasks")) {
-						FinishedTaskList.getInstance().add(panel.getModel());
-					}
-				}
-			}*/
 		}
+	
 	}
 }
+
