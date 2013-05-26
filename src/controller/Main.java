@@ -74,7 +74,7 @@ public class Main {
 		
 		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
 		
-		categoryListView.setFinishedCategory(finishedModel);
+		categoryListView.setFinishedCategory(finishedCatPanel);
 		
 		allCatPanel.setTitle("All Tasks");
 		
