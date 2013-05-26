@@ -53,6 +53,7 @@ public class StartCategoryPanel extends JPanel {
 		
 		
 	}
+	
 	public void setTitle(String title){
 		categoryLabel.setText(title);
 		
@@ -64,7 +65,6 @@ public class StartCategoryPanel extends JPanel {
 	}
 	public void setController(CategoryPanelController controller){
 		this.addMouseListener(controller);
-		System.out.println("added controller");
 		
 	}
 	

@@ -29,6 +29,7 @@ public class HintTextField extends JTextField implements FocusListener {
             super.setText("");
         }
     }
+    
     @Override
     public void focusLost(FocusEvent e) {
         if(this.getText().isEmpty()) {
@@ -41,5 +42,6 @@ public class HintTextField extends JTextField implements FocusListener {
         String typed = super.getText();
         return typed.equals(hint) ? "" : typed;
     }
+    
 }
 
