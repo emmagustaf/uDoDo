@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 /**
  * A class to represent a model of the display.

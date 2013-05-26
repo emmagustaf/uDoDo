@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import model.TaskModel;
+
+import Model.TaskModel;
 
 import view.CategoryListView;
 import view.HeaderView;

@@ -8,6 +8,11 @@ import javax.swing.JRadioButtonMenuItem;
 
 import utility.ColorSettings;
 
+/**
+ * 
+ * @author Hanna
+ *
+ */
 public class MenuController implements ActionListener {
 
 	private ColorSettings colorSettings;
@@ -31,6 +36,7 @@ public class MenuController implements ActionListener {
 			}
 
 			if (e.getActionCommand().equals("Help")) {
+	
 				JOptionPane.showMessageDialog(null,
 						"<html><b>Help</b></html> \n Please contact uDoDo",
 						"Help", JOptionPane.PLAIN_MESSAGE);

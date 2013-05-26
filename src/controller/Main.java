@@ -8,7 +8,7 @@ import javax.swing.UIManager;
 import utility.ColorSettings;
 import utility.Read;
 import view.*;
-import model.*;
+import modeltest.*;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -21,6 +21,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
+
+import Model.CategoryModel;
 //import com.apple.resources.*;
 
 //import com.sun.j3d.utils.geometry.Box;

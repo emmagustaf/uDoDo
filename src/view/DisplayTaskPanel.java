@@ -7,95 +7,88 @@ import utility.*;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
-import model.*;
+import modeltest.*;
+import Model.DisplayModel;
+import Model.TaskModel;
 import controller.*;
-
 import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
-import java.awt.ComponentOrientation;
-import javax.swing.DropMode;
 
 
 /**
  * A class to represent the view where you can see more details about a task, which includes
  * the title, description, priority and deadline of the task
  *
- * @author Hanna Materne
- *
  */
 public class DisplayTaskPanel extends JPanel {
 	
-	private JButton editButton = new JButton();
+	private JButton editButton;
 	private TaskModel taskModel;
 	private DisplayController controller;
 	private DisplayModel displayModel;
 	private JLabel deadlineLabel;
-	private JLabel deadlineLabel_1;
+	private JLabel deadlineLabel_1;	//The label that contains the deadline
 	
 	/**
 	 * Create the panel.
 	 */
 	public DisplayTaskPanel(DisplayModel displayModel, TaskModel taskModel) {
 		
+		this.taskModel=taskModel;
+		this.editButton = new JButton();
+		//All graphical settings and components created with correct settings
 		this.setMinimumSize(new Dimension (300, 500));
 		this.setMaximumSize(new Dimension (300, 500));
 		this.setPreferredSize(new Dimension (300, 500));
-	
-		this.taskModel=taskModel;
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setLayout(new MigLayout("", "[110.00][][][]", "[][][][][][][][][][][]"));
-		
+
+		//The label containing the title of the task.
 		JLabel titleLabel = new JLabel(displayModel.getTaskModel().getTitle());
 		titleLabel.setFont(GraphicConstants.HEADINGFONT);
 		titleLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(titleLabel, "cell 0 0 2 1");
 		
-		//JLabel descriptionLabel = new JLabel(displayModel.getTaskModel().getDescription());
-		JTextPane descriptionLabel = new JTextPane();
-		descriptionLabel.setText(displayModel.getTaskModel().getDescription());
-		descriptionLabel.setDragEnabled(false);
-		descriptionLabel.setEditable(false);
-		descriptionLabel.setBorder(null);
-		descriptionLabel.setMinimumSize(new Dimension (230, 30));
-		descriptionLabel.setMaximumSize(new Dimension(230, 125));
-		descriptionLabel.setPreferredSize(new Dimension(230, 125));
-		descriptionLabel.setFont(GraphicConstants.REGULARFONT);
-		descriptionLabel.setBackground(GraphicConstants.BACKGROUND);
-		descriptionLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(descriptionLabel, "cell 0 2 2 2,alignx left,aligny top");
+		//The pain containing the description of the task.
+		JTextPane descriptionPane = new JTextPane();
+		descriptionPane.setMinimumSize(new Dimension (230, 30));
+		descriptionPane.setMaximumSize(new Dimension(230, 125));
+		descriptionPane.setPreferredSize(new Dimension(230, 125));
+		descriptionPane.setText(displayModel.getTaskModel().getDescription());
+		descriptionPane.setDragEnabled(false);
+		descriptionPane.setEditable(false);
+		descriptionPane.setBorder(null);
+		descriptionPane.setFont(GraphicConstants.REGULARFONT);
+		descriptionPane.setBackground(GraphicConstants.BACKGROUND);
+		descriptionPane.setForeground(GraphicConstants.FOREGROUND);
+		add(descriptionPane, "cell 0 2 2 2,alignx left,aligny top");
 		
+		//Deadline label created and initializes
 		JLabel deadlineLabel = new JLabel("Deadline");
 		deadlineLabel.setFont(GraphicConstants.REGULARFONT);
 		deadlineLabel.setForeground(GraphicConstants.FOREGROUND);
 		add(deadlineLabel, "cell 0 5");
 		
+		//Deadline label that contains the deadline initialized
 		deadlineLabel_1 = new JLabel(taskModel.getDeadline());
 		deadlineLabel_1.setFont(GraphicConstants.REGULARBOLDFONT);
 		deadlineLabel_1.setForeground(GraphicConstants.FOREGROUND);
 		add(deadlineLabel_1, "cell 0 6");
 		
-		JLabel prioLabel = new JLabel("Priority");
-		prioLabel.setFont(GraphicConstants.REGULARFONT);
-		prioLabel.setForeground(GraphicConstants.FOREGROUND);
-		add(prioLabel, "cell 0 8");
+		//Edit button created and initialized
 		editButton.setRolloverIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/setting.edit.hover.png")));
 		editButton.setToolTipText("change task");
-		
-		
-		getEditButton().setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&24.png")));
-		getEditButton().setBorderPainted(false);
-		add(getEditButton(), "cell 2 10,alignx left,aligny top");
-		getEditButton().setActionCommand("editTask");
+		editButton.setIcon(new ImageIcon(DisplayTaskPanel.class.getResource("/utility/icons/cogs_icon&24.png")));
+		editButton.setBorderPainted(false);
+		add(editButton, "cell 2 10,alignx left,aligny top");
+		editButton.setActionCommand("editTask");
 
 	}
 	
 	/**
-	 * Returns the actual taskmodel.
-	 * 
-	 * @return taskmodel
+	 * Returns the taskmodel that this displayPanel is created from.
+	 * @return taskmodel the model this panel displays
 	 */
 	public TaskModel getTaskModel(){
 		return this.taskModel;
@@ -105,26 +98,12 @@ public class DisplayTaskPanel extends JPanel {
 	 * Sets the controller for the panel. 
 	 * Mouselistener will handle what actions will be performed when the editbutton is clicked
 	 * 
-	 * @param controller
+	 * @param controller the controller that controlls the buttons
 	 */
 	public void setController(DisplayController controller){
 		
-		getEditButton().addActionListener(controller);
+		editButton.addActionListener(controller);
 		this.addMouseListener(controller);
-	}
-
-	/**
-	 * @return the editButton
-	 */
-	public JButton getEditButton() {
-		return editButton;
-	}
-
-	/**
-	 * @param editButton the editButton to set
-	 */
-	public void setEditButton(JButton editButton) {
-		this.editButton = editButton;
 	}
 
 }

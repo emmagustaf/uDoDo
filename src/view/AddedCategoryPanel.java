@@ -4,10 +4,11 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import javax.swing.*;
 
+import Model.AllCategoryListModel;
+import Model.CategoryModel;
+
 import utility.GraphicConstants;
 
-import model.AllCategoryListModel;
-import model.CategoryModel;
 import controller.CategoryPanelController;
 /**
  * A class to represent the panels which are added by the user.

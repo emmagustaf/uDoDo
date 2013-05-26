@@ -1,15 +1,24 @@
-package model;
+package modeltest;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.Test;
 
+import Model.CategoryModel;
+import Model.DisplayModel;
+import Model.TaskModel;
 
+/**
+ * A Class testning the DisplayModel
+ */
 public class DisplayModelTest {
-
+	
+	CategoryModel categoryModel = new CategoryModel("category"); //A categoryModel created to be able to test the displaymodel
+	
 	@Test
 	public void getTaskTitleTest() {
-		TaskModel taskModel = new TaskModel(null);
+		TaskModel taskModel = new TaskModel(null, categoryModel);
 		taskModel.setTitle("test");
 		
 		assertEquals("test", taskModel.getTitle());
@@ -17,7 +26,7 @@ public class DisplayModelTest {
 	
 	@Test
 	public void setTaskTitleTest(){
-		TaskModel taskModel = new TaskModel(null);
+		TaskModel taskModel = new TaskModel(null, categoryModel);
 		taskModel.setTitle("test");
 		
 		assertEquals("test", taskModel.getTitle());
@@ -25,7 +34,7 @@ public class DisplayModelTest {
 	
 	@Test
 	public void getTaskDescriptionTest(){
-		TaskModel taskModel = new TaskModel(null);
+		TaskModel taskModel = new TaskModel(null, categoryModel);
 		taskModel.setDescription("test");
 		
 		assertEquals("test", taskModel.getDescription());
@@ -33,7 +42,7 @@ public class DisplayModelTest {
 	
 	@Test
 	public void setTaskDescriptionTest() {
-		TaskModel taskModel = new TaskModel(null);
+		TaskModel taskModel = new TaskModel(null, categoryModel);
 		taskModel.setDescription("test");
 		
 		assertEquals("test", taskModel.getDescription());
@@ -41,8 +50,8 @@ public class DisplayModelTest {
 
 	@Test
 	public void getTaskModelTest() {
-		TaskModel taskModel = new TaskModel(null);
-		TaskModel taskMod = new TaskModel(null);
+		TaskModel taskModel = new TaskModel(null, categoryModel);
+		TaskModel taskMod = new TaskModel(null, categoryModel);
 		
 		DisplayModel displayModel = new DisplayModel(taskModel);
 		

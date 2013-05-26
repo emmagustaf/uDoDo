@@ -2,26 +2,22 @@ package view;
 
 import javax.swing.JPanel;
 
-import model.TaskModel;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JCheckBox;
 import java.awt.Dimension;
 
 import java.awt.Component;
 import javax.swing.JButton;
 import utility.*;
 
+import Model.TaskModel;
 import controller.TaskController;
 import javax.swing.JToggleButton;
-import java.awt.Color;
 
 /**
  * A view-class to represent a TaskPanel. 
- * 
- * @author Hanna
  */
 
 public class TaskPanel extends JPanel {
@@ -39,24 +35,17 @@ public class TaskPanel extends JPanel {
 	public TaskPanel(TaskModel model) {
 		
 		this.model=model;
-		System.out.println(model.getTitle() + " skapad");
-		
 		this.setBackground(GraphicConstants.BACKGROUND);
 		this.setForeground(GraphicConstants.FOREGROUND);
 		
-		setMinimumSize(new Dimension(290, 80));
-		setPreferredSize(new Dimension(290, 72));
-		setMaximumSize(new Dimension(290, 80));
-//		setSize(new Dimension(30, 20));
-
+		this.setMinimumSize(new Dimension(290, 80));
+		this.setPreferredSize(new Dimension(290, 72));
+		this.setMaximumSize(new Dimension(290, 80));
 		setLayout(new MigLayout("", "[40.00px,left][100.00][30.00][88.00][93.00]", "[45.00px,center][][]"));
 
-		
-		
 		checkbutton = new JToggleButton("");
 		checkbutton.setRolloverSelectedIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
 		checkbutton.setRolloverIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
-//		checkbutton.setRolloverEnabled(true);
 		checkbutton.setSelectedIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
 		checkbutton.setToolTipText("Change state of task");
 		checkbutton.setBorderPainted(false);
@@ -80,7 +69,6 @@ public class TaskPanel extends JPanel {
 		deleteTaskButton.setToolTipText("Delete task");
 		deleteTaskButton.setBorderPainted(false);
 		deleteTaskButton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/delete_icon&16.png")));
-		//deleteTaskButton.setFont(GraphicConstants.REGULARFONT);
 		deleteTaskButton.setActionCommand("deleteTask");
 		add(deleteTaskButton, "cell 4 0,alignx right,aligny center");
 		
@@ -94,6 +82,10 @@ public class TaskPanel extends JPanel {
 		add(deadlineLabel, "cell 1 1,alignx left,aligny center");
 		
 	}
+	
+	/**
+	 * Setters and getter for the components of the taskpanel
+	 */
 	
 	public void setTitle(){
 		taskLabel.setText(model.getTitle());
