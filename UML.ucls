@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.2" icons="false" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="model.AllTaskListModel" project="uDoDo" 
-    file="/uDoDo/src/model/AllTaskListModel.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="Model.AllTaskListModel" project="uDoDo" 
+    file="/uDoDo/src/Model/AllTaskListModel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="78" width="184" x="75" y="32"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -10,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="model.CategoryModel" project="uDoDo" file="/uDoDo/src/model/CategoryModel.java" 
+  <class id="2" language="java" name="Model.CategoryModel" project="uDoDo" file="/uDoDo/src/Model/CategoryModel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1222" y="1489"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" accessors="true" 
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="model.AllCategoryListModel" project="uDoDo" 
-    file="/uDoDo/src/model/AllCategoryListModel.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="Model.AllCategoryListModel" project="uDoDo" 
+    file="/uDoDo/src/Model/AllCategoryListModel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="133" y="353"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -28,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="model.DisplayModel" project="uDoDo" file="/uDoDo/src/model/DisplayModel.java" 
+  <class id="4" language="java" name="Model.DisplayModel" project="uDoDo" file="/uDoDo/src/Model/DisplayModel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1296" y="-475"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" accessors="true" 
@@ -37,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="model.TaskModel" project="uDoDo" file="/uDoDo/src/model/TaskModel.java" 
+  <class id="5" language="java" name="Model.TaskModel" project="uDoDo" file="/uDoDo/src/Model/TaskModel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="321" width="187" x="2199" y="1262"/>    
     <display autosize="false" stereotype="false" package="true" initial-value="false" signature="true" accessors="true" 
@@ -46,8 +46,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="model.FinishedTaskList" project="uDoDo" 
-    file="/uDoDo/src/model/FinishedTaskList.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="Model.FinishedTaskList" project="uDoDo" 
+    file="/uDoDo/src/Model/FinishedTaskList.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="163" y="221"/>    
     <display autosize="true" stereotype="false" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
