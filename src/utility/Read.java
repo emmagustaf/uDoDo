@@ -21,7 +21,6 @@ public class Read {
 			
 			while((obj = (ArrayList<TaskModel>)inputStream.readObject()) != null){
 				if ( obj instanceof ArrayList){
-					System.out.println(((ArrayList<TaskModel>)obj).toString());
 					AllTaskListModel.getInstance().addAll(((ArrayList<TaskModel>)obj));
 				}
 			}

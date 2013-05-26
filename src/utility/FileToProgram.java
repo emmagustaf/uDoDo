@@ -1,5 +1,7 @@
 package utility;
 
+import java.awt.Component;
+
 import model.AllTaskListModel;
 import view.*;
 import model.*;
@@ -15,18 +17,30 @@ public class FileToProgram {
 		for(int i=0; i<AllTaskListModel.getInstance().size(); i++){
 			TaskPanel panel= new TaskPanel(AllTaskListModel.getInstance().get(i));
 			TaskController taskController = new TaskController(listView, panel, taskSettingView, catListView);
-			catModel=panel.getModel().getCategory();
-			AddedCategoryPanel catPanel = new AddedCategoryPanel(catModel);
 			
-			CategoryPanelController catController = new CategoryPanelController(taskSettingView, catPanel, catListView, listView);
-		
+			DisplayModel dispModel = new DisplayModel(panel.getModel());
+			DisplayTaskPanel dispPanel = new DisplayTaskPanel(dispModel, panel.getModel());
+			taskSettingView.add(dispPanel);
+			DisplayController dispController = new DisplayController(listView, taskSettingView, dispPanel);
+						
+			
+			dispPanel.setController(dispController);
 			panel.setController(taskController);
-			catPanel.setController(catController);
+
 			
-			catListView.panel.add(catPanel);
+//			catModel=panel.getModel().getCategory();
+//			AddedCategoryPanel catPanel = new AddedCategoryPanel(catModel);
+//			
+			//CategoryPanelController catController = new CategoryPanelController(taskSettingView, catPanel, catListView, listView);
+		
+//			catPanel.setController(catController);
+//			
+//			catListView.panel.add(catPanel);
+			
 			listView.panelInScroll.add(panel);
 			
 			listView.updateView();
+			
 		}
 		
 	}
