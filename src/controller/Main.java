@@ -93,7 +93,7 @@ public class Main {
 		
 		HeaderController controller = new HeaderController(headerView, listView, allCatPanel, taskSettings, categoryListView);
 		CategoryController catConroller = new CategoryController(taskSettings, categoryView, categoryListView, listView);
-		
+
 
 		frame.setMinimumSize(new Dimension(700, 750));
 		//frame.setResizable(false);
@@ -111,6 +111,7 @@ public class Main {
 		ColorSettings colorSettings = new ColorSettings(guiView);
 		
 		MenuController menuController = new MenuController(colorSettings);
+		TopController topController = new TopController(topView, colorSettings);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
@@ -136,6 +137,24 @@ public class Main {
 		greyhound.addActionListener(menuController);
 		greyhound.setActionCommand("Greyhound");
 		mnTheme.add(greyhound);
+		
+		JRadioButtonMenuItem greenDisease = new JRadioButtonMenuItem("Green disease");
+		buttonGroup.add(greenDisease);
+		greenDisease.addActionListener(menuController);
+		greenDisease.setActionCommand("Green disease");
+		mnTheme.add(greenDisease);
+		
+		JRadioButtonMenuItem blueJean = new JRadioButtonMenuItem("Blue jean");
+		buttonGroup.add(blueJean);
+		blueJean.addActionListener(menuController);
+		blueJean.setActionCommand("Blue jean");
+		mnTheme.add(blueJean);
+		
+		JRadioButtonMenuItem yellowSubmarine = new JRadioButtonMenuItem("Yellow submarine");
+		buttonGroup.add(yellowSubmarine);
+		yellowSubmarine.addActionListener(menuController);
+		yellowSubmarine.setActionCommand("Yellow submarine");
+		mnTheme.add(yellowSubmarine);
 
 		JRadioButtonMenuItem mnAbout = new JRadioButtonMenuItem("About us");
 		mnAbout.addActionListener(menuController);

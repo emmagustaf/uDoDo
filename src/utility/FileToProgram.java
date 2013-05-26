@@ -1,5 +1,7 @@
 package utility;
 
+import com.sun.org.apache.xpath.internal.operations.Equals;
+
 import model.AllTaskListModel;
 import view.*;
 import model.*;
@@ -20,19 +22,23 @@ public class FileToProgram {
 			panel.setController(taskController);
 
 			//listView.panelInScroll.add(panel);
-			
+		
 			for (int j = 0; j < AllCategoryListModel.getInstance().size(); j++) {
-				AddedCategoryPanel catPanel = new AddedCategoryPanel(AllCategoryListModel.getInstance().get(j));
-				if (catPanel.getTitle() != null) {
+				StartCategoryPanel catPanel = new AddedCategoryPanel(AllCategoryListModel.getInstance().get(j));
+				if (catPanel.getTitle() != null ) {
 					CategoryPanelController catPanelController = new CategoryPanelController(
 							taskSettingView, catPanel, catListView, listView);
 
 					catPanel.setController(catPanelController);
-					panel.getModel().getCategory();
-					catPanel.getModel().getTaskList().add(panel.getModel());
-					catListView.panel.add(catPanel);
+					
+					if(catPanel.getModel().getCatTitle().equals(panel.getModel().getCategory().getCatTitle())){
+						catPanel.getModel().getTaskList().add(panel.getModel());
+						catListView.panel.add(catPanel);
+					}
 					
 					
+					
+					//catpanel addas varje gŒng loopen kšrs
 					
 					if(panel.getModel().getCategory().getCatTitle().equals("Finished Tasks")){
 						FinishedTaskList.getInstance().add(panel.getModel());
