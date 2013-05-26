@@ -57,7 +57,7 @@ public class TaskController implements ActionListener, MouseListener {
 				
 				CategoryModel cModel = taskPanel.getModel().getCategory();
 				
-				if(taskPanel.getModel().getState() && !FinishedTaskList.getInstance().contains(taskPanel.getModel())){
+				if(taskPanel.getModel().isChecked() && !FinishedTaskList.getInstance().contains(taskPanel.getModel())){
 				
 					
 //					catListView.getFinishedCategoryPanel().setBackground(GraphicConstants.BUTTONPRESSED);

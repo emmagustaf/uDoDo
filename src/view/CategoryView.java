@@ -42,6 +42,7 @@ public class CategoryView extends JPanel {
 		addNewCategoryButton.setMargin(new Insets(0, 1, 0, 1));
 		addNewCategoryButton.setPreferredSize(new Dimension(50, 29));
 		addNewCategoryButton.setMinimumSize(new Dimension(50, 29));
+		addNewCategoryButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		add(addNewCategoryButton, "cell 1 0,alignx center,aligny center");
 		addNewCategoryButton.setBorderPainted(false);
 		addNewCategoryButton.setOpaque(true);
