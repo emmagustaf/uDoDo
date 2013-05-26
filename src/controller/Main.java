@@ -21,6 +21,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
+
+import com.sun.j3d.utils.geometry.Box;
+
 import utility.*;
 public class Main {
 	private static final ButtonGroup buttonGroup = new ButtonGroup();
@@ -45,38 +48,33 @@ public class Main {
 		}
 		
 		JFrame frame = new JFrame();
+		frame.setTitle("uDoDo 1.0");
 		
 		ListView listView = new ListView();
-		
-		//CategoryController catController= new CategoryController();
 		CategoryView categoryView = new CategoryView();
 		CategoryListView categoryListView = new CategoryListView();
-		
-		
-		//ListController controller = new ListController(listView);
 		HeaderView headerView = new HeaderView();
-		
 		TopView topView = new TopView();
-		
 		TaskSettingView taskSettings = new TaskSettingView();
+		//CategoryController catController= new CategoryController();
+		//ListController controller = new ListController(listView);		
 		
 		CategoryModel allModel = new CategoryModel("All Tasks");
 		CategoryModel finishedModel = new CategoryModel("Finished Tasks");
 		
 		StartCategoryPanel allCatPanel = new StartCategoryPanel(allModel);
+		allCatPanel.setTitle("All Tasks");
+		allCatPanel.setFont(GraphicConstants.REGULARBOLDFONT);
+		
+		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
+		finishedCatPanel.setTitle("Finished Tasks");
+		finishedCatPanel.setFont(GraphicConstants.REGULARBOLDFONT);
 		
 		categoryListView.setDefaultCategory(allModel);
 		categoryListView.getMarkedList().clear();
 		categoryListView.getLastMarkedList().clear();
-		
-		StartCategoryPanel finishedCatPanel = new StartCategoryPanel(finishedModel);
-		
-		categoryListView.setFinishedCategory(finishedCatPanel);
-		
-		allCatPanel.setTitle("All Tasks");
-		
-		finishedCatPanel.setTitle("Finished Tasks");
-		
+		categoryListView.setFinishedCategory(finishedCatPanel);		
+
 		categoryListView.panel.add(allCatPanel);
 		categoryListView.panel.add(finishedCatPanel);
 		
@@ -94,17 +92,14 @@ public class Main {
 		//AddedCategoryPanel catPanel = new AddedCategoryPanel(model);
 		
 		HeaderController controller = new HeaderController(headerView, listView, allCatPanel, taskSettings, categoryListView);
-		
 		CategoryController catConroller = new CategoryController(taskSettings, categoryView, categoryListView, listView);
 		
-		
-		
-		frame.setTitle("uDoDo 1.0");
+
 		frame.setMinimumSize(new Dimension(700, 750));
 		//frame.setResizable(false);
 
 		// Add gui to window
-		FileToProgram.SavedToList(listView, categoryListView);
+		FileToProgram.savedToList(listView, categoryListView, taskSettings);
 		frame.getContentPane().add(guiView);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -150,6 +145,7 @@ public class Main {
 		JRadioButtonMenuItem menyHelp = new JRadioButtonMenuItem("Help");
 		menyHelp.addActionListener(menuController);
 		menyHelp.setActionCommand("Help");
+		menyHelp.setAlignmentX(Box.RIGHT);
 		mnHelp.add(menyHelp);
 
 		// Open the window
