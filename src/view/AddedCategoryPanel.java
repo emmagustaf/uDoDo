@@ -33,6 +33,7 @@ public class AddedCategoryPanel extends StartCategoryPanel {
 		this.setToolTipText("" + model.getCatTitle());
 		this.setBackground(GraphicConstants.BACKGROUND);
 		setForeground(GraphicConstants.FOREGROUND);
+		deleteCatButton.setRolloverIcon(new ImageIcon(AddedCategoryPanel.class.getResource("/utility/icons/delete.icon.hover.png")));
 		
 		deleteCatButton.setToolTipText("Delete category and all it's content");
 		
