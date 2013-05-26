@@ -1,14 +1,10 @@
 package model;
 
-import java.awt.Component;
 import java.util.*;
-
-import utility.Save;
-import view.*;
-import controller.*;
 import java.io.*;
+
 /**
- * A class to represent a model of the category.
+ * A class to represent a model of a category.
  * 
  * @author Hanna
  *
@@ -17,15 +13,12 @@ public class CategoryModel implements Serializable{
 
 	private static final long serialVersionUID = 349685488686548422L;
 	private String catTitle;
-	private CategoryView view;
-	private AddedCategoryPanel panel;
-	private CategoryModel panelModel;
 	private List<TaskModel> taskList;
-	private StartCategoryPanel startPanel;
-
+	
 	/**
-	 * Creates a CategoryModel, if 
-	 * @param catTitle
+	 * Creates a CategoryModel with an ArrayList to put TaskModels in. If the categories "Finished Tasks" 
+	 * or "All Tasks" are created no ArrayList is created, since those categories are using 
+	 * different ArrayLists (FinishedTaskList and AllTaskListModel).
 	 */
 	public CategoryModel(String catTitle) {
 		if(!catTitle.equals("Finished Tasks") && !catTitle.equals("All Tasks")){
@@ -36,8 +29,7 @@ public class CategoryModel implements Serializable{
 	
 	
 	/**
-	 * Returns the actual TaskList
-	 * @return
+	 * Returns the List of tasks in the category
 	 */
 	public List<TaskModel> getTaskList(){
 		if(catTitle.equals("Finished Tasks")){
@@ -50,8 +42,7 @@ public class CategoryModel implements Serializable{
 	}
 
 	/**
-	 * Returns the title connected to the category
-	 * @return
+	 * Returns the title of the category
 	 */
 	public String getCatTitle() {
 		return catTitle;

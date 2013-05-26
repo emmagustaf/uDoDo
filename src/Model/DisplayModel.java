@@ -69,7 +69,7 @@ public class DisplayModel {
 	 * @return description
 	 */
 	public void setTaskDescription(String description){
-		this.description=description;
+		this.description = description;
 		
 	}
 

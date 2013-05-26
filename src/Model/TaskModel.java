@@ -1,8 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import utility.*;
 import javax.swing.JLabel;
 
@@ -15,74 +13,58 @@ public class TaskModel implements Serializable{
 	 */
 	private static final long serialVersionUID = 3243208829863896513L;
 
-
-	private enum Priority{
-		HIGH_PRIORITY, NO_PRIORITY
-	}
-	
 	private boolean checked;
 	private String title;
 	private String description;
-	private Priority prio;
 	private CategoryModel catModel;
-	private EditTaskPanel editTaskPanel;
 	private String deadline;
 	private JLabel deadlineLabel = new JLabel();
-	//private List<TaskModel> uncheckedTaskList = new ArrayList<TaskModel>();
-	//we will have to find a way to keep track of unchecked and checked tasks
-	//I think it will be too many lists with stuff soon...
+
 	
-	public TaskModel(String title){
-		this.title = title;
-		this.checked = false;
-		this.prio = Priority.NO_PRIORITY;
-	}
 	
 	public TaskModel(String title, CategoryModel catModel){
-		this(title);
+		this.title = title;
+		this.checked = false;
 		this.catModel = catModel;
 		catModel.getTaskList().add(this);
 
-		if(AllTaskListModel.getInstance().contains(this)){
-			AllTaskListModel.getInstance().remove(this);
+		if(!AllTaskListModel.getInstance().contains(this)){
+			AllTaskListModel.getInstance().add(this);
 		}
-		AllTaskListModel.getInstance().add(this);
+
 		Save.saveFiles();
 
 	}
 	
-	public void changePriority(){				//We probably will be needing a controller-class for the tasks, doing this kind of stuff but not yet! :D
-		switch (prio) {
-			case NO_PRIORITY:
-				prio = Priority.HIGH_PRIORITY;
-				break;
-			case HIGH_PRIORITY:
-				prio = Priority.NO_PRIORITY;
-				break;
-			default:
-				prio = this.getPrio();
-				break;
-		}
-			
-	}
-	
+	/**
+	 * Changes the tasks checked/unchecked state
+	 */
 	public void changeState(){
 		checked = !checked;
+		
 	}
 	
+	/**
+	 * 
+	 * @return true if the task is checked, and false if the task is unchecked
+	 */
 	public boolean isChecked(){
 		return checked;
 		
 	}
 	
-	public Priority getPrio(){
-		return prio;
-	}
-	
+	/**
+	 * 
+	 * @return the title of the task
+	 */
 	public String getTitle(){
 		return title;
 	}
 	
+	/**
+	 * 
+	 * @return the description of the task
+	 */
 	public String getDescription(){
 		return description;
 	}
@@ -95,40 +77,39 @@ public class TaskModel implements Serializable{
 		this.description=description;
 	}
 	
-	public void setPrio(Priority prio){
-		this.prio=prio;
-	}
+	/**
+	 * sets the deadline for the TaskModel
+	 */
 	public void setDeadline(String deadline){
 		this.deadline=deadline;
 	}
+	
+	/**
+	 * sets the deadline in the EditTaskPanel
+	 */
 	public void setDeadlineLabel(String deadline){
 		deadlineLabel.setText(deadline);
 	}
 	
+	/**
+	 * 
+	 * @return a String with the deadline for the task, or if no deadline exists, an explanatory message
+	 */
 	public String getDeadline(){
 		if(deadline==null){
 			return "No deadline for this task";
 		}else{
-		return deadline;
+			return deadline;
 		}
 	}
 
+	/**
+	 * 
+	 * @return the CategoryModel which the task belongs to
+	 */
 	public CategoryModel getCategory(){
 		return catModel;
 	}
-	 
-	
-	//public StartCategoryPanel getCatPanel(){
-		//return catPanel;
-	//}
-	
-	
-	public void changeCategory(CategoryModel catModel){
-		catModel.getTaskList().remove(this);
-		CategoryModel model = catModel;
-		model.getTaskList().add(this);
-	}
-
 
 }
 
