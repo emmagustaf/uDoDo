@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-
 import utility.GraphicConstants;
 
 public class TaskSettingView extends JScrollPane{

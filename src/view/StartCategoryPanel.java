@@ -24,11 +24,10 @@ public class StartCategoryPanel extends JPanel {
 	public StartCategoryPanel(CategoryModel categoryModel) {
 		
 		this.categoryModel = categoryModel;
-		
 		this.setBackground(GraphicConstants.BACKGROUND);
-		setMinimumSize(new Dimension(200, 40));
-		setMaximumSize(new Dimension(200, 40));
-		setPreferredSize(new Dimension(200, 40));
+		this.setMinimumSize(new Dimension(200, 40));
+		this.setMaximumSize(new Dimension(200, 40));
+		this.setPreferredSize(new Dimension(200, 40));
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 146, 41 , 0};
@@ -53,6 +52,12 @@ public class StartCategoryPanel extends JPanel {
 		
 		
 	}
+	
+	
+	/**
+	 * Setters and getters for the specific category.
+	 * 
+	 */
 	
 	public void setTitle(String title){
 		categoryLabel.setText(title);

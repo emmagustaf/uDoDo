@@ -4,17 +4,12 @@ import java.awt.*;
 
 import utility.*;
 import controller.*;
-
 import javax.swing.*;
-
 import net.miginfocom.swing.MigLayout;
-
-import javax.swing.border.LineBorder;
-import javax.swing.GroupLayout.Alignment;
-
 
 public class CategoryView extends JPanel {
 	
+	//variables created
 	private JButton addNewCategoryButton;
 	private JTextField categoryTitleInput;
 	
@@ -32,25 +27,30 @@ public class CategoryView extends JPanel {
 		
 		categoryTitleInput = new HintTextField("Add category...", 20);
 		categoryTitleInput.setForeground(Color.gray);
-		add(categoryTitleInput, "cell 0 0,alignx left,aligny center");
-		
 		categoryTitleInput.setFont(GraphicConstants.REGULARFONT);
 		categoryTitleInput.setActionCommand("newCategory");
 		
+		add(categoryTitleInput, "cell 0 0,alignx left,aligny center");
+		
+		//All the settings to be added to the button add new category
 		addNewCategoryButton = new JButton("Ok");
-		addNewCategoryButton.setBorder(null);
-		addNewCategoryButton.setMargin(new Insets(0, 1, 0, 1));
+
 		addNewCategoryButton.setPreferredSize(new Dimension(50, 29));
 		addNewCategoryButton.setMinimumSize(new Dimension(50, 29));
+		addNewCategoryButton.setMaximumSize(new Dimension(50, 29));
 		addNewCategoryButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		add(addNewCategoryButton, "cell 1 0,alignx center,aligny center");
+		
 		addNewCategoryButton.setBorderPainted(false);
 		addNewCategoryButton.setOpaque(true);
-		addNewCategoryButton.setMaximumSize(new Dimension(50, 29));
+		addNewCategoryButton.setBorder(null);
+		addNewCategoryButton.setMargin(new Insets(0, 1, 0, 1));
+		
 		addNewCategoryButton.setForeground(new Color(255, 255, 255));
 		addNewCategoryButton.setBackground(new Color(30, 144, 255));
 		addNewCategoryButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		addNewCategoryButton.setActionCommand("newCategory");
+		
+		add(addNewCategoryButton, "cell 1 0,alignx center,aligny center");
 	}
 	
 	/**
@@ -66,7 +66,7 @@ public class CategoryView extends JPanel {
 	
 	/**
 	 * Returns the categorytitle that the user has typed in
-	 * @return
+	 * @return categoryTitleInput the input of the title for the category
 	 */
 	public JTextField getTextField(){
 		
