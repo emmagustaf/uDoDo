@@ -60,10 +60,12 @@ public class CategoryController implements ActionListener{
 				ArrayList <CategoryModel> catList = new ArrayList<CategoryModel>();
 				catList.add(cat);
 				
-				if(!AllCategoryListModel.getInstance().contains(catPanel.getTitle())){
-					AllCategoryListModel.getInstance().addAll(catList);
-					Save.saveCategories();
+				if(AllCategoryListModel.getInstance().contains(catList)){
+				AllCategoryListModel.getInstance().removeAll(catList);
 				}
+				AllCategoryListModel.getInstance().addAll(catList);
+				Save.saveCategories();
+				
 				view.getTextField().setText("");
 				//catListView.addToCatList(catPanel);
 				catListView.updateView();

@@ -21,6 +21,7 @@ public class Read {
 			
 			while((obj = (ArrayList<TaskModel>)inputStream.readObject()) != null){
 				if ( obj instanceof ArrayList){
+					
 					AllTaskListModel.getInstance().addAll(((ArrayList<TaskModel>)obj));
 				}
 			}
@@ -92,9 +93,7 @@ public class Read {
 			
 			while((obj = (ArrayList<TaskModel>)inputStream.readObject()) != null){
 				if ( obj instanceof ArrayList){
-					if(obj.contains(StartCategoryPanel.class)){
-						obj.remove(StartCategoryPanel.class);
-					}
+					
 					FinishedTaskList.getInstance().addAll((ArrayList<TaskModel>)obj);
 				}
 			}
