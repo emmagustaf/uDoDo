@@ -66,7 +66,7 @@ public class TaskModel implements Serializable{
 		checked = !checked;
 	}
 	
-	public boolean getState(){
+	public boolean isChecked(){
 		return checked;
 		
 	}

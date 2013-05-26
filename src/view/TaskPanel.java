@@ -56,13 +56,14 @@ public class TaskPanel extends JPanel {
 		checkbutton = new JToggleButton("");
 		checkbutton.setRolloverSelectedIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
 		checkbutton.setRolloverIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
-		checkbutton.setRolloverEnabled(true);
+//		checkbutton.setRolloverEnabled(true);
 		checkbutton.setSelectedIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checked.box.blue.png")));
 		checkbutton.setToolTipText("Change state of task");
 		checkbutton.setBorderPainted(false);
 		checkbutton.setIcon(new ImageIcon(TaskPanel.class.getResource("/utility/icons/checkbox_unchecked_icon&16.png")));
 		checkbutton.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		checkbutton.setActionCommand("taskCheck");
+		checkbutton.setSelected(this.getModel().isChecked());
 		add(checkbutton, "cell 0 0,alignx center,aligny center");
 
 		taskLabel = new JLabel(model.getTitle());
